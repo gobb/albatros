@@ -1,0 +1,60 @@
+{% extends '::base.html.twig' %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<ul class="breadcrumb">
+					<li><a href="{{ path('aripd_default_index') }}">{{ 'Home'|trans() }}</a> <span class="divider">/</span></li>
+					<li class="active">{{ 'Product Catalog'|trans({}, 'ARIPDStoreBundle') }}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<table class="table">
+					<thead>
+						<tr>
+							<th></th>
+							<th>{{ 'Product'|trans({}, 'ARIPDStoreBundle') }}</th>
+							<th>{{ 'Bulk Price'|trans({}, 'ARIPDStoreBundle') }}</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for entity in entities %}
+						<tr>
+							<td>
+								<div class="span2 thumbnail">
+									<a href="{{ path('aripd_store_model_show', { id: entity.model.id, code: entity.model.code, slug: entity.slug }) }}">
+										<img src="{{ entity.model.image.url }}" alt="{{ entity.name }}"/>
+									</a>
+							</td>
+							<td>
+								<h5>{{ entity.name }}</h5>
+								<p>{{ entity.description }}</p>
+								<hr class="soft"/>
+								<ul class="nav nav-pills">
+									{% for model in entity.models %}
+									<li class="span1 {% if model == entity %}active{% endif %}">
+										<a href="{{ path('aripd_store_model_show', { id: model.id, code: model.code, slug: model.product.slug }) }}">
+											{{ model.code }}
+											<img src="{{ model.image.url }}" alt="{{ model.product.name }}"/>
+										</a>
+									</li>
+									{% endfor %}
+								</ul>
+							</td>
+							<td>
+								<div>{{ entity.model.bulkprice|localizedcurrency(entity.model.bulkiso4217.code) }}</div>
+								<div>{{ entity.model.bulkprice|convertFormat(entity.model.bulkiso4217, app.session.get('iso4217')) }}</div>
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

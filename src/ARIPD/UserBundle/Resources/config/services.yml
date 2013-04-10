@@ -1,0 +1,46 @@
+parameters:
+    aripduser.facebook_provider.class: ARIPD\UserBundle\Security\User\Provider\FacebookProvider 
+    aripduser.authentication_listener.class: ARIPD\UserBundle\EventListener\AuthenticationListener
+    aripduser.log_service.class: ARIPD\UserBundle\Service\LogService
+    aripduser.basket_service.class: ARIPD\UserBundle\Service\BasketService
+    aripduser.purchaseorder_service.class: ARIPD\UserBundle\Service\PurchaseorderService
+
+services:
+    aripduser.facebook_provider:
+        class: "%aripduser.facebook_provider.class%"
+        arguments:
+            facebook: "@fos_facebook.api"
+            userManager: "@fos_user.user_manager"
+            validator: "@validator"
+            container: "@service_container"
+        
+    aripduser.profile.form.type:
+        class: ARIPD\UserBundle\Form\Type\ProfileFormType
+        arguments: ["%fos_user.model.user.class%"]
+        tags:
+            - { name: form.type, alias: aripduser_profileformtype }
+
+    aripduser.registration.form.type:
+        class: ARIPD\UserBundle\Form\Type\RegistrationFormType
+        arguments: ["%fos_user.model.user.class%"]
+        tags:
+            - { name: form.type, alias: aripduser_registrationformtype }
+
+    aripduser.authentication_listener:
+        class: "%aripduser.authentication_listener.class%"
+        arguments: [ "@service_container", "@doctrine.orm.entity_manager", "@router", "@security.context" ]
+        tags:
+            - { name: kernel.event_listener, event: security.interactive_login, method: onSecurityInteractiveLogin }
+            
+    aripduser.log_service:
+        class: "%aripduser.log_service.class%"
+        arguments: [ "@service_container", "@doctrine.orm.entity_manager" ]
+        
+    aripduser.basket_service:
+        class: "%aripduser.basket_service.class%"
+        arguments: [ "@service_container", "@doctrine.orm.entity_manager" ]
+        
+    aripduser.purchaseorder_service:
+        class: "%aripduser.purchaseorder_service.class%"
+        arguments: [ "@service_container", "@doctrine.orm.entity_manager" ]
+

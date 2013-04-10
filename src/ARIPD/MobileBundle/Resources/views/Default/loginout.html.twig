@@ -1,0 +1,5 @@
+{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+<a href="{{ path('fos_user_security_logout') }}" data-icon="delete" class="ui-btn-right">{{ 'Logout'|trans({}, 'ARIPDUserBundle') }}</a>
+{% else %}
+<a href="{{ path('aripd_mobile_default_login') }}" data-icon="check" class="ui-btn-right">{{ 'Login'|trans({}, 'ARIPDUserBundle') }}</a>
+{% endif %}

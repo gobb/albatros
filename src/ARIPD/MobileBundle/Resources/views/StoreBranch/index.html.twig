@@ -1,0 +1,34 @@
+{% extends 'ARIPDMobileBundle::layout.html.twig' %}
+
+{% block body %}
+<div data-role="page" id="foo" data-title="Page Foo">
+	<div data-role="header" data-id="header" data-position="fixed">
+		<a href="{{ path('aripd_mobile_default_index') }}" data-icon="home">{{ 'Home'|trans() }}</a>
+		<h1>{{ 'Branch'|trans({}, 'ARIPDStoreBundle') }}</h1>
+		{% include 'ARIPDMobileBundle:Default:loginout.html.twig' %}
+	</div>
+	<div data-role="content">
+		<ul data-role="listview" data-filter="true" data-filter-placeholder="Search branches..." data-filter-theme="d" data-theme="d" data-divider-theme="d">
+			{% for entity in entities %}
+			<li>
+				<a href="{{ path('aripd_mobile_store_branch_show', {id: entity.id}) }}">
+					<img src="{{ entity.url }}">
+					<h3>{{ entity.name }}</h3>
+					<p>{{ entity.fulladdress }}</p>
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div data-role="footer" data-id="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a class="ui-btn-active ui-state-persist" href="{{ path('aripd_mobile_store_branch_index') }}">{{ 'Branch'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+				<li><a href="{{ path('aripd_mobile_store_product_index') }}">{{ 'Menu'|trans({}, 'ARIPDMobileBundle') }}</a></li>
+				<li><a href="{{ path('aripd_mobile_loyalty_index') }}">Bana özel</a></li>
+				<li><a href="{{ path('aripd_mobile_default_share') }}">{{ 'Share'|trans() }}</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}

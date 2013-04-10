@@ -1,0 +1,6 @@
+<ul class="nav nav-pills filter-nav well">
+	<li class="active"><a data-id="all" href="#">Tüm Ürünler</a></li>
+	{% for entity in entities %}
+	<li><a data-id="{{ entity.slug }}" href="#">{{ entity.name }}</a></li>
+	{% endfor %}
+</ul>

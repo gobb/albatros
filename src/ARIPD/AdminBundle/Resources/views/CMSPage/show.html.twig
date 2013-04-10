@@ -1,0 +1,14 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ entity.name }}</h1>
+</div>
+<div class="lead">
+	{{ entity.description }}
+</div>
+<p>{{ entity.content|raw }}</p>
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_cms_page_edit', { id: entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+</div>
+{% endblock %}

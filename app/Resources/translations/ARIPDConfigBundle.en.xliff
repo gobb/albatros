@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2013-04-16T08:59:10Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="754164850f38c1ecdaf6b8ed894cb192bc36c5f4" resname="Configuration">
+        <jms:reference-file line="143">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <source>Configuration</source>
+        <target state="new">Configuration</target>
+      </trans-unit>
+      <trans-unit id="fa2580146ae9017ee1bfac4c14440fcc30fc7031" resname="The settings were changed">
+        <jms:reference-file line="54">ConfigBundle/Controller/SettingsController.php</jms:reference-file>
+        <source>The settings were changed</source>
+        <target state="new">The settings were changed</target>
+      </trans-unit>
+      <trans-unit id="bf962dc47ba24e744283dc1dea32fc8f8ed12a1e" resname="There are no settings defined yet.">
+        <jms:reference-file line="3">views/Settings/modify_form_empty.html.twig</jms:reference-file>
+        <source>There are no settings defined yet.</source>
+        <target state="new">There are no settings defined yet.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,44 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'User Management'|trans({}, 'ARIPDUserBundle') }}</h1>
+</div>
+<div class="row">
+	<div class="span3 columns">
+		<div class="thumbnail">
+			{{ profileImage(entity, configVariable('user_user_width'), configVariable('user_user_height')) }}
+		</div>
+	</div>
+	<div class="span6 columns">
+		<dl class="dl-horizontal">
+			<dt>{{ 'Status'|trans({}, 'ARIPDUserBundle') }}</dt>
+			<dd>{% if entity.enabled %}Enabled{% else %}Not Enabled{% endif %}</dd>
+			<dt>{{ 'Id'|trans({}, 'ARIPDUserBundle') }}</dt>
+			<dd>{{ entity.id }}</dd>
+			<dt>{{ 'Username'|trans({}, 'ARIPDUserBundle') }}</dt>
+			<dd>{{ entity.username }}</dd>
+			<dt>{{ 'Fullname'|trans({}, 'ARIPDUserBundle') }}</dt>
+			<dd>{{ entity.fullname }}</dd>
+			<dt>{{ 'Groups'|trans({}, 'ARIPDUserBundle') }}</dt>
+			<dd>
+				{% for group in entity.groups %}
+				<span class="label">{{ group.name }}</span>{% if loop.last == false %}&nbsp;{% endif %}
+				{% endfor %}
+			</dd>
+			<dt>{{ 'E-mail address'|trans({}, 'ARIPDUserBundle') }}</dt>
+			<dd>{{ entity.email }}</dd>
+			<dt>{{ 'Date of birth'|trans({}, 'ARIPDUserBundle') }}</dt>
+			<dd>{{ entity.dateofbirth|localizeddate('medium', 'none') }}</dd>
+		</dl>
+	</div>
+</div>
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_useruser_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_useruser_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+	<button class="btn btn-danger" type="button" onclick="deleteRecord();"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+</div>
+<form id="delete_form" action="{{ path('aripd_admin_useruser_delete', { 'id': entity.id }) }}" method="post">
+	{{ form_widget(delete_form) }}
+</form>
+{% endblock %}

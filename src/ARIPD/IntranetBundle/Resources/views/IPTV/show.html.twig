@@ -1,0 +1,65 @@
+<h1>IPTV</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>{{ entity.name }}</td>
+        </tr>
+        <tr>
+            <th>Clipurl</th>
+            <td>{{ entity.clipurl }}</td>
+        </tr>
+        <tr>
+            <th>Netconnectionurl</th>
+            <td>{{ entity.netconnectionurl }}</td>
+        </tr>
+        <tr>
+            <th>Width</th>
+            <td>{{ entity.width }}</td>
+        </tr>
+        <tr>
+            <th>Height</th>
+            <td>{{ entity.height }}</td>
+        </tr>
+        <tr>
+            <th>Playersrc</th>
+            <td>{{ entity.playersrc }}</td>
+        </tr>
+        <tr>
+            <th>Playerkey</th>
+            <td>{{ entity.playerkey }}</td>
+        </tr>
+        <tr>
+            <th>Influxisurl</th>
+            <td>{{ entity.influxisurl }}</td>
+        </tr>
+        <tr>
+            <th>Controlsurl</th>
+            <td>{{ entity.controlsurl }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('aripd_intranet_iptv_index') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('aripd_intranet_iptv_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('aripd_intranet_iptv_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

@@ -1,0 +1,41 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ 'Payment through Virtual POS'|trans({}, 'ARIPDShoppingBundle') }}{% endblock %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<ul class="breadcrumb">
+					<li><a href="{{ path('aripd_default_index') }}">{{ 'Home'|trans() }}</a> <span class="divider">/</span></li>
+					<li class="active">{{ 'Payment through Virtual POS'|trans({}, 'ARIPDShoppingBundle') }}</li>
+				</ul>
+				<form class="span4 offset4" action="{{ path('aripd_shopping_payment_pos') }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
+					
+					{{ form_errors(form) }}
+					
+					{{ form_row(form.ccno, { 'attr': { 'class': 'span3', 'placeholder': 'Credit Card Number'|trans({}, 'ARIPDShoppingBundle') }}) }}
+					{{ form_row(form.cvc, { 'attr': { 'class': 'span2', 'placeholder': 'Security Number'|trans({}, 'ARIPDShoppingBundle') }}) }}
+					
+					<div>
+						<label>{{ 'Expiration Date'|trans({}, 'ARIPDShoppingBundle')  }}</label>
+						{{ form_widget(form.expdateYear, { 'attr': { 'class': 'span1', 'placeholder': 'label.expdateYear'|trans() }}) }}
+						{{ form_widget(form.expdateMonth, { 'attr': { 'class': 'span1', 'placeholder': 'label.expdateMonth'|trans() }}) }}
+					</div>
+					
+					{{ form_row(form.amount, { 'attr': { 'class': 'span2', 'placeholder': 'Total Amount'|trans({}, 'ARIPDShoppingBundle') }}) }}
+					
+					{{ form_rest(form) }}
+					
+					<div class="form-actions">
+						<a class="btn pull-left" href="{{ path('aripd_default_index') }}"><i class="icon-chevron-left"></i> {{ 'Cancel'|trans() }}</a>
+						<button class="btn pull-right" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Continue'|trans() }} <i class="icon-chevron-right"></i></button>
+					</div>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

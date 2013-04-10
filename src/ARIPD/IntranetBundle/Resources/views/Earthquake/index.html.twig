@@ -1,0 +1,91 @@
+{% extends 'ARIPDIntranetBundle::layout.html.twig' %}
+
+{% block title %}Earthquake{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+google.load('visualization', '1.1', {packages: ['controls']});
+google.setOnLoadCallback(drawVisualization);
+
+function drawVisualization() {
+	var jsonData = $.ajax({
+		url: '{{ path('earthquake_json') }}',
+		dataType:"json",
+		async: false
+	}).responseText;
+
+	// Create our data table out of JSON data loaded from server.
+	var data = new google.visualization.DataTable(jsonData);
+
+	var slider = new google.visualization.ControlWrapper({
+		controlType: 'NumberRangeFilter',
+		containerId: 'control1',
+		options: {
+			filterColumnLabel: 'Magnitude',
+			ui: {'labelStacking': 'vertical'}
+		}
+	});
+	
+	var categoryPicker = new google.visualization.ControlWrapper({
+		controlType: 'CategoryFilter',
+		containerId: 'control2',
+		options: {
+			filterColumnLabel: 'Date',
+			ui: {
+				labelStacking: 'vertical',
+				allowTyping: false,
+				allowMultiple: false
+			}
+		}
+	});
+	
+	var geochart = new google.visualization.ChartWrapper({
+		chartType: 'GeoChart',
+		containerId: 'chart1',
+		options: {
+			width: 500,
+			height: 300,
+			region: 'TR',
+			displayMode: 'markers',
+			colorAxis: {colors: ['green', 'blue']}
+		},
+		view: {'columns': [5, 4]}
+	});
+	
+	var table = new google.visualization.ChartWrapper({
+			'chartType': 'Table',
+			'containerId': 'chart2',
+			'options': {
+				'width': '500px'
+			}
+	});
+	
+	new google.visualization.Dashboard(document.getElementById('dashboard')).
+		bind([slider, categoryPicker], [geochart, table]).
+		draw(data);
+}
+</script>
+{% endblock %}
+
+{% block body %}
+<h2>Earthquakes in Turkey</h2>
+<h3>Data feed from Boğaziçi University Kandilli Observatory and Earthquake Research Institute</h3>
+
+<div id="dashboard">
+	<table style="width: 100%;" border="0">
+		<tr style='vertical-align: top'>
+			<td style='width: 250px; font-size: 0.9em;'>
+				<div id="control1"></div>
+				<div id="control2"></div>
+			</td>
+			<td>
+				<div style="float: left;" id="chart1"></div>
+			</td>
+			<td>
+				<div style="float: left;" id="chart2"></div>
+			</td>
+		</tr>
+	</table>
+</div>
+{% endblock %}

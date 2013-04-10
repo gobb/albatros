@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2013-04-16T08:58:46Z" source-language="en" target-language="tr" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="b521caa6e1db82e5a01c924a419870cb72b81635" resname="ADMIN">
+        <jms:reference-file line="18">Form/Type/UserGroupFormType.php</jms:reference-file>
+        <source>ADMIN</source>
+        <target state="new">ADMIN</target>
+      </trans-unit>
+      <trans-unit id="d70f93df5e8f9b55be44fbeee9d203972e3383d4" resname="Address">
+        <jms:reference-file line="23">ARIPDUserBundle/Postaladdress/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="23">ARIPDUserBundle/Postaladdress/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">Form/Type/PostaladdressFormType.php</jms:reference-file>
+        <source>Address</source>
+        <target>Adres</target>
+      </trans-unit>
+      <trans-unit id="477f95dfb8823284eb96754128b83178bca7fe65" resname="Address Information">
+        <jms:reference-file line="8">pdc_com_tr/views/footer.html.twig</jms:reference-file>
+        <jms:reference-file line="37">pdc_com_tr/views/header.html.twig</jms:reference-file>
+        <source>Address Information</source>
+        <target>Adres Bilgilerim</target>
+      </trans-unit>
+      <trans-unit id="aade08adf1d3634d947daabb00d6a941ab399214" resname="An email has been sent to %email%. It contains a link you must click to reset your password.">
+        <jms:reference-file line="14">ARIPDUserBundle/Resetting/checkEmail.html.twig</jms:reference-file>
+        <source>An email has been sent to %email%. It contains a link you must click to reset your password.</source>
+        <target>%email% adresine parolanızı sıfırlama adresi bulunan bir e-posta gönderildi.</target>
+      </trans-unit>
+      <trans-unit id="3c4302c29219cbf58ab45074953ac9435fa17f89" resname="An email has been sent to %email%. It contains an activation link you must click to activate your account.">
+        <jms:reference-file line="10">ARIPDUserBundle/Registration/checkEmail.html.twig</jms:reference-file>
+        <source>An email has been sent to %email%. It contains an activation link you must click to activate your account.</source>
+        <target>"%email% adresine hesabınızı aktive etmek için kullanacağınız aktivasyon linkini barındıran bir e-posta gönderildi."</target>
+      </trans-unit>
+      <trans-unit id="38661bcc191f49ed036e7844b45a0195b583f70d" resname="Back to the originating page">
+        <jms:reference-file line="15">ARIPDUserBundle/Registration/confirmed.html.twig</jms:reference-file>
+        <source>Back to the originating page</source>
+        <target>Asıl sayfaya geri dön.</target>
+      </trans-unit>
+      <trans-unit id="8c684290ce0b8a8e6cee79a145e17554064a4760" resname="Change password">
+        <jms:reference-file line="3">ARIPDUserBundle/ChangePassword/changePassword.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDUserBundle/ChangePassword/changePassword.html.twig</jms:reference-file>
+        <jms:reference-file line="4">ARIPDUserBundle/ChangePassword/changePassword_content.html.twig</jms:reference-file>
+        <jms:reference-file line="17">ARIPDUserBundle/Profile/show.html.twig</jms:reference-file>
+        <jms:reference-file line="17">ARIPDUserBundle/Resetting/reset.html.twig</jms:reference-file>
+        <source>Change password</source>
+        <target>Parolayı değiştir</target>
+      </trans-unit>
+      <trans-unit id="4271627f4f0bef6104a95cca7bb21cda4d74503e" resname="City">
+        <jms:reference-file line="25">ARIPDUserBundle/Postaladdress/new.html.twig</jms:reference-file>
+        <jms:reference-file line="13">Form/Type/PostaladdressFormType.php</jms:reference-file>
+        <source>City</source>
+        <target>Şehir</target>
+      </trans-unit>
+      <trans-unit id="baf3357bba0be671d9f7943b857013c9517d8d7c" resname="Congrats %username%, your account is now activated.">
+        <jms:reference-file line="11">ARIPDUserBundle/Registration/confirmed.html.twig</jms:reference-file>
+        <source>Congrats %username%, your account is now activated.</source>
+        <target>Tebrikler %username%. Hesabınız şu anda aktifleştirildi.</target>
+      </trans-unit>
+      <trans-unit id="d523ebbd10146cdfd39dee077f04c9d08468d0bc" resname="Country">
+        <jms:reference-file line="27">ARIPDUserBundle/Postaladdress/new.html.twig</jms:reference-file>
+        <jms:reference-file line="15">Form/Type/PostaladdressFormType.php</jms:reference-file>
+        <source>Country</source>
+        <target>Ülke</target>
+      </trans-unit>
+      <trans-unit id="60dee38933959dfdae71ec0ee78d9ddb94f8ba0e" resname="County">
+        <jms:reference-file line="24">ARIPDUserBundle/Postaladdress/new.html.twig</jms:reference-file>
+        <jms:reference-file line="12">Form/Type/PostaladdressFormType.php</jms:reference-file>
+        <source>County</source>
+        <target>İlçe</target>
+      </trans-unit>
+      <trans-unit id="5a0b1c170fd55ab07e5656625be963d20baa107a" resname="Create group">
+        <jms:reference-file line="12">views/UserGroup/new.html.twig</jms:reference-file>
+        <source>Create group</source>
+        <target>Grup oluştur</target>
+      </trans-unit>
+      <trans-unit id="9518425f4174063deaa8350a027abe1f38cf535b" resname="Date of birth">
+        <jms:reference-file line="31">ARIPDUserBundle/Profile/show_content.html.twig</jms:reference-file>
+        <jms:reference-file line="17">Form/Type/UserUserFormType.php</jms:reference-file>
+        <jms:reference-file line="31">views/UserUser/show.html.twig</jms:reference-file>
+        <jms:reference-file line="35">Form/Type/ProfileFormType.php</jms:reference-file>
+        <source>Date of birth</source>
+        <target>Doğum tarihi</target>
+      </trans-unit>
+      <trans-unit id="0dc777ae598605863da3d1b56919ad76136c5cf7" resname="E-mail Address">
+        <jms:reference-file line="25">views/UserUser/_index.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/UserUser/index.html.twig</jms:reference-file>
+        <jms:reference-file line="20">Form/Type/ProfileFormType.php</jms:reference-file>
+        <source>E-mail Address</source>
+        <target>E-posta Adresi</target>
+      </trans-unit>
+      <trans-unit id="394c802657352b895ae38bae0eb2aec2edcdb050" resname="E-mail address">
+        <jms:reference-file line="7">ARIPDUserBundle/Profile/show_content.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/UserUser/show.html.twig</jms:reference-file>
+        <source>E-mail address</source>
+        <target>E-posta adresi</target>
+      </trans-unit>
+      <trans-unit id="4681c1294d3b35b0c439c3d8dbd7c4e9fce46e0d" resname="EDITOR">
+        <jms:reference-file line="19">Form/Type/UserGroupFormType.php</jms:reference-file>
+        <source>EDITOR</source>
+        <target state="new">EDITOR</target>
+      </trans-unit>
+      <trans-unit id="82da67b211249624f24f3c7db5642a5112c9446f" resname="Facebook">
+        <jms:reference-file line="39">ARIPDUserBundle/Profile/show_content.html.twig</jms:reference-file>
+        <source>Facebook</source>
+        <target state="new">Facebook</target>
+      </trans-unit>
+      <trans-unit id="b7c17e97d3d625694b836d85ace6edc18bbef0e6" resname="Female">
+        <jms:reference-file line="27">Form/Type/UserUserFormType.php</jms:reference-file>
+        <jms:reference-file line="29">Form/Type/ProfileFormType.php</jms:reference-file>
+        <source>Female</source>
+        <target>Bayan</target>
+      </trans-unit>
+      <trans-unit id="cf23ba48c06d7e6d4b41a205bfb3cac3bb7b1e38" resname="Firstname">
+        <jms:reference-file line="15">ARIPDUserBundle/Profile/show_content.html.twig</jms:reference-file>
+        <source>Firstname</source>
+        <target>Ad</target>
+      </trans-unit>
+      <trans-unit id="9b1458893fdf24868765e6710e8c64ee8ed94388" resname="Fullname">
+        <jms:reference-file line="21">views/UserUser/show.html.twig</jms:reference-file>
+        <source>Fullname</source>
+        <target state="new">Fullname</target>
+      </trans-unit>
+      <trans-unit id="8a754c61c2ced0c5ff79a1827e02c9d643d6d926" resname="Gender">
+        <jms:reference-file line="23">ARIPDUserBundle/Profile/show_content.html.twig</jms:reference-file>
+        <jms:reference-file line="25">Form/Type/UserUserFormType.php</jms:reference-file>
+        <jms:reference-file line="26">Form/Type/ProfileFormType.php</jms:reference-file>
+        <source>Gender</source>
+        <target>Cinsiyet</target>
+      </trans-unit>
+      <trans-unit id="2b681c0a24baff8899d7163cc7f805c75e1f44e4" resname="Google">
+        <jms:reference-file line="43">ARIPDUserBundle/Profile/show_content.html.twig</jms:reference-file>
+        <source>Google</source>
+        <target state="new">Google</target>
+      </trans-unit>
+      <trans-unit id="ae9629f4ebb82c6331c0809fa9a0e54b00e578e6" resname="Groups">
+        <jms:reference-file line="14">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="23">views/UserUser/show.html.twig</jms:reference-file>
+        <source>Groups</source>
+        <target>Gruplar</target>
+      </trans-unit>
+      <trans-unit id="474ae52625b87d7628ae7b20a499329a99e07119" resname="Id">
+        <jms:reference-file line="17">views/UserUser/show.html.twig</jms:reference-file>
+        <source>Id</source>
+        <target state="new">Id</target>
+      </trans-unit>
+      <trans-unit id="639860fbb86cea7f96e287fa3fecca62e4bb42f8" resname="Lastname">
+        <jms:reference-file line="19">ARIPDUserBundle/Profile/show_content.html.twig</jms:reference-file>
+        <source>Lastname</source>
+        <target>Soyad</target>
+      </trans-unit>
+      <trans-unit id="ced3905ec8220a51e0d47124fc2d0549ce7c8472" resname="Latitude">
+        <jms:reference-file line="28">ARIPDUserBundle/Postaladdress/new.html.twig</jms:reference-file>
+        <jms:reference-file line="16">Form/Type/PostaladdressFormType.php</jms:reference-file>
+        <source>Latitude</source>
+        <target>Enlem</target>
+      </trans-unit>
+      <trans-unit id="31c7fd2e291eeee7451ad31168f87183e31b4b9d" resname="Linkedin">
+        <jms:reference-file line="47">ARIPDUserBundle/Profile/show_content.html.twig</jms:reference-file>
+        <source>Linkedin</source>
+        <target state="new">Linkedin</target>
+      </trans-unit>
+      <trans-unit id="94a81845605d66c589c959aece015c300bf9d5d8" resname="Log in to your account">
+        <jms:reference-file line="18">ARIPDUserBundle/Security/login.html.twig</jms:reference-file>
+        <source>Log in to your account</source>
+        <target>Hesabınıza giriş yapın</target>
+      </trans-unit>
+      <trans-unit id="4e5a2893bdcc7d239c1db72e4c4ffbe4bea73174" resname="Login">
+        <jms:reference-file line="3">ARIPDUserBundle/Security/login.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDUserBundle/Security/login.html.twig</jms:reference-file>
+        <jms:reference-file line="49">ARIPDUserBundle/Security/login.html.twig</jms:reference-file>
+        <jms:reference-file line="50">pdc_com_tr/views/header.html.twig</jms:reference-file>
+        <jms:reference-file line="44">Resources/views/topbar_right.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Default/login.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/Default/login.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Default/loginout.html.twig</jms:reference-file>
+        <source>Login</source>
+        <target>Giriş</target>
+      </trans-unit>
+      <trans-unit id="63b4a51971addf2ca5c0b86747abf1b53a862da3" resname="Login with %service%">
+        <jms:reference-file line="54">ARIPDUserBundle/Security/login.html.twig</jms:reference-file>
+        <source>Login with %service%</source>
+        <target>%service% ile giriş yap</target>
+      </trans-unit>
+      <trans-unit id="e43d612e11f1568f2373e719d4c4b08dcecdc7cc" resname="Logout">
+        <jms:reference-file line="47">pdc_com_tr/views/header.html.twig</jms:reference-file>
+        <jms:reference-file line="36">Resources/views/topbar_right.html.twig</jms:reference-file>
+        <jms:reference-file line="2">views/Default/loginout.html.twig</jms:reference-file>
+        <source>Logout</source>
+        <target>Çıkış</target>
+      </trans-unit>
+      <trans-unit id="126dd3b70a5ca7818e0e26ad1e008d23b0f14a53" resname="Logs">
+        <jms:reference-file line="18">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <source>Logs</source>
+        <target>Kayıt Defteri</target>
+      </trans-unit>
+      <trans-unit id="6f9f011c5d36df6d431a68143636a75fbaa508bd" resname="Longitude">
+        <jms:reference-file line="29">ARIPDUserBundle/Postaladdress/new.html.twig</jms:reference-file>
+        <jms:reference-file line="17">Form/Type/PostaladdressFormType.php</jms:reference-file>
+        <source>Longitude</source>
+        <target>Boylam</target>
+      </trans-unit>
+      <trans-unit id="3f3a489c72dea800ea7b6338c89938766d41a6e5" resname="Male">
+        <jms:reference-file line="26">Form/Type/UserUserFormType.php</jms:reference-file>
+        <jms:reference-file line="28">Form/Type/ProfileFormType.php</jms:reference-file>
+        <source>Male</source>
+        <target>Bay</target>
+      </trans-unit>
+      <trans-unit id="f1702b4686278becffc88baabe6f4b7a8355532c" resname="Messages">
+        <jms:reference-file line="12">Resources/views/topbar_right.html.twig</jms:reference-file>
+        <source>Messages</source>
+        <target>Mesajlar</target>
+      </trans-unit>
+      <trans-unit id="b1d702459399a2512fba5a402d4d5f26aee34693" resname="Mobile">
+        <jms:reference-file line="11">ARIPDUserBundle/Profile/show_content.html.twig</jms:reference-file>
+        <source>Mobile</source>
+        <target>Mobile</target>
+      </trans-unit>
+      <trans-unit id="b51b2b0d62c7e20b8d8a956fed9a940fed0677d6" resname="My Account">
+        <jms:reference-file line="6">pdc_com_tr/views/footer.html.twig</jms:reference-file>
+        <jms:reference-file line="32">pdc_com_tr/views/header.html.twig</jms:reference-file>
+        <source>My Account</source>
+        <target>Bana Özel</target>
+      </trans-unit>
+      <trans-unit id="cea177bfcb7a6889f5d3948d21a6fa40bd5a4ccb" resname="My Basket">
+        <jms:reference-file line="3">ARIPDUserBundle/Basket/index.html.twig</jms:reference-file>
+        <jms:reference-file line="9">pdc_com_tr/views/footer.html.twig</jms:reference-file>
+        <jms:reference-file line="38">pdc_com_tr/views/header.html.twig</jms:reference-file>
+        <jms:reference-file line="22">Resources/views/topbar_right.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/Loyalty/index.html.twig</jms:reference-file>
+        <source>My Basket</source>
+        <target>Sepetim</target>
+      </trans-unit>
+      <trans-unit id="9494839e861ebbc9d9ac098b78c61575a38eabdd" resname="My Favorites">
+        <jms:reference-file line="10">pdc_com_tr/views/footer.html.twig</jms:reference-file>
+        <jms:reference-file line="39">pdc_com_tr/views/header.html.twig</jms:reference-file>
+        <source>My Favorites</source>
+        <target>Favorilerim</target>
+      </trans-unit>
+      <trans-unit id="9ba8d391c59aeb246fa3938363866f5e153da58a" resname="My Profile">
+        <jms:reference-file line="3">ARIPDUserBundle/Profile/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDUserBundle/Profile/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="3">ARIPDUserBundle/Profile/show.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDUserBundle/Profile/show.html.twig</jms:reference-file>
+        <jms:reference-file line="11">Resources/views/topbar_right.html.twig</jms:reference-file>
+        <source>My Profile</source>
+        <target>Profilim</target>
+      </trans-unit>
+      <trans-unit id="9cd56f8eaf0151bcb8d837200a8f9c1200743073" resname="My Purchase Orders">
+        <jms:reference-file line="3">ARIPDUserBundle/Purchaseorder/index.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDUserBundle/Purchaseorder/index.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDUserBundle/Purchaseorder/show.html.twig</jms:reference-file>
+        <jms:reference-file line="11">pdc_com_tr/views/footer.html.twig</jms:reference-file>
+        <jms:reference-file line="40">pdc_com_tr/views/header.html.twig</jms:reference-file>
+        <jms:reference-file line="23">Resources/views/topbar_right.html.twig</jms:reference-file>
+        <source>My Purchase Orders</source>
+        <target>Siparişlerim</target>
+      </trans-unit>
+      <trans-unit id="709a23220f2c3d64d1e1d6d18c4d5280f8d82fca" resname="Name">
+        <jms:reference-file line="10">Form/Type/PostaladdressFormType.php</jms:reference-file>
+        <source>Name</source>
+        <target state="new">Name</target>
+      </trans-unit>
+      <trans-unit id="b325b4df513c88d8051412fbc91f51c9a5b15d4a" resname="Not a member?">
+        <jms:reference-file line="57">ARIPDUserBundle/Security/login.html.twig</jms:reference-file>
+        <source>Not a member?</source>
+        <target>Üye değil misiniz?</target>
+      </trans-unit>
+      <trans-unit id="8be3c943b1609fffbfc51aad666d0a04adf83c9d" resname="Password">
+        <jms:reference-file line="31">ARIPDUserBundle/Security/login.html.twig</jms:reference-file>
+        <jms:reference-file line="34">ARIPDUserBundle/Security/login.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/Security/login.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/Security/login.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/Default/login.html.twig</jms:reference-file>
+        <jms:reference-file line="16">views/Default/login.html.twig</jms:reference-file>
+        <source>Password</source>
+        <target>Parola</target>
+      </trans-unit>
+      <trans-unit id="ad12e4228cccee1d10c5b8de2aa28c286efaaf96" resname="Personal Information">
+        <jms:reference-file line="7">pdc_com_tr/views/footer.html.twig</jms:reference-file>
+        <jms:reference-file line="36">pdc_com_tr/views/header.html.twig</jms:reference-file>
+        <source>Personal Information</source>
+        <target>Kişisel Bilgilerim</target>
+      </trans-unit>
+      <trans-unit id="543897979c4d5745fa7099cac7a6985df21fd995" resname="Postal Address">
+        <jms:reference-file line="3">ARIPDShoppingBundle/Postaladdress/list.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/UserPostaladdress/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/UserPostaladdress/index.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/UserPostaladdress/new.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/UserPostaladdress/show.html.twig</jms:reference-file>
+        <source>Postal Address</source>
+        <target>Posta Adresi</target>
+      </trans-unit>
+      <trans-unit id="c7ac934cfaa9b50e25559321e48737eb6bc8d9d8" resname="Postal Code">
+        <jms:reference-file line="26">ARIPDUserBundle/Postaladdress/new.html.twig</jms:reference-file>
+        <jms:reference-file line="14">Form/Type/PostaladdressFormType.php</jms:reference-file>
+        <source>Postal Code</source>
+        <target>Posta Kodu</target>
+      </trans-unit>
+      <trans-unit id="ff4fc0276e960c348647b647235f68200887c9d2" resname="Profile">
+        <jms:reference-file line="7">views/UserProfile/show.html.twig</jms:reference-file>
+        <source>Profile</source>
+        <target state="new">Profile</target>
+      </trans-unit>
+      <trans-unit id="8a9f2f18f2e841c8b6ba72044397ca904610d578" resname="Profile Pictures">
+        <jms:reference-file line="19">ARIPDUserBundle/Profile/show.html.twig</jms:reference-file>
+        <source>Profile Pictures</source>
+        <target>Profil Resimlerim</target>
+      </trans-unit>
+      <trans-unit id="d672995a14650d0e018026b64f297663d8c71c8d" resname="Register">
+        <jms:reference-file line="5">ARIPDCMSBundle/Page/list.html.twig</jms:reference-file>
+        <jms:reference-file line="3">ARIPDUserBundle/Registration/checkEmail.html.twig</jms:reference-file>
+        <jms:reference-file line="3">ARIPDUserBundle/Registration/confirmed.html.twig</jms:reference-file>
+        <jms:reference-file line="3">ARIPDUserBundle/Registration/register.html.twig</jms:reference-file>
+        <jms:reference-file line="13">ARIPDUserBundle/Registration/register.html.twig</jms:reference-file>
+        <jms:reference-file line="19">ARIPDUserBundle/Registration/register.html.twig</jms:reference-file>
+        <jms:reference-file line="58">ARIPDUserBundle/Security/login.html.twig</jms:reference-file>
+        <jms:reference-file line="49">pdc_com_tr/views/header.html.twig</jms:reference-file>
+        <jms:reference-file line="45">Resources/views/topbar_right.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/UserRegistration/_register_captcha.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/UserRegistration/_register_captcha.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/UserRegistration/register.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/UserRegistration/register.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/UserResetting/request.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/UserResetting/request.html.twig</jms:reference-file>
+        <source>Register</source>
+        <target>Kayıt ol</target>
+      </trans-unit>
+      <trans-unit id="ced7b308a348567fbf21dd775ee496dd01207f24" resname="Remember me">
+        <jms:reference-file line="42">ARIPDUserBundle/Security/login.html.twig</jms:reference-file>
+        <source>Remember me</source>
+        <target>Beni hatırla</target>
+      </trans-unit>
+      <trans-unit id="5c4bc97ee5d0ac344829dbcef02d7302feb098a8" resname="Reset password">
+        <jms:reference-file line="3">ARIPDUserBundle/Resetting/checkEmail.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDUserBundle/Resetting/checkEmail.html.twig</jms:reference-file>
+        <jms:reference-file line="3">ARIPDUserBundle/Resetting/passwordAlreadyRequested.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDUserBundle/Resetting/passwordAlreadyRequested.html.twig</jms:reference-file>
+        <jms:reference-file line="3">ARIPDUserBundle/Resetting/request.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDUserBundle/Resetting/request.html.twig</jms:reference-file>
+        <jms:reference-file line="24">ARIPDUserBundle/Resetting/request.html.twig</jms:reference-file>
+        <jms:reference-file line="3">ARIPDUserBundle/Resetting/reset.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDUserBundle/Resetting/reset.html.twig</jms:reference-file>
+        <jms:reference-file line="48">ARIPDUserBundle/Security/login.html.twig</jms:reference-file>
+        <jms:reference-file line="19">views/UserResetting/request.html.twig</jms:reference-file>
+        <source>Reset password</source>
+        <target>Parolayı sıfırla</target>
+      </trans-unit>
+      <trans-unit id="8c2663969dc3a28651fa0177c786c7fc2fbec954" resname="SUPER ADMIN">
+        <jms:reference-file line="17">Form/Type/UserGroupFormType.php</jms:reference-file>
+        <source>SUPER ADMIN</source>
+        <target state="new">SUPER ADMIN</target>
+      </trans-unit>
+      <trans-unit id="f6bc03346f2f0836b4dbdbe21fb3d2a4db95ae1e" resname="Set as profile picture">
+        <jms:reference-file line="4">ARIPDUserBundle/Image/list.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CRMImage/list.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreBranchimage/list.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreModelimage/list.html.twig</jms:reference-file>
+        <source>Set as profile picture</source>
+        <target>Profil resmi olarak ayarla</target>
+      </trans-unit>
+      <trans-unit id="bae7d5be70820ed56467bd9a63744e23b47bd711" resname="Status">
+        <jms:reference-file line="15">views/UserUser/show.html.twig</jms:reference-file>
+        <source>Status</source>
+        <target state="new">Status</target>
+      </trans-unit>
+      <trans-unit id="0bd62b9dacf31c21e9dc37f7fdadc0851db3029a" resname="The password for this user has already been requested within the last 24 hours.">
+        <jms:reference-file line="14">ARIPDUserBundle/Resetting/passwordAlreadyRequested.html.twig</jms:reference-file>
+        <source>The password for this user has already been requested within the last 24 hours.</source>
+        <target>Son 24 saat içerisinde bu kullanıcı parola için istekte bulunmuş.</target>
+      </trans-unit>
+      <trans-unit id="f003f660cb605e499475a17f218c9ce78179407a" resname="The username or email address %username% does not exist.">
+        <jms:reference-file line="18">ARIPDUserBundle/Resetting/request.html.twig</jms:reference-file>
+        <jms:reference-file line="13">views/UserResetting/request.html.twig</jms:reference-file>
+        <source>The username or email address %username% does not exist.</source>
+        <target>%username% şeklinde bir kullanıcı adı ya da e-posta adresi bulunamadı.</target>
+      </trans-unit>
+      <trans-unit id="5392c950bdde4be7e5f5b8fdc6a1ca5f21e905cf" resname="Twitter">
+        <jms:reference-file line="35">ARIPDUserBundle/Profile/show_content.html.twig</jms:reference-file>
+        <source>Twitter</source>
+        <target state="new">Twitter</target>
+      </trans-unit>
+      <trans-unit id="6eb0c61201a96afc99cbf180f1c8d93c0a9fd8c8" resname="USER">
+        <jms:reference-file line="21">Form/Type/UserGroupFormType.php</jms:reference-file>
+        <source>USER</source>
+        <target state="new">USER</target>
+      </trans-unit>
+      <trans-unit id="652015c2b05e8c5bb74614de6cc34f852ff84ffb" resname="Update group">
+        <jms:reference-file line="13">views/UserGroup/edit.html.twig</jms:reference-file>
+        <source>Update group</source>
+        <target>Update group</target>
+      </trans-unit>
+      <trans-unit id="9f8a2389a20ca0752aa9e95093515517e90e194c" resname="User">
+        <jms:reference-file line="12">views/BlogPost/index.html.twig</jms:reference-file>
+        <source>User</source>
+        <target>Kullanıcı</target>
+      </trans-unit>
+      <trans-unit id="5ca6e571e0d3add6b3954eb296783de689f78dc1" resname="User Management">
+        <jms:reference-file line="7">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/UserUser/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/UserUser/show.html.twig</jms:reference-file>
+        <source>User Management</source>
+        <target>Kullanıcı Yönetimi</target>
+      </trans-unit>
+      <trans-unit id="6d75b24f8efc2ebece7258532a0f4145716eb8ff" resname="User is">
+        <jms:reference-file line="4">Resources/views/topbar_right.html.twig</jms:reference-file>
+        <source>User is</source>
+        <target>Kullanıcı: %username%</target>
+      </trans-unit>
+      <trans-unit id="84c29015de33e5d22422382a372caba5c58f8c01" resname="Username">
+        <jms:reference-file line="4">ARIPDUserBundle/Profile/show_content.html.twig</jms:reference-file>
+        <jms:reference-file line="23">ARIPDUserBundle/Security/login.html.twig</jms:reference-file>
+        <jms:reference-file line="26">ARIPDUserBundle/Security/login.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/Security/login.html.twig</jms:reference-file>
+        <jms:reference-file line="9">views/Security/login.html.twig</jms:reference-file>
+        <jms:reference-file line="19">views/UserUser/show.html.twig</jms:reference-file>
+        <jms:reference-file line="13">views/Default/login.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/Default/login.html.twig</jms:reference-file>
+        <jms:reference-file line="17">Form/Type/ProfileFormType.php</jms:reference-file>
+        <source>Username</source>
+        <target>Kullanıcı adı</target>
+      </trans-unit>
+      <trans-unit id="4f8553693f6866b09a2d5e8ed3df638d3552b314" resname="Username or email address">
+        <jms:reference-file line="20">ARIPDUserBundle/Resetting/request.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/UserResetting/request.html.twig</jms:reference-file>
+        <source>Username or email address</source>
+        <target>Kullanıcı adı veya e-posta adresi</target>
+      </trans-unit>
+      <trans-unit id="57f2b181d0a5e79a147ea1cdf41457f58dbbb3c9" resname="Users">
+        <jms:reference-file line="17">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <source>Users</source>
+        <target>Kullanıcılar</target>
+      </trans-unit>
+      <trans-unit id="f818188f163068df7506a01599b61d606ec9d09d" resname="WRITER">
+        <jms:reference-file line="20">Form/Type/UserGroupFormType.php</jms:reference-file>
+        <source>WRITER</source>
+        <target state="new">WRITER</target>
+      </trans-unit>
+      <trans-unit id="038b0d37f0f32b1ccfb51d3d61b09e89a8d4bf9f" resname="Welcome %fullname%">
+        <jms:reference-file line="4">pdc_com_tr/views/header.html.twig</jms:reference-file>
+        <source>Welcome %fullname%</source>
+        <target>Hoşgeldiniz %fullname%</target>
+      </trans-unit>
+      <trans-unit id="e4270027463d695f289d1302f3cf94acb7b8b8a5" resname="Wish List">
+        <jms:reference-file line="7">views/UserWishlist/index.html.twig</jms:reference-file>
+        <source>Wish List</source>
+        <target state="new">Wish List</target>
+      </trans-unit>
+      <trans-unit id="0c0a69a3e25ba71944b31e53f0a057e417264e0b" resname="label.approver">
+        <jms:reference-file line="28">Form/Type/UserGroupFormType.php</jms:reference-file>
+        <source>label.approver</source>
+        <target state="new">label.approver</target>
+      </trans-unit>
+      <trans-unit id="e86aa1c14adcd28b45ea82fc7d39b49baa8a9313" resname="label.writer">
+        <jms:reference-file line="29">Form/Type/UserGroupFormType.php</jms:reference-file>
+        <source>label.writer</source>
+        <target state="new">label.writer</target>
+      </trans-unit>
+      <trans-unit id="6362bc7b7a8f72b782ffd590744ab069327bbe4a" resname="registration.email.message">
+        <jms:reference-file line="9">views/Registration/email.txt.twig</jms:reference-file>
+        <source>registration.email.message</source>
+        <target>Hoşgeldiniz %username%!
+
+Hesabınızın aktivasyonunu tamamlamak için lütfen aşağıdaki adresi ziyaret ediniz.
+%confirmationUrl%
+
+Teşekkürler,
+%company%</target>
+      </trans-unit>
+      <trans-unit id="10df4e23ec43b671aafea0a3a9ebc8dcc92b1bd0" resname="registration.email.subject">
+        <jms:reference-file line="3">views/Registration/email.txt.twig</jms:reference-file>
+        <source>registration.email.subject</source>
+        <target>Hoşgeldiniz %username%!</target>
+      </trans-unit>
+      <trans-unit id="70c8836a0e3b8dadb494b8de56ebed18939359b5" resname="resetting.email.message">
+        <jms:reference-file line="9">views/Resetting/email.txt.twig</jms:reference-file>
+        <source>resetting.email.message</source>
+        <target>Merhaba  %username%!
+
+Parolanızı yenilemek için  %confirmationUrl% adresini ziyaret ediniz.
+
+Teşekkürler,
+%company%</target>
+      </trans-unit>
+      <trans-unit id="126cf13058808d8948cc673c7933c6c1ce27841d" resname="resetting.email.subject">
+        <jms:reference-file line="3">views/Resetting/email.txt.twig</jms:reference-file>
+        <source>resetting.email.subject</source>
+        <target>Parola Yenileme</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

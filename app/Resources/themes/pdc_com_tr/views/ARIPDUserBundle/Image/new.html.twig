@@ -1,0 +1,4 @@
+<form action="{{ path('aripd_user_image_create') }}" method="post" {{ form_enctype(form) }}>
+	{{ form_widget(form) }}
+	<button class="btn btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit"><i class="icon-upload"></i> {{ 'Upload'|trans() }}</button>
+</form>

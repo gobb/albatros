@@ -1,0 +1,36 @@
+{% extends 'ARIPDMobileBundle::layout.html.twig' %}
+
+{% block body %}
+<div data-role="page" id="foo" data-title="Page Foo">
+	<div data-role="header" data-id="header" data-position="fixed">
+		<a data-rel="back" data-icon="arrow-l">Back</a>
+		<h1>{{ entity.product.name }}</h1>
+		{% include 'ARIPDMobileBundle:Default:loginout.html.twig' %}
+	</div>
+	<div data-role="content">
+		<div>
+			<img alt="" src="{{ entity.image.url }}"/>
+		</div>
+		<div>{{ entity.product.defaultcategory.name }}</div>
+		<div>{{ entity.product.name }}</div>
+		<div>{{ entity.product.description }}</div>
+		<div>{{ entity.product.content|raw }}</div>
+		<div><a href="vnd.youtube://DoDOdwvLikQ">Youtube Sample Link</a></div>
+		<div><iframe src="http://www.youtube.com/embed/DoDOdwvLikQ" width="280" height="175"></iframe></div>
+	</div>
+	<div data-role="footer" data-id="footer" data-position="fixed">
+		<div data-role="controlgroup" data-type="horizontal">
+			<a data-ajax="false" href="{{ path('aripd_mobile_user_basket_add', { id: entity.id, quantity: 1 }) }}" data-role="button" data-icon="plus">{{ 'Add to basket'|trans({}, 'ARIPDShoppingBundle') }}</a>
+			<a data-ajax="false" href="{{ path('aripd_mobile_user_wishlist_add', { id: entity.id }) }}" data-role="button" data-icon="plus">{{ 'Add to wish list'|trans({}, 'ARIPDShoppingBundle') }}</a>
+		</div>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="{{ path('aripd_mobile_store_branch_index') }}">{{ 'Branch'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+				<li><a href="{{ path('aripd_mobile_store_product_index') }}">{{ 'Menu'|trans({}, 'ARIPDMobileBundle') }}</a></li>
+				<li><a href="{{ path('aripd_mobile_loyalty_index') }}">Bana özel</a></li>
+				<li><a href="{{ path('aripd_mobile_default_share') }}">{{ 'Share'|trans() }}</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'themes'|trans() }}</h1>
+</div>
+<ul class="thumbnails">
+	{% for theme in themes %}
+	<li class="{% if loop.first %}span3{% else %}span3{% endif %}">
+		<div class="thumbnail">
+			<div class="caption">
+				<h5><span class="label {% if theme_active == theme.getRelativePathname() %}label-success{% endif %}">{{ theme.getRelativePathname() }}</span></h5>
+				<div class="btn-group">
+					<a class="btn" href="{{ path('aripd_admin_appearance_theme_show', { theme: theme.getRelativePathname() }) }}">{{ 'Edit'|trans() }}</a>
+					{% if theme_active != theme.getRelativePathname() and themes|length > 1 %}
+					<a class="btn" href="#">{{ 'Set'|trans() }}</a>
+					<a class="btn btn-danger" onclick="if(confirm('Are you sure to delete?')){return true;}else{return false;}" href="{{ path('aripd_admin_appearance_theme_delete', { theme: theme.getRelativePathname() }) }}">{{ 'Delete'|trans() }}</a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</li>
+	{% endfor %}
+</ul>
+{% endblock %}

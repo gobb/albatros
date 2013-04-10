@@ -1,0 +1,20 @@
+{% extends 'ARIPDMobileBundle::layout.html.twig' %}
+
+{% block body %}
+<div data-role="page" id="foo" data-title="{{ 'Register'|trans({}, 'ARIPDUserBundle') }}">
+	<div data-role="header" data-id="header" data-position="fixed">
+		<a href="{{ path('aripd_mobile_default_index') }}" data-icon="home">{{ 'Home'|trans() }}</a>
+		<h1>{{ 'Register'|trans({}, 'ARIPDUserBundle') }}</h1>
+	</div>
+	<div data-role="content" data-inset="true">
+		<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+			{{ form_widget(form) }}
+			<div class="btn-group">
+				<button class="btn btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Submit'|trans() }}</button>
+			</div>
+		</form>
+	</div>
+	<div data-role="footer" data-id="footer" data-position="fixed">
+	</div>
+</div>
+{% endblock %}

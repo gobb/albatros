@@ -1,0 +1,14 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'model'|trans() }} <small>{{ product.name }}</small></h1>
+</div>
+<form action="{{ path('aripd_admin_store_model_create', { product_id: product.id }) }}" method="post" {{ form_enctype(form) }}>
+	{{ form_widget(form) }}
+	<div class="form-actions">
+		<a class="btn" href="{{ path('aripd_admin_storeproduct_show', { id: product.id }) }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+		<button class="btn btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Create'|trans() }}</button>
+	</div>
+</form>
+{% endblock %}

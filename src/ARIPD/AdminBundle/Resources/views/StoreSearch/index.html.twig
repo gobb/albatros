@@ -1,0 +1,10 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<ul class="breadcrumb">
+	<li><a href="{{ path('aripd_default_index') }}">{{ 'Dashboard'|trans({}, 'ARIPDAdminBundle') }}</a> <span class="divider">/</span></li>
+	<li class="active">{{ 'Store Management'|trans({}, 'ARIPDStoreBundle') }} <span class="divider">/</span></li>
+	<li class="active">Arama Raporu (Store)</li>
+</ul>
+{{ render(controller('ARIPDAdminBundle:StoreSearch:report')) }}
+{% endblock %}

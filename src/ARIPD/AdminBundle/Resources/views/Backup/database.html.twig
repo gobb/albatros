@@ -1,0 +1,39 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'Backup Database'|trans({}, 'ARIPDAdminBundle') }}</h1>
+</div>
+<form class="form-inline" method="POST" action="{{ path('aripd_admin_backup_database_start') }}">
+	<div class="well">
+		<div class="input-prepend">
+			<span class="add-on"><i class="icon-calendar"></i></span>
+			<select class="span2" name="interval">
+				<option value="immediately">şimdi</option>
+				<option value="daily">günde bir kez</option>
+				<option value="weekly">haftada bir kez</option>
+				<option value="biweekly">iki haftada bir kez</option>
+				<option value="monthly">ayda bir kez</option>
+			</select>
+		</div>
+		<div class="input-prepend">
+			<span class="add-on"><i class="icon-time"></i></span>
+			<input class="span1" id="prependedInput" type="time" name="time" value="00:00" />
+		</div>
+		<button class="btn" type="submit">{{ 'Backup'|trans() }}</button>
+		<a class="btn" href="{{ path('aripd_admin_backup_database_deleteall') }}">{{ 'Delete all'|trans() }}</a>
+	</div>
+</form>
+
+<table class="table table-striped">
+	{% for file in files %}
+	<tr>
+		<td>{{ file.getRelativePathname() }}</td>
+		<td>
+			<a class="btn btn-mini" href="{{ path('aripd_admin_backup_database_download', { filename: file.getRelativePathname() }) }}"><i class="icon-download"></i> {{ 'Download'|trans() }}</a>
+			<a class="btn btn-mini" href="{{ path('aripd_admin_backup_database_delete', { filename: file.getRelativePathname() }) }}"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</a>
+		</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}

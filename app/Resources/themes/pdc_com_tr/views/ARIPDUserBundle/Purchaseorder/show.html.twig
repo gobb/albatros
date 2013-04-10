@@ -1,0 +1,136 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Sipariş İçeriği{% endblock %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<ul class="breadcrumb">
+					<li><a href="{{ path('aripd_default_index') }}">{{ 'Home'|trans() }}</a> <span class="divider">/</span></li>
+					<li><a href="{{ path('aripd_user_purchaseorder_index') }}">{{ 'My Purchase Orders'|trans({}, 'ARIPDUserBundle') }}</a> <span class="divider">/</span></li>
+					<li class="active">{{ purchaseorder.poid }}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span8 offset2">
+				<table class="table">
+					<caption>
+						<h3>Sipariş numarası: <span class="label label-important">{{ purchaseorder.poid }}</span></h3>
+						<h4>Sipariş durumu: <span class="label label-important">{{ purchaseorder.status.name }}</span></h4>
+						<div><i class="icon-time"></i> <time title="Oluşturulma" datetime="{{ purchaseorder.createdAt|date('c') }}">{{ purchaseorder.createdAt|localizeddate('medium', 'medium') }}</time></div>
+						<div><i class="icon-time"></i> <time title="Son Güncellenme" datetime="{{ purchaseorder.updatedAt|date('c') }}">{{ purchaseorder.updatedAt|localizeddate('medium', 'medium') }}</time></div>
+					</caption>
+					<thead>
+						<tr>
+							<th></th>
+							<th>Ürün</th>
+							<th>Miktar</th>
+							<th>Alt toplam</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% set totalQuantity = 0 %}
+						{% set totalPriceConverted = 0 %}
+						{% set totalPriceConvertedFormatted = null %}
+						{% for outgoing in purchaseorder.outgoings %}
+						{% set unitprice = outgoing.price %}
+						{% set unitpriceConverted = unitprice * outgoing.model.iso4217.rate / app.session.get('iso4217').rate %}
+						{% set unitpriceConvertedFormatted = unitpriceConverted|localizedcurrency(app.session.get('iso4217').code) %}
+						{% set quantity = outgoing.quantity %}
+						{% set subtotal = unitprice * quantity %}
+						{% set subtotalConverted = subtotal * outgoing.model.iso4217.rate / app.session.get('iso4217').rate %}
+						{% set subtotalConvertedFormatted = subtotalConverted|localizedcurrency(app.session.get('iso4217').code) %}
+						<tr>
+							<td>
+								<img class="span1" src="{{ outgoing.model.image.url }}" alt=""/>
+							</td>
+							<td>
+								<a href="{{ path('aripd_store_model_show', { id: outgoing.model.id, code: outgoing.model.code, slug: outgoing.model.product.slug }) }}">
+									<div>{{ outgoing.model.product.name }}</div>
+									<div><small>{{ outgoing.model.code }}</small></div>
+									<div>{{ unitpriceConvertedFormatted }}</div>
+								</a>
+							</td>
+							<td>{{ quantity }}</td>
+							<td>{{ subtotalConvertedFormatted }}</td>
+						</tr>
+						{% set totalQuantity = totalQuantity + quantity %}
+						{% set totalPriceConverted = totalPriceConverted + subtotalConverted %}
+						{% set totalPriceConvertedFormatted = totalPriceConverted|localizedcurrency(app.session.get('iso4217').code) %}
+						{% endfor %}
+					</tbody>
+					<tfoot>
+						<tr>
+							<td></td>
+							<th>Sipariş Tutarı</th>
+							<td></td>
+							<td>{{ totalPriceConvertedFormatted }}</td>
+						</tr>
+						{% set basketAmountTotalAfterVouchercode = totalPriceConverted %}
+						{% if purchaseorder.voucher %}
+						<tr>
+							<td></td>
+							<th>İndirim Çeki</th>
+							<td>
+								{% if purchaseorder.vouchercode %}{{ purchaseorder.vouchercode.vouchercode }}{% elseif purchaseorder.voucher %}{{ purchaseorder.voucher.code }}{% endif %}
+							</td>
+							{% set basketAmountTotalAfterVouchercode = totalPriceConverted + totalPriceConverted * purchaseorder.voucher.impactRate + purchaseorder.voucher.impactPrice %}
+							{% set basketAmountTotalAfterVouchercodeFormatted = basketAmountTotalAfterVouchercode|localizedcurrency(app.session.get('iso4217').code) %}
+							<td>{{ basketAmountTotalAfterVouchercodeFormatted }}</td>
+						</tr>
+						{% endif %}
+						<tr>
+							<td></td>
+							<th>Ödeme Şekli</th>
+							{% set basketAmountTotalAfterVouchercodeAfterPayment = basketAmountTotalAfterVouchercode + basketAmountTotalAfterVouchercode * purchaseorder.payment.impactRate + purchaseorder.payment.impactPrice %}
+							{% set basketAmountTotalAfterVouchercodeAfterPaymentFormatted = basketAmountTotalAfterVouchercodeAfterPayment|localizedcurrency(app.session.get('iso4217').code) %}
+							<td>
+								<div>{{ purchaseorder.payment.paymentgroup.paymentgrouptype.name }}</div>
+								<div>{{ purchaseorder.payment.paymentgroup.name }}</div>
+								<div>{{ purchaseorder.payment.name }}</div>
+							</td>
+							<td>{{ basketAmountTotalAfterVouchercodeAfterPaymentFormatted }}</td>
+						</tr>
+						<tr>
+							<td></td>
+							<th>Taşıma</th>
+							{% set basketAmountTotalAfterVouchercodeAfterPaymentAfterTransportation = (basketAmountTotalAfterVouchercode >= configVariable('shopping_transportation_foc_minimum_amount')) ? basketAmountTotalAfterVouchercodeAfterPayment : (basketAmountTotalAfterVouchercodeAfterPayment + purchaseorder.transportation.impactPrice) %}
+							{% set basketAmountTotalAfterVouchercodeAfterPaymentAfterTransportationFormatted = basketAmountTotalAfterVouchercodeAfterPaymentAfterTransportation|localizedcurrency(app.session.get('iso4217').code) %}
+							<td>
+								<div>{{ purchaseorder.transportation.name }}</div>
+								<div>{% if basketAmountTotalAfterVouchercode >= configVariable('shopping_transportation_foc_minimum_amount') %}(Ücretsiz Taşıma){% endif %}</div>
+							</td>
+							<td>{{ basketAmountTotalAfterVouchercodeAfterPaymentAfterTransportationFormatted }}</td>
+						</tr>
+						<tr>
+							<td></td>
+							<th>Toplam Tutar</th>
+							<td></td>
+							<td>{{ basketAmountTotalAfterVouchercodeAfterPaymentAfterTransportationFormatted }}</td>
+						</tr>
+						<tr>
+							<td></td>
+							<th>Teslimat Adresi</th>
+							<td colspan="2">
+								<div><strong>{{ purchaseorder.deliveryaddress.name }}</strong></div>
+								{{ purchaseorder.deliveryaddress.fulladdress }}
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<th>Fatura Adresi</th>
+							<td colspan="2">
+								<div><strong>{{ purchaseorder.invoiceaddress.name }}</strong></div>
+								{{ purchaseorder.invoiceaddress.fulladdress }}
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

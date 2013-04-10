@@ -1,0 +1,63 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'Payments'|trans({}, 'ARIPDShoppingBundle') }}</h1>
+</div>
+<table class="table">
+	<tbody>
+		<tr>
+			<th></th>
+			<td>
+				<div class="span2">
+					<img src="{{ image(entity.getWebPath()).resize(300, 300, 'transparent').png }}" />
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<th>Id</th>
+			<td>{{ entity.id }}</td>
+		</tr>
+		<tr>
+			<th>Active</th>
+			<td>{{ entity.active }}</td>
+		</tr>
+		<tr>
+			<th>paymenttype</th>
+			<td>{{ entity.paymenttype.name }}</td>
+		</tr>
+		<tr>
+			<th>Name</th>
+			<td>{{ entity.name }}</td>
+		</tr>
+		<tr>
+			<th>Content</th>
+			<td>{{ entity.content|raw }}</td>
+		</tr>
+		<tr>
+			<th>Taksitler</th>
+			<td>
+				<table>
+					{% for payment in entity.payments %}
+					<tr>
+						<td>{{ payment.name }}</td>
+						<td>{{ payment.impactRate }}</td>
+						<td>
+							<a class="btn btn-mini" href="{{ path('aripd_admin_shopping_payment_edit', { 'id': payment.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+						</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_shopping_payment_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_shopping_payment_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+	<button class="btn btn-danger" type="button" onclick="deleteRecord();"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+</div>
+<form id="delete_form" action="{{ path('aripd_admin_shopping_payment_delete', { 'id': entity.id }) }}" method="post">
+	{{ form_widget(delete_form) }}
+</form>
+{% endblock %}

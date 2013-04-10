@@ -1,0 +1,37 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'Brands'|trans({}, 'ARIPDStoreBundle') }}</h1>
+</div>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Logo</th>
+			<th>Name</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for entity in pagination %}
+		<tr>
+			<td>
+				<span class="span2 thumbnail"><img src="{{ entity.url }}"></span>
+			</td>
+			<td>{{ entity.name }}</td>
+			<td>
+				<div class="btn-group">
+					<a class="btn btn-mini" href="{{ path('aripd_admin_store_brand_show', { 'id': entity.id }) }}">{{ 'Show'|trans() }}</a>
+					<a class="btn btn-mini" href="{{ path('aripd_admin_store_brand_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+				</div>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<div class="navigation">{{ knp_pagination_render(pagination) }}</div>
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_store_brand_clear') }}">{{ 'Delete all'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_store_brand_new') }}">{{ 'New entry'|trans() }}</a>
+</div>
+{% endblock %}

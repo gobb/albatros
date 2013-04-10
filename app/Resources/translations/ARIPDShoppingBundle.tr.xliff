@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2013-04-16T08:58:46Z" source-language="en" target-language="tr" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="6a72487eefbc32b50545d5a489f4af9be398ee50" resname="&quot;%productName%&quot; has been added to your shopping cart">
+        <jms:reference-file line="100">UserBundle/Controller/BasketController.php</jms:reference-file>
+        <source>"%productName%" has been added to your shopping cart</source>
+        <target>"%productName%" alışveriş sepetinize eklendi</target>
+      </trans-unit>
+      <trans-unit id="59ecab2811d79bcd935020d2355bf02262401416" resname="&quot;%productName%&quot; has been removed from your shopping basket">
+        <jms:reference-file line="127">MobileBundle/Controller/UserBasketController.php</jms:reference-file>
+        <jms:reference-file line="171">UserBundle/Controller/BasketController.php</jms:reference-file>
+        <source>"%productName%" has been removed from your shopping basket</source>
+        <target>"%productName%" alışveriş sepetinizden çıkarıldı</target>
+      </trans-unit>
+      <trans-unit id="ceaaff687aa867e9f8325a48aeb288bb15ed900c" resname="%count% items in your basket">
+        <jms:reference-file line="13">pdc_com_tr/views/header.html.twig</jms:reference-file>
+        <source>%count% items in your basket</source>
+        <target>{0} Sepetinizde ürün yok|{1} Sepetinizde bir adet ürün var|]1,Inf] Sepetinizde %count% adet ürün var</target>
+      </trans-unit>
+      <trans-unit id="1d978ebd10b1bca55bb1b347380cdc3a7fd75a85" resname="Add to basket">
+        <jms:reference-file line="64">ARIPDStoreBundle/Model/show.html.twig</jms:reference-file>
+        <jms:reference-file line="23">views/StoreModel/show.html.twig</jms:reference-file>
+        <source>Add to basket</source>
+        <target>Sepete ekle</target>
+      </trans-unit>
+      <trans-unit id="3c9997b0054aa378c17ca0552374d4184fd41aec" resname="Add to wish list">
+        <jms:reference-file line="24">views/StoreModel/show.html.twig</jms:reference-file>
+        <source>Add to wish list</source>
+        <target>İstek listeme ekle</target>
+      </trans-unit>
+      <trans-unit id="2dbf1ebf5dc9557d3d9fe3d1b977c6031e323c67" resname="Added to your wish list">
+        <jms:reference-file line="64">MobileBundle/Controller/UserWishlistController.php</jms:reference-file>
+        <jms:reference-file line="68">UserBundle/Controller/WishlistController.php</jms:reference-file>
+        <source>Added to your wish list</source>
+        <target state="new">Added to your wish list</target>
+      </trans-unit>
+      <trans-unit id="b18d07f9d80396d251e9e8604f3a8c2fa229223e" resname="All products in your shopping basket has been removed">
+        <jms:reference-file line="160">MobileBundle/Controller/UserBasketController.php</jms:reference-file>
+        <jms:reference-file line="203">UserBundle/Controller/BasketController.php</jms:reference-file>
+        <source>All products in your shopping basket has been removed</source>
+        <target>Alışveriş sepetinizdeki tüm ürünler çıkarıldı</target>
+      </trans-unit>
+      <trans-unit id="adac69379a626c2436948a4ef1792c7d719ef929" resname="Code">
+        <jms:reference-file line="14">Form/Type/ShoppingVoucherFormType.php</jms:reference-file>
+        <source>Code</source>
+        <target state="new">Code</target>
+      </trans-unit>
+      <trans-unit id="4f9be057f0ea5d2ba72fd2c810e8d7b9aa98b469" resname="Content">
+        <jms:reference-file line="31">Form/Type/ShoppingPaymentgroupFormType.php</jms:reference-file>
+        <source>Content</source>
+        <target>İçerik</target>
+      </trans-unit>
+      <trans-unit id="400e287eba17a3e603978218eae91f254aa21fa1" resname="Credit Card Number">
+        <jms:reference-file line="128">ARIPDShoppingBundle/Payment/checkout.html.twig</jms:reference-file>
+        <jms:reference-file line="18">ARIPDShoppingBundle/Payment/pos.html.twig</jms:reference-file>
+        <jms:reference-file line="10">Form/Type/CreditcardFormType.php</jms:reference-file>
+        <source>Credit Card Number</source>
+        <target>Kredi Kart Numarası</target>
+      </trans-unit>
+      <trans-unit id="edbfc65340b6396fffd65efc488292dfbe076440" resname="Credit Card Payment succeeded">
+        <jms:reference-file line="154">ShoppingBundle/Controller/PaymentController.php</jms:reference-file>
+        <source>Credit Card Payment succeeded</source>
+        <target state="new">Credit Card Payment succeeded</target>
+      </trans-unit>
+      <trans-unit id="14e887f5efbb6add84122950092422e324b8b1fb" resname="Credit Card Payment unsuccessful">
+        <jms:reference-file line="167">ShoppingBundle/Controller/PaymentController.php</jms:reference-file>
+        <source>Credit Card Payment unsuccessful</source>
+        <target state="new">Credit Card Payment unsuccessful</target>
+      </trans-unit>
+      <trans-unit id="01d9a07259255f8e512eaf7fda142d5b349db867" resname="Discount Vouchers">
+        <jms:reference-file line="123">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <source>Discount Vouchers</source>
+        <target>İndirim Çekleri</target>
+      </trans-unit>
+      <trans-unit id="4a35679c27d00d5538717225f60e86b72f4dd8cf" resname="Ending At">
+        <jms:reference-file line="39">Form/Type/ShoppingVoucherFormType.php</jms:reference-file>
+        <source>Ending At</source>
+        <target state="new">Ending At</target>
+      </trans-unit>
+      <trans-unit id="29a152dbe5f25217f00f23915c807a03ec7c7c0d" resname="Expiration Date">
+        <jms:reference-file line="132">ARIPDShoppingBundle/Payment/checkout.html.twig</jms:reference-file>
+        <jms:reference-file line="22">ARIPDShoppingBundle/Payment/pos.html.twig</jms:reference-file>
+        <source>Expiration Date</source>
+        <target>Son Kullanma Tarihi</target>
+      </trans-unit>
+      <trans-unit id="f5da90c2a0cb7dd6be49645c533fafdab7f602b7" resname="Free Shipping">
+        <jms:reference-file line="41">pdc_com_tr/views/sidebar.html.twig</jms:reference-file>
+        <source>Free Shipping</source>
+        <target>Ücretsiz Taşıma</target>
+      </trans-unit>
+      <trans-unit id="b14eab40e43793f5be3acf01e647ea23de44456a" resname="Free shipping on any order over %limit%">
+        <jms:reference-file line="42">pdc_com_tr/views/sidebar.html.twig</jms:reference-file>
+        <source>Free shipping on any order over %limit%</source>
+        <target>%limit% üstü siparişleriniz için ücretsiz taşıma</target>
+      </trans-unit>
+      <trans-unit id="1012280c24db74cad67d21e2ebe22dfa9c5846e6" resname="Impact Price">
+        <jms:reference-file line="20">Form/Type/ShoppingPaymentFormType.php</jms:reference-file>
+        <jms:reference-file line="18">Form/Type/ShoppingTransportationFormType.php</jms:reference-file>
+        <jms:reference-file line="20">Form/Type/ShoppingVoucherFormType.php</jms:reference-file>
+        <source>Impact Price</source>
+        <target state="new">Impact Price</target>
+      </trans-unit>
+      <trans-unit id="7f2c57502caa7274db34525ccd67ba6265aa4280" resname="Impact Rate">
+        <jms:reference-file line="19">Form/Type/ShoppingPaymentFormType.php</jms:reference-file>
+        <jms:reference-file line="17">Form/Type/ShoppingVoucherFormType.php</jms:reference-file>
+        <source>Impact Rate</source>
+        <target state="new">Impact Rate</target>
+      </trans-unit>
+      <trans-unit id="709a23220f2c3d64d1e1d6d18c4d5280f8d82fca" resname="Name">
+        <jms:reference-file line="16">Form/Type/ShoppingPaymentFormType.php</jms:reference-file>
+        <jms:reference-file line="21">Form/Type/ShoppingPaymentgroupFormType.php</jms:reference-file>
+        <jms:reference-file line="16">Form/Type/ShoppingTransportationFormType.php</jms:reference-file>
+        <jms:reference-file line="13">Form/Type/ShoppingVoucherFormType.php</jms:reference-file>
+        <source>Name</source>
+        <target state="new">Name</target>
+      </trans-unit>
+      <trans-unit id="51b7a8a4c68a8eaa403c840017fe5998f53be1da" resname="Opportunities">
+        <jms:reference-file line="18">pdc_com_tr/views/footer.html.twig</jms:reference-file>
+        <source>Opportunities</source>
+        <target>Fırsatlar</target>
+      </trans-unit>
+      <trans-unit id="f699f295e5ae4ac633cfa18437fed38d028b3fdb" resname="Parameter">
+        <jms:reference-file line="18">Form/Type/ShoppingPaymentFormType.php</jms:reference-file>
+        <source>Parameter</source>
+        <target state="new">Parameter</target>
+      </trans-unit>
+      <trans-unit id="b41a92bed03261664717a6afdad4edf3d5d6ef6e" resname="Payment">
+        <jms:reference-file line="71">views/Purchaseorder/email.html.twig</jms:reference-file>
+        <source>Payment</source>
+        <target state="new">Payment</target>
+      </trans-unit>
+      <trans-unit id="12331583b98a66b63f347574487754ecad327a6d" resname="Payment Types">
+        <jms:reference-file line="30">pdc_com_tr/views/sidebar.html.twig</jms:reference-file>
+        <source>Payment Types</source>
+        <target>Ödeme Tipleri</target>
+      </trans-unit>
+      <trans-unit id="7f7aa633dcc3dca197f4b02b24b02c125132c67f" resname="Payment through Virtual POS">
+        <jms:reference-file line="3">ARIPDShoppingBundle/Payment/pos.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDShoppingBundle/Payment/pos.html.twig</jms:reference-file>
+        <jms:reference-file line="43">pdc_com_tr/views/header.html.twig</jms:reference-file>
+        <source>Payment through Virtual POS</source>
+        <target>Sanal POS ile Ödeme</target>
+      </trans-unit>
+      <trans-unit id="44357ae55a217646f4d1c3bb7cb7b437fa838999" resname="Payments">
+        <jms:reference-file line="3">ARIPDShoppingBundle/Payment/list.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ShoppingPayment/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ShoppingPayment/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ShoppingPayment/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ShoppingPayment/show.html.twig</jms:reference-file>
+        <source>Payments</source>
+        <target>Payments</target>
+      </trans-unit>
+      <trans-unit id="170a28a9db6d27d7212fc6dc249434a57517e7bc" resname="Period">
+        <jms:reference-file line="17">Form/Type/ShoppingPaymentFormType.php</jms:reference-file>
+        <source>Period</source>
+        <target state="new">Period</target>
+      </trans-unit>
+      <trans-unit id="64ae990b7345971bc4e0de24995dd1c751dabe8f" resname="Please select a delivery address">
+        <jms:reference-file line="198">ShoppingBundle/Controller/PaymentController.php</jms:reference-file>
+        <source>Please select a delivery address</source>
+        <target>Lütfen teslimat adresini seçin</target>
+      </trans-unit>
+      <trans-unit id="88d65def17b2f26a35dc26b937db49dc0614e0f1" resname="Please select an invoice address">
+        <jms:reference-file line="205">ShoppingBundle/Controller/PaymentController.php</jms:reference-file>
+        <source>Please select an invoice address</source>
+        <target>Lütfen fatura adresini seçin</target>
+      </trans-unit>
+      <trans-unit id="298e9f28219e4f966d6a3959ac9557f4c20aeebf" resname="Postal Addresses">
+        <jms:reference-file line="3">ARIPDUserBundle/Postaladdress/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDUserBundle/Postaladdress/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="3">ARIPDUserBundle/Postaladdress/index.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDUserBundle/Postaladdress/index.html.twig</jms:reference-file>
+        <jms:reference-file line="14">ARIPDUserBundle/Postaladdress/index.html.twig</jms:reference-file>
+        <jms:reference-file line="3">ARIPDUserBundle/Postaladdress/new.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDUserBundle/Postaladdress/new.html.twig</jms:reference-file>
+        <jms:reference-file line="3">ARIPDUserBundle/Postaladdress/show.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDUserBundle/Postaladdress/show.html.twig</jms:reference-file>
+        <jms:reference-file line="14">Resources/views/topbar_right.html.twig</jms:reference-file>
+        <source>Postal Addresses</source>
+        <target>Posta Adresleri</target>
+      </trans-unit>
+      <trans-unit id="c6f375f1191ffe6d6599c8992b016bb2131d8f51" resname="Product is already in your wish list">
+        <jms:reference-file line="49">MobileBundle/Controller/UserWishlistController.php</jms:reference-file>
+        <jms:reference-file line="52">UserBundle/Controller/WishlistController.php</jms:reference-file>
+        <source>Product is already in your wish list</source>
+        <target state="new">Product is already in your wish list</target>
+      </trans-unit>
+      <trans-unit id="44f6af6945544c0bab016a9160df6abb0cefcb60" resname="Quantity">
+        <jms:reference-file line="12">Form/Type/VouchercodeFormType.php</jms:reference-file>
+        <jms:reference-file line="4">views/Vouchercode/form.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/Purchaseorder/email.html.twig</jms:reference-file>
+        <source>Quantity</source>
+        <target state="new">Quantity</target>
+      </trans-unit>
+      <trans-unit id="5b613c72878071a7e52c63e13b23e07907c9a2a8" resname="Security Number">
+        <jms:reference-file line="129">ARIPDShoppingBundle/Payment/checkout.html.twig</jms:reference-file>
+        <jms:reference-file line="19">ARIPDShoppingBundle/Payment/pos.html.twig</jms:reference-file>
+        <jms:reference-file line="11">Form/Type/CreditcardFormType.php</jms:reference-file>
+        <source>Security Number</source>
+        <target>Güvenlik Numarası</target>
+      </trans-unit>
+      <trans-unit id="fcd24297dafafe5da92467e8502fc2c494861121" resname="Set as delivery address">
+        <jms:reference-file line="16">ARIPDShoppingBundle/Postaladdress/form.html.twig</jms:reference-file>
+        <source>Set as delivery address</source>
+        <target>Teslimat adresi</target>
+      </trans-unit>
+      <trans-unit id="f0a3e026aff3b54ba6c66afe12303c9e9ed80e31" resname="Set as invoice address">
+        <jms:reference-file line="17">ARIPDShoppingBundle/Postaladdress/form.html.twig</jms:reference-file>
+        <source>Set as invoice address</source>
+        <target>Fatura adresi</target>
+      </trans-unit>
+      <trans-unit id="f74e0a19dce4eb1692628e1023f979ffe9b8da66" resname="Shopping Basket">
+        <jms:reference-file line="7">views/UserBasket/index.html.twig</jms:reference-file>
+        <source>Shopping Basket</source>
+        <target state="new">Shopping Basket</target>
+      </trans-unit>
+      <trans-unit id="bf36cac672bae3679f386eb3c0642e0c1a11622c" resname="Site Security">
+        <jms:reference-file line="52">pdc_com_tr/views/sidebar.html.twig</jms:reference-file>
+        <source>Site Security</source>
+        <target>Site Güvenliği</target>
+      </trans-unit>
+      <trans-unit id="6d8eed168d61a7460f8ec1cc396d5e001a12cafa" resname="Starting At">
+        <jms:reference-file line="34">Form/Type/ShoppingVoucherFormType.php</jms:reference-file>
+        <source>Starting At</source>
+        <target state="new">Starting At</target>
+      </trans-unit>
+      <trans-unit id="490aaabf32fb4bc74335d3413cad4342dd282f5f" resname="Total Amount">
+        <jms:reference-file line="137">ARIPDShoppingBundle/Payment/checkout.html.twig</jms:reference-file>
+        <jms:reference-file line="27">ARIPDShoppingBundle/Payment/pos.html.twig</jms:reference-file>
+        <jms:reference-file line="24">Form/Type/CreditcardFormType.php</jms:reference-file>
+        <source>Total Amount</source>
+        <target>Toplam Tutar</target>
+      </trans-unit>
+      <trans-unit id="145a070a517739f618caeba641d751a7084a53c4" resname="Transportation">
+        <jms:reference-file line="130">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="82">views/Purchaseorder/email.html.twig</jms:reference-file>
+        <source>Transportation</source>
+        <target state="new">Transportation</target>
+      </trans-unit>
+      <trans-unit id="ec8cab32a18eb7f3a52c5f5f3fc9ec54c7296a6e" resname="Transportations">
+        <jms:reference-file line="5">views/ShoppingTransportation/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ShoppingTransportation/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ShoppingTransportation/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ShoppingTransportation/show.html.twig</jms:reference-file>
+        <source>Transportations</source>
+        <target state="new">Transportations</target>
+      </trans-unit>
+      <trans-unit id="409ca9fe0f2e45fd4f6f6c4c22a6cf4a68b85eb7" resname="Voucher">
+        <jms:reference-file line="61">views/Purchaseorder/email.html.twig</jms:reference-file>
+        <source>Voucher</source>
+        <target state="new">Voucher</target>
+      </trans-unit>
+      <trans-unit id="e4270027463d695f289d1302f3cf94acb7b8b8a5" resname="Wish List">
+        <jms:reference-file line="3">ARIPDUserBundle/Wishlist/index.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDUserBundle/Wishlist/index.html.twig</jms:reference-file>
+        <jms:reference-file line="14">ARIPDUserBundle/Wishlist/index.html.twig</jms:reference-file>
+        <jms:reference-file line="21">Resources/views/topbar_right.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/Loyalty/index.html.twig</jms:reference-file>
+        <source>Wish List</source>
+        <target>İstek Listesi</target>
+      </trans-unit>
+      <trans-unit id="75e0b387d1859159e5b612aff482436a01fd306e" resname="You will get free shipping">
+        <jms:reference-file line="62">ShoppingBundle/Controller/TransportationController.php</jms:reference-file>
+        <source>You will get free shipping</source>
+        <target>Ücretsiz taşımadan yararlanacaksınız</target>
+      </trans-unit>
+      <trans-unit id="bacaea04c230fb1864f23c15c96b886c98d31862" resname="Your shopping basket has been updated successfully">
+        <jms:reference-file line="57">MobileBundle/Controller/UserBasketController.php</jms:reference-file>
+        <jms:reference-file line="59">UserBundle/Controller/BasketController.php</jms:reference-file>
+        <jms:reference-file line="138">UserBundle/Controller/BasketController.php</jms:reference-file>
+        <source>Your shopping basket has been updated successfully</source>
+        <target>Alışveriş sepetiniz başarı ile güncellendi</target>
+      </trans-unit>
+      <trans-unit id="ac0ccf3e05fe826e31be2dfe40c7f8e13deeb137" resname="label.active">
+        <jms:reference-file line="41">Form/Type/ShoppingPaymentgroupFormType.php</jms:reference-file>
+        <source>label.active</source>
+        <target state="new">label.active</target>
+      </trans-unit>
+      <trans-unit id="04837b8f752e0e4b0ef789c89793851a1c6b005d" resname="label.clientid">
+        <jms:reference-file line="37">Form/Type/ShoppingPaymentgroupFormType.php</jms:reference-file>
+        <source>label.clientid</source>
+        <target state="new">label.clientid</target>
+      </trans-unit>
+      <trans-unit id="ecaf54eb5f92da2c91912d0e5456afe525f334e4" resname="label.file">
+        <jms:reference-file line="40">Form/Type/ShoppingPaymentgroupFormType.php</jms:reference-file>
+        <jms:reference-file line="28">Form/Type/ShoppingTransportationFormType.php</jms:reference-file>
+        <source>label.file</source>
+        <target state="new">label.file</target>
+      </trans-unit>
+      <trans-unit id="f6a0d5c3a093ed387702ba25f79d0ac96f1b4f00" resname="label.gate1">
+        <jms:reference-file line="32">Form/Type/ShoppingPaymentgroupFormType.php</jms:reference-file>
+        <source>label.gate1</source>
+        <target state="new">label.gate1</target>
+      </trans-unit>
+      <trans-unit id="9ad8f52c0915741460e53b041f8d1c8222ab9357" resname="label.gate2">
+        <jms:reference-file line="33">Form/Type/ShoppingPaymentgroupFormType.php</jms:reference-file>
+        <source>label.gate2</source>
+        <target state="new">label.gate2</target>
+      </trans-unit>
+      <trans-unit id="620b01162b9d29d005251061cc82e53b62d3fa40" resname="label.mid">
+        <jms:reference-file line="34">Form/Type/ShoppingPaymentgroupFormType.php</jms:reference-file>
+        <source>label.mid</source>
+        <target state="new">label.mid</target>
+      </trans-unit>
+      <trans-unit id="7d574b71664e6cd6184ed2639468bbcda72a629d" resname="label.posid">
+        <jms:reference-file line="36">Form/Type/ShoppingPaymentgroupFormType.php</jms:reference-file>
+        <source>label.posid</source>
+        <target state="new">label.posid</target>
+      </trans-unit>
+      <trans-unit id="478c21a9b3721e0ec8639a62c9040477268fb768" resname="label.storekey">
+        <jms:reference-file line="39">Form/Type/ShoppingPaymentgroupFormType.php</jms:reference-file>
+        <source>label.storekey</source>
+        <target state="new">label.storekey</target>
+      </trans-unit>
+      <trans-unit id="763efc3117d69e338633555e62aa8e1d213be2d3" resname="label.storetype">
+        <jms:reference-file line="38">Form/Type/ShoppingPaymentgroupFormType.php</jms:reference-file>
+        <source>label.storetype</source>
+        <target state="new">label.storetype</target>
+      </trans-unit>
+      <trans-unit id="269c7a0d6d94185744dddd033318c691cfbe8575" resname="label.tid">
+        <jms:reference-file line="35">Form/Type/ShoppingPaymentgroupFormType.php</jms:reference-file>
+        <source>label.tid</source>
+        <target state="new">label.tid</target>
+      </trans-unit>
+      <trans-unit id="fdcd782990241ef6fa0c7c4c22eaf97bc4e8eb0f" resname="purchaseorder.email.message">
+        <jms:reference-file line="1">views/Purchaseorder/email.html.twig</jms:reference-file>
+        <source>purchaseorder.email.message</source>
+        <target><![CDATA[<p>Sayın %username%!</p>
+<p>Sipariş numaranız <strong>%poid%</strong><br/>
+Siparişinizin son durumunu bu numara ile veya aşağıdaki bağlantıdan takip edebilirsiniz.<br/>
+%purchaseorderUrl%</p>
+<p>Sipariş bilgileriniz aşağıdaki gibidir.</p>
+<p>Teşekkürler,<br/>
+%company%</p>]]></target>
+      </trans-unit>
+      <trans-unit id="608137b9adb882dfa14cf94188ce0ceef06b8473" resname="purchaseorder.email.subject">
+        <jms:reference-file line="137">UserBundle/Service/PurchaseorderService.php</jms:reference-file>
+        <source>purchaseorder.email.subject</source>
+        <target>Sipariş bilgileriniz</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

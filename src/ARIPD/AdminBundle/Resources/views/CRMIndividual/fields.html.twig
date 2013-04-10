@@ -1,0 +1,8 @@
+{% block field_row %}
+{% spaceless %}
+<span style="display: inline; vertical-align: sub; ">
+	{{ form_errors(form) }}
+	{{ form_widget(form) }}
+</span>
+{% endspaceless %}
+{% endblock %}

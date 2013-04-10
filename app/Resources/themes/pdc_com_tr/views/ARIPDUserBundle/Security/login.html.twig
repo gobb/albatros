@@ -1,0 +1,93 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ 'Login'|trans({}, 'ARIPDUserBundle') }}{% endblock title %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<ul class="breadcrumb">
+					<li><a href="{{ path('aripd_default_index') }}">{{ 'Home'|trans() }}</a> <span class="divider">/</span></li>
+					<li class="active">{{ 'Login'|trans({}, 'ARIPDUserBundle') }}</li>
+				</ul>
+				<div class="modal modal-login">
+					{% if error %}{{ app.session.flashbag.set('error', error|trans({}, 'ARIPDUserBundle')) }}{% endif %}
+					<form class="form-horizontal" id="login-form" action="{{ path('fos_user_security_check') }}" method="POST">
+		        <div class="modal-header">
+		          <h3>{{ 'Log in to your account'|trans({}, 'ARIPDUserBundle') }}</h3>
+		        </div>
+		        <div class="modal-body">
+							<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+							<div class="control-group">
+								<label class="control-label" for="email">{{ 'Username'|trans({}, 'ARIPDUserBundle') }}</label>
+								<div class="controls">
+									<div class="input-prepend">
+										<span class="add-on"><i class="icon-user"></i></span><input type="text" placeholder="{{ 'Username'|trans({}, 'ARIPDUserBundle') }}" id="username" name="_username" value="{{ last_username }}" />
+									</div>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="email">{{ 'Password'|trans({}, 'ARIPDUserBundle') }}</label>
+								<div class="controls">
+									<div class="input-prepend">
+										<span class="add-on"><i class="icon-lock"></i></span><input type="password" placeholder="{{ 'Password'|trans({}, 'ARIPDUserBundle') }}" id="password" name="_password" />
+									</div>
+								</div>
+							</div>
+							<div class="control-group">
+								<div class="controls">
+									<label class="" for="remember_me">
+										<input type="checkbox" id="remember_me" name="_remember_me" value="on" checked="checked"/>
+										{{ 'Remember me'|trans({}, 'ARIPDUserBundle') }}
+									</label>
+								</div>
+							</div>
+						</div>
+		        <div class="modal-footer">
+							<a class="pull-left" href="{{ path('fos_user_resetting_request') }}">{{ 'Reset password'|trans({}, 'ARIPDUserBundle') }}</a>
+							<button class="pull-right btn btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Login'|trans({}, 'ARIPDUserBundle') }}</button>
+						</div>
+					</form>
+				</div>
+		    <div class="text-center">
+		      {{ facebook_login_button({'autologoutlink': true, 'label': 'Login with %service%'|trans({'%service%': 'Facebook'}, 'ARIPDUserBundle')}) }}
+		    </div>
+		    <div class="text-center">
+					{{ 'Not a member?'|trans({}, 'ARIPDUserBundle') }}
+		      <a href="{{ path('fos_user_registration_register') }}">{{ 'Register'|trans({}, 'ARIPDUserBundle') }}</a>
+		    </div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#username").focus();
+});
+</script>
+{{ facebook_initialize({'xfbml': true, 'fbAsyncInit': 'onFbInit();'}) }}
+<script>
+function goLogIn(){
+	window.location.href = "{{ path('fos_facebook_security_check') }}";
+}
+function onFbInit() {
+	if (typeof(FB) != 'undefined' && FB != null ) {
+		FB.Event.subscribe('auth.statusChange', function(response) {
+			if (response.session || response.authResponse) {
+				setTimeout(goLogIn, 500);
+			} else {
+				window.location.href = "{{ path('fos_user_security_logout') }}";
+			}
+		});
+		FB.Event.subscribe('auth.logout', function(response) {
+			window.location.href = "{{ path('fos_user_security_logout') }}";
+		});
+	}
+}
+</script>
+{% endblock %}

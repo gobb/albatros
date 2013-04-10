@@ -1,0 +1,52 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ 'My Purchase Orders'|trans({}, 'ARIPDUserBundle') }}{% endblock %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<ul class="breadcrumb">
+					<li><a href="{{ path('aripd_default_index') }}">{{ 'Home'|trans() }}</a> <span class="divider">/</span></li>
+					<li class="active">{{ 'My Purchase Orders'|trans({}, 'ARIPDUserBundle') }}</li>
+				</ul>
+				{% if entities %}
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Tarih</th>
+							<th>Sipariş No</th>
+							<th>Durum</th>
+							<th>Ödeme Tipi</th>
+							<th>Kargo Firması</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for entity in entities %}
+						<tr>
+							<td>
+								<div><i class="icon-time"></i> <time title="Oluşturulma" datetime="{{ entity.createdAt|date('c') }}">{{ entity.createdAt|localizeddate('medium', 'medium') }}</time></div>
+								<div><i class="icon-time"></i> <time title="Son Güncellenme" datetime="{{ entity.updatedAt|date('c') }}">{{ entity.updatedAt|localizeddate('medium', 'medium') }}</time></div>
+							</td>
+							<td>{{ entity.poid }}</td>
+							<td>{{ entity.status.name }}</td>
+							<td>
+								<div>{{ entity.payment.paymentgroup.paymentgrouptype.name }}</div>
+								<div>{{ entity.payment.paymentgroup.name }}</div>
+								<div>{{ entity.payment.name }}</div>
+							</td>
+							<td>{{ entity.transportation.name }}</td>
+							<td><a class="btn btn-mini" href="{{ path('aripd_user_purchaseorder_show', {poid: entity.poid }) }}">{{ 'Show'|trans() }}</a></td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				{% else %}
+				{{ 'alert.records.zero'|trans() }}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

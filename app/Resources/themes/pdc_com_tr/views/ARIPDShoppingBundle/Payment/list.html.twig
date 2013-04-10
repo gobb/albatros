@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ 'Payments'|trans({}, 'ARIPDShoppingBundle') }}{% endblock %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				{{ render(controller('ARIPDShoppingBundle:Payment:form')) }}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+parameters:
+    kernel.listener.iso4217_listener.class: ARIPD\AdminBundle\EventListener\Iso4217Listener
+    #kernel.listener.theme_listener.class: ARIPD\AdminBundle\EventListener\ThemeListener
+    #kernel.listener.domain_listener.class: ARIPD\AdminBundle\EventListener\DomainListener
+    #kernel.listener.config_listener.class: ARIPD\AdminBundle\EventListener\ConfigListener
+    aripdadmin.fxrate_service.class: ARIPD\AdminBundle\Service\FxrateService
+    aripdadmin.twig.intl_extension.class: ARIPD\AdminBundle\Twig\Extension\IntlExtension
+    aripdadmin.twig.visual_extension.class: ARIPD\AdminBundle\Twig\Extension\VisualExtension
+
+services:
+    kernel.listener.iso4217_listener:
+        class: "%kernel.listener.iso4217_listener.class%"
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+        arguments: [ "@service_container" ]
+    #kernel.listener.theme_listener:
+    #    class: %kernel.listener.theme_listener.class%
+    #    tags:
+    #        - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+    #    arguments: [ @service_container ]
+    #kernel.listener.domain_listener:
+    #    class: %kernel.listener.domain_listener.class%
+    #    tags:
+    #        - { name: kernel.event_listener, event: kernel.request, method: onDomainParse }
+    #kernel.listener.config_listener:
+    #    class: %kernel.listener.config_listener.class%
+    #    tags:
+    #        - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+    #    arguments: [@swiftmailer.transport.real, @doctrine.orm.entity_manager]
+    
+    aripdadmin.fxrate_service:
+        class: "%aripdadmin.fxrate_service.class%"
+        arguments: [ "@service_container", "@doctrine.orm.entity_manager" ]
+    
+    aripdadmin.group.form.type:
+        class: ARIPD\AdminBundle\Form\Type\UserGroupFormType
+        arguments: ["%fos_user.model.group.class%"]
+        tags:
+            - { name: form.type, alias: aripdadmin_usergroupformtype }
+
+    aripdadmin.twig.intl_extension:
+        class: "%aripdadmin.twig.intl_extension.class%"
+        tags:
+            - { name: twig.extension }
+            
+    aripdadmin.twig.visual_extension:
+        class: "%aripdadmin.twig.visual_extension.class%"
+        arguments: [ "@service_container", "@router" ]
+        tags:
+            - { name: twig.extension }

@@ -1,0 +1,27 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+{{ render(controller('ARIPDAdminBundle:CRMIndividual:form')) }}
+<div class="page-header">
+	<h1>{{ 'Search Results'|trans({}, 'ARIPDCRMBundle') }}</h1>
+</div>
+
+{% set count = entities|length %}
+<div class="lead">{{ 'There are %count% results found for %q%'|transchoice(count, { '%count%': count, '%q%': q }) }}</div>
+
+<ul class="thumbnails">
+	{% for entity in pagination %}
+	<li class="span3">
+		<div class="thumbnail">
+			{{ crmIndividualImage(entity, configVariable('crm_individual_width'), configVariable('crm_individual_height')) }}
+			<div class="caption">
+				<h5>{{ entity.fullname }}</h5>
+				<p>Son Güncelleme: {{ entity.updatedAt|localizeddate('medium', 'medium') }}</p>
+				<p><a href="{{ path('aripd_admin_crm_individual_show', {id: entity.id}) }}" class="btn btn-primary btn-mini">{{ 'More'|trans() }} <i class="icon-chevron-right icon-white"></i></a></p>
+			</div>
+		</div>
+	</li>
+	{% endfor %}
+</ul>
+<div class="navigation">{{ knp_pagination_render(pagination) }}</div>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'ARIPDMobileBundle::layout.html.twig' %}
+
+{% block body %}
+<div data-role="page" id="foo" data-title="{{ 'Login'|trans({}, 'ARIPDUserBundle') }}">
+	<div data-role="header" data-id="header" data-position="fixed">
+		<a href="{{ path('aripd_mobile_default_index') }}" data-icon="home">{{ 'Home'|trans() }}</a>
+		<h1>{{ 'Login'|trans({}, 'ARIPDUserBundle') }}</h1>
+	</div>
+	<div data-role="content" data-inset="true">
+		<form id="loginForm" action="{{ path('fos_user_security_check') }}" method="post">
+			<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+			<fieldset>
+				<label for="username">{{ 'Username'|trans({}, 'ARIPDUserBundle') }}</label>
+				<input type="text" name="_username" id="username" placeholder="{{ 'Username'|trans({}, 'ARIPDUserBundle') }}" />
+				<label for="password">{{ 'Password'|trans({}, 'ARIPDUserBundle') }}</label>
+				<input type="password" name="_password" id="password" placeholder="{{ 'Password'|trans({}, 'ARIPDUserBundle') }}" />
+				<input type="hidden" name="_target_path" value="{{ path('aripd_mobile_default_index') }}" />
+				<button type="submit" data-role="button" data-inline="true" data-theme="b">{{ 'Submit'|trans() }}</button>
+				<hr />
+				Don't have a login?
+				<a href="{{ path('aripd_mobile_user_registration_register') }}">Sign Up</a>
+				<a href="{{ path('aripd_mobile_user_resetting_request') }}">Reminder</a>
+			</fieldset>
+		</form>
+	</div>
+	<div data-role="footer" data-id="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="{{ path('aripd_mobile_store_branch_index') }}">{{ 'Branch'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+				<li><a href="{{ path('aripd_mobile_store_product_index') }}">{{ 'Menu'|trans({}, 'ARIPDMobileBundle') }}</a></li>
+				<li><a href="{{ path('aripd_mobile_loyalty_index') }}">Bana özel</a></li>
+				<li><a href="{{ path('aripd_mobile_default_share') }}">{{ 'Share'|trans() }}</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	$("#___submit").click(function() {
+		$.post("{{ path('fos_user_security_check') }}", {
+			_username : $('#username').val(),
+			_password : $('#password').val()
+		}, function(data) {
+			if (data.success == false) {
+				alert('Kullanıcı adı yanlış');
+			}
+			if (data.success == true) {
+				location.href = appURL+"adminPage";
+			}
+		}, "json");
+	});
+	
+	$('#loginForm').live('submit', function (e) {
+
+	    //cache the form element for use in this function
+	    var $this = $(this);
+
+	    //prevent the default submission of the form
+	    e.preventDefault();
+
+	    //run an AJAX post request to your server-side script, $this.serialize() is the data from your form being added to the request
+	    $.post($this.attr('action'), $this.serialize(), function (responseData) {
+	        //in here you can analyze the output from your server-side script (responseData) and validate the user's login without leaving the page
+	        console.log(responseData);
+	        $.mobile.changePage( "{{ path('aripd_mobile_default_index') }}" );
+	    });
+	});
+	
+});
+</script>
+{% endblock %}

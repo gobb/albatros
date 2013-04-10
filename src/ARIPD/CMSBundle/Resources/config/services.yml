@@ -1,0 +1,20 @@
+parameters:
+    aripdcms.post_service.class: ARIPD\CMSBundle\Service\PostService
+    aripdcms.post_listener.class: ARIPD\CMSBundle\EventListener\PostListener
+    aripdcms.search_service.class: ARIPD\CMSBundle\Service\SearchService
+
+services:
+    aripdcms.post_service:
+        class: "%aripdcms.post_service.class%"
+        public: true
+        scope: request
+        arguments: [ "@service_container", "@doctrine.orm.entity_manager", "@request" ]
+    aripdcms.post_listener:
+        class: "%aripdcms.post_listener.class%"
+        arguments: [ "@service_container" ]
+        tags:
+            - { name: doctrine.event_listener, event: postLoad, method: postLoad }
+            
+    aripdcms.search_service:
+        class: "%aripdcms.search_service.class%"
+        arguments: [ "@service_container", "@doctrine.orm.entity_manager" ]

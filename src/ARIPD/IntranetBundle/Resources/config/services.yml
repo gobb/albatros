@@ -1,0 +1,11 @@
+parameters:
+#    aripd_intranet.example.class: ARIPD\IntranetBundle\Example
+    aripd_intranet.tcmb.class: ARIPD\IntranetBundle\Service\TCMBService
+
+services:
+#    aripd_intranet.example:
+#        class: %aripd_intranet.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    aripd_intranet.tcmb:
+        class: %aripd_intranet.tcmb.class%
+        arguments: [ @service_container, @doctrine.orm.entity_manager ]

@@ -1,0 +1,42 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ 'Search Results'|trans({}, 'ARIPDStoreBundle') }}{% endblock %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<ul class="breadcrumb">
+					<li><a href="{{ path('aripd_default_index') }}">{{ 'Home'|trans() }}</a> <span class="divider">/</span></li>
+					<li class="active">{{ 'Search Results'|trans({}, 'ARIPDStoreBundle') }}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<div>
+					{% set count = entities|length %}
+					<div class="lead">{{ 'There are %count% results found for %q%'|transchoice(count, { '%count%': count, '%q%': q }) }}</div>
+				</div>
+				<ul class="thumbnails">
+					{% for entity in pagination %}
+					<li class="span3">
+						<div class="thumbnail">
+							<a href="{{ path('aripd_store_model_show', {id: entity.model.id, code: entity.model.code, slug: entity.slug}) }}">
+								<img alt="" src="{{ entity.model.image.url }}" alt=""/>
+							</a>
+							<div class="caption">
+								<h5>{{ entity.name }}</h5>
+								<p>{{ entity.description }}</p>
+							</div>
+						</div>
+					</li>
+					{% endfor %}
+				</ul>
+				<div class="navigation">{{ knp_pagination_render(pagination) }}</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

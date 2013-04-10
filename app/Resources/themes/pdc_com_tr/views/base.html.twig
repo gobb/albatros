@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}{{ configVariable('app_name') }} | {{ configVariable('app_tagline') }}{% endblock %}</title>
+	<meta name="description" content="{% block description %}{{ configVariable('app_description') }}{% endblock %}">
+	<meta name="keywords" content="{% block keywords %}{{ configVariable('app_keywords') }}{% endblock %}">
+	<meta name="author" content="{{ configVariable('app_name') }}">
+
+	<meta name="google-site-verification" content="{{ configVariable('google-site-verification') }}" />
+	<meta content="https://lh6.googleusercontent.com/-tmflXS--tmA/AAAAAAAAAAI/AAAAAAAAADc/O0gAnEnN1tY/s250-c-k/photo.jpg" itemprop="image"/>
+	<link href="https://plus.google.com/111360470667419012579" rel="author" />
+	
+	<!-- Bootstrap style  -->
+	{% block stylesheets %}
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+	<link href="/themes/pdc_com_tr/assets/css/master.css" rel="stylesheet"/>
+	{% endblock %}
+	
+	<!-- fav and touch icons -->
+	<link rel="icon" href="/themes/pdc_com_tr/assets/ico/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/themes/pdc_com_tr/assets/ico/favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/themes/pdc_com_tr/assets/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/themes/pdc_com_tr/assets/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/themes/pdc_com_tr/assets/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="/themes/pdc_com_tr/assets/ico/apple-touch-icon-57-precomposed.png">
+</head>
+<body>
+	
+	{% include '::header.html.twig' %}
+	{% block container %}{% endblock %}
+	{% include '::footer.html.twig' %}
+
+	{% block javascripts %}
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+	<script src="/themes/pdc_com_tr/assets/js/bootshop.js"></script>
+	<script src="/themes/pdc_com_tr/assets/js/master.js"></script>
+	<script src="/themes/pdc_com_tr/assets/js/jquery.lightbox-0.5.js"></script>
+	<script src="/themes/pdc_com_tr/assets/js/bootbox.min.js"></script>
+	<script src="/themes/pdc_com_tr/assets/js/jquery.easing.js"></script>
+	<script src="/themes/pdc_com_tr/assets/js/jquery.quicksand.js"></script>
+	<script src="/themes/pdc_com_tr/assets/js/jquery.quicksand.plugin.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		
+		{% for type, flashMessages in app.session.flashbag.all() %}
+		{% for flashMessage in flashMessages %}
+			bootbox.alert("{{ flashMessage }}", function() {
+				console.log("{{ flashMessage }}");
+			});
+		{% endfor %}
+		{% endfor %}
+
+		$('#myCarousel').carousel({
+			interval: 7000
+		});
+
+		$('#brandnew').carousel({
+			interval: 4000
+		});
+
+		$('#gallery a').lightBox({
+			imageLoading:		'/themes/pdc_com_tr/assets/images/lightbox/lightbox-ico-loading.gif',
+			imageBtnPrev:		'/themes/pdc_com_tr/assets/images/lightbox/lightbox-btn-prev.gif',
+			imageBtnNext:		'/themes/pdc_com_tr/assets/images/lightbox/lightbox-btn-next.gif',
+			imageBtnClose:	'/themes/pdc_com_tr/assets/images/lightbox/lightbox-btn-close.gif',
+			imageBlank:			'/themes/pdc_com_tr/assets/images/lightbox/lightbox-blank.gif',
+		});
+		
+	});
+	</script>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', '{{ configVariable('ga_tracking') }}']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+	{% endblock %}
+	
+</body>
+</html>

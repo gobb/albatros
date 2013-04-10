@@ -1,0 +1,26 @@
+{% extends "ARIPDAdminBundle::layout.html.twig" %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'groups'|trans() }}</h1>
+</div>
+<dl class="dl-horizontal">
+	<dt>Grup</dt>
+	<dd>{{ entity.name }}</dd>
+	<dt>{{ 'label.approver'|trans() }}</dt>
+	<dd>{% if entity.approver %}Evet{% else %}Hayır{% endif %}</dd>
+	<dt>{{ 'label.writer'|trans() }}</dt>
+	<dd>{% if entity.writer %}Evet{% else %}Hayır{% endif %}</dd>
+	<dt>Roller</dt>
+	<dd>{% for role in entity.roles %}<span class="label">{{ role }}</span>{% if loop.last == false %}&nbsp;{% endif %}{% endfor %}</dd>
+</dl>
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_user_group_new') }}">{{ 'New entry'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_user_group_edit', { id: entity.id } ) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+	<button class="btn btn-danger" type="button" onclick="deleteRecord();"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+</div>
+
+<form id="delete_form" action="{{ path('aripd_admin_fxrate_delete', { 'id': entity.id }) }}" method="post">
+	{{ form_widget(delete_form) }}
+</form>
+{% endblock %}

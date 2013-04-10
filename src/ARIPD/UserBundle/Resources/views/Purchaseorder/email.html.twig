@@ -1,0 +1,97 @@
+{{ 'purchaseorder.email.message'|trans({'%username%': purchaseorder.user.username, '%poid%': purchaseorder.poid, '%purchaseorderUrl%': purchaseorderUrl, '%company%': configVariable('app_name')}, 'ARIPDShoppingBundle')|raw }}
+
+<table style="width: 500px;">
+	<thead>
+		<tr>
+			<th width="250">{{ 'Product'|trans({}, 'ARIPDStoreBundle') }}</th>
+			<th width="50">{{ 'Quantity'|trans({}, 'ARIPDShoppingBundle') }}</th>
+			<th width="100">{{ 'Price'|trans({}, 'ARIPDStoreBundle') }}</th>
+			<th width="100">{{ 'label.subtotal'|trans() }}</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% set totalQuantity = 0 %}
+		{% set totalPriceConverted = 0 %}
+		{% set totalPriceConvertedFormatted = null %}
+		{% for outgoing in purchaseorder.outgoings %}
+		{% set unitprice = outgoing.model.price %}
+		{% set unitpriceConverted = unitprice * outgoing.model.iso4217.rate / app.session.get('iso4217').rate %}
+		{% set unitpriceConvertedFormatted = unitpriceConverted|localizedcurrency(app.session.get('iso4217').code) %}
+		{% set quantity = outgoing.quantity %}
+		{% set subtotal = unitprice * quantity %}
+		{% set subtotalConverted = subtotal * outgoing.model.iso4217.rate / app.session.get('iso4217').rate %}
+		{% set subtotalConvertedFormatted = subtotalConverted|localizedcurrency(app.session.get('iso4217').code) %}
+		<tr>
+			<td>
+				<a href="{{ url('aripd_store_model_show', { id: outgoing.model.id, code: outgoing.model.code, slug: outgoing.model.product.slug }) }}">
+					<div>{{ outgoing.model.product.name }}</div>
+					<div><small>{{ outgoing.model.code }}</small></div>
+				</a>
+			</td>
+			<td style="text-align: center;">
+				{{ quantity }}
+			</td>
+			<td style="text-align: center;">
+				<div>{{ unitprice|localizedcurrency(outgoing.model.iso4217.code) }}</div>
+				<div>{{ unitpriceConvertedFormatted }}</div>
+			</td>
+			<td style="text-align: center;">
+				<div>{{ subtotal|localizedcurrency(outgoing.model.iso4217.code) }}</div>
+				<div>{{ subtotalConvertedFormatted }}</div>
+			</td>
+		</tr>
+		{% set totalQuantity = totalQuantity + quantity %}
+		{% set totalPriceConverted = totalPriceConverted + subtotalConverted %}
+		{% set totalPriceConvertedFormatted = totalPriceConverted|localizedcurrency(app.session.get('iso4217').code) %}
+		{% else %}
+		<tr>
+			<td colspan="4">{{ 'alert.records.zero'|trans() }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+	<tfoot>
+		<tr>
+			<th>{{ 'label.total'|trans() }}</th>
+			<td colspan="2"></td>
+			<th>{{ totalPriceConvertedFormatted }}</th>
+		</tr>
+		{% set basketAmountTotalAfterVouchercode = totalPriceConverted %}
+		{% if purchaseorder.voucher %}
+		<tr>
+			<th>{{ 'Voucher'|trans({}, 'ARIPDShoppingBundle') }}</th>
+			<td colspan="2">
+				{% if purchaseorder.vouchercode %}{{ purchaseorder.vouchercode.vouchercode }}{% elseif purchaseorder.voucher %}{{ purchaseorder.voucher.code }}{% endif %}
+			</td>
+			{% set basketAmountTotalAfterVouchercode = totalPriceConverted + totalPriceConverted * purchaseorder.voucher.impactRate + purchaseorder.voucher.impactPrice %}
+			{% set basketAmountTotalAfterVouchercodeFormatted = basketAmountTotalAfterVouchercode|localizedcurrency(app.session.get('iso4217').code) %}
+			<th>{{ basketAmountTotalAfterVouchercodeFormatted }}</th>
+		</tr>
+		{% endif %}
+		<tr>
+			<th>{{ 'Payment'|trans({}, 'ARIPDShoppingBundle') }}</th>
+			{% set basketAmountTotalAfterVouchercodeAfterPayment = basketAmountTotalAfterVouchercode + basketAmountTotalAfterVouchercode * purchaseorder.payment.impactRate + purchaseorder.payment.impactPrice %}
+			{% set basketAmountTotalAfterVouchercodeAfterPaymentFormatted = basketAmountTotalAfterVouchercodeAfterPayment|localizedcurrency(app.session.get('iso4217').code) %}
+			<td colspan="2">
+				<div>{{ purchaseorder.payment.paymentgroup.paymentgrouptype.name }}</div>
+				<div>{{ purchaseorder.payment.paymentgroup.name }}</div>
+				<div>{{ purchaseorder.payment.name }}</div>
+			</td>
+			<th>{{ basketAmountTotalAfterVouchercodeAfterPaymentFormatted }}</th>
+		</tr>
+		<tr>
+			<th>{{ 'Transportation'|trans({}, 'ARIPDShoppingBundle') }}</th>
+			{% set basketAmountTotalAfterVouchercodeAfterPaymentAfterTransportation = (basketAmountTotalAfterVouchercode >= configVariable('shopping_transportation_foc_minimum_amount')) ? basketAmountTotalAfterVouchercodeAfterPayment : (basketAmountTotalAfterVouchercodeAfterPayment + purchaseorder.transportation.impactPrice) %}
+			{% set basketAmountTotalAfterVouchercodeAfterPaymentAfterTransportationFormatted = basketAmountTotalAfterVouchercodeAfterPaymentAfterTransportation|localizedcurrency(app.session.get('iso4217').code) %}
+			<td colspan="2">
+				<div>{{ purchaseorder.transportation.name }}</div>
+				<div>{% if basketAmountTotalAfterVouchercode >= configVariable('shopping_transportation_foc_minimum_amount') %}(Ücretsiz Taşıma){% endif %}</div>
+			</td>
+			<th>{{ basketAmountTotalAfterVouchercodeAfterPaymentAfterTransportationFormatted }}</th>
+		</tr>
+		<tr>
+			<th>{{ 'label.total'|trans() }}</th>
+			<td colspan="2"></td>
+			<th>{{ basketAmountTotalAfterVouchercodeAfterPaymentAfterTransportationFormatted }}</th>
+		</tr>
+	</tfoot>
+</table>

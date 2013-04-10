@@ -1,0 +1,125 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<ul class="breadcrumb">
+	<li><a href="{{ path('aripd_default_index') }}">{{ 'Dashboard'|trans({}, 'ARIPDAdminBundle') }}</a> <span class="divider">/</span></li>
+	<li><a href="{{ path('aripd_admin_userpurchaseorder_index') }}">{{ 'purchaseorders'|trans() }}</a> <span class="divider">/</span></li>
+	<li class="active">{{ entity.poid }}</li>
+</ul>
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_userpurchaseorder_print', { id: entity.id }) }}"><i class="icon-print"></i> {{ 'Print'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_userpurchaseorder_edit', { id: entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+</div>
+<table class="table">
+	<caption>
+		<h3>Sipariş numarası: <span class="label label-important">{{ entity.poid }}</span></h3>
+		<h4>Sipariş durumu: <span class="label label-important">{{ entity.status.name }}</span></h4>
+	</caption>
+	<thead>
+		<tr>
+			<th></th>
+			<th>Ürün</th>
+			<th>Miktar</th>
+			<th>Alt toplam</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% set totalQuantity = 0 %}
+		{% set totalPriceConverted = 0 %}
+		{% set totalPriceConvertedFormatted = null %}
+		{% for outgoing in entity.outgoings %}
+		{% set unitprice = outgoing.price %}
+		{% set unitpriceConverted = unitprice * outgoing.model.iso4217.rate / app.session.get('iso4217').rate %}
+		{% set unitpriceConvertedFormatted = unitpriceConverted|localizedcurrency(app.session.get('iso4217').code) %}
+		{% set quantity = outgoing.quantity %}
+		{% set subtotal = unitprice * quantity %}
+		{% set subtotalConverted = subtotal * outgoing.model.iso4217.rate / app.session.get('iso4217').rate %}
+		{% set subtotalConvertedFormatted = subtotalConverted|localizedcurrency(app.session.get('iso4217').code) %}
+		<tr>
+			<td>
+				<img class="span1" alt="" src="{{ outgoing.model.image.url }}"/>
+			</td>
+			<td>
+				<a href="{{ path('aripd_store_model_show', { id: outgoing.model.id, code: outgoing.model.code, slug: outgoing.model.product.slug }) }}">
+					<div>{{ outgoing.model.product.name }}</div>
+					<div><small>{{ outgoing.model.code }}</small></div>
+					<div>{{ unitpriceConvertedFormatted }}</div>
+				</a>
+			</td>
+			<td>{{ quantity }}</td>
+			<td>{{ subtotalConvertedFormatted }}</td>
+		</tr>
+		{% set totalQuantity = totalQuantity + quantity %}
+		{% set totalPriceConverted = totalPriceConverted + subtotalConverted %}
+		{% set totalPriceConvertedFormatted = totalPriceConverted|localizedcurrency(app.session.get('iso4217').code) %}
+		{% endfor %}
+	</tbody>
+	<tfoot>
+		<tr>
+			<td></td>
+			<td>
+				<strong>Sipariş Tutarı</strong>
+			</td>
+			<td></td>
+			<td>{{ totalPriceConvertedFormatted }}</td>
+		</tr>
+		{% set basketAmountTotalAfterVouchercode = totalPriceConverted %}
+		{% if entity.voucher %}
+		<tr>
+			<td></td>
+			<td>
+				<strong>İndirim Çeki</strong>
+			</td>
+			<td></td>
+			{% set basketAmountTotalAfterVouchercode = totalPriceConverted + totalPriceConverted * entity.voucher.impactRate + entity.voucher.impactPrice %}
+			{% set basketAmountTotalAfterVouchercodeFormatted = basketAmountTotalAfterVouchercode|localizedcurrency(app.session.get('iso4217').code) %}
+			<td>{{ basketAmountTotalAfterVouchercodeFormatted }}</td>
+		</tr>
+		{% endif %}
+		<tr>
+			<td></td>
+			<td>
+				<strong>Ödeme Şekli</strong>
+			</td>
+			{% set basketAmountTotalAfterVouchercodeAfterPayment = basketAmountTotalAfterVouchercode + basketAmountTotalAfterVouchercode * entity.payment.impactRate + entity.payment.impactPrice %}
+			{% set basketAmountTotalAfterVouchercodeAfterPaymentFormatted = basketAmountTotalAfterVouchercodeAfterPayment|localizedcurrency(app.session.get('iso4217').code) %}
+			<td>
+				<div>{{ entity.payment.paymentgroup.paymentgrouptype.name }}</div>
+				<div>{{ entity.payment.paymentgroup.name }}</div>
+				<div>{{ entity.payment.name }}</div>
+			</td>
+			<td>{{ basketAmountTotalAfterVouchercodeAfterPaymentFormatted }}</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<strong>Taşıma Ücreti</strong>
+			</td>
+			{% set basketAmountTotalAfterVouchercodeAfterPaymentAfterTransportation = (basketAmountTotalAfterVouchercode >= configVariable('shopping_transportation_foc_minimum_amount')) ? basketAmountTotalAfterVouchercodeAfterPayment : (basketAmountTotalAfterVouchercodeAfterPayment + entity.transportation.impactPrice) %}
+			{% set basketAmountTotalAfterVouchercodeAfterPaymentAfterTransportationFormatted = basketAmountTotalAfterVouchercodeAfterPaymentAfterTransportation|localizedcurrency(app.session.get('iso4217').code) %}
+			<td>
+				<div>{{ entity.transportation.name }}</div>
+				<div>{% if basketAmountTotalAfterVouchercode >= configVariable('shopping_transportation_foc_minimum_amount') %}(Ücretsiz Taşıma){% endif %}</div>
+			</td>
+			<td>{{ basketAmountTotalAfterVouchercodeAfterPaymentAfterTransportationFormatted }}</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<strong>Toplam Tutar</strong>
+			</td>
+			<td></td>
+			<td>{{ basketAmountTotalAfterVouchercodeAfterPaymentAfterTransportationFormatted }}</td>
+		</tr>
+	</tfoot>
+</table>
+
+{% if entity.user %}
+<h3>Kullanıcı Bilgileri</h3>
+<ul>
+	<li>{{ entity.user.fullname }}</li>
+	<li>{{ entity.user.email }}</li>
+	<li>{{ entity.user.mobile }}</li>
+</ul>
+{% endif %}
+{% endblock %}

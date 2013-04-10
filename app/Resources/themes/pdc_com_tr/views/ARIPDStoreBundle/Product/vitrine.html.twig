@@ -1,0 +1,15 @@
+{% for entity in entities %}
+<li style="border:0">&nbsp;</li>
+<li>
+	<div class="thumbnail">
+		<img src="{{ entity.model.image.url }}" alt="{{ entity.name }}"/>
+		<div class="caption">
+			<h5>{{ entity.name }}</h5>
+			<h4>
+				<a class="btn" href="{{ path('aripd_store_model_show', { id: entity.model.id, code: entity.model.code, slug: entity.slug }) }}">{{ 'Show'|trans() }}</a>
+				<span class="pull-right">{{ entity.model.price|convertFormat(entity.model.iso4217, app.session.get('iso4217')) }}</span>
+			</h4>
+		</div>
+	</div>
+</li>
+{% endfor %}

@@ -1,0 +1,53 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ entity.product.name }} <small>{{ entity.code }}</small></h1>
+</div>
+<ul class="unstyled">
+	<li>
+		<img src="{{ entity.image.url }}" alt="{{ entity.code }}"/>
+	</li>
+	<li>System Code: {{ entity.getSystemcode() }}</li>
+	<li>Code: {{ entity.code }}</li>
+	<li>Price: {{ entity.price }} {{ entity.iso4217.name }}</li>
+	<li>Quantity: {{ entity.quantity }}</li>
+</ul>
+<div class="form-actions btn-toolbar">
+	<a class="btn" href="{{ path('aripd_admin_storeproduct_show', { id: entity.product.id }) }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_store_model_new', { 'product_id': entity.product.id }) }}">{{ 'New entry'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_store_model_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+	<button class="btn btn-danger" type="button" onclick="deleteRecord();"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+</div>
+<form id="delete_form" action="{{ path('aripd_admin_store_model_delete', { 'id': entity.id }) }}" method="post">
+	{{ form_widget(delete_form) }}
+</form>
+
+{% if entity.product.attributekeys is not empty %}
+<div id="images" class="page-header">
+	<h1>Attributes <small>Headings, paragraphs, lists, and other inline type elements</small></h1>
+</div>
+<form method="POST" action="{{ path('aripd_admin_store_model_attribute', { id: entity.id }) }}">
+	<ul class="unstyled">
+		{% for attributekey in entity.product.attributekeys %}
+		<li>
+			<label>{{ attributekey.name }}</label>
+			<select name="attribute[{{ attributekey.id }}]">
+				<option>---</option>
+				{% for attributevalue in attributekey.attributevalues %}
+				<option value="{{ attributevalue.id }}" {% if attributevalue in entity.attributevalues %}selected="selected"{% endif %}>{{ attributevalue.name }}</option>
+				{% endfor %}
+			</select>
+		</li>
+		{% endfor %}
+	</ul>
+	<button class="btn" type="submit">{{ 'Save'|trans() }}</button>
+</form>
+{% endif %}
+
+<div id="images" class="page-header">
+	<h1>Images <small>Headings, paragraphs, lists, and other inline type elements</small></h1>
+</div>
+{{ render(controller('ARIPDAdminBundle:StoreSearch:report', { 'model_id': entity.id })) }}
+{% include 'ARIPDAdminBundle:StoreModelimage:list.html.twig' with { entity: entity } %}
+{% endblock %}

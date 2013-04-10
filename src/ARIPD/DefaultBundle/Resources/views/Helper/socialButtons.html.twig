@@ -1,0 +1,17 @@
+<div class="socialBar pull-right">
+	{% if twitter is not sameas(false) %}
+	<div class="button twitterButton pull-left">
+		{{ twitterButton(twitter) }}
+	</div>
+	{% endif %}
+	{% if googleplus is not sameas(false) %}
+	<div class="button googleplusButton pull-left">
+		{{ googlePlusButton(googleplus) }}
+	</div>
+	{% endif %}
+	{% if facebook is not sameas(false) %}
+	<div class="button facebookButton pull-left">
+		{{ facebookButton(facebook) }}
+	</div>
+	{% endif %}
+</div>

@@ -1,0 +1,46 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'Banners'|trans({}, 'ARIPDStoreBundle') }}</h1>
+</div>
+<img src="{{ entity.url }}">
+<table class="table">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>{{ entity.name }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ entity.description }}</td>
+        </tr>
+        <tr>
+            <th>Starting At</th>
+            <td>{{ entity.startingAt|localizeddate('medium', 'medium') }}</td>
+        </tr>
+        <tr>
+            <th>Ending At</th>
+            <td>{{ entity.endingAt|localizeddate('medium', 'medium') }}</td>
+        </tr>
+        <tr>
+            <th>Href</th>
+            <td>{{ entity.href }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_store_banner_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_store_banner_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+	<button class="btn btn-danger" type="button" onclick="deleteRecord();"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+</div>
+
+<form id="delete_form" action="{{ path('aripd_admin_store_banner_delete', { 'id': entity.id }) }}" method="post">
+	{{ form_widget(delete_form) }}
+</form>
+{% endblock %}

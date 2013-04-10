@@ -1,0 +1,63 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>Anketler</h1>
+</div>
+<div>
+	<h2>{{ entity.name }}</h2>
+	<p>{{ entity.description|raw }}</p>
+	<p>Başlangıç: <i class="icon-time"></i> <time datetime="{{ entity.startingAt|date('c') }}">{{ entity.startingAt|localizeddate('full', 'none') }}</time></p>
+	<p>Bitiş: <i class="icon-time"></i> <time datetime="{{ entity.endingAt|date('c') }}">{{ entity.endingAt|localizeddate('full', 'none') }}</time></p>
+</div>
+
+<ul>
+	{% for question in entity.questions %}
+	<li>
+		{{ question.name }}
+		<ul>
+			{% for answer in question.answers %}
+			<li>{{ answer.name }}</li>
+			{% endfor %}
+		</ul>
+	</li>
+	{% endfor %}
+</ul>
+
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_survey_survey_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_survey_survey_new') }}">{{ 'New entry'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_survey_survey_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+	<button class="btn btn-danger" type="button" onclick="deleteRecord();"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+</div>
+
+<form id="delete_form" action="{{ path('aripd_admin_survey_survey_delete', { 'id': entity.id }) }}" method="post">
+	{{ form_widget(delete_form) }}
+</form>
+
+<div class="page-header">
+	<h1>Report</h1>
+</div>
+<ul>
+	{% for question in entity.questions %}
+	<li>
+		<div id="chart{{ question.id }}">&nbsp;</div>
+	</li>
+	{% endfor %}
+</ul>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]});
+$(function() {
+	
+	{% for question in entity.questions %}
+	{{ gchart_pie_chart(attribute(data, 'dataTable' ~ question.id), "chart#{question.id}", 400, 200, "#{question.name}") }}
+	{% endfor %}
+	
+});
+</script>
+{% endblock %}

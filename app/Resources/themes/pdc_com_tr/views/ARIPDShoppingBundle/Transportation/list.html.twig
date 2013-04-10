@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Taşıma{% endblock %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				{{ render(controller('ARIPDShoppingBundle:Transportation:form')) }}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

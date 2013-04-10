@@ -1,0 +1,57 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'iso4217'|trans() }}</h1>
+</div>
+<table class="table">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>{{ entity.name }}</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td>{{ entity.code }}</td>
+        </tr>
+        <tr>
+            <th>Symbol</th>
+            <td>{{ entity.symbol }}</td>
+        </tr>
+        <tr>
+            <th>Active</th>
+            <td>{{ entity.active }}</td>
+        </tr>
+        <tr>
+            <th>Decimal Places</th>
+            <td>{{ entity.decimalPlaces }}</td>
+        </tr>
+        <tr>
+            <th>Decimal Point</th>
+            <td>{{ entity.decimalPoint }}</td>
+        </tr>
+        <tr>
+            <th>Thousands Seperator</th>
+            <td>{{ entity.thousandsSeperator }}</td>
+        </tr>
+        <tr>
+            <th>Rate</th>
+            <td>{{ entity.rate }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_iso4217_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_iso4217_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+	<button class="btn btn-danger" type="button" onclick="deleteRecord();"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+</div>
+
+<form id="delete_form" action="{{ path('aripd_admin_iso4217_delete', { 'id': entity.id }) }}" method="post">
+	{{ form_widget(delete_form) }}
+</form>
+{% endblock %}

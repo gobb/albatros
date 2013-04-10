@@ -1,0 +1,234 @@
+{% extends 'ARIPDIntranetBundle::layout.html.twig' %}
+
+{% block body %}
+<!-- http://www.streamtransport.com/ -->
+<div class="container">
+	<div class="row">
+		<div class="span12">
+			<section id="collapse">
+	      <div class="row">
+	        <div class="span3 columns">
+					<a href="{{ path('aripd_intranet_iptv_new') }}"><i class="icon-plus"></i> Create a new entry</a>
+	        <div class="accordion" id="accordion2">
+	            <div class="accordion-group">
+	              <div class="accordion-heading">
+	                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+	                  Encode/Decode Tool
+	                </a>
+	              </div>
+	              <div id="collapseOne" class="accordion-body collapse">
+	                <div class="accordion-inner">
+										<form name="fA">
+											<textarea id="f1" wrap="off"></textarea>
+											<div class="btn-group">
+												<button class="btn" onclick="document.fA.c1.value=escapeTxt(document.fA.f1.value); return false;"><i class="icon-circle-arrow-down"></i> Encode</button>
+												<button class="btn" onclick="document.fA.f1.value=unescapeTxt(document.fA.c1.value); return false;"><i class="icon-circle-arrow-up"></i> Decode</button>
+											</div>
+											<textarea id="c1"></textarea>
+										</form>
+	                </div>
+	              </div>
+	            </div>
+	            <div class="accordion-group">
+	              <div class="accordion-heading">
+	                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+	                  Channels
+	                </a>
+	              </div>
+	              <div id="collapseTwo" class="accordion-body collapse in">
+	                <div class="accordion-inner">
+	                  <div id="divChannels"></div>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	          
+	       </div>
+	        <div class="span9 columns">
+	          <div id="video"><a href="#" id="player"></a></div>
+	        </div>
+	      </div>
+			</section>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script src="{{ asset('bundles/aripdintranet/plugins/flowplayer/flowplayer-3.2.6.min.js') }}"></script>
+<script type="text/javascript">
+$(function() {
+	
+	$.ajax({
+		url: "{{ path('aripd_intranet_iptv_json') }}",
+		dataType: 'json',
+		success: function(response) {
+			$("#divChannels").html('');
+			var items = [];
+			$.each(response, function(key, val) {
+				//var link_show = Routing.generate('aripd_intranet_iptv_show', {id: val.id});
+				//var link_edit = Routing.generate('aripd_intranet_iptv_edit', {id: val.id});
+				if (val.playersrc == '')   val.playersrc   = '/bundles/aripdintranet/plugins/flowplayer/flowplayer-3.2.7.swf';
+				if (val.influxisurl == '') val.influxisurl = '/bundles/aripdintranet/plugins/flowplayer/flowplayer.rtmp-3.2.3.swf';
+				if (val.controlsurl == '') val.controlsurl = '/bundles/aripdintranet/plugins/flowplayer/flowplayer.controls-3.2.5.swf';
+				var list = $('<li/>', {id: val.id});
+				$('<a/>', {
+					'playerWidth': val.width,
+					'playerHeight': val.height,
+					'clipUrl': val.clipurl,
+					'netConnectionUrl': val.netconnectionurl,
+					'playerSrc': val.playersrc,
+					'playerKey': val.playerkey,
+					'influxisUrl': val.influxisurl,
+					'controlsUrl': val.controlsurl,
+					'href': '#',
+					'html': val.name
+				}).appendTo(list);
+				/*
+				$('<a/>', {
+					'href': link_show,
+					'html': 'show'
+				}).appendTo(list);
+				$('<a/>', {
+					'href': link_edit,
+					'html': 'edit'
+				}).appendTo(list);
+				*/
+				items.push($('<div>').append(list.clone()).remove().html());
+			});
+			$('<ul/>', {
+				'id': 'channels',
+				'class': 'nav nav-pills nav-stacked',
+				'css': { 'float': 'left', 'margin-right': '20px' },
+				html: items.join('')
+			}).appendTo("#divChannels");
+
+			$("ul#channels li a").click(function() {
+				
+				var clipUrl = $(this).attr("clipUrl");
+				var netConnectionUrl = $(this).attr("netConnectionUrl");
+				var playerWidth = $(this).attr("playerWidth");
+				var playerHeight = $(this).attr("playerHeight");
+				
+				var playerSrc = $(this).attr("playerSrc");
+				var playerKey = $(this).attr("playerKey");
+				var influxisUrl = $(this).attr("influxisUrl");
+				var controlsUrl = $(this).attr("controlsUrl");
+				
+				$("#video a#player").remove();
+				
+				$('<a/>', {
+					'id': 'player',
+					'href': '#',
+					'css': { 'display': 'block', 'width': playerWidth, 'height': playerHeight },
+					'html': ''
+				}).appendTo('#video');
+				
+				$f("player", {
+					src: playerSrc,
+					wmode: "opaque"//transparent,opaque
+					}, {
+					
+					key: playerKey,
+					
+					// clip uses influxis provider
+					clip: { 
+						autoPlay: true,
+						live: true,
+						url: clipUrl,
+						provider: 'influxis'
+					},
+					
+					// enable pseudostreaming support 
+					plugins: { 
+						controls:  {
+                            //url: controlsUrl,
+							all: false,
+							play: false,
+							time: false,
+							scrubber: false,
+							fullscreen: true,
+							volume: true,
+							mute: true
+						},
+						
+						// here is our rtpm plugin configuration
+						influxis: { 
+							url: influxisUrl, 
+							netConnectionUrl: netConnectionUrl
+                        }
+
+					}
+					
+				});
+				
+				//$(this).css({ 'font-weight': 'bold' });
+				
+				return false;
+				
+			}).each(function() {
+				//$(this).css({ 'font-weight': 'normal' });
+			});
+			
+			$("ul#channels li a:first").trigger("click");
+		}
+	});
+	
+	
+});
+
+
+
+var encN=1;
+
+function decodeTxt(s){
+	var s1=unescape(s.substr(0,s.length-1));
+	var t='';
+	for(i=0; i<s1.length; i++) t+=String.fromCharCode(s1.charCodeAt(i)-s.substr(s.length-1,1));
+	return unescape(t);
+}
+
+function encodeTxt(s){
+	s=escape(s);
+	var ta=new Array();
+	for(i=0; i<s.length; i++) ta[i]=s.charCodeAt(i)+encN;
+		return ""+escape(eval("String.fromCharCode("+ta+")"))+encN;
+}
+
+function escapeTxt(os){
+	var ns='';
+	var t;
+	var chr='';
+	var cc='';
+	var tn='';
+	for(i=0; i<256; i++){
+		tn=i.toString(16);
+		if(tn.length<2) tn="0"+tn;
+		cc+=tn;
+		chr+=unescape('%'+tn);
+	}
+	cc=cc.toUpperCase();
+	os.replace(String.fromCharCode(13)+'',"%13");
+	for(q=0; q<os.length; q++){
+		t=os.substr(q,1);
+		for(i=0;i<chr.length;i++){
+			if(t==chr.substr(i,1)){
+				t=t.replace(chr.substr(i,1),"%"+cc.substr(i*2,2));
+				i=chr.length;
+			}
+		}
+		ns+=t;
+	}
+	return ns;
+}
+
+function unescapeTxt(s){
+	return unescape(s);
+}
+
+function wF(s){
+	document.write(decodeTxt(s));
+}
+</script>
+{% endblock %}

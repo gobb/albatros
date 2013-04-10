@@ -1,0 +1,162 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Ödeme şekli{% endblock %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<ul class="breadcrumb">
+				  <li class=""><a href="{{ path('aripd_user_basket_index') }}">Alışveriş sepetim</a> <span class="divider">/</span></li>
+				  <li class=""><a href="{{ path('aripd_shopping_payment_list') }}">Ödeme şekli</a> <span class="divider">/</span></li>
+				  <li class=""><a href="{{ path('aripd_shopping_transportation_list') }}">Taşıma</a> <span class="divider">/</span></li>
+				  <li class=""><a href="{{ path('aripd_shopping_postaladdress_list') }}">Adres bilgileri</a> <span class="divider">/</span></li>
+				  <li class="active">Ödeme <span class="divider">/</span></li>
+				</ul>
+				<div class="row">
+					<div class="span6 pull-left">
+						<h3>Sipariş ayrıntıları</h3>
+						<hr class="soft">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td>
+									Teslimat adresi
+									</td>
+									<td>
+									{{ deliveryaddress.name }}: {{ deliveryaddress.fulladdress }}
+									</td>
+								</tr>
+								<tr>
+									<td>
+									Fatura adresi
+									</td>
+									<td>
+									{{ invoiceaddress.name }}: {{ invoiceaddress.fulladdress }}
+									</td>
+								</tr>
+								<tr>
+									<td>
+									Sipariş tutarı
+									</td>
+									<td>
+									{{ basketAmountTotal|localizedcurrency(app.session.get('iso4217').code) }}
+									</td>
+								</tr>
+								{% if app.session.get('vouchercode') == true %}
+								<tr>
+									<td>
+									İndirim çeki
+									</td>
+									<td>
+									{{ app.session.get('vouchercode') }} {{ basketAmountTotalAfterVouchercode|localizedcurrency(app.session.get('iso4217').code) }}
+									</td>
+								</tr>
+								{% endif %}
+								<tr>
+									<td>
+									Ödeme şekli
+									</td>
+									<td>
+									{{ payment.paymentgroup.paymentgrouptype.name }} - {{ payment.paymentgroup.name }} - {{ payment.name }}
+									{{ basketAmountTotalAfterVouchercodeAfterPayment|localizedcurrency(app.session.get('iso4217').code) }}
+									</td>
+								</tr>
+								<tr>
+									<td>
+									Taşıma
+									</td>
+									<td>
+									{{ transportation.name }} - {{ transportation.impactPrice|convertFormat(transportation.iso4217, app.session.get('iso4217')) }}
+									{% if basketAmountTotalAfterVouchercode >= configVariable('shopping_transportation_foc_minimum_amount') %}(Ücretsiz Taşıma){% endif %}
+									</td>
+								</tr>
+								<tr>
+									<td>
+									Toplam tutar
+									</td>
+									<td>
+									{{ basketAmountTotalAfterVouchercodeAfterPaymentAfterTransportation|localizedcurrency(app.session.get('iso4217').code) }}
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<ul class="hide">
+							<li>
+								<label>Teslimat Adresi</label>
+								{{ deliveryaddress.name }}: {{ deliveryaddress.fulladdress }}
+							</li>
+							<li>
+								<label>Fatura Adresi</label>
+								{{ invoiceaddress.name }}: {{ invoiceaddress.fulladdress }}
+							</li>
+							<li>
+								<label>Sipariş Tutarı</label>
+								{{ basketAmountTotal|localizedcurrency(app.session.get('iso4217').code) }}
+							</li>
+							{% if app.session.get('vouchercode') == true %}
+							<li>
+								<label>İndirim Çeki</label>
+								{{ app.session.get('vouchercode') }} {{ basketAmountTotalAfterVouchercode|localizedcurrency(app.session.get('iso4217').code) }}
+							</li>
+							{% endif %}
+							<li>
+								<label>Ödeme Şekli</label>
+								{{ payment.paymentgroup.paymentgrouptype.name }} - {{ payment.paymentgroup.name }} - {{ payment.name }}
+								{{ basketAmountTotalAfterVouchercodeAfterPayment|localizedcurrency(app.session.get('iso4217').code) }}
+							</li>
+							<li>
+								<label>Taşıma Ücreti {% if basketAmountTotalAfterVouchercode >= configVariable('shopping_transportation_foc_minimum_amount') %}(Ücretsiz Taşıma){% endif %}</label>
+								{{ transportation.name }} - {{ transportation.impactPrice|convertFormat(transportation.iso4217, app.session.get('iso4217')) }}
+							</li>
+							<li>
+								<label>Toplam Tutar</label>
+								{{ basketAmountTotalAfterVouchercodeAfterPaymentAfterTransportation|localizedcurrency(app.session.get('iso4217').code) }}
+							</li>
+						</ul>
+					</div>
+					<div class="span6 pull-right">
+						<h3>Ödeme</h3>	
+						<hr class="soft">
+						<p>{{ payment.paymentgroup.content|raw }}</p>
+						{% if payment.paymentgroup.paymentgrouptype.code == 'cc' %}
+						<form action="{{ path('aripd_shopping_payment_checkout') }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
+							
+							{{ form_errors(form) }}
+							
+							{{ form_row(form.ccno, { 'attr': { 'class': 'span3', 'placeholder': 'Credit Card Number'|trans({}, 'ARIPDShoppingBundle') }}) }}
+							{{ form_row(form.cvc, { 'attr': { 'class': 'span2', 'placeholder': 'Security Number'|trans({}, 'ARIPDShoppingBundle') }}) }}
+							
+							<div>
+								<label>{{ 'Expiration Date'|trans({}, 'ARIPDShoppingBundle')  }}</label>
+								{{ form_widget(form.expdateYear, { 'attr': { 'class': 'span1', 'placeholder': 'label.expdateYear'|trans() }}) }}
+								{{ form_widget(form.expdateMonth, { 'attr': { 'class': 'span1', 'placeholder': 'label.expdateMonth'|trans() }}) }}
+							</div>
+							
+							{{ form_row(form.amount, { 'attr': { 'value': basketAmountTotalAfterVouchercodeAfterPaymentAfterTransportation|localizednumber, 'readonly': 'readonly', 'class': 'span2', 'placeholder': 'Total Amount'|trans({}, 'ARIPDShoppingBundle') }}) }}
+							
+							{{ form_rest(form) }}
+							
+							<div class="form-actions">
+								<a class="btn" href="{{ path('aripd_shopping_postaladdress_list') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+								<button class="btn pull-right" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Continue'|trans() }} <i class="icon-chevron-right"></i></button>
+							</div>
+							
+						</form>
+						{% else %}
+						<form action="{{ path('aripd_shopping_payment_checkout') }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
+							{{ form_widget(form) }}
+							<div class="form-actions">
+								<a class="btn" href="{{ path('aripd_shopping_postaladdress_list') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+								<button class="btn pull-right" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Continue'|trans() }} <i class="icon-chevron-right"></i></button>
+							</div>
+						</form>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

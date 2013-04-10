@@ -1,0 +1,53 @@
+{% extends 'ARIPDMobileBundle::layout.html.twig' %}
+
+{% block body %}
+<div data-role="page" id="foo" data-title="Page Foo">
+	<div data-role="header" data-id="header" data-position="fixed">
+		<a href="{{ path('aripd_mobile_default_index') }}" data-icon="home">{{ 'Home'|trans() }}</a>
+		<h1>Bana özel</h1>
+		{% include 'ARIPDMobileBundle:Default:loginout.html.twig' %}
+	</div>
+	<div data-role="content">
+		<ul data-role="listview">
+			<li><a href="{{ path('aripd_mobile_user_profile_show') }}">Kişisel Bilgilerim</a></li>
+			<li><a href="{{ path('aripd_mobile_user_postaladdress_index') }}">Adres Bilgilerim</a></li>
+			<li><a href="{{ path('aripd_mobile_user_wishlist_index') }}">{{ 'Wish List'|trans({}, 'ARIPDShoppingBundle') }} ({{ app.user.wishlists|length }})</a></li>
+			<li><a href="{{ path('aripd_mobile_user_basket_index') }}">{{ 'My Basket'|trans({}, 'ARIPDUserBundle') }} ({{ app.user.baskets|length }})</a></li>
+			<li><a href="{{ path('aripd_mobile_loyalty_points') }}">Puan hareketlerim</a></li>
+			<li><a href="{{ path('aripd_mobile_loyalty_transfer') }}">Puan Transferi</a></li>
+			<li><a href="{{ path('aripd_mobile_loyalty_qrcode') }}" data-icon="">db generated qrcode</a>
+			<li><a href="#about" data-icon="info">Nasıl kullanılır?</a></li>
+		</ul>
+	</div>
+	<div data-role="footer" data-id="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="{{ path('aripd_mobile_store_branch_index') }}">{{ 'Branch'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+				<li><a href="{{ path('aripd_mobile_store_product_index') }}">{{ 'Menu'|trans({}, 'ARIPDMobileBundle') }}</a></li>
+				<li><a class="ui-btn-active ui-state-persist" href="{{ path('aripd_mobile_loyalty_index') }}">Bana özel</a></li>
+				<li><a href="{{ path('aripd_mobile_default_share') }}">{{ 'Share'|trans() }}</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="page" id="about" data-title="Nasıl kullanılır?">
+	<div data-role="header" data-id="header" data-position="fixed">
+		<a data-rel="back" data-icon="arrow-l">Back</a>
+		<h1>Nasıl kullanılır?</h1>
+		{% include 'ARIPDMobileBundle:Default:loginout.html.twig' %}
+	</div>
+	<div data-role="content">
+		<p>Ekranınıza çıkan karekodunu kasaya okutun. Onay alındıktan sonra hediye puanınız hesabınıza işlenecektir.</p>
+	</div>
+	<div data-role="footer" data-id="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="{{ path('aripd_mobile_store_branch_index') }}">{{ 'Branch'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+				<li><a href="{{ path('aripd_mobile_store_product_index') }}">{{ 'Menu'|trans({}, 'ARIPDMobileBundle') }}</a></li>
+				<li><a href="{{ path('aripd_mobile_loyalty_index') }}">Bana özel</a></li>
+				<li><a href="{{ path('aripd_mobile_default_share') }}">{{ 'Share'|trans() }}</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}

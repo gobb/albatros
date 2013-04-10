@@ -1,0 +1,31 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'Topics'|trans({}, 'ARIPDCMSBundle') }}</h1>
+</div>
+<dl class="dl-horizontal">
+	<dt>Id</dt>
+	<dd>{{ entity.id }}</dd>
+	<dt>Name</dt>
+	<dd>{{ entity.name }}</dd>
+	<dt>I18n</dt>
+	<dd>{{ entity.iso639.name }}</dd>
+	<dt>Alt konular</dt>
+	<dd>
+		<ul>
+			{% for subtopic in entity.subtopics %}
+			<li>{{ subtopic.name }}</li>
+			{% endfor %}
+		</ul>
+	</dd>
+</dl>
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_cms_topic_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_cms_topic_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+	<button class="btn btn-danger" type="button" onclick="deleteRecord();"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+</div>
+<form id="delete_form" action="{{ path('aripd_admin_cms_topic_delete', { 'id': entity.id }) }}" method="post">
+	{{ form_widget(delete_form) }}
+</form>
+{% endblock %}

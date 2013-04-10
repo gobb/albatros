@@ -1,0 +1,12 @@
+<ul class="thumbnails">
+	{% for image in entity.images %}
+	<li class="{% if entity.defaultimage is not empty and image.id == entity.defaultimage.id %}span2{% else %}span1{% endif %}">
+		<a href="#" rel="popover" data-content="{{ image.description }}" data-original-title="{{ image.name }}"><i class="icon-info-sign"></i></a>
+		<a href="{{ path('aripd_admin_crm_image_set', {id: image.id}) }}" title="{{ 'Set as profile picture'|trans({}, 'ARIPDUserBundle') }}"><i class="icon-user"></i></a>
+		<a href="{{ path('aripd_admin_crm_image_delete', {id: image.id}) }}" title="{{ 'Delete'|trans() }}"><i class="icon-trash"></i></a>
+		<a class="thumbnail" href="{{ image(image.getWebPath()) }}" title="{{ image.name }}" rel="gallery">
+			{{ entityImage(image) }}
+		</a>
+	</li>
+	{% endfor %}
+</ul>

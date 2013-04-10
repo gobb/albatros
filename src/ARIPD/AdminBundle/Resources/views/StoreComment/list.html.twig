@@ -1,0 +1,16 @@
+<ul class="unstyled">
+	{% for entity in entities %}
+	<li id="comment-{{ entity.id }}" class="alert {% if entity.approved %}alert-success{% else %}alert-error{% endif %}">
+		<p>{{ entity.content }}</p>
+		<p>
+			<i class="icon-user"></i> {{ entity.user.fullname }}
+			<i class="icon-time"></i> {{ entity.createdAt|localizeddate('medium', 'medium') }}
+		</p>
+		{% if entity.approved %}
+		<p><a class="btn btn-mini" href="{{ path('aripd_admin_store_comment_status', {id: entity.id}) }}"><i class="icon-ban-circle"></i> Onayı geri çek</a></p>
+		{% else %}
+		<p><a class="btn btn-mini" href="{{ path('aripd_admin_store_comment_status', {id: entity.id}) }}"><i class="icon-ok-circle"></i> Onayla</a></p>
+		{% endif %}
+	</li>
+	{% endfor %}
+</ul>

@@ -1,0 +1,5 @@
+<select>
+	{% for directory in directories %}
+	<option value="{{ directory.getRelativePathname() }}">{{ directory.getRelativePathname() }}</option>
+	{% endfor %}
+</select>

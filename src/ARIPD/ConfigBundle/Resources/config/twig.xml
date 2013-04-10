@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+	<parameters>
+		<parameter key="aripd_config.configTemplate.class">ARIPD\ConfigBundle\Twig\Extension\ConfigTemplateExtension</parameter>
+		<parameter key="aripd_config.configTemplate.sectionOrder" type="collection" />
+		<parameter key="aripd_config.configVariable.class">ARIPD\ConfigBundle\Twig\Extension\ConfigVariableExtension</parameter>
+	</parameters>
+
+	<services>
+		<service id="twig.extension.aripd_config_template" class="%aripd_config.configTemplate.class%">
+			<tag name="twig.extension" />
+			<call method="setSectionOrder">
+				<argument>%aripd_config.configTemplate.sectionOrder%</argument>
+			</call>
+		</service>
+		<service id="twig.extension.aripd_config_variable" class="%aripd_config.configVariable.class%">
+			<tag name="twig.extension" />
+      <argument type="service" id="service_container" />
+		</service>
+	</services>
+
+</container>

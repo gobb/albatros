@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ 'Postal Addresses'|trans({}, 'ARIPDShoppingBundle') }}{% endblock %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<ul class="breadcrumb">
+					<li><a href="{{ path('aripd_default_index') }}">{{ 'Home'|trans() }}</a> <span class="divider">/</span></li>
+					<li class="active">{{ 'Postal Addresses'|trans({}, 'ARIPDShoppingBundle') }}</li>
+				</ul>
+				<h3>{{ 'Postal Addresses'|trans({}, 'ARIPDShoppingBundle') }}</h3>	
+				<hr class="soft">
+			</div>
+		</div>
+		{% for entity in entities %}
+		<div class="row">
+			<div class="span4">
+				<img class="thumbnail" width="360" height="270" src="http://maps.googleapis.com/maps/api/staticmap?center={{ entity.latitude }},{{ entity.longitude }}&markers=size:mid%7Ccolor:0x40ad36%7Clabel:S%7C{{ entity.latitude }},{{ entity.longitude }}&zoom=15&size=360x270&sensor=false" />
+			</div>
+			<div class="span8">
+				<div class="lead">{{ entity.name }}</div>
+				{{ entity.fulladdress }}
+				<div>
+					<a class="btn btn-mini" href="{{ path('aripd_user_postaladdress_show', { id: entity.id }) }}">{{ 'Show'|trans() }}</a>
+					<a class="btn btn-mini" href="{{ path('aripd_user_postaladdress_edit', { id: entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+				</div>
+			</div>
+		</div>
+		{% else %}
+		{{ 'alert.records.zero'|trans() }}
+		{% endfor %}
+		<div class="form-actions">
+			<a class="btn" href="{{ path('aripd_user_postaladdress_new') }}">{{ 'New entry'|trans() }}</a>
+		</div>
+	</div>
+</div>
+{% endblock %}

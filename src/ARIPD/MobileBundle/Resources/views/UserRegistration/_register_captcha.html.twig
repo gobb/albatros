@@ -1,0 +1,60 @@
+{% extends 'ARIPDMobileBundle::layout.html.twig' %}
+
+{% block body %}
+<div data-role="page" id="foo" data-title="{{ 'Register'|trans({}, 'ARIPDUserBundle') }}">
+	<div data-role="header" data-id="header" data-position="fixed">
+		<a href="{{ path('aripd_mobile_default_index') }}" data-icon="home">{{ 'Home'|trans() }}</a>
+		<h1>{{ 'Register'|trans({}, 'ARIPDUserBundle') }}</h1>
+	</div>
+	<div data-role="content" data-inset="true">
+		<form action="#" id="mobileRegistrationForm" method="POST">
+			<fieldset>
+				<label for="email">E-posta adresiniz:</label>
+				<input type="email" name="email" id="email" value=""  />
+				<label for="password">Parolanız:</label>
+				<input type="password" name="password" id="password" value="" />
+				<label for="password">Parolanız (Tekrar):</label>
+				<input type="password" name="password" id="password" value="" />
+				<div data-role="fieldcontain" class="ui-hide-label">
+					<fieldset data-role="controlgroup">
+						<legend>Agree to the terms:</legend>
+						<input type="checkbox" name="checkbox-agree" id="checkbox-agree" class="custom" />
+						<label for="checkbox-agree">I agree</label>
+					</fieldset>
+				</div>
+				<div id="mc">
+					<p>Please draw the shape in the box to submit the form:</p>
+					<canvas id="mc-canvas"></canvas>
+				</div>
+				<input type="submit" disabled="disabled" value="Kayıt Ol" data-role="button" data-inline="true" data-theme="b" />
+				<input type="hidden" id="mc-action" value="submitform.php" />
+			</fieldset>
+		</form>
+	</div>
+	<div data-role="footer" data-id="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="{{ path('aripd_mobile_store_branch_index') }}">{{ 'Branch'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+				<li><a href="{{ path('aripd_mobile_store_product_index') }}">{{ 'Menu'|trans({}, 'ARIPDMobileBundle') }}</a></li>
+				<li><a href="{{ path('aripd_mobile_loyalty_index') }}">Bana özel</a></li>
+				<li><a href="{{ path('aripd_mobile_default_share') }}">{{ 'Share'|trans() }}</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('bundles/aripdmobile/css/jquery.motionCaptcha.0.2.css') }}" />
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script src="{{ asset('bundles/aripdmobile/js/jquery.motionCaptcha.0.2.js') }}"></script>
+<script type="text/javascript">
+$(function() {
+	$('#mobileRegistrationForm').motionCaptcha();
+});
+</script>
+{% endblock %}

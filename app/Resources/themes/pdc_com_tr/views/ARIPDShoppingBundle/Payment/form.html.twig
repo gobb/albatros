@@ -1,0 +1,64 @@
+<ul class="breadcrumb">
+  <li class=""><a href="{{ path('aripd_user_basket_index') }}">Alışveriş sepetim</a> <span class="divider">/</span></li>
+  <li class="active">Ödeme şekli <span class="divider">/</span></li>
+  <li class="active">Taşıma <span class="divider">/</span></li>
+  <li class="active">Adres bilgileri <span class="divider">/</span></li>
+  <li class="active">Ödeme <span class="divider">/</span></li>
+</ul>
+
+<form method="post" action="{{ path('aripd_shopping_payment_set') }}">
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs">
+	{% for entity in entities %}
+    <li class="{% if loop.first %}active{% endif %}">
+    	<a href="#tab-{{ entity.id }}" data-toggle="tab">
+	    	{{ entityImage(entity.paymentgrouptype, 40, 40) }}
+	    	{{ entity.paymentgrouptype.name }} - {{ entity.name }}
+    	</a>
+    </li>
+	{% endfor %}
+  </ul>
+  <div class="tab-content">
+	{% for entity in entities %}
+    <div class="tab-pane {% if loop.first %}active{% endif %}" id="tab-{{ entity.id }}">
+      <h5>{{ entity.paymentgrouptype.name }} - {{ entity.name }}</h5>
+			{{ entityImage(entity, 100, 100) }}
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            <td>Ödeme</td>
+            <td>Taksit tutarı</td>
+            <td>Toplam tutar</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for payment in entity.payments %}
+					{% set total_amount = basketAmountTotalAfterVouchercode + basketAmountTotalAfterVouchercode * payment.impactRate + payment.impactPrice %}
+					{% set installment_amount = total_amount / payment.period %}
+					<tr>
+            <td>
+              <input type="radio" name="payment" value="{{ payment.id }}" {% if app.session.get('payment') == payment.id %}checked="checked"{% endif %} />
+            </td>
+            <td style="width: 200px;">
+              {{ payment.name }}
+            </td>
+            <td style="width: 100px;">
+              {{ installment_amount|localizedcurrency(app.session.get('iso4217').code) }}
+            </td>
+            <td style="width: 100px;">
+              {{ total_amount|localizedcurrency(app.session.get('iso4217').code) }}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+	{% endfor %}
+  </div>
+</div>
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_user_basket_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+	<button class="btn pull-right">{{ 'Continue'|trans() }} <i class="icon-chevron-right"></i></button>
+</div>
+</form>

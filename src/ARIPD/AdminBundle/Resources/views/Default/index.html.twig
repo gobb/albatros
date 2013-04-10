@@ -1,0 +1,181 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="well">
+	<div class="row-fluid">
+		<div class="span3">
+			<h4>Total Users</h4>
+			<p><a href="{{ path('aripd_admin_useruser_index') }}" class="badge badge-inverse">{{ users|length }}</a></p>
+		</div>
+		<div class="span3">
+			<h4>New Users Today</h4>
+			<p><a href="users.html" class="badge badge-inverse">8</a></p>
+		</div>
+		<div class="span3">
+			<h4>Pending</h4>
+			<p><a href="users.html" class="badge badge-inverse">2</a></p>
+		</div>
+		<div class="span3">
+			<h4>Roles</h4>
+			<p><a href="roles.html" class="badge badge-inverse">3</a></p>
+		</div>
+	</div>
+</div>
+
+<div class="page-header">
+	<h1>Ürünler <small>Stok Bilgileri</small></h1>
+</div>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Rate</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for product in products %}
+		<tr>
+			<td>{{ product.name }}</td>
+			<td>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Code</th>
+							<th>Quantity</th>
+							<th>Cost</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for model in product.models %}
+						<tr>
+							<td>
+								<a href="{{ path('aripd_default_index') }}">{{ model.code }}</a>
+							</td>
+							<td><strong class="{% if model.quantity < 10 %}text-error{% elseif model.quantity < 20 %}text-warning{% else %}text-success{% endif %}">{{ model.quantity }}</strong></td>
+							<td>{{ model.cost }}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="2"><a class="btn btn-primary pull-right" href="{{ path('aripd_admin_iso4217_index') }}">{{ 'Edit'|trans() }}</a></td>
+		</tr>
+	</tfoot>
+</table>
+
+<div class="page-header">
+	<h1>Döviz Oranları <small>TCMB Güncel Oranları</small></h1>
+</div>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Rate</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for iso4217 in iso4217s %}
+		<tr>
+			<td>{{ iso4217.code }}</td>
+			<td>{{ iso4217.rate }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="2"><a class="btn btn-primary pull-right" href="{{ path('aripd_admin_iso4217_index') }}">{{ 'Edit'|trans() }}</a></td>
+		</tr>
+	</tfoot>
+</table>
+
+<div class="page-header">
+	<h1>Locked Users <small>Approve or Reject</small></h1>
+</div>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>E-mail</th>
+			<th>Phone</th>
+			<th>City</th>
+			<th>Role</th>
+			<th>Status</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for user in users if user.locked %}
+		<tr>
+			<td>{{ user.id }}</td>
+			<td>{{ user.fullname }}</td>
+			<td>{{ user.email }}</td>
+			<td>{{ user.mobile }}</td>
+			<td>{{ user.gender }}</td>
+			<td>User</td>
+			<td><span class="label label-important">Inactive</span></td>
+			<td><span class="actions"><a href="javascript:void(0);" class="label label-success">Approve</a> <a href="javascript:void(0);" class="label label-important">Reject</a></span></td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+<div class="page-header">
+	<h1>Reklamlar <small>Görüntülenme ve tıklanma adetleri</small></h1>
+</div>
+<table class="table table-striped table-bordered table-hover">
+	<thead>
+		<tr>
+			<th>Advertisement</th>
+			<th>View</th>
+			<th>Hit</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for advertisement in advertisements %}
+		<tr>
+			<td><a href="{{ path('aripd_admin_ads_advertisement_show', {id: advertisement.id}) }}">{{ advertisement.name }}</a></td>
+			<td>{{ advertisement.views|length }}</td>
+			<td>{{ advertisement.hits|length }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+<div class="page-header">
+	<h1>Recent Activity <small>En son hareketlerin listesi</small></h1>
+</div>
+<table class="table table-striped table-bordered table-hover">
+	<thead>
+		<tr>
+			<th>Datetime</th>
+			<th>User</th>
+			<th>Activity</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for log in logs %}
+		<tr>
+			<td>{{ log.createdAt|localizeddate('short', 'short') }}</td>
+			<td>{{ log.user.fullname }}</td>
+			<td>{{ log.logtype.name }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="3"><a class="btn btn-primary pull-right" href="{{ path('aripd_admin_userlog_index') }}">{{ 'Show all'|trans() }}</a></td>
+		</tr>
+	</tfoot>
+</table>
+
+<div class="page-header">
+	<h1>Arama Raporu <small>Store</small></h1>
+</div>
+{{ render(controller('ARIPDAdminBundle:StoreSearch:report')) }}
+{% endblock %}

@@ -1,0 +1,7 @@
+<form action="{{ path('aripd_admin_fxrate_create') }}" method="post" {{ form_enctype(form) }}>
+	{{ form_widget(form) }}
+	<div class="form-actions">
+		<a class="btn" href="{{ path('aripd_admin_fxrate_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+		<button class="btn btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Create'|trans() }}</button>
+	</div>
+</form>

@@ -1,0 +1,35 @@
+<hr class="soft">
+<div id="footerSection">
+	<div class="container">
+		<div class="row">
+			<div class="span3">
+				<h5>{{ 'My Account'|trans({}, 'ARIPDUserBundle') }}</h5>
+				<a href="{{ path('aripd_user_profile_show') }}">{{ 'Personal Information'|trans({}, 'ARIPDUserBundle') }}</a> 
+				<a href="{{ path('aripd_user_postaladdress_index') }}">{{ 'Address Information'|trans({}, 'ARIPDUserBundle') }}</a> 
+				<a href="{{ path('aripd_user_basket_index') }}">{{ 'My Basket'|trans({}, 'ARIPDUserBundle') }}</a>
+				<a href="{{ path('aripd_user_wishlist_index') }}">{{ 'My Favorites'|trans({}, 'ARIPDUserBundle') }}</a>
+				<a href="{{ path('aripd_user_purchaseorder_index') }}">{{ 'My Purchase Orders'|trans({}, 'ARIPDUserBundle') }}</a>
+			</div>
+			<div class="span3">
+				<h5>{{ 'Corporate'|trans({}, 'ARIPDCMSBundle') }}</h5>
+				{{ render(controller('ARIPDCMSBundle:Page:list')) }}
+			</div>
+			<div class="span3">
+				<h5>{{ 'Opportunities'|trans({}, 'ARIPDShoppingBundle') }}</h5>
+				<a href="{{ path('aripd_cms_page_contact') }}">{{ 'New Products'|trans({}, 'ARIPDStoreBundle') }}</a>
+				<a href="{{ path('aripd_cms_page_contact') }}">{{ 'Top Sellers'|trans({}, 'ARIPDStoreBundle') }}</a>
+				<a href="{{ path('aripd_cms_page_contact') }}">{{ 'Special Offers'|trans({}, 'ARIPDStoreBundle') }}</a>
+				<a href="{{ path('aripd_cms_page_contact') }}">{{ 'Brands'|trans({}, 'ARIPDStoreBundle') }}</a>
+			</div>
+			<div class="span3 pull-right">
+				<h5>{{ 'Social Media'|trans({}, 'ARIPDCMSBundle') }}</h5>
+				<a href="#" target="_blank">{{ 'Facebook'|trans({}, 'ARIPDCMSBundle') }}</a>
+				<a href="https://twitter.com/pdccomtr" target="_blank">{{ 'Twitter'|trans({}, 'ARIPDCMSBundle') }}</a>
+				<a href="#" target="_blank">{{ 'Youtube'|trans({}, 'ARIPDCMSBundle') }}</a>
+				<a href="https://plus.google.com/111360470667419012579" rel="publisher">{{ 'Google+'|trans({}, 'ARIPDCMSBundle') }}</a>
+			</div> 
+		</div>
+		<hr class="soft">
+		<p class="pull-right">{{ 'Copyright 2012-%currentYear% %companyName%. All rights reserved.'|trans({'%currentYear%': "now"|date("Y"), '%companyName%': configVariable('app_name')}) }}</p>
+	</div>
+</div>

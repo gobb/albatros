@@ -1,0 +1,12 @@
+{% for entity in entities %}
+<li class="subMenu {% if loop.first %}open{% endif %}">
+	<a {% if entity.subs is empty %}href="{{ path('aripd_store_category_show', { id: entity.id, slug: entity.slug }) }}"{% endif %}>{{ entity.name }}</a>
+	{% if entity.subs is not empty %}
+	<ul class="{% if false == loop.first %}hide{% endif %}">
+		{% for sub in entity.subs %}
+		<li><a class="{% if loop.first %}active{% endif %}" href="{{ path('aripd_store_category_show', { id: sub.id, slug: sub.slug }) }}">{{ sub.name }} ({{ sub.products|length }})</a></li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+</li>
+{% endfor %}

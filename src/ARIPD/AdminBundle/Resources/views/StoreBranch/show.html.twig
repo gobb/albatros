@@ -1,0 +1,37 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ entity.name }}</h1>
+</div>
+<p>{{ entity.content|raw }}</p>
+<div class="row">
+	<div class="span3">
+		<div class="thumbnail">
+		</div>
+	</div>
+	<div class="span3">
+		<p>Address: {{ entity.fulladdress }}</p>
+		<p>Phone: {{ entity.phone }}</p>
+		<p>Coord: {{ entity.latitude }}, {{ entity.longitude }}</p>
+	</div>
+	<div class="span3">
+		<img class="thumbnail" width="280" height="240" src="http://maps.googleapis.com/maps/api/staticmap?center={{ entity.latitude }},{{ entity.longitude }}&markers=size:mid%7Ccolor:0x40ad36%7Clabel:S%7C{{ entity.latitude }},{{ entity.longitude }}&zoom=15&size=280x240&sensor=false" />
+	</div>
+</div>
+
+<div class="form-actions btn-toolbar">
+	<a class="btn" href="{{ path('aripd_admin_store_branch_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_store_branch_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+	<button class="btn btn-danger" type="button" onclick="deleteRecord();"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+</div>
+<form id="delete_form" action="{{ path('aripd_admin_store_branch_delete', { 'id': entity.id }) }}" method="post">
+	{{ form_widget(delete_form) }}
+</form>
+
+<div id="images" class="page-header">
+	<h1>Images <small>Headings, paragraphs, lists, and other inline type elements</small></h1>
+</div>
+{{ render(controller('ARIPDAdminBundle:StoreBranchimage:new', { 'branch_id': entity.id })) }}
+{% include 'ARIPDAdminBundle:StoreBranchimage:list.html.twig' with { entity: entity } %}
+{% endblock %}

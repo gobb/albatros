@@ -1,0 +1,23 @@
+{% extends 'ARIPDMobileBundle::layout.html.twig' %}
+
+{% block body %}
+<div data-role="page" id="foo" data-title="Page Foo">
+	<div data-role="header" data-id="header" data-position="fixed">
+		<a data-rel="back" data-icon="arrow-l">Back</a>
+		<h1>{{ 'Postal Address'|trans({}, 'ARIPDUserBundle') }}</h1>
+		{% include 'ARIPDMobileBundle:Default:loginout.html.twig' %}
+	</div>
+	<div data-role="content">
+		<form action="{{ path('aripd_mobile_user_postaladdress_create') }}" method="post" {{ form_enctype(form) }}>
+			{{ form_widget(form) }}
+			<div class="form-actions">
+				<a class="btn" href="{{ path('aripd_mobile_user_postaladdress_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+				<button class="btn btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Create'|trans() }}</button>
+			</div>
+		</form>
+	</div>
+	<div data-role="footer" data-id="footer" data-position="fixed">
+		<a href="{{ path('aripd_mobile_user_postaladdress_new') }}">Yeni kayıt</a>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2013-04-16T08:59:10Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="c560b61406cb064eba72b9f3c370ab268c8a9ef4" resname="%count% items in stock">
+        <jms:reference-file line="51">ARIPDStoreBundle/Model/show.html.twig</jms:reference-file>
+        <source>%count% items in stock</source>
+        <target>{0} Not available|{1} Only one item in stock|]1,Inf] %count% items in stock</target>
+      </trans-unit>
+      <trans-unit id="c72423543b7ae45d87680d9b6a5da98b1b0e1731" resname="Invoiced At">
+        <jms:reference-file line="23">Form/Type/IncomingFormType.php</jms:reference-file>
+        <source>Invoiced At</source>
+        <target>Invoiced At</target>
+      </trans-unit>
+      <trans-unit id="3e8248e32edfca0c629622b5b669c2d9ce4d0917" resname="Price">
+        <jms:reference-file line="47">Form/Type/IncomingFormType.php</jms:reference-file>
+        <source>Price</source>
+        <target state="new">Price</target>
+      </trans-unit>
+      <trans-unit id="44f6af6945544c0bab016a9160df6abb0cefcb60" resname="Quantity">
+        <jms:reference-file line="44">Form/Type/IncomingFormType.php</jms:reference-file>
+        <source>Quantity</source>
+        <target state="new">Quantity</target>
+      </trans-unit>
+      <trans-unit id="55edd462872a4ecd0aa258d3ceb013247715e2e5" resname="Supplier">
+        <jms:reference-file line="28">Form/Type/IncomingFormType.php</jms:reference-file>
+        <source>Supplier</source>
+        <target state="new">Supplier</target>
+      </trans-unit>
+      <trans-unit id="3cd9c41a102fb35eb8b88cf1fed3e0de49dc6095" resname="label.iso4217">
+        <jms:reference-file line="56">Form/Type/IncomingFormType.php</jms:reference-file>
+        <source>label.iso4217</source>
+        <target state="new">label.iso4217</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

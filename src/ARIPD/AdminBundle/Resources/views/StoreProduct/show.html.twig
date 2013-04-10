@@ -1,0 +1,58 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ entity.name }}</h1>
+</div>
+<ul>
+	<li>Tags: {% for tag in entity.tags %}{{ tag.name }}{% if loop.last == false %},{% endif %}{% endfor %}</li>
+	<li>Attributekeys: {% for attributekey in entity.attributekeys %}{{ attributekey.name }}{% if loop.last == false %},{% endif %}{% endfor %}</li>
+	<li>Approved?: {%  if entity.approved %}Approved{% else %}Not Approved{% endif %}</li>
+	<li>Id: {{ entity.id }}</li>
+	{% if entity.user %}
+	<li>Yazar: {{ entity.user.fullname }}</li>
+	{% endif %}
+	<li>Published At: {{ entity.publishedAt|localizeddate }}</li>
+	<li>Category: {{ entity.defaultcategory.name }}</li>
+</ul>
+
+<p class="lead">{{ entity.description }}</p>
+<p>{{ entity.content|raw }}</p>
+{% if entity.video %}
+<p>{{ entity.video|videoEmbed(870, 543) }}</p>
+{% endif %}
+<div class="form-actions btn-toolbar">
+	<a class="btn" href="{{ path('aripd_admin_storeproduct_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_storeproduct_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+	<button class="btn btn-danger" type="button" onclick="deleteRecord();"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+</div>
+<form id="delete_form" action="{{ path('aripd_admin_storeproduct_delete', { 'id': entity.id }) }}" method="post">
+	{{ form_widget(delete_form) }}
+</form>
+
+<div id="models" class="page-header">
+	<h1>Models <small>Headings, paragraphs, lists, and other inline type elements</small></h1>
+</div>
+{% include 'ARIPDAdminBundle:StoreModel:list.html.twig' with { entity: entity } %}
+
+<div id="comments" class="page-header">
+	<h1>Comments <small>Headings, paragraphs, lists, and other inline type elements</small></h1>
+</div>
+{% include 'ARIPDAdminBundle:StoreComment:list.html.twig' with { entities: entity.comments } %}
+			
+<div id="reports" class="page-header">
+	<h1>Reports <small>Headings, paragraphs, lists, and other inline type elements</small></h1>
+</div>
+<div id="hit">&nbsp;</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]});
+$(function() {
+	{{ gchart_bar_chart(hit, "hit", '100%', 200, entity.name) }}
+});
+</script>
+{% endblock %}

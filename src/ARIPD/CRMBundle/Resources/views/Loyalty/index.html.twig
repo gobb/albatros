@@ -1,0 +1,14 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>Loyalty Program</h1>
+</div>
+<form action="{{ path('aripd_admin_crm_loyalty_index') }}" method="post" {{ form_enctype(form) }}>
+	<div class="input-append">
+		{{ form_widget(form.token, { 'attr': { 'id': 'appendedInputButtons', 'placeholder': 'label.search.qrcode'|trans() }}) }}
+		<button class="btn" type="submit"><i class="icon-search"></i> {{ 'Search'|trans() }}</button>
+	</div>
+	{{ form_rest(form) }}
+</form>
+{% endblock %}

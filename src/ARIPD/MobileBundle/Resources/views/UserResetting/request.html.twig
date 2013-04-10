@@ -1,0 +1,26 @@
+{% extends 'ARIPDMobileBundle::layout.html.twig' %}
+
+{% block body %}
+<div data-role="page" id="foo" data-title="{{ 'Register'|trans({}, 'ARIPDUserBundle') }}">
+	<div data-role="header" data-id="header" data-position="fixed">
+		<a href="{{ path('aripd_mobile_default_index') }}" data-icon="home">{{ 'Home'|trans() }}</a>
+		<h1>{{ 'Register'|trans({}, 'ARIPDUserBundle') }}</h1>
+	</div>
+	<div data-role="content" data-inset="true">
+		<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+			<div>
+				{% if invalid_username is defined %}
+				<p>{{ 'The username or email address %username% does not exist.'|trans({'%username%': invalid_username}, 'ARIPDUserBundle') }}</p>
+				{% endif %}
+				<label for="username">{{ 'Username or email address'|trans({}, 'ARIPDUserBundle') }}</label>
+				<input type="text" id="username" name="username" />
+			</div>
+			<div>
+				<input class="btn btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit" value="{{ 'Reset password'|trans({}, 'ARIPDUserBundle') }}" />
+			</div>
+		</form>
+	</div>
+	<div data-role="footer" data-id="footer" data-position="fixed">
+	</div>
+</div>
+{% endblock %}

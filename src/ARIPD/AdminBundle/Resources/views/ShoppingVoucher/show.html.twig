@@ -1,0 +1,60 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'vouchers'|trans() }}</h1>
+</div>
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Id</th>
+			<td>{{ entity.id }}</td>
+		</tr>
+		<tr>
+			<th>Name</th>
+			<td>{{ entity.name }}</td>
+		</tr>
+		<tr>
+			<th>I18n</th>
+			<td>{{ entity.code }}</td>
+		</tr>
+		<tr>
+			<th>Impact Rate</th>
+			<td>{{ entity.impactRate }}</td>
+		</tr>
+		{% if entity.impactPrice %}
+		<tr>
+			<th>Impact Price</th>
+			<td>{{ entity.impactPrice|localizedcurrency(entity.iso4217.code) }}</td>
+		</tr>
+		{% endif %}
+		<tr>
+			<th>Starting At</th>
+			<td>{{ entity.startingAt|localizeddate('short', 'short') }}</td>
+		</tr>
+		<tr>
+			<th>Ending At</th>
+			<td>{{ entity.endingAt|localizeddate('short', 'short') }}</td>
+		</tr>
+		<tr>
+			<th>Unique Voucher Codes</th>
+			<td>
+				<ol>
+					{% for vouchercode in entity.vouchercodes %}
+					<li>{{ vouchercode.vouchercode }}</li>
+					{% endfor %}
+				</ol>
+				{{ render(controller('ARIPDShoppingBundle:Vouchercode:generate', { 'voucher_id': entity.id })) }}
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_shopping_voucher_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_shopping_voucher_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+	<button class="btn btn-danger" type="button" onclick="deleteRecord();"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+</div>
+<form id="delete_form" action="{{ path('aripd_admin_shopping_voucher_delete', { 'id': entity.id }) }}" method="post">
+	{{ form_widget(delete_form) }}
+</form>
+{% endblock %}

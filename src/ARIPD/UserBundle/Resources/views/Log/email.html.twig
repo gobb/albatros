@@ -1,0 +1,6 @@
+<h3>User</h3>
+{{ log.user.fullname }}, {{ log.user.email}}
+
+<h3>Logtype</h3>
+<strong>{{ log.logtype.name }}</strong>
+<i>{{ log.createdAt|localizeddate('full', 'medium') }}</i>

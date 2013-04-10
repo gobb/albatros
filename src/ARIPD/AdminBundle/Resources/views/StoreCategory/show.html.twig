@@ -1,0 +1,28 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'Categories'|trans({}, 'ARIPDStoreBundle') }}</h1>
+</div>
+<div class="span2 thumbnail pull-right">
+	<img src="{{ entity.url }}">
+</div>
+<h2>{{ entity.name }}</h2>
+<div class="lead">{{ entity.description }}</div>
+<div>{{ entity.content|raw }}</div>
+<ul>
+	{% for sub in entity.subs %}
+	<li>
+		<a href="{{ path('aripd_admin_store_category_edit', { 'id': sub.id }) }}"><i class="icon-edit"></i> {{ sub.name }}</a>
+	</li>
+	{% endfor %}
+</ul>
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_store_category_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_store_category_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+	<button class="btn btn-danger" type="button" onclick="deleteRecord();"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+</div>
+<form id="delete_form" action="{{ path('aripd_admin_store_category_delete', { 'id': entity.id }) }}" method="post">
+	{{ form_widget(delete_form) }}
+</form>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "ARIPDAdminBundle::layout.html.twig" %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'groups'|trans() }}</h1>
+</div>
+<form action="{{ path('aripd_admin_user_group_update', {id: entity.id} ) }}" {{ form_enctype(edit_form) }} method="POST">
+	{{ form_widget(edit_form) }}
+	<div class="form-actions">
+		<a class="btn" href="{{ path('aripd_admin_user_group_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+		<a class="btn" href="{{ path('aripd_admin_user_group_new') }}">{{ 'New entry'|trans() }}</a>
+		<button class="btn btn-danger" type="button" onclick="deleteRecord();"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+		<button class="btn btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Update group'|trans([], 'ARIPDUserBundle') }}</button>
+	</div>
+</form>
+<form id="delete_form" action="{{ path('aripd_admin_user_group_delete', { id: entity.id }) }}" method="post">
+	{{ form_widget(delete_form) }}
+</form>
+{% endblock %}

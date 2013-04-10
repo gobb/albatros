@@ -1,0 +1,59 @@
+<div id="header">
+	<div class="container">
+		<div id="welcomeLine" class="row">
+			<div class="span6">{% if is_granted('ROLE_USER') %}{{ 'Welcome %fullname%'|trans({'%fullname%': app.user.fullname}, 'ARIPDUserBundle') }}{% endif %}</div>
+			<div class="span6">
+				<div class="pull-right">
+					
+					{{ render(controller('ARIPDDefaultBundle:Iso639:list')) }}
+					
+					{{ render(controller('ARIPDDefaultBundle:Iso4217:list')) }}
+
+					{% if is_granted('ROLE_USER') %}
+					<a href="{{ path('aripd_user_basket_index') }}"><span class="btn btn-mini active"><i class="icon-shopping-cart icon-white"></i> {{ '%count% items in your basket'|transchoice(app.user.baskets|length, { '%count%': app.user.baskets|length }, 'ARIPDShoppingBundle') }}</span></a>
+					{% endif %}
+					 
+				</div>
+			</div>
+		</div>
+		<div class="navbar">
+			<a data-target="#topMenu" data-toggle="collapse" class="btn btn-navbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<div class="navbar-inner">
+				<a class="brand" href="{{ path('aripd_default_index') }}"><img src="/themes/pdc_com_tr/assets/images/logo.png" alt="{{ configVariable('app_name') }}"/></a>
+				<ul id="topMenu" class="nav pull-right">
+					<li class=""><a href="{{ path('aripd_cms_page_contact') }}">{{ 'Contact'|trans({}, 'ARIPDCMSBundle') }}</a></li>
+					{% if is_granted('ROLE_USER') %}
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							{{ 'My Account'|trans({}, 'ARIPDUserBundle') }}
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+							<li><a href="{{ path('aripd_user_profile_show') }}">{{ 'Personal Information'|trans({}, 'ARIPDUserBundle') }}</a></li>
+							<li><a href="{{ path('aripd_user_postaladdress_index') }}">{{ 'Address Information'|trans({}, 'ARIPDUserBundle') }}</a></li>
+							<li><a href="{{ path('aripd_user_basket_index') }}">{{ 'My Basket'|trans({}, 'ARIPDUserBundle') }}</a></li>
+							<li><a href="{{ path('aripd_user_wishlist_index') }}">{{ 'My Favorites'|trans({}, 'ARIPDUserBundle') }}</a></li>
+							<li><a href="{{ path('aripd_user_purchaseorder_index') }}">{{ 'My Purchase Orders'|trans({}, 'ARIPDUserBundle') }}</a></li>
+							{% if is_granted('ROLE_EDITOR') %}
+							<li class="divider"></li>
+							<li><a href="{{ path('aripd_shopping_payment_pos') }}">{{ 'Payment through Virtual POS'|trans({}, 'ARIPDShoppingBundle') }}</a></li>
+							{% endif %}
+						</ul>
+					</li>
+					<li class=""><a href="{{ path('fos_user_security_logout') }}">{{ 'Logout'|trans({}, 'ARIPDUserBundle') }} ({{ app.user.username }})</a></li>
+					{% else %}
+					<li class=""><a href="{{ path('fos_user_registration_register') }}">{{ 'Register'|trans({}, 'ARIPDUserBundle') }}</a></li>
+					<li class=""><a accesskey="L" href="{{ path('fos_user_security_login') }}">{{ 'Login'|trans({}, 'ARIPDUserBundle') }}</a></li>
+					{% endif %}
+				</ul>
+				<form class="navbar-search" action="{{ path('aripd_store_search_result') }}" method="GET">
+					<input type="text" id="srchFld" name="q" class="search-query span5" placeholder="{{ 'Search for a product'|trans({}, 'ARIPDStoreBundle') }}">
+				</form>
+		  </div>
+		</div>
+	</div>
+</div>

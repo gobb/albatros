@@ -1,0 +1,78 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'Advertisement Management'|trans({}, 'ARIPDAdsBundle') }}</h1>
+</div>
+<div class="thumbnail">
+	{% if entity.path|fileExtension == "swf" %}
+	<embed width="{{ entity.banner.width }}" height="{{ entity.banner.height }}" type="application/x-shockwave-flash" src="{{ entity.getWebPath() }}" flashvars="foo=bar&baz=zoo" pluginspage="http://www.adobe.com/go/getflashplayer" />
+	{% else %}
+	{{ entityImage(entity, entity.banner.width, entity.banner.height) }}
+	{% endif %}
+</div>
+<table class="table">
+	<tbody>
+		<tr>
+			<th>Id</th>
+			<td>{{ entity.id }}</td>
+		</tr>
+		<tr>
+			<th>Name</th>
+			<td>{{ entity.name }}</td>
+		</tr>
+		<tr>
+			<th>Tarih aralığı</th>
+			<td>
+				<p class="text-success">Başlangıç: <i class="icon-time"></i> <time datetime="{{ entity.startingAt|date('c') }}">{{ entity.startingAt|localizeddate('full', 'medium') }}</time></p>
+				<p class="{% if entity.endingAt|date('U') < 'now'|date('U') %}text-error{% else %}text-success{% endif %}">Bitiş: <i class="icon-time"></i> <time datetime="{{ entity.endingAt|date('c') }}">{{ entity.endingAt|localizeddate('full', 'medium') }}</time></p>
+			</td>
+		<tr>
+			<th>Path</th>
+			<td>
+				<p>{{ entity.path }}</p>
+				<p>Image width: {{ image(entity.getWebPath()).width }}px</p>
+				<p>Image height: {{ image(entity.getWebPath()).height }}px</p>
+			</td>
+		</tr>
+		<tr>
+			<th>Href</th>
+			<td>{{ entity.href }}</td>
+		</tr>
+		<tr>
+			<th>Banner</th>
+			<td>{{ entity.banner }}</td>
+		</tr>
+		<tr>
+			<th>Tags</th>
+			<td>{% for tag in entity.tags %}<span class="label">{{ tag.name }}</span>{% if loop.last == false %}&nbsp;{% endif %}{% endfor %}</td>
+		</tr>
+	</tbody>
+</table>
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_ads_advertisement_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_ads_advertisement_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+	<button class="btn btn-danger" type="button" onclick="deleteRecord();"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+</div>
+<form id="delete_form" action="{{ path('aripd_admin_ads_advertisement_delete', { 'id': entity.id }) }}" method="post">
+	{{ form_widget(delete_form) }}
+</form>
+
+<div class="page-header">
+	<h1>Reports <small>Headings, paragraphs, lists, and other inline type elements</small></h1>
+</div>
+<div id="view">&nbsp;</div>
+<div id="hit">&nbsp;</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]});
+$(function() {
+	{{ gchart_bar_chart(view, "view", '100%', 200, entity.name) }}
+	{{ gchart_bar_chart(hit, "hit", '100%', 200, entity.name) }}
+});
+</script>
+{% endblock %}

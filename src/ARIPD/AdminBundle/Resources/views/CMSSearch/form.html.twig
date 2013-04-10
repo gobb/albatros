@@ -1,0 +1,8 @@
+<form action="{{ path('aripd_admin_cms_search_index') }}" method="POST" {{ form_enctype(form) }}>
+	<div class="input-append">
+		{{ form_widget(form.name, { 'attr': { 'class': 'span2', 'id': 'appendedInputButtons', 'placeholder': 'label.search.cms'|trans() }}) }}
+		<button class="btn" type="submit"><i class="icon-search"></i> {{ 'Search'|trans() }}</button>
+		<a class="btn" href="{{ path('aripd_admin_cmspost_new') }}">{{ 'New entry'|trans() }}</a>
+	</div>
+	{{ form_rest(form) }}
+</form>

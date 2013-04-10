@@ -1,0 +1,183 @@
+<div class="well">
+	
+	<div class="accordion" id="accordion2">
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle nav-header" data-toggle="collapse" data-parent="#accordion2" href="#collapse1">
+					{{ 'User Management'|trans({}, 'ARIPDUserBundle') }}
+				</a>
+			</div>
+			<div id="collapse1" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<ul class="unstyled">
+						{% if is_granted('ROLE_ADMIN') %}
+						<li><a href="{{ path('aripd_admin_user_group_index') }}">{{ 'Groups'|trans({}, 'ARIPDUserBundle') }}</a></li>
+						{% endif %}
+						{% if is_granted('ROLE_EDITOR') %}
+						<li><a href="{{ path('aripd_admin_useruser_index') }}">{{ 'Users'|trans({}, 'ARIPDUserBundle') }}</a></li>
+						<li><a href="{{ path('aripd_admin_userlog_index') }}">{{ 'Logs'|trans({}, 'ARIPDUserBundle') }}</a></li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		</div>
+		{% if config.module_dms %}
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle nav-header" data-toggle="collapse" data-parent="#accordion2" href="#collapse2">
+					{{ 'Dealer Management'|trans({}, 'ARIPDDMSBundle') }}
+				</a>
+			</div>
+			<div id="collapse2" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<ul class="unstyled">
+						{% if is_granted('ROLE_ADMIN') %}
+						<li><a href="{{ path('aripd_dms_salesorder_index') }}">{{ 'dealer.sales'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_dms_group_index') }}">{{ 'groups'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_dmsdealer_index') }}">{{ 'dealers'|trans() }}</a></li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		{% if config.module_cms %}
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle nav-header" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">
+					{{ 'Content Management'|trans({}, 'ARIPDCMSBundle') }}
+				</a>
+			</div>
+			<div id="collapse3" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<ul class="unstyled">
+						{% if is_granted('ROLE_ADMIN') %}
+						<li><a href="{{ path('aripd_admin_forum_topic_index') }}">{{ 'Forums'|trans({}, 'ARIPDForumBundle') }}</a></li>
+						<li><a href="{{ path('aripd_admin_blog_post_index') }}">{{ 'Blogs'|trans({}, 'ARIPDBlogBundle') }}</a></li>
+						<li><a href="{{ path('aripd_admin_cms_faq_index') }}">{{ 'FAQs'|trans({}, 'ARIPDCMSBundle') }}</a></li>
+						{% endif %}
+						{% if is_granted('ROLE_EDITOR') %}
+						<li><a href="{{ path('aripd_admin_cms_page_index') }}">{{ 'Pages'|trans({}, 'ARIPDCMSBundle') }}</a></li>
+						<li><a href="{{ path('aripd_admin_cms_topic_index') }}">{{ 'Topics'|trans({}, 'ARIPDCMSBundle') }}</a></li>
+						<li><a href="{{ path('aripd_admin_cmspost_index') }}">{{ 'Posts'|trans({}, 'ARIPDCMSBundle') }}</a></li>
+						<li><a href="{{ path('aripd_admin_survey_survey_index') }}">{{ 'Surveys'|trans({}, 'ARIPDSurveyBundle') }}</a></li>
+						<li><a href="{{ path('aripd_admin_ads_advertisement_index') }}">{{ 'Advertisements'|trans({}, 'ARIPDAdsBundle') }}</a></li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		{% if config.module_crm %}
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle nav-header" data-toggle="collapse" data-parent="#accordion2" href="#collapse4">
+					{{ 'Customer Relationship'|trans({}, 'ARIPDCRMBundle') }}
+				</a>
+			</div>
+			<div id="collapse4" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<ul class="unstyled">
+						{% if is_granted('ROLE_ADMIN') %}
+						<li><a href="{{ path('aripd_admin_crm_loyalty_index') }}">Müşteri Sadakat Programı</a></li>
+						<li><a href="{{ path('aripd_admin_crm_taggroup_index') }}">{{ 'taggroups'|trans() }}</a></li>
+						{% endif %}
+						{% if is_granted('ROLE_EDITOR') %}
+						<li><a href="{{ path('aripd_admin_crm_individual_index') }}">{{ 'individuals'|trans() }}</a></li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		{% if config.module_scm %}
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle nav-header" data-toggle="collapse" data-parent="#accordion2" href="#collapse5">
+					{{ 'Supply Chain'|trans({}, 'ARIPDSCMBundle') }}
+				</a>
+			</div>
+			<div id="collapse5" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<ul class="unstyled">
+						{% if is_granted('ROLE_ADMIN') %}
+						<li><a href="{{ path('aripd_admin_scm_supplier_index') }}">{{ 'Suppliers'|trans({}, 'ARIPDSCMBundle') }}</a></li>
+						<li><a href="{{ path('aripd_admin_store_incoming_index') }}">{{ 'incomings'|trans({}, 'ARIPDSCMBundle') }}</a></li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		{% if config.module_store %}
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle nav-header" data-toggle="collapse" data-parent="#accordion2" href="#collapse6">
+					{{ 'Store Management'|trans({}, 'ARIPDStoreBundle') }}
+				</a>
+			</div>
+			<div id="collapse6" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<ul class="unstyled">
+						{% if is_granted('ROLE_ADMIN') %}
+						<li><a href="{{ path('aripd_admin_shopping_voucher_index') }}">{{ 'Discount Vouchers'|trans({}, 'ARIPDShoppingBundle') }}</a></li>
+						<li><a href="{{ path('aripd_admin_store_attributekey_index') }}">{{ 'Attributes'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+						<li><a href="{{ path('aripd_admin_store_brand_index') }}">{{ 'Brands'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+						<li><a href="{{ path('aripd_admin_store_branch_index') }}">{{ 'Branches'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+						<li><a href="{{ path('aripd_admin_store_banner_index') }}">{{ 'Banners'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+						<li><a href="{{ path('aripd_admin_store_category_index') }}">{{ 'Categories'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+						<li><a href="{{ path('aripd_admin_userpurchaseorder_index') }}">{{ 'purchaseorders'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_shoppingtransportation_index') }}">{{ 'Transportation'|trans({}, 'ARIPDShoppingBundle') }}</a></li>
+						{% endif %}
+						{% if is_granted('ROLE_EDITOR') %}
+						<li><a href="{{ path('aripd_admin_storeproduct_index') }}">{{ 'Products'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle nav-header" data-toggle="collapse" data-parent="#accordion2" href="#collapse7">
+					{{ 'Configuration'|trans({}, 'ARIPDConfigBundle') }}
+				</a>
+			</div>
+			{% if is_granted('ROLE_SUPERADMIN') %}
+			<div id="collapse7" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<ul class="unstyled">
+						<li><a href="{{ path('aripd_admin_shopping_paymentgrouptype_index') }}">{{ 'paymentgrouptypes'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_shopping_paymentgroup_index') }}">{{ 'paymentgroups'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_logtype_index') }}">{{ 'logtypes'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_taxonomy_index') }}">{{ 'Taxonomy'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+						<li><a href="{{ path('aripd_admin_iso639_index') }}">{{ 'iso639'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_iso3166_index') }}">{{ 'iso3166'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_iso4217_index') }}">{{ 'iso4217'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_appearance_theme_index') }}">{{ 'Themes'|trans({}, 'ARIPDAdminBundle') }}</a></li>
+						<li><a href="{{ path('aripd_config_settings_modify') }}">{{ 'Variables'|trans({}, 'ARIPDAdminBundle') }}</a></li>
+						<li><a href="{{ path('jms_translation_index') }}">{{ 'Translations'|trans({}, 'ARIPDAdminBundle') }}</a></li>
+						<li><a href="{{ path('BCCCronManagerBundle_index') }}">{{ 'Cron Manager'|trans({}, 'ARIPDAdminBundle') }}</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle nav-header" data-toggle="collapse" data-parent="#accordion2" href="#collapse8">
+					{{ 'Backup'|trans({}, 'ARIPDAdminBundle') }}
+				</a>
+			</div>
+			<div id="collapse8" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<ul class="unstyled">
+						<li><a href="{{ path('aripd_admin_backup_database_index') }}">{{ 'Backup Database'|trans({}, 'ARIPDAdminBundle') }}</a></li>
+						<li><a href="{{ path('aripd_admin_backup_themes_index') }}">{{ 'Backup Themes'|trans({}, 'ARIPDAdminBundle') }}</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>

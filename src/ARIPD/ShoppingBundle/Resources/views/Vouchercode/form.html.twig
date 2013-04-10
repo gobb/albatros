@@ -1,0 +1,8 @@
+<form action="{{ path('aripd_shopping_vouchercode_generate', { voucher_id: voucher.id }) }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
+	<div class="input-prepend input-append">
+		<span class="add-on">+</span>
+		{{ form_widget(form.quantity, { 'attr': { 'class': 'span1', 'id': 'appendedPrependedInput', 'placeholder': 'Quantity'|trans({}, 'ARIPDShoppingBundle'), 'min': 1 }}) }}
+		<button class="btn" type="submit">{{ 'Generate'|trans() }}</button>
+	</div>
+	{{ form_rest(form) }}
+</form>

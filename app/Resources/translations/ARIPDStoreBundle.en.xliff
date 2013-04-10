@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2013-04-16T08:59:10Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="b858cb282617fb0956d960215c8e84d1ccf909c6" resname=" ">
+        <jms:reference-file line="105">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <jms:reference-file line="11">Form/Type/StoreTagFormType.php</jms:reference-file>
+        <source> </source>
+        <target state="new"> </target>
+      </trans-unit>
+      <trans-unit id="e525fa72373eb01469877d56acc5fb8226d7595b" resname="Add Tag">
+        <jms:reference-file line="59">views/StoreProduct/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="53">views/StoreProduct/new.html.twig</jms:reference-file>
+        <source>Add Tag</source>
+        <target state="new">Add Tag</target>
+      </trans-unit>
+      <trans-unit id="d70f93df5e8f9b55be44fbeee9d203972e3383d4" resname="Address">
+        <jms:reference-file line="13">Form/Type/StoreBranchFormType.php</jms:reference-file>
+        <source>Address</source>
+        <target state="new">Address</target>
+      </trans-unit>
+      <trans-unit id="60fe93b6224957e7a1d79ed1b489057ed6377701" resname="All Products">
+        <jms:reference-file line="2">ARIPDStoreBundle/Tag/listByCategoryId.html.twig</jms:reference-file>
+        <source>All Products</source>
+        <target state="new">All Products</target>
+      </trans-unit>
+      <trans-unit id="9d12608fc0bdb0a5e7659af03e099b9fbd5449a1" resname="Alphabetical">
+        <jms:reference-file line="20">ARIPDStoreBundle/Category/show.html.twig</jms:reference-file>
+        <source>Alphabetical</source>
+        <target state="new">Alphabetical</target>
+      </trans-unit>
+      <trans-unit id="880f22e65b09a97d83e46c594bf25612f33ec892" resname="Attribute names">
+        <jms:reference-file line="102">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <source>Attribute names</source>
+        <target state="new">Attribute names</target>
+      </trans-unit>
+      <trans-unit id="a6652617f2c799eb11ee727b16c5646c48af6905" resname="Attributes">
+        <jms:reference-file line="124">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <source>Attributes</source>
+        <target state="new">Attributes</target>
+      </trans-unit>
+      <trans-unit id="b64085ed689f2c4b2652377aae67842cf443a750" resname="Banners">
+        <jms:reference-file line="127">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreBanner/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreBanner/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreBanner/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreBanner/show.html.twig</jms:reference-file>
+        <source>Banners</source>
+        <target state="new">Banners</target>
+      </trans-unit>
+      <trans-unit id="1627510b242fdd96752b823f80c1c2b488d0747b" resname="Branch">
+        <jms:reference-file line="33">views/Default/index.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/Default/login.html.twig</jms:reference-file>
+        <jms:reference-file line="20">views/Default/share.html.twig</jms:reference-file>
+        <jms:reference-file line="24">views/Loyalty/____index.html.twig</jms:reference-file>
+        <jms:reference-file line="25">views/Loyalty/index.html.twig</jms:reference-file>
+        <jms:reference-file line="45">views/Loyalty/index.html.twig</jms:reference-file>
+        <jms:reference-file line="24">views/Loyalty/transfer.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/StoreBranch/index.html.twig</jms:reference-file>
+        <jms:reference-file line="26">views/StoreBranch/index.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/StoreBranch/map.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/StoreBranch/map.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/StoreBranch/show.html.twig</jms:reference-file>
+        <jms:reference-file line="22">views/StoreBranch/show.html.twig</jms:reference-file>
+        <jms:reference-file line="28">views/StoreModel/show.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/StoreProduct/index.html.twig</jms:reference-file>
+        <jms:reference-file line="36">views/UserBasket/index.html.twig</jms:reference-file>
+        <jms:reference-file line="23">views/UserProfile/show.html.twig</jms:reference-file>
+        <jms:reference-file line="37">views/UserRegistration/_register_captcha.html.twig</jms:reference-file>
+        <jms:reference-file line="26">views/UserWishlist/index.html.twig</jms:reference-file>
+        <source>Branch</source>
+        <target state="new">Branch</target>
+      </trans-unit>
+      <trans-unit id="f578227926a03a85a494aaca127cfbff63d7ec5e" resname="Branches">
+        <jms:reference-file line="126">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreBranch/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreBranch/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreBranch/new.html.twig</jms:reference-file>
+        <source>Branches</source>
+        <target state="new">Branches</target>
+      </trans-unit>
+      <trans-unit id="62b4aa574f708ad26153df481b7f720473b4f1c5" resname="Brand">
+        <jms:reference-file line="71">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <jms:reference-file line="25">views/StoreProduct/index.html.twig</jms:reference-file>
+        <jms:reference-file line="23">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <source>Brand</source>
+        <target state="new">Brand</target>
+      </trans-unit>
+      <trans-unit id="ecd05348c2a555579030121c949156cb499534b0" resname="Brands">
+        <jms:reference-file line="22">pdc_com_tr/views/footer.html.twig</jms:reference-file>
+        <jms:reference-file line="125">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreBrand/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreBrand/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreBrand/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreBrand/show.html.twig</jms:reference-file>
+        <source>Brands</source>
+        <target state="new">Brands</target>
+      </trans-unit>
+      <trans-unit id="072ca00c81028c4df6c8691a608b88b543dce4a8" resname="Bulk Price">
+        <jms:reference-file line="21">ARIPDStoreBundle/Catalog/bulk.html.twig</jms:reference-file>
+        <source>Bulk Price</source>
+        <target state="new">Bulk Price</target>
+      </trans-unit>
+      <trans-unit id="6ccb60071be8f00760a3824d9f7d0fad57de789f" resname="Categories">
+        <jms:reference-file line="128">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="96">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <jms:reference-file line="5">views/StoreCategory/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreCategory/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreCategory/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreCategory/show.html.twig</jms:reference-file>
+        <jms:reference-file line="37">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <source>Categories</source>
+        <target state="new">Categories</target>
+      </trans-unit>
+      <trans-unit id="a3c686e711e4720f99b4562bb3dbaae7ab658cf2" resname="Category">
+        <jms:reference-file line="24">views/StoreProduct/index.html.twig</jms:reference-file>
+        <jms:reference-file line="29">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <source>Category</source>
+        <target state="new">Category</target>
+      </trans-unit>
+      <trans-unit id="45b9ce6e2d695ff2c034093f4531d40c366e7b04" resname="Choose an option">
+        <jms:reference-file line="25">Form/Type/StoreCategoryFormType.php</jms:reference-file>
+        <jms:reference-file line="70">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <jms:reference-file line="82">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <jms:reference-file line="27">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <jms:reference-file line="22">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <source>Choose an option</source>
+        <target state="new">Choose an option</target>
+      </trans-unit>
+      <trans-unit id="4271627f4f0bef6104a95cca7bb21cda4d74503e" resname="City">
+        <jms:reference-file line="14">Form/Type/StoreBranchFormType.php</jms:reference-file>
+        <source>City</source>
+        <target state="new">City</target>
+      </trans-unit>
+      <trans-unit id="adac69379a626c2436948a4ef1792c7d719ef929" resname="Code">
+        <jms:reference-file line="16">Form/Type/StoreModelFormType.php</jms:reference-file>
+        <jms:reference-file line="13">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <source>Code</source>
+        <target state="new">Code</target>
+      </trans-unit>
+      <trans-unit id="fce06e20e5f7f74aacccab40b59b75a56c8f7305" resname="Comments">
+        <jms:reference-file line="90">ARIPDStoreBundle/Model/show.html.twig</jms:reference-file>
+        <source>Comments</source>
+        <target state="new">Comments</target>
+      </trans-unit>
+      <trans-unit id="4f9be057f0ea5d2ba72fd2c810e8d7b9aa98b469" resname="Content">
+        <jms:reference-file line="12">Form/Type/StoreBranchFormType.php</jms:reference-file>
+        <jms:reference-file line="29">Form/Type/StoreCategoryFormType.php</jms:reference-file>
+        <jms:reference-file line="64">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <source>Content</source>
+        <target state="new">Content</target>
+      </trans-unit>
+      <trans-unit id="e0e4cb66142e2c0852103ca06409bd4a96c5a705" resname="Default Category">
+        <jms:reference-file line="84">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <source>Default Category</source>
+        <target state="new">Default Category</target>
+      </trans-unit>
+      <trans-unit id="e6cf5e5ccc63fbaba8d6685fe4995cef09d0c36d" resname="Deleted successfully">
+        <jms:reference-file line="113">AdminBundle/Controller/StoreBranchimageController.php</jms:reference-file>
+        <jms:reference-file line="110">AdminBundle/Controller/StoreModelimageController.php</jms:reference-file>
+        <jms:reference-file line="127">UserBundle/Controller/StoreModelimageController.php</jms:reference-file>
+        <source>Deleted successfully</source>
+        <target state="new">Deleted successfully</target>
+      </trans-unit>
+      <trans-unit id="55f8ebc805e65b5b71ddafdae390e3be2bcd69af" resname="Description">
+        <jms:reference-file line="28">Form/Type/StoreBannerFormType.php</jms:reference-file>
+        <jms:reference-file line="13">Form/Type/StoreBranchimageFormType.php</jms:reference-file>
+        <jms:reference-file line="28">Form/Type/StoreCategoryFormType.php</jms:reference-file>
+        <jms:reference-file line="14">Form/Type/StoreModelimageFormType.php</jms:reference-file>
+        <jms:reference-file line="17">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <source>Description</source>
+        <target state="new">Description</target>
+      </trans-unit>
+      <trans-unit id="93059b5513789a9669322ead09ce41384e53b834" resname="Do you want to exhibit in the showcase?">
+        <jms:reference-file line="36">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <jms:reference-file line="23">views/StoreProduct/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="23">views/StoreProduct/new.html.twig</jms:reference-file>
+        <source>Do you want to exhibit in the showcase?</source>
+        <target state="new">Do you want to exhibit in the showcase?</target>
+      </trans-unit>
+      <trans-unit id="4a35679c27d00d5538717225f60e86b72f4dd8cf" resname="Ending At">
+        <jms:reference-file line="40">Form/Type/StoreBannerFormType.php</jms:reference-file>
+        <source>Ending At</source>
+        <target state="new">Ending At</target>
+      </trans-unit>
+      <trans-unit id="4c0ab96e8dd44e528589261be865f136fcbae564" resname="High to low">
+        <jms:reference-file line="23">ARIPDStoreBundle/Category/show.html.twig</jms:reference-file>
+        <source>High to low</source>
+        <target state="new">High to low</target>
+      </trans-unit>
+      <trans-unit id="aa68887c441f06b3833d4d439948441ce36f075b" resname="Is it a new product?">
+        <jms:reference-file line="40">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <jms:reference-file line="24">views/StoreProduct/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="24">views/StoreProduct/new.html.twig</jms:reference-file>
+        <source>Is it a new product?</source>
+        <target state="new">Is it a new product?</target>
+      </trans-unit>
+      <trans-unit id="def978ae73e01273bcc4220ef1a7db8ecc49e1ca" resname="Is it approved?">
+        <jms:reference-file line="32">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <jms:reference-file line="22">views/StoreProduct/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="22">views/StoreProduct/new.html.twig</jms:reference-file>
+        <source>Is it approved?</source>
+        <target state="new">Is it approved?</target>
+      </trans-unit>
+      <trans-unit id="ced3905ec8220a51e0d47124fc2d0549ce7c8472" resname="Latitude">
+        <jms:reference-file line="18">Form/Type/StoreBranchFormType.php</jms:reference-file>
+        <source>Latitude</source>
+        <target state="new">Latitude</target>
+      </trans-unit>
+      <trans-unit id="e02718f55e2bbbad4b3f86770caf4c86b3b5ef73" resname="Loading the next page">
+        <jms:reference-file line="62">ARIPDStoreBundle/Catalog/retail.html.twig</jms:reference-file>
+        <source>Loading the next page</source>
+        <target state="new">Loading the next page</target>
+      </trans-unit>
+      <trans-unit id="6f9f011c5d36df6d431a68143636a75fbaa508bd" resname="Longitude">
+        <jms:reference-file line="19">Form/Type/StoreBranchFormType.php</jms:reference-file>
+        <source>Longitude</source>
+        <target state="new">Longitude</target>
+      </trans-unit>
+      <trans-unit id="b1b588e8ffba9c37d560f4b4d63c6344d009ce2e" resname="Low to high">
+        <jms:reference-file line="22">ARIPDStoreBundle/Category/show.html.twig</jms:reference-file>
+        <source>Low to high</source>
+        <target state="new">Low to high</target>
+      </trans-unit>
+      <trans-unit id="f1ae328a18bced1896bcbc40fb178b8a5145e1b4" resname="Model Code">
+        <jms:reference-file line="50">ARIPDStoreBundle/Model/show.html.twig</jms:reference-file>
+        <source>Model Code</source>
+        <target state="new">Model Code</target>
+      </trans-unit>
+      <trans-unit id="709a23220f2c3d64d1e1d6d18c4d5280f8d82fca" resname="Name">
+        <jms:reference-file line="25">Form/Type/StoreBannerFormType.php</jms:reference-file>
+        <jms:reference-file line="11">Form/Type/StoreBranchFormType.php</jms:reference-file>
+        <jms:reference-file line="12">Form/Type/StoreBranchimageFormType.php</jms:reference-file>
+        <jms:reference-file line="27">Form/Type/StoreCategoryFormType.php</jms:reference-file>
+        <jms:reference-file line="11">Form/Type/StoreModelimageFormType.php</jms:reference-file>
+        <jms:reference-file line="12">Form/Type/StoreModelimageFormType.php</jms:reference-file>
+        <jms:reference-file line="14">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <source>Name</source>
+        <target state="new">Name</target>
+      </trans-unit>
+      <trans-unit id="cde883964ef73b88a4e97fe75ddd68fba1df7af0" resname="New Products">
+        <jms:reference-file line="19">pdc_com_tr/views/footer.html.twig</jms:reference-file>
+        <jms:reference-file line="10">pdc_com_tr/views/index.html.twig</jms:reference-file>
+        <source>New Products</source>
+        <target state="new">New Products</target>
+      </trans-unit>
+      <trans-unit id="b78403fea4ab0b1beba4418e46ca3634834ade2d" resname="No more pages to load">
+        <jms:reference-file line="63">ARIPDStoreBundle/Catalog/retail.html.twig</jms:reference-file>
+        <source>No more pages to load</source>
+        <target state="new">No more pages to load</target>
+      </trans-unit>
+      <trans-unit id="23d692f07a3fb646a8e54fcd2dc724f4ea2ed2c6" resname="Parent">
+        <jms:reference-file line="26">Form/Type/StoreCategoryFormType.php</jms:reference-file>
+        <source>Parent</source>
+        <target state="new">Parent</target>
+      </trans-unit>
+      <trans-unit id="77064d5265236e0ac252f3fc4a5ba7b274b6a583" resname="Phone">
+        <jms:reference-file line="17">Form/Type/StoreBranchFormType.php</jms:reference-file>
+        <source>Phone</source>
+        <target state="new">Phone</target>
+      </trans-unit>
+      <trans-unit id="3e8248e32edfca0c629622b5b669c2d9ce4d0917" resname="Price">
+        <jms:reference-file line="17">Form/Type/StoreModelFormType.php</jms:reference-file>
+        <jms:reference-file line="15">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <jms:reference-file line="8">views/Purchaseorder/email.html.twig</jms:reference-file>
+        <source>Price</source>
+        <target state="new">Price</target>
+      </trans-unit>
+      <trans-unit id="dd3b86d1ef21b9fb2e1edc30f524e7afb491b1ad" resname="Product">
+        <jms:reference-file line="20">ARIPDStoreBundle/Catalog/bulk.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/Purchaseorder/email.html.twig</jms:reference-file>
+        <source>Product</source>
+        <target state="new">Product</target>
+      </trans-unit>
+      <trans-unit id="4971e32f3bcc69f93859e0acc81030a8dfc6d78c" resname="Product Catalog">
+        <jms:reference-file line="10">ARIPDStoreBundle/Catalog/bulk.html.twig</jms:reference-file>
+        <jms:reference-file line="10">ARIPDStoreBundle/Catalog/retail.html.twig</jms:reference-file>
+        <source>Product Catalog</source>
+        <target state="new">Product Catalog</target>
+      </trans-unit>
+      <trans-unit id="a3ca256249650eb399820a8fa3168cf1ff941405" resname="Product Code">
+        <jms:reference-file line="13">views/StoreProduct/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="13">views/StoreProduct/new.html.twig</jms:reference-file>
+        <source>Product Code</source>
+        <target state="new">Product Code</target>
+      </trans-unit>
+      <trans-unit id="2b365ecdfd5469f2385e0a3e41391653acd69484" resname="Product Identifier Text">
+        <jms:reference-file line="15">views/StoreProduct/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/StoreProduct/new.html.twig</jms:reference-file>
+        <source>Product Identifier Text</source>
+        <target state="new">Product Identifier Text</target>
+      </trans-unit>
+      <trans-unit id="8f093e6894975568376a2e2978eef05e00eb6a98" resname="Product Information">
+        <jms:reference-file line="88">ARIPDStoreBundle/Model/show.html.twig</jms:reference-file>
+        <jms:reference-file line="94">ARIPDStoreBundle/Model/show.html.twig</jms:reference-file>
+        <source>Product Information</source>
+        <target state="new">Product Information</target>
+      </trans-unit>
+      <trans-unit id="06bc65133fcfe7fbcf0493fe485515b54a6167a5" resname="Product Name">
+        <jms:reference-file line="14">views/StoreProduct/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/StoreProduct/new.html.twig</jms:reference-file>
+        <source>Product Name</source>
+        <target state="new">Product Name</target>
+      </trans-unit>
+      <trans-unit id="fe0a091fdbfb3e9c31b7a1bd7975974938e702fa" resname="Products">
+        <jms:reference-file line="133">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="19">Resources/views/topbar_right.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/StoreProduct/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/StoreProduct/index.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/StoreProduct/new.html.twig</jms:reference-file>
+        <source>Products</source>
+        <target state="new">Products</target>
+      </trans-unit>
+      <trans-unit id="9b49f70ec1e6219e702ba9f3c5f3a3df081d917d" resname="Published At">
+        <jms:reference-file line="46">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <jms:reference-file line="18">views/StoreProduct/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="18">views/StoreProduct/new.html.twig</jms:reference-file>
+        <source>Published At</source>
+        <target state="new">Published At</target>
+      </trans-unit>
+      <trans-unit id="47bfda5c977675ffcc7d090942ddec7a3e3fa2d3" resname="Recommended Products">
+        <jms:reference-file line="89">ARIPDStoreBundle/Model/show.html.twig</jms:reference-file>
+        <source>Recommended Products</source>
+        <target state="new">Recommended Products</target>
+      </trans-unit>
+      <trans-unit id="8ec1d81ccfff212cabf8b004a72254a1a189e0d8" resname="Recommended products with this product">
+        <jms:reference-file line="113">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <source>Recommended products with this product</source>
+        <target state="new">Recommended products with this product</target>
+      </trans-unit>
+      <trans-unit id="e963907dac5cd5c017869b4c96c18021c9bd058b" resname="Remove">
+        <jms:reference-file line="97">views/StoreProduct/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="91">views/StoreProduct/new.html.twig</jms:reference-file>
+        <source>Remove</source>
+        <target state="new">Remove</target>
+      </trans-unit>
+      <trans-unit id="30ded33c156d5c019a814280b63a72ef4b3e4478" resname="Reverse alphabetical">
+        <jms:reference-file line="21">ARIPDStoreBundle/Category/show.html.twig</jms:reference-file>
+        <source>Reverse alphabetical</source>
+        <target state="new">Reverse alphabetical</target>
+      </trans-unit>
+      <trans-unit id="5e054413dacd642ddacc8f8ec146442bea000086" resname="Search Results">
+        <jms:reference-file line="3">ARIPDStoreBundle/Search/result.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDStoreBundle/Search/result.html.twig</jms:reference-file>
+        <source>Search Results</source>
+        <target state="new">Search Results</target>
+      </trans-unit>
+      <trans-unit id="3967471a583cee4208b9ac7041739051cc1aebf9" resname="Search for a product">
+        <jms:reference-file line="54">pdc_com_tr/views/header.html.twig</jms:reference-file>
+        <source>Search for a product</source>
+        <target state="new">Search for a product</target>
+      </trans-unit>
+      <trans-unit id="378e9e163b7eecefadb4415cae533096e336c4ab" resname="Sorting">
+        <jms:reference-file line="30">Form/Type/StoreCategoryFormType.php</jms:reference-file>
+        <source>Sorting</source>
+        <target state="new">Sorting</target>
+      </trans-unit>
+      <trans-unit id="1f647f0a01b388176512f5e65b172a3c98f8e1af" resname="Special Offers">
+        <jms:reference-file line="21">pdc_com_tr/views/footer.html.twig</jms:reference-file>
+        <source>Special Offers</source>
+        <target state="new">Special Offers</target>
+      </trans-unit>
+      <trans-unit id="0c709f9886c34419d95252da6707fd3dc704a220" resname="Specifications">
+        <jms:reference-file line="98">ARIPDStoreBundle/Model/show.html.twig</jms:reference-file>
+        <source>Specifications</source>
+        <target state="new">Specifications</target>
+      </trans-unit>
+      <trans-unit id="6d8eed168d61a7460f8ec1cc396d5e001a12cafa" resname="Starting At">
+        <jms:reference-file line="35">Form/Type/StoreBannerFormType.php</jms:reference-file>
+        <source>Starting At</source>
+        <target state="new">Starting At</target>
+      </trans-unit>
+      <trans-unit id="a72502067518684f9deeec70cf119fd26326cd33" resname="State">
+        <jms:reference-file line="15">Form/Type/StoreBranchFormType.php</jms:reference-file>
+        <source>State</source>
+        <target state="new">State</target>
+      </trans-unit>
+      <trans-unit id="f04d2af73e827b049cf012c961434e0f925e948a" resname="Store Management">
+        <jms:reference-file line="116">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/StoreProduct/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/StoreProduct/index.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/StoreProduct/new.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/StoreSearch/index.html.twig</jms:reference-file>
+        <source>Store Management</source>
+        <target state="new">Store Management</target>
+      </trans-unit>
+      <trans-unit id="da33d8906282e9d4e451c9ca29955b8061e181e9" resname="Taxonomy">
+        <jms:reference-file line="153">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <source>Taxonomy</source>
+        <target state="new">Taxonomy</target>
+      </trans-unit>
+      <trans-unit id="36ce83fc9f9390b40f8cedb250e25ba748972565" resname="Thanks for grading">
+        <jms:reference-file line="55">UserBundle/Controller/StorePointController.php</jms:reference-file>
+        <source>Thanks for grading</source>
+        <target state="new">Thanks for grading</target>
+      </trans-unit>
+      <trans-unit id="b0cb32f9ac4ca00b043b3e7399f099429f4ddcaa" resname="Top Sellers">
+        <jms:reference-file line="20">pdc_com_tr/views/footer.html.twig</jms:reference-file>
+        <source>Top Sellers</source>
+        <target state="new">Top Sellers</target>
+      </trans-unit>
+      <trans-unit id="00b684cb216615b4c8347c8fa7be4f4f1cc3f1fd" resname="Upload completed">
+        <jms:reference-file line="77">UserBundle/Controller/StoreModelimageController.php</jms:reference-file>
+        <source>Upload completed</source>
+        <target state="new">Upload completed</target>
+      </trans-unit>
+      <trans-unit id="bc17c1f0179a888f2a7e8389f67d4f2cf5cf4531" resname="Video">
+        <jms:reference-file line="18">Form/Type/StoreProductFormType.php</jms:reference-file>
+        <source>Video</source>
+        <target state="new">Video</target>
+      </trans-unit>
+      <trans-unit id="3f3cef39ae04a033d7fe20b3673dc32b5c13d3b2" resname="Video embed code">
+        <jms:reference-file line="16">views/StoreProduct/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="16">views/StoreProduct/new.html.twig</jms:reference-file>
+        <source>Video embed code</source>
+        <target state="new">Video embed code</target>
+      </trans-unit>
+      <trans-unit id="5b228cd18208609a146d01d32dfbff641c086286" resname="You have already graded before">
+        <jms:reference-file line="42">UserBundle/Controller/StorePointController.php</jms:reference-file>
+        <source>You have already graded before</source>
+        <target state="new">You have already graded before</target>
+      </trans-unit>
+      <trans-unit id="aec742c8cd57ac5fee0ad76b17e91c6d76608cb3" resname="Zip">
+        <jms:reference-file line="16">Form/Type/StoreBranchFormType.php</jms:reference-file>
+        <source>Zip</source>
+        <target state="new">Zip</target>
+      </trans-unit>
+      <trans-unit id="ecaf54eb5f92da2c91912d0e5456afe525f334e4" resname="label.file">
+        <jms:reference-file line="15">Form/Type/StoreModelimageFormType.php</jms:reference-file>
+        <source>label.file</source>
+        <target state="new">label.file</target>
+      </trans-unit>
+      <trans-unit id="e90cb33aff8e333d59a1db3371b94983aac0a9dc" resname="label.href">
+        <jms:reference-file line="29">Form/Type/StoreBannerFormType.php</jms:reference-file>
+        <source>label.href</source>
+        <target state="new">label.href</target>
+      </trans-unit>
+      <trans-unit id="4de1867062602d09eb9454f69569483eaf1dfc36" resname="label.url">
+        <jms:reference-file line="30">Form/Type/StoreBannerFormType.php</jms:reference-file>
+        <source>label.url</source>
+        <target state="new">label.url</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

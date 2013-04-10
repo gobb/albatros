@@ -1,0 +1,18 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'paymentgroups'|trans() }}</h1>
+</div>
+<form action="{{ path('aripd_admin_shopping_paymentgroup_create') }}" method="post" {{ form_enctype(form) }}>
+	{{ form_row(form.paymentgrouptype) }}
+	{{ form_row(form.name) }}
+	{{ form_row(form.iso4217) }}
+	{{ form_row(form.content, {attr: {class: 'redactor span9'}}) }}
+	{{ form_rest(form) }}
+	<div class="form-actions">
+		<a class="btn" href="{{ path('aripd_admin_shopping_paymentgroup_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+		<button class="btn btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Create'|trans() }}</button>
+	</div>
+</form>
+{% endblock %}

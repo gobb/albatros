@@ -1,0 +1,45 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'vouchers'|trans() }}</h1>
+</div>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Voucher</th>
+			<th>Common code</th>
+			<th>Start</th>
+			<th>End</th>
+			<th>Impact Rate</th>
+			<th>Impact Price</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+	{% for entity in entities %}
+	<tr>
+		<td>{{ entity.name }}</td>
+		<td>{{ entity.code }}</td>
+		<td>{{ entity.startingAt|localizeddate('short', 'short') }}</td>
+		<td>{{ entity.endingAt|localizeddate('short', 'short') }}</td>
+		<td>{{ entity.impactRate }}</td>
+		<td>{% if entity.impactPrice %}{{ entity.impactPrice|localizedcurrency(entity.iso4217.code) }}{% endif %}</td>
+		<td>
+			<div class="btn-group">
+				<a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-cog"></i></a>
+				<ul class="dropdown-menu pull-right">
+					<li><a href="{{ path('aripd_admin_shopping_voucher_show', { id: entity.id }) }}"><i class="icon-pencil"></i> {{ 'Show'|trans() }}</a></li>
+					<li><a href="{{ path('aripd_admin_shopping_voucher_edit', { id: entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a></li>
+					<li><a href="{{ path('aripd_admin_shopping_voucher_delete', { id: entity.id }) }}"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</a></li>
+				</ul>
+			</div>
+		</td>
+	</tr>
+	{% endfor %}
+	</tbody>
+</table>
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_shopping_voucher_new') }}">{{ 'New entry'|trans() }}</a>
+</div>
+{% endblock %}

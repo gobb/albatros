@@ -1,0 +1,120 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ entity.product.name }}{% endblock %}
+{% block description %}{{ entity.product.description }}{% endblock %}
+{% block keywords %}{% for tag in entity.product.tags %}{{ tag.name }}{% if false == loop.last %},{% endif %}{% endfor %}{% endblock %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			{% include '::sidebar.html.twig' %}
+			<div class="span9">
+				<ul class="breadcrumb">
+					<li><a href="{{ path('aripd_default_index') }}">{{ 'Home'|trans() }}</a> <span class="divider">/</span></li>
+					<li><a href="{{ path('aripd_store_category_show', { id: entity.product.defaultcategory.id, slug: entity.product.defaultcategory.slug }) }}">{{ entity.product.defaultcategory.name }}</a> <span class="divider">/</span></li>
+					<li class="active">{{ entity.product.name }}</li>
+				</ul>
+				<div class="row">	  
+					<div id="gallery" class="span3">
+						<a href="{{ entity.image.url }}" title="{{ entity.product.name }}">
+							<img src="{{ entity.image.url }}" style="width:100%" alt="{{ entity.code }}" />
+						</a>
+						{% if entity.images is not empty %}
+						<div id="differentview" class="moreOptopm carousel slide">
+							<div class="carousel-inner">
+								<div class="item active">
+									{% for image in entity.images %}
+									<a href="{{ image.url }}" title="{{ image.model.product.name }}">
+										<img src="{{image.url }}" style="width:29%" alt="{{ image.model.code }}"/>
+									</a>
+									{% if loop.index%3 == 0 %}
+								</div>
+								<div class="item">
+									{% endif %}
+									{% endfor %}
+								</div>
+							</div>
+							<!--  
+							<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+							<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a> 
+							-->
+						</div>
+						{% endif %}
+						<!---->
+					</div>
+					<div class="span6">
+						<h3>{{ entity.product.name }}</h3>
+						<div class="row-fluid">
+							<div class="span4">
+								<small>{{ 'Model Code'|trans({}, 'ARIPDStoreBundle') }}: {{ entity.code }}</small><br/>
+								<small>{{ '%count% items in stock'|transchoice(entity.quantity, { '%count%': entity.quantity }, 'ARIPDStockBundle') }}</small>
+							</div>
+							<div class="span8">
+								{{ socialButtons({ 'twitter': { 'locale': app.request.locale }, 'google': { 'locale': app.request.locale }, 'facebook': { 'locale': 'tr_TR', 'send': false } }) }}
+							</div>
+						</div>
+						<hr class="soft"/>
+						<form class="form-horizontal qtyFrm" action="{{ path('aripd_user_basket_create', { id: entity.id }) }}" method="get">
+							<div class="control-group">
+								<label class="control-label"><span>{{ entity.price|convertFormat(entity.iso4217, app.session.get('iso4217')) }}</span></label>
+								<div class="controls">
+									{% if entity.quantity > 0 %}
+									<input type="number" name="quantity" min="1" value="1" class="span1" />
+									<button type="submit" class="btn pull-right"><i class=" icon-shopping-cart"></i> {{ 'Add to basket'|trans({}, 'ARIPDShoppingBundle') }}</button>
+									{% endif %}
+								</div>
+							</div>
+						</form>
+						<hr class="soft"/>
+						<ul class="thumbnails pull-right">
+							{% for model in entity.product.models %}
+							<li class="span1 {% if model == entity %}active{% endif %}">
+								<a href="{{ path('aripd_store_model_show', { id: model.id, code: model.code, slug: model.product.slug }) }}">
+									<img class="thumbnail" src="{{ model.image.url }}" alt="{{ model.product.name }}"/>
+								</a>
+							</li>
+							{% endfor %}
+						</ul>
+						<hr class="soft clr"/>
+						<p>{{ entity.product.description }}</p>
+						<a class="btn btn-small pull-right" href="#detail">{{ 'Details'|trans() }}</a>
+						<br class="clr"/>
+						<a href="#" name="detail"></a>
+						<hr class="soft"/>
+					</div>
+					<div class="span9">
+						<ul id="productDetail" class="nav nav-tabs">
+							<li class="active"><a href="#home" data-toggle="tab">{{ 'Product Information'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+							<li class=""><a href="#recommend" data-toggle="tab">{{ 'Recommended Products'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+							<li class=""><a href="#comments" data-toggle="tab">{{ 'Comments'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+						</ul>
+						<div id="myTabContent" class="tab-content">
+							<div class="tab-pane fade active in" id="home">
+								<h4>{{ 'Product Information'|trans({}, 'ARIPDStoreBundle') }}</h4>
+								{% if entity.attributevalues is not empty %}
+								<table class="table table-bordered">
+									<tbody>
+										<tr class="techSpecRow"><th colspan="2">{{ 'Specifications'|trans({}, 'ARIPDStoreBundle') }}</th></tr>
+										{% for attributevalue in entity.attributevalues %}
+										<tr class="techSpecRow"><td class="techSpecTD1">{{ attributevalue.attributekey.name }}: </td><td class="techSpecTD2">{{ attributevalue.name }}</td></tr>
+										{% endfor %}
+									</tbody>
+								</table>
+								{% endif %}
+								<div>{{ entity.product.content|raw }}</div>
+							</div>
+							<div class="tab-pane fade" id="recommend">
+								{{ render(controller('ARIPDStoreBundle:Product:recommend', { id: entity.product.id })) }}
+							</div>
+							<div class="tab-pane fade" id="comments">
+								<div class="fb-comments" data-href="{{ app.request.uri }}" data-width="870" data-num-posts="10"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

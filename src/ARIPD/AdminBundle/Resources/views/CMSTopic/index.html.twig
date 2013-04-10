@@ -1,0 +1,61 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'Topics'|trans({}, 'ARIPDCMSBundle') }}</h1>
+</div>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Konu</th>
+			<th>Alt konular</th>
+			<th>Dil</th>
+			<th>Menüde gösterim</th>
+			<th>{{ 'label.approver'|trans() }}</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+	{% for entity in entities %}
+	<tr>
+		<td>{{ entity.name }}</td>
+		<td>
+			<ul>
+				{% for subtopic in entity.subtopics %}
+				<li>
+					{{ subtopic.name }}
+					<span class="btn-group">
+						<a class="btn btn-mini" href="{{ path('aripd_admin_cms_subtopic_show', {id: subtopic.id}) }}">{{ 'Show'|trans() }}</a>
+						<a class="btn btn-mini" href="{{ path('aripd_admin_cms_subtopic_edit', {id: subtopic.id}) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+					</span>
+				</li>
+				{% endfor %}
+				<a class="btn btn-mini" href="{{ path('aripd_admin_cms_subtopic_new') }}">{{ 'New entry'|trans() }}</a>
+			</ul>
+		</td>
+		<td>{{ entity.iso639.name }}</td>
+		<td>
+			{% if entity.hidden %}
+			<span class="label label-important">Kapalı</span>
+			{% else %}
+			<span class="label label-success">Açık</span>
+			{% endif %}</td>
+		<td>
+			{% for group in entity.groups %}
+			<span class="label label-info">{{ group.name }}</span>
+			{% endfor %}
+		</td>
+		<td>
+			<div class="btn-group">
+				<a class="btn btn-mini" href="{{ path('aripd_admin_cms_topic_show', {id: entity.id}) }}">{{ 'Show'|trans() }}</a>
+				<a class="btn btn-mini" href="{{ path('aripd_admin_cms_topic_edit', {id: entity.id}) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+			</div>
+		</td>
+	</tr>
+	{% endfor %}
+	</tbody>
+</table>
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_cms_topic_new') }}">{{ 'New entry'|trans() }}</a>
+</div>
+{% endblock %}

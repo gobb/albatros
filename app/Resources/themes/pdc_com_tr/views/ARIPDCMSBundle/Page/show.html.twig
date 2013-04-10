@@ -1,0 +1,24 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ entity.name }}{% endblock %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			{% include '::sidebar.html.twig' %}
+			<div class="span9" id="mainCol">
+				<ul class="breadcrumb">
+					<li><a href="{{ path('aripd_default_index') }}">{{ 'Home'|trans() }}</a> <span class="divider">/</span></li>
+					<li class="active">{{ entity.name }}</li>
+				</ul>
+				<h3>{{ entity.name }}</h3>	
+				<hr class="soft">
+				{{ entity.description }}
+				<hr class="soft">
+				{{ entity.content|raw }}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

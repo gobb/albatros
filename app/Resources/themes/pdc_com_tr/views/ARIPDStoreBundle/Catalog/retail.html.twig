@@ -1,0 +1,74 @@
+{% extends '::base.html.twig' %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<ul class="breadcrumb">
+					<li><a href="{{ path('aripd_default_index') }}">{{ 'Home'|trans() }}</a> <span class="divider">/</span></li>
+					<li class="active">{{ 'Product Catalog'|trans({}, 'ARIPDStoreBundle') }}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				{{ render(controller('ARIPDStoreBundle:Tag:list')) }}
+				<ul class="thumbnails" id="container">
+					{% for entity in pagination %}
+					<li class="span3 element">
+						<div class="thumbnail">
+							<a href="{{ path('aripd_store_model_show', { id: entity.model.id, code: entity.model.code, slug: entity.slug }) }}">
+								<img src="{{ entity.model.image.url }}" alt="{{ entity.name }}"/>
+							</a>
+							<div class="caption">
+								<h5>{{ entity.name }}</h5>
+								<p>{{ entity.description }}</p>
+								<h4>
+									<a class="btn btn-large" href="{{ path('aripd_store_model_show', { id: entity.model.id, code: entity.model.code, slug: entity.slug }) }}">{{ 'Show'|trans() }}</a>
+									<span class="pull-right">{{ entity.model.price|convertFormat(entity.model.iso4217, app.session.get('iso4217')) }}</span>
+								</h4>
+							</div>
+						</div>
+					</li>
+					{% endfor %}
+				</ul>
+				<nav id="page_nav">
+					<a href="{{ path('aripd_store_catalog_retailpaging', { page: 2 }) }}"></a>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript" src="/themes/pdc_com_tr/assets/js/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="/themes/pdc_com_tr/assets/js/jquery.infinitescroll.min.js"></script>
+<script>
+$(function(){
+	var $container = $('#container');
+
+	$container.isotope({
+		itemSelector : '.element'
+	});
+
+	$container.infinitescroll({
+			navSelector  : '#page_nav',    // selector for the paged navigation 
+			nextSelector : '#page_nav a',  // selector for the NEXT link (to page 2)
+			itemSelector : '.element',     // selector for all items you'll retrieve
+			loading: {
+				msgText: '{{ 'Loading the next page'|trans({}, 'ARIPDStoreBundle') }}',
+				finishedMsg: '{{ 'No more pages to load'|trans({}, 'ARIPDStoreBundle') }}',
+				img: 'http://i.imgur.com/qkKy8.gif'
+			}
+		},
+		function( newElements ) {
+			$container.isotope( 'appended', $( newElements ) );
+		}
+	);
+
+});
+</script>
+{% endblock %}

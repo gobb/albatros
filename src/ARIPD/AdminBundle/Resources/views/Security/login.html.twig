@@ -1,0 +1,26 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="row">
+	<div class="span3 offset4 well">
+		<form action="{{ path('fos_user_security_check') }}" method="post">
+			<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+			<label for="username">{{ 'Username'|trans({}, 'ARIPDUserBundle') }}</label>
+			<input class="input-block-level" type="text" id="username" name="_username" placeholder="{{ 'Username'|trans({}, 'ARIPDUserBundle') }}" />
+			<label for="password">{{ 'Password'|trans({}, 'ARIPDUserBundle') }}</label>
+			<input class="input-block-level" type="password" id="password" name="_password" placeholder="{{ 'Password'|trans({}, 'ARIPDUserBundle') }}" />
+			{# <input type="hidden" name="_target_path" value="{{ path('aripd_admin_default_index') }}" /> #}
+			<button class="btn btn-block" type="submit">Login</button>
+		</form>
+	</div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#username").focus();
+});
+</script>
+{% endblock %}

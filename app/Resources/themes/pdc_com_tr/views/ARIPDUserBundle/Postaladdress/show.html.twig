@@ -1,0 +1,35 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ 'Postal Addresses'|trans({}, 'ARIPDShoppingBundle') }}{% endblock %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<ul class="breadcrumb">
+					<li><a href="{{ path('aripd_default_index') }}">{{ 'Home'|trans() }}</a> <span class="divider">/</span></li>
+					<li class="active">{{ 'Postal Addresses'|trans({}, 'ARIPDShoppingBundle') }}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span6">
+				<h2>{{ entity.name }}</h2>
+				<span>{{ entity.fulladdress }}</span>
+				<form action="{{ path('aripd_user_postaladdress_delete', { 'id': entity.id }) }}" method="post">
+					{{ form_widget(delete_form) }}
+					<div class="form-actions">
+						<a class="btn" href="{{ path('aripd_user_postaladdress_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+						<a class="btn" href="{{ path('aripd_user_postaladdress_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+						<button class="btn btn-danger" type="submit"><i class="icon-trash icon-white"></i> {{ 'Delete'|trans() }}</button>
+					</div>
+				</form>
+			</div>
+			<div class="span6">
+				<img class="thumbnail" src="http://maps.googleapis.com/maps/api/staticmap?center={{ entity.latitude }},{{ entity.longitude }}&markers=size:mid%7Ccolor:0x40ad36%7Clabel:S%7C{{ entity.latitude }},{{ entity.longitude }}&zoom=15&size=560x300&sensor=false" />
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

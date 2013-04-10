@@ -1,0 +1,15 @@
+{% extends "ARIPDAdminBundle::layout.html.twig" %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'users'|trans() }}</h1>
+</div>
+<form action="{{ path('aripd_admin_useruser_create') }}" {{ form_enctype(form) }} method="POST" class="">
+	{{ form_widget(form) }}
+	<div class="form-actions">
+		<a class="btn" href="{{ path('aripd_admin_useruser_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+		<a class="btn" href="{{ path('aripd_admin_useruser_new') }}">{{ 'New entry'|trans() }}</a>
+		<button class="btn btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Create'|trans() }}</button>
+	</div>
+</form>
+{% endblock %}

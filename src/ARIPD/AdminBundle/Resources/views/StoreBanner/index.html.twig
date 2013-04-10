@@ -1,0 +1,44 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'Banners'|trans({}, 'ARIPDStoreBundle') }}</h1>
+</div>
+<table class="table table-striped table-bordered table-condensed">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Start Date</th>
+			<th>End Date</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for entity in pagination %}
+		<tr>
+			<td>{{ entity.id }}</td>
+			<td>{{ entity.name }}</td>
+			<td>{{ entity.startingAt|localizeddate('full', 'medium') }}</td>
+			<td>{{ entity.endingAt|localizeddate('full', 'medium') }}</td>
+			<td>
+				<div class="btn-group">
+					<a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-cog"></i></a>
+					<ul class="dropdown-menu pull-right">
+						<li><a href="{{ path('aripd_admin_store_banner_show', { id: entity.id }) }}"><i class="icon-pencil"></i> {{ 'Show'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_store_banner_edit', { id: entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_store_banner_delete', { id: entity.id }) }}"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</a></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+<div class="navigation">{{ knp_pagination_render(pagination) }}</div>
+
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_store_banner_new') }}">{{ 'New entry'|trans() }}</a>
+</div>
+{% endblock %}

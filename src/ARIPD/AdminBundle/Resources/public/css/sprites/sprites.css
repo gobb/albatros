@@ -1,0 +1,47 @@
+/*
+ * sprites-creditcard.png
+ * interval 163x20
+ */
+.creditcard {
+	background-image: url('sprites-creditcards.png');
+	background-repeat: no-repeat;
+	width: 163px;
+	height: 20px;
+}
+
+.creditcard.bonus {
+	background-position: 0 0px;
+}
+
+.creditcard.world {
+	background-position: 0 -20px;
+}
+
+.creditcard.axess {
+	background-position: 0 -80px;
+}
+
+/*
+ * sprites-flag_16x11.png
+ * interval 28x28
+ */
+.flag {
+	display: block;
+	width: 16px;
+	height: 11px;
+	background-image: url(sprites-flags_16x11.png);
+	/*background-image: url(sprites-flags_34x25.gif);*/
+	background-repeat: no-repeat;
+}
+
+.flag.tr {
+	background-position: -116px -537px;
+}
+
+.flag.us {
+	background-position: -4px -565px;
+}
+
+.flag.de {
+	background-position: -284px -117px;
+}

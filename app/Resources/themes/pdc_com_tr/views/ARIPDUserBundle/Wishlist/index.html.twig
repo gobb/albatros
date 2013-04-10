@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ 'Wish List'|trans({}, 'ARIPDShoppingBundle') }}{% endblock %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<ul class="breadcrumb">
+					<li><a href="{{ path('aripd_default_index') }}">{{ 'Home'|trans() }}</a> <span class="divider">/</span></li>
+					<li class="active">{{ 'Wish List'|trans({}, 'ARIPDShoppingBundle') }}</li>
+				</ul>
+				<h3>{{ 'Wish List'|trans({}, 'ARIPDShoppingBundle') }}</h3>	
+				<hr class="soft">
+				{% if entities %}
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Resim</th>
+							<th>Ürün</th>
+							<th>Birim fiyat</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for entity in entities %}
+						<tr>
+							<td>
+								<div class="span2">
+									<img src="{{ entity.model.image.url }}" alt=""/>
+								</div>
+							</td>
+							<td><a href="{{ path('aripd_store_model_show', { id: entity.model.id, code: entity.model.code, slug: entity.model.product.slug }) }}">{{ entity.model.product.name }}</a></td>
+							<td>{{ entity.model.price }}</td>
+							<td>
+								<a class="btn btn-mini" href="{{ path('aripd_user_wishlist_remove', { id: entity.model.id }) }}"><i class="icon-trash"></i> {{ 'Remove'|trans() }}</a>
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				<div class="btn-group pull-left">
+					<a class="btn btn-danger" href="{{ path('aripd_user_wishlist_clear') }}"><i class="icon-trash"></i> {{ 'Remove all'|trans() }}</a>
+				</div>
+				{% else %}
+				{{ 'alert.records.zero'|trans() }}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

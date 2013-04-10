@@ -1,0 +1,41 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ 'Reset password'|trans({}, 'ARIPDUserBundle') }}{% endblock title %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<ul class="breadcrumb">
+					<li><a href="{{ path('aripd_default_index') }}">{{ 'Home'|trans() }}</a> <span class="divider">/</span></li>
+					<li class="active">{{ 'Reset password'|trans({}, 'ARIPDUserBundle') }}</li>
+				</ul>
+				<div class="span3 offset3">
+					<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+					    <div>
+					        {% if invalid_username is defined %}
+					            <p>{{ 'The username or email address %username% does not exist.'|trans({'%username%': invalid_username}, 'ARIPDUserBundle') }}</p>
+					        {% endif %}
+					        <label for="username">{{ 'Username or email address'|trans({}, 'ARIPDUserBundle') }}</label>
+					        <input type="text" id="username" name="username" />
+					    </div>
+					    <div>
+					        <input class="btn btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit" value="{{ 'Reset password'|trans({}, 'ARIPDUserBundle') }}" />
+					    </div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#username").focus();
+});
+</script>
+{% endblock %}

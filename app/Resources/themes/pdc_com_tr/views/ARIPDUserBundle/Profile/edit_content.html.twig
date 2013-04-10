@@ -1,0 +1,13 @@
+<div class="row-fluid">
+	<div class="span8">
+		<form action="{{ path('aripd_user_profile_edit') }}" {{ form_enctype(form) }} method="POST">
+			{{ form_widget(form) }}
+			<div>
+				<input class="btn btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit" value="{{ 'Update'|trans() }}" />
+			</div>
+		</form>
+	</div>
+	<div class="span4">
+		{{ profileImage(user, configVariable('user_user_width'), configVariable('user_user_height')) }}
+	</div>
+</div>

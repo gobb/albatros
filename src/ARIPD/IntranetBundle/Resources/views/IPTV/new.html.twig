@@ -1,0 +1,16 @@
+<h1>IPTV creation</h1>
+
+<form action="{{ path('aripd_intranet_iptv_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit">Create</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('aripd_intranet_iptv_index') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>

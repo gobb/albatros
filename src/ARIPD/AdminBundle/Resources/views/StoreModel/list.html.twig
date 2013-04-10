@@ -1,0 +1,53 @@
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_store_model_new', { product_id: entity.id }) }}">{{ 'New entry'|trans() }}</a>
+</div>
+<table class="table">
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th>Code</th>
+			<th>Attributes</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for model in entity.models %}
+		<tr>
+			<td>
+				<img src="{{ gchart_get_qrcode_url(model.getSystemcode()) }}"/>
+			</td>
+			<td>
+				<div class="span2"><img alt="" src="{{ model.image.url }}"/></div>
+			</td>
+			<td>
+				<h4>{{ model.code }}<br><small>{{ model.getSystemcode() }}</small></h4>
+			</td>
+			<td>
+				<table class="table table-striped">
+				{% for attributevalue in model.attributevalues %}
+				<tr><td>{{ attributevalue.attributekey.name }}</td><td>{{ attributevalue.name }}</td></tr>
+				{% endfor %}
+				</table>
+			</td>
+			<td>{{ model.price }}</td>
+			<td>{{ model.quantity }}</td>
+			<td>
+				<div class="btn-group">
+					<a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-cog"></i></a>
+					<ul class="dropdown-menu pull-right">
+						{% if model.prime == false %}
+						<li><a href="{{ path('aripd_admin_store_model_prime', { id: model.id }) }}"><i class="icon-pencil"></i> {{ 'Primary'|trans() }}</a></li>
+						{% endif %}
+						<li><a href="{{ path('aripd_admin_store_model_show', { id: model.id }) }}"><i class="icon-pencil"></i> {{ 'Show'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_store_model_edit', { id: model.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_store_model_delete', { id: model.id }) }}"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</a></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>

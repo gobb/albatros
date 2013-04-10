@@ -1,0 +1,19 @@
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Query</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for entity in entities %}
+		<tr>
+			<td>{{ entity.query }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+	<tfoot>
+		<tr>
+			<td><a class="btn btn-primary pull-right" href="{{ path('aripd_admin_storesearch_index') }}">{{ 'Show all'|trans() }}</a></td>
+		</tr>
+	</tfoot>
+</table>

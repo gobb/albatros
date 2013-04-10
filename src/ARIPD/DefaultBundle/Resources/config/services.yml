@@ -1,0 +1,14 @@
+parameters:
+
+services:
+    aripd.helper.social:
+        class : ARIPD\DefaultBundle\Templating\Helper\SocialHelper
+        tags : 
+            - { name : "templating.helper", alias : "social-buttons" } 
+        arguments : [ "@templating" ]
+
+    twig.extension.aripd_default_social_extension:
+        class: ARIPD\DefaultBundle\Twig\Extension\SocialExtension
+        tags:
+            - { name: "twig.extension" }
+        arguments : [ "@service_container" ]

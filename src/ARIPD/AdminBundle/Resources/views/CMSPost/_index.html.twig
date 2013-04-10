@@ -1,0 +1,96 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	$('[rel=tooltip]').tooltip({ placement: 'right' })
+});
+</script>
+{% endblock %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'Posts'|trans({}, 'ARIPDCMSBundle') }}</h1>
+</div>
+{{ render(controller('ARIPDAdminBundle:CMSSearch:form')) }}
+<ul class="nav nav-pills">
+  <li class="dropdown" id="menu1">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
+      Yazılar
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="{{ path('aripd_admin_cmspost_index') }}">Onay	bekleyenler</a></li>
+    </ul>
+  </li>
+  <li class="dropdown" id="menu2">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#menu2">
+      Yorumlar
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+  </li>
+  <li class="dropdown" id="menu3">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#menu3">
+      Raporlar
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+  </li>
+ </ul>
+
+{% if pagination|length > 0 %}
+<table class="table table-striped table-bordered table-condensed">
+	<thead>
+		<tr>
+			<th>Yazı</th>
+			<th>Durum</th>
+			<th>Etiketler</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for entity in pagination %}
+		<tr>
+			<td>
+				<div>{{ entity.user.fullname }}</div>
+				<div>{{ entity.topic.name }}</div>
+				<div>{{ entity.name }}</div>
+			</td>
+			<td>{% if entity.approved %}Approved{% else %}Not Approved{% endif %}</td>
+			<td>{% for tag in entity.tags %}{{ tag.name }}{% if loop.last == false %},{% endif %}{% endfor %}</td>
+			<td>
+				<div class="btn-group">
+					<a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-cog"></i></a>
+					<ul class="dropdown-menu pull-right">
+						<li><a href="{{ path('aripd_admin_cmspost_show', { id: entity.id }) }}"><i class="icon-pencil"></i> {{ 'Show'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_cmspost_edit', { id: entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_cmspost_delete', { id: entity.id }) }}"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</a></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+<div class="navigation">{{ knp_pagination_render(pagination) }}</div>
+
+{% else %}
+{{ 'alert.records.zero'|trans() }}
+{% endif %}
+
+{% endblock %}

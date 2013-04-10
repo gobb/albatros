@@ -1,0 +1,14 @@
+{% extends 'ARIPDMobileBundle::layout.html.twig' %}
+
+{% block body %}
+<div data-role="dialog" id="code">
+	<div data-role="header" data-theme="d">
+		<h1>Code</h1>
+	</div>
+	<div data-role="content" data-theme="c">
+		<h1>Here is the code</h1>
+		<div style="word-wrap: break-word;">{{ code }}</div>
+		<a data-role="button" data-rel="back">Ok</a>
+	</div>
+</div>
+{% endblock %}

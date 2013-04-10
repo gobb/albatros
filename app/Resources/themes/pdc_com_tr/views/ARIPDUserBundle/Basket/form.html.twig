@@ -1,0 +1,89 @@
+<ul class="breadcrumb">
+  <li class="active">Alışveriş sepetim <span class="divider">/</span></li>
+  <li class="active">Ödeme şekli<span class="divider">/</span></li>
+  <li class="active">Taşıma <span class="divider">/</span></li>
+  <li class="active">Adres bilgileri <span class="divider">/</span></li>
+  <li class="active">Ödeme <span class="divider">/</span></li>
+</ul>
+
+{% if entities %}
+<form method="post" action="{{ path('aripd_user_basket_update') }}">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Ürün</th>
+				<th>Miktar</th>
+				<th>Birim fiyat</th>
+				<th>Alt toplam</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% set totalQuantity = 0 %}
+			{% set totalPriceConverted = 0 %}
+			{% set totalPriceConvertedFormatted = null %}
+			{% for entity in entities %}
+			{% set unitprice = entity.model.price %}
+			{% set unitpriceConverted = unitprice * entity.model.iso4217.rate / app.session.get('iso4217').rate %}
+			{% set unitpriceConvertedFormatted = unitpriceConverted|localizedcurrency(app.session.get('iso4217').code) %}
+			{% set quantity = entity.quantity %}
+			{% set subtotal = unitprice * quantity %}
+			{% set subtotalConverted = subtotal * entity.model.iso4217.rate / app.session.get('iso4217').rate %}
+			{% set subtotalConvertedFormatted = subtotalConverted|localizedcurrency(app.session.get('iso4217').code) %}
+			<tr>
+				<td>
+					<div class="span1 thumbnail"><img src="{{ entity.model.image.url }}" /></div>
+				</td>
+				<td>
+					<a href="{{ path('aripd_store_model_show', { id: entity.model.id, code: entity.model.code, slug: entity.model.product.slug }) }}">
+						<div>{{ entity.model.product.name }}</div>
+						<div><small>{{ entity.model.code }}</small></div>
+					</a>
+				</td>
+				<td>
+					<input class="span1" type="number" min="1" name="shoppingbasket[{{ entity.model.id }}]" value="{{ quantity }}" />
+					<a href="{{ path('aripd_user_basket_remove', { id: entity.model.id }) }}">{{ 'Remove'|trans() }}</a>
+				</td>
+				<td>
+					<div>{{ unitprice|localizedcurrency(entity.model.iso4217.code) }}</div>
+					<div>{{ unitpriceConvertedFormatted }}</div>
+				</td>
+				<td>
+					<div>{{ subtotal|localizedcurrency(entity.model.iso4217.code) }}</div>
+					<div>{{ subtotalConvertedFormatted }}</div>
+				</td>
+			</tr>
+			{% set totalQuantity = totalQuantity + quantity %}
+			{% set totalPriceConverted = totalPriceConverted + subtotalConverted %}
+			{% set totalPriceConvertedFormatted = totalPriceConverted|localizedcurrency(app.session.get('iso4217').code) %}
+			{% else %}
+			<tr>
+				<td colspan="5">{{ 'alert.records.zero'|trans() }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+		<thead>
+			<tr>
+				<th colspan="1"></th>
+				<th colspan="1">TOPLAM</th>
+				<th colspan="1">{{ totalQuantity }}</th>
+				<th colspan="1"></th>
+				<th colspan="1">{{ totalPriceConvertedFormatted }}</th>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<div class="pull-left">
+						<a class="btn btn-danger" href="{{ path('aripd_user_basket_clear') }}"><i class="icon-trash icon-white"></i> {{ 'Remove all'|trans() }}</a>
+						<button class="btn" type="submit">{{ 'Update'|trans() }}</button>
+					</div>
+				</td>
+</form>
+				<td colspan="2">
+					{{ render(controller('ARIPDShoppingBundle:Voucher:form')) }}
+				</td>
+			</tr>
+		</thead>
+	</table>
+{% else %}
+{{ 'alert.records.zero'|trans() }}
+{% endif %}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2013-04-16T08:58:46Z" source-language="en" target-language="tr" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="45b9ce6e2d695ff2c034093f4531d40c366e7b04" resname="Choose an option">
+        <jms:reference-file line="15">Form/Type/ForumTopicFormType.php</jms:reference-file>
+        <source>Choose an option</source>
+        <target>Seçiminizi yapın</target>
+      </trans-unit>
+      <trans-unit id="c005499309629c2dd1540384f9d88388c2791d54" resname="Forums">
+        <jms:reference-file line="55">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <source>Forums</source>
+        <target>Forumlar</target>
+      </trans-unit>
+      <trans-unit id="709a23220f2c3d64d1e1d6d18c4d5280f8d82fca" resname="Name">
+        <jms:reference-file line="21">Form/Type/ForumTopicFormType.php</jms:reference-file>
+        <source>Name</source>
+        <target state="new">Name</target>
+      </trans-unit>
+      <trans-unit id="23d692f07a3fb646a8e54fcd2dc724f4ea2ed2c6" resname="Parent">
+        <jms:reference-file line="16">Form/Type/ForumTopicFormType.php</jms:reference-file>
+        <source>Parent</source>
+        <target state="new">Parent</target>
+      </trans-unit>
+      <trans-unit id="091209500798a4f0adf7f03acf1e449f86e3abab" resname="Post could not be published">
+        <jms:reference-file line="112">UserBundle/Controller/ForumPostController.php</jms:reference-file>
+        <source>Post could not be published</source>
+        <target state="new">Post could not be published</target>
+      </trans-unit>
+      <trans-unit id="8196205f9be34f99a303d52312b5b4fb986fa64c" resname="Post has been published">
+        <jms:reference-file line="88">UserBundle/Controller/ForumPostController.php</jms:reference-file>
+        <source>Post has been published</source>
+        <target state="new">Post has been published</target>
+      </trans-unit>
+      <trans-unit id="378e9e163b7eecefadb4415cae533096e336c4ab" resname="Sorting">
+        <jms:reference-file line="22">Form/Type/ForumTopicFormType.php</jms:reference-file>
+        <jms:reference-file line="22">views/ForumTopic/show.html.twig</jms:reference-file>
+        <source>Sorting</source>
+        <target>Sıralama</target>
+      </trans-unit>
+      <trans-unit id="0cb634005155215ccdc6117ebec3ea8731a1eba0" resname="Thread could not be published">
+        <jms:reference-file line="155">UserBundle/Controller/ForumThreadController.php</jms:reference-file>
+        <source>Thread could not be published</source>
+        <target state="new">Thread could not be published</target>
+      </trans-unit>
+      <trans-unit id="6f8c0c70e34b652c20ce60c2e3401f9ebe57d817" resname="Thread has been published">
+        <jms:reference-file line="130">UserBundle/Controller/ForumThreadController.php</jms:reference-file>
+        <source>Thread has been published</source>
+        <target state="new">Thread has been published</target>
+      </trans-unit>
+      <trans-unit id="27244c42d4ddb91d2ca2d2ad1c003fb1edfb1cb2" resname="You are already follower of this thread">
+        <jms:reference-file line="40">UserBundle/Controller/ForumThreadController.php</jms:reference-file>
+        <source>You are already follower of this thread</source>
+        <target state="new">You are already follower of this thread</target>
+      </trans-unit>
+      <trans-unit id="335d57e256bfb1dde728b8624da7a0d0766137e3" resname="You are now following this thread">
+        <jms:reference-file line="46">UserBundle/Controller/ForumThreadController.php</jms:reference-file>
+        <source>You are now following this thread</source>
+        <target state="new">You are now following this thread</target>
+      </trans-unit>
+      <trans-unit id="95b16f43cc4ae10179c096560bbef62350a3e072" resname="label.iso639">
+        <jms:reference-file line="20">Form/Type/ForumTopicFormType.php</jms:reference-file>
+        <source>label.iso639</source>
+        <target state="new">label.iso639</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,10 @@
+<table class="table table-striped">
+	<tbody>
+		{% for entity in entities %}
+		<tr>
+			<td><span class="span1"><img src="{{ image(entity.getWebPath()) }}" alt=""/></span></td>
+			<td>{{ entity.name }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>

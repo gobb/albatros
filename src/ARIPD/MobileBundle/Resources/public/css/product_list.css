@@ -1,0 +1,49 @@
+#side-inbox .date {
+	float: right;
+	color: rgba(200, 200, 200, .8);
+	font-size: .7em;
+	font-weight: normal;
+}
+
+#side-inbox .excerpt {
+	clear: both;
+	font-size: .7em;
+	font-weight: normal;
+}
+
+#side-inbox .km-content h3 {
+	margin-left: 0;
+}
+
+#main-pane .km-content {
+	padding: 30px;
+}
+
+#main-pane dl {
+	float: left;
+	margin: 0;
+	padding: 0 0 20px 0;
+}
+
+#main-pane dl:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+#main-pane dt,#main-pane dd {
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+#main-pane dt {
+	clear: left;
+	width: 60px;
+	text-align: right;
+	padding: 0 10px;
+}

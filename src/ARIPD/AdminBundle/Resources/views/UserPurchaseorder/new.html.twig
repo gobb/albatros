@@ -1,0 +1,94 @@
+{% extends "ARIPDAdminBundle::layout.html.twig" %}
+
+{% block container %}
+<ul class="breadcrumb">
+	<li><a href="{{ path('aripd_default_index') }}">{{ 'Dashboard'|trans({}, 'ARIPDAdminBundle') }}</a> <span class="divider">/</span></li>
+	<li><a href="{{ path('aripd_admin_userpurchaseorder_index') }}">{{ 'purchaseorders'|trans() }}</a> <span class="divider">/</span></li>
+	<li class="active">Yeni</li>
+</ul>
+<form action="{{ path('aripd_admin_userpurchaseorder_create') }}" {{ form_enctype(form) }} method="POST">
+	<fieldset class="hide">
+		<legend>Kişi Bilgisi</legend>
+		{# form_widget(form.user.vars.prototype) #}
+	</fieldset>
+	<fieldset>
+		<legend>Satış Bilgisi</legend>
+		{{ form_row(form.status) }}
+		{{ form_row(form.transportation) }}
+		{{ form_row(form.payment) }}
+	</fieldset>
+	<fieldset>
+		<legend>Ürün Bilgisi</legend>
+		<ul class="outgoings" data-prototype="{{ form_widget(form.outgoings.vars.prototype) | e }}">
+			{% for outgoing in form.outgoings %}
+			<li>{{ form_row(outgoing) }}</li>
+			{% endfor %}
+		</ul>
+	</fieldset>
+	
+	{{ form_rest(form) }}
+	
+	<div class="form-actions">
+		<button class="btn btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Save'|trans() }}</button>
+	</div>
+</form>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+//Get the div that holds the collection of outgoings
+var collectionHolder = $('ul.outgoings');
+
+// setup an "add a outgoing" link
+var $addTagLink = $('<a href="#" class="add_outgoing_link">{{ 'Add'|trans() }}</a>');
+var $newLinkLi = $('<li></li>').append($addTagLink);
+
+jQuery(document).ready(function() {
+	// add a delete link to all of the existing outgoing form li elements
+	collectionHolder.find('li').each(function() {
+		addTagFormDeleteLink($(this));
+	});
+
+	// add the "add a outgoing" anchor and li to the outgoings ul
+	collectionHolder.append($newLinkLi);
+
+	$addTagLink.on('click', function(e) {
+		// prevent the link from creating a "#" on the URL
+		e.preventDefault();
+
+		// add a new outgoing form (see next code block)
+		addTagForm(collectionHolder, $newLinkLi);
+	});
+});
+
+function addTagForm(collectionHolder, $newLinkLi) {
+    // Get the data-prototype we explained earlier
+    var prototype = collectionHolder.attr('data-prototype');
+
+    // Replace '__name__' in the prototype's HTML to
+    // instead be a number based on the current collection's length.
+    var newForm = prototype.replace(/__name__/g, collectionHolder.children().length);
+
+    // Display the form in the page in an li, before the "Add a outgoing" link li
+    var $newFormLi = $('<li></li>').append(newForm);
+    $newLinkLi.before($newFormLi);
+
+    // add a delete link to the new form
+    addTagFormDeleteLink($newFormLi);
+}
+
+function addTagFormDeleteLink($outgoingFormLi) {
+    var $removeFormA = $('<a href="#">{{ 'Delete'|trans() }}</a>');
+    $outgoingFormLi.append($removeFormA);
+
+    $removeFormA.on('click', function(e) {
+        // prevent the link from creating a "#" on the URL
+        e.preventDefault();
+
+        // remove the li for the outgoing form
+        $outgoingFormLi.remove();
+    });
+}
+</script>
+{% endblock %}

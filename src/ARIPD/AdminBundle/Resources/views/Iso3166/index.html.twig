@@ -1,0 +1,46 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'iso3166'|trans() }}</h1>
+</div>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Native</th>
+			<th>An</th>
+			<th>A2</th>
+			<th>A3</th>
+			<th>Phone code</th>
+			<th>Active?</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for entity in entities %}
+		<tr>
+			<td><a href="{{ path('aripd_admin_iso3166_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+			<td>{{ entity.name }}</td>
+			<td>{{ entity.native }}</td>
+			<td>{{ entity.an }}</td>
+			<td>{{ entity.a2 }}</td>
+			<td>{{ entity.a3 }}</td>
+			<td>{{ entity.phonecode }}</td>
+			<td>{{ entity.active }}</td>
+			<td>
+				<div class="btn-group">
+					<a class="btn btn-mini" href="{{ path('aripd_admin_iso3166_show', { 'id': entity.id }) }}">{{ 'Show'|trans() }}</a>
+					<a class="btn btn-mini" href="{{ path('aripd_admin_iso3166_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+				</div>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_iso3166_new') }}">{{ 'New entry'|trans() }}</a>
+</div>
+{% endblock %}

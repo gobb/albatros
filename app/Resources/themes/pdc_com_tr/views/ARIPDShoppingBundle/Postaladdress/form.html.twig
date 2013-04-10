@@ -1,0 +1,35 @@
+<ul class="breadcrumb">
+  <li class=""><a href="{{ path('aripd_user_basket_index') }}">Alışveriş sepetim</a> <span class="divider">/</span></li>
+  <li class=""><a href="{{ path('aripd_shopping_payment_list') }}">Ödeme şekli</a> <span class="divider">/</span></li>
+  <li class=""><a href="{{ path('aripd_shopping_transportation_list') }}">Taşıma</a> <span class="divider">/</span></li>
+  <li class="active">Adres bilgileri <span class="divider">/</span></li>
+  <li class="active">Ödeme <span class="divider">/</span></li>
+</ul>
+
+<form method="POST" action="{{ path('aripd_shopping_postaladdress_set') }}">
+	{% for entity in entities %}
+	<div class="well">
+		<h4>{{ entity.name }}</h4>
+		{{ entity.fulladdress }}
+		<hr>
+		<div>
+			<input type="radio" name="deliveryaddress" value="{{ entity.id }}" {% if app.session.get('deliveryaddress') == entity.id %}checked="checked"{% endif %} /> {{ 'Set as delivery address'|trans({}, 'ARIPDShoppingBundle') }}
+			<input type="radio" name="invoiceaddress" value="{{ entity.id }}" {% if app.session.get('invoiceaddress') == entity.id %}checked="checked"{% endif %} /> {{ 'Set as invoice address'|trans({}, 'ARIPDShoppingBundle') }}
+			<a class="btn btn-mini pull-right" href="{{ path('aripd_user_postaladdress_edit', { id: entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+		</div>
+	</div>
+	{% else %}
+	<div class="alert alert-block alert-error fade in">
+		<h4 class="alert-heading">Bilgilerinizde eksiklik var!</h4>
+		<p>Lütfen adres bilgilerinizi tamamlayın.</p>
+		<p>
+			<a class="btn" href="{{ path('aripd_user_postaladdress_index') }}">Adres bilgilerime git</a>
+		</p>
+	</div>
+	{% endfor %}
+	<div class="form-actions">
+		<a class="btn" href="{{ path('aripd_shopping_transportation_list') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+		<a class="btn" href="{{ path('aripd_user_postaladdress_new') }}"><i class="icon-home"></i> Yeni bir adres ekle</a>
+		<button class="btn pull-right" type="submit">{{ 'Continue'|trans() }} <i class="icon-chevron-right"></i></button>
+	</div>
+</form>

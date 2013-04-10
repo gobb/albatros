@@ -1,0 +1,68 @@
+{% extends 'ARIPDMobileBundle::layout.html.twig' %}
+
+{% block body %}
+<div data-role="page" id="foo" data-title="Page Foo">
+	<div data-role="header" data-id="header" data-position="fixed">
+		<a data-rel="back" data-icon="arrow-l">Back</a>
+		<h1>{{ 'Shopping Basket'|trans({}, 'ARIPDShoppingBundle') }}</h1>
+		{% include 'ARIPDMobileBundle:Default:loginout.html.twig' %}
+	</div>
+	<div data-role="content">
+		{% if entities %}
+		<ul data-role="listview" data-filter="true" data-filter-placeholder="Search" data-filter-theme="d" data-theme="d" data-divider-theme="d">
+			{% for entity in entities %}
+			<li>
+				<a data-transition="slide" href="{{ path('aripd_mobile_store_model_show', { id: entity.model.id, slug: entity.model.slug }) }}">
+					<img alt="" src="{{ entity.model.image.url }}"/>
+					<h3>{{ entity.model.product.name }} &raquo; {{ entity.model.price }}</h3>
+					<p>{{ entity.model.product.description }}</p>
+				</a>
+				<input style="width: 75px;" type="number" min="1" onchange="updateMobileUserBasketQuantity({{ entity.model.id }}, this.value);" id="quantity" name="quantity" pattern="[0-9]*" value="{{ entity.quantity }}" placeholder="Miktar">
+				<a data-ajax="false" href="{{ path('aripd_mobile_user_basket_remove', { id: entity.model.id }) }}" data-icon="delete" data-rel="popup" data-position-to="window" data-transition="pop">Sepetten çıkar</a>
+			</li>
+			{% endfor %}
+		</ul>
+		{% else %}
+		Sepetinizde ürün bulunmuyor.
+		{% endif %}
+	</div>
+	<div data-role="footer" data-id="footer" data-position="fixed">
+		<div data-role="controlgroup" data-type="horizontal">
+			<a data-ajax="false" href="{{ path('aripd_mobile_user_basket_clear') }}" data-role="button">{{ 'Remove all'|trans() }}</a>
+			<a data-ajax="false" href="{{ path('aripd_mobile_user_purchaseorder_create') }}" data-role="button" data-icon="arrow-r" data-iconpos="right">Sipariş ver</a>
+		</div>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="{{ path('aripd_mobile_store_branch_index') }}">{{ 'Branch'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+				<li><a class="ui-btn-active ui-state-persist" href="{{ path('aripd_mobile_store_product_index') }}">{{ 'Menu'|trans({}, 'ARIPDMobileBundle') }}</a></li>
+				<li><a href="{{ path('aripd_mobile_loyalty_index') }}">Bana özel</a></li>
+				<li><a href="{{ path('aripd_mobile_default_share') }}">{{ 'Share'|trans() }}</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type='text/javascript'>//<![CDATA[ 
+function updateMobileUserBasketQuantity(id, quantity) {
+	//console.log('id:'+id+' quantity:'+quantity);
+	var url = Routing.generate('aripd_mobile_userbasket_ajaxupdate', { id: id, quantity: quantity });
+	//console.log(url);
+	$.ajax({
+		url: url,
+		dataType: 'json',
+		success: function(response) {
+			console.log(response);
+		}
+	});
+}
+// TODO jqm sayfa load problemi için bunu dene
+$(window).load(function(){
+	$("#quantity1").live("change", function() {
+		alert("hai " + $("#quantity1").val()); 
+	});
+});//]]>
+</script>
+{% endblock %}

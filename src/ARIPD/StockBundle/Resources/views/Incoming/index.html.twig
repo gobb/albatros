@@ -1,0 +1,48 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'incomings'|trans() }}</h1>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Createdat</th>
+            <th>Updatedat</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('aripd_admin_store_incoming_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.quantity }}</td>
+            <td>{{ entity.price }}</td>
+            <td>{% if entity.createdAt %}{{ entity.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('aripd_admin_store_incoming_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('aripd_admin_store_incoming_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('aripd_admin_store_incoming_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
+{% endblock %}

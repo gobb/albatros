@@ -1,0 +1,48 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'iso4217'|trans() }}</h1>
+</div>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Code</th>
+			<th>Symbol</th>
+			<th>Active</th>
+			<th>Decimal Places</th>
+			<th>Decimal Point</th>
+			<th>Thousands Seperator</th>
+			<th>Rate</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for entity in entities %}
+		<tr>
+			<td><a href="{{ path('aripd_admin_iso4217_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+			<td>{{ entity.name }}</td>
+			<td>{{ entity.code }}</td>
+			<td>{{ entity.symbol }}</td>
+			<td>{{ entity.active }}</td>
+			<td>{{ entity.decimalPlaces }}</td>
+			<td>{{ entity.decimalPoint }}</td>
+			<td>{{ entity.thousandsSeperator }}</td>
+			<td>{{ entity.rate }}</td>
+			<td>
+				<div class="btn-group">
+					<a class="btn btn-mini" href="{{ path('aripd_admin_iso4217_show', { 'id': entity.id }) }}">{{ 'Show'|trans() }}</a>
+					<a class="btn btn-mini" href="{{ path('aripd_admin_iso4217_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+				</div>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_iso4217_new') }}">{{ 'New entry'|trans() }}</a>
+</div>
+{% endblock %}

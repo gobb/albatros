@@ -1,0 +1,37 @@
+<?php
+namespace ARIPD\AdminBundle\DataFixtures\ORM;
+use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use ARIPD\AdminBundle\Entity\Pop;
+
+class PopFixtures extends AbstractFixture {
+	public function load(ObjectManager $manager) {
+
+		ini_set('memory_limit', 512 * 1024 * 1024);
+		
+		if (($handle = fopen(__DIR__ . DIRECTORY_SEPARATOR . "Pop.csv", "r")) !== FALSE) {
+			
+			while (($data = fgetcsv($handle, 1000, ',', '"')) !== FALSE) {
+				
+				$entity = new Pop();
+				$entity->setName($data[0]);
+				$entity->setType($data[1]);
+				$entity->setProvince($data[2]);
+				$entity->setDistrict($data[3]);
+				$entity->setPopulation($data[4]);
+				$entity->setLongitude($data[5]);
+				$entity->setLatitude($data[6]);
+	
+				$manager->persist($entity);
+				
+			}
+			
+			$manager->flush();
+	
+			fclose($handle);
+			
+		}
+		
+	}
+
+}

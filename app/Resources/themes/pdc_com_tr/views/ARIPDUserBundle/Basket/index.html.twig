@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ 'My Basket'|trans({}, 'ARIPDUserBundle') }}{% endblock %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				{{ render(controller('ARIPDUserBundle:Basket:form')) }}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

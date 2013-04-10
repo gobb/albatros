@@ -1,0 +1,13 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'Transportations'|trans({}, 'ARIPDShoppingBundle') }}</h1>
+</div>
+<form action="{{ path('aripd_admin_shoppingtransportation_create') }}" method="post" {{ form_enctype(form) }}>
+	{{ form_widget(form) }}
+	<div class="form-actions">
+		<button class="btn btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Create'|trans() }}</button>
+	</div>
+</form>
+{% endblock %}

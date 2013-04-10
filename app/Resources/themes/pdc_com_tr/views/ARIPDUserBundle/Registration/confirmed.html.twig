@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ 'Register'|trans({}, 'ARIPDUserBundle') }}{% endblock title %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<div class="alert alert-success">
+					{{ 'Congrats %username%, your account is now activated.'|trans({'%username%': user.username}, 'ARIPDUserBundle') }}
+				</div>
+				{% if app.session is not empty %}
+					{% set targetUrl = app.session.get('_security.target_path') %}
+					{% if targetUrl is not empty %}<p><a href="{{ targetUrl }}">{{ 'Back to the originating page'|trans({}, 'ARIPDUserBundle') }}</a></p>{% endif %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

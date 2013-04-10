@@ -1,0 +1,13 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ entity.name }}{% endblock %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<h1>{{ entity.name }}</h1>
+		<hr class="soften">	
+		<div class="">{{ entity.content|raw }}</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+parameters:
+    aripdstore.product_service.class: ARIPD\StoreBundle\Service\ProductService
+    aripdstore.product_listener.class: ARIPD\StoreBundle\EventListener\ProductListener
+    aripdstore.category_service.class: ARIPD\StoreBundle\Service\CategoryService
+    aripdstore.search_service.class: ARIPD\StoreBundle\Service\SearchService
+
+services:
+    aripdstore.product_service:
+        class: "%aripdstore.product_service.class%"
+        arguments: [ "@service_container", "@doctrine.orm.entity_manager" ]
+    aripdstore.product_listener:
+        class: "%aripdstore.product_listener.class%"
+        arguments: [ "@service_container" ]
+        tags:
+            - { name: doctrine.event_listener, event: postLoad, method: postLoad }
+    aripdstore.category_service:
+        class: "%aripdstore.category_service.class%"
+        arguments: [ "@service_container", "@doctrine.orm.entity_manager" ]
+    aripdstore.search_service:
+        class: "%aripdstore.search_service.class%"
+        arguments: [ "@service_container", "@doctrine.orm.entity_manager" ]

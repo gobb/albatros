@@ -1,0 +1,6 @@
+{% for entity in entities %}
+<a href="{{ path('aripd_cms_page_show', { id: entity.id, slug: entity.slug }) }}">{{ entity.name }}</a>
+{% endfor %}
+<a href="{{ path('aripd_cms_page_contact') }}">{{ 'Contact'|trans({}, 'ARIPDCMSBundle') }}</a>
+<a href="{{ path('fos_user_registration_register') }}">{{ 'Register'|trans({}, 'ARIPDUserBundle') }}</a>
+<a href="{{ path('aripd_cms_faq_index') }}">{{ 'FAQs'|trans({}, 'ARIPDCMSBundle') }}</a>

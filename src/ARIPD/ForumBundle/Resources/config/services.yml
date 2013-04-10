@@ -1,0 +1,11 @@
+parameters:
+    aripdforum.topic_service.class: ARIPD\ForumBundle\Service\TopicService
+    aripdforum.thread_service.class: ARIPD\ForumBundle\Service\ThreadService
+
+services:
+    aripdforum.topic_service:
+        class: "%aripdforum.topic_service.class%"
+        arguments: [ "@service_container", "@doctrine.orm.entity_manager" ]
+    aripdforum.thread_service:
+        class: "%aripdforum.thread_service.class%"
+        arguments: [ "@service_container", "@doctrine.orm.entity_manager" ]

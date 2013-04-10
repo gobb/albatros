@@ -1,0 +1,17 @@
+{% extends 'ARIPDMobileBundle::layout.html.twig' %}
+
+{% block body %}
+<div data-role="page" id="foo" data-title="Page Foo">
+	<div data-role="header" data-id="header" data-position="fixed">
+		<a data-rel="back" data-icon="arrow-l">Back</a>
+		<h1>QR Code</h1>
+		{% include 'ARIPDMobileBundle:Default:loginout.html.twig' %}
+	</div>
+	<div data-role="content">
+		<p style="text-align:center"><img src="https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl={{ code }}&chld=H|0" /></p>
+		<p><a href="{{ path('aripd_mobile_loyalty_code') }}" data-role="button" data-rel="dialog" data-transition="flip">Show Code</a></p>
+	</div>
+	<div data-role="footer" data-id="footer" data-position="fixed">
+	</div>
+</div>
+{% endblock %}

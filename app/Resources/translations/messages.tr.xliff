@@ -1,0 +1,1255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2013-04-16T08:58:46Z" source-language="en" target-language="tr" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="d93d10ff0fbef1b4aa0ddc24e10e907746d3c85a" resname="API">
+        <jms:reference-file line="27">Resources/views/adminbar.html.twig</jms:reference-file>
+        <source>API</source>
+        <target state="new">API</target>
+      </trans-unit>
+      <trans-unit id="61cc55aa0453184734c3fa0b621eda6fa874bd83" resname="Add">
+        <jms:reference-file line="52">views/SurveySurvey/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="47">views/UserPurchaseorder/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="44">views/UserPurchaseorder/new.html.twig</jms:reference-file>
+        <source>Add</source>
+        <target>Ekle</target>
+      </trans-unit>
+      <trans-unit id="cfea419c3b4e8b02ee586e70a28bf846e44cdda4" resname="Apply">
+        <jms:reference-file line="25">views/Settings/modify_form.html.twig</jms:reference-file>
+        <source>Apply</source>
+        <target>Uygula</target>
+      </trans-unit>
+      <trans-unit id="b52b36b7269fbfc58ec24bb724691951a3decbe8" resname="Back">
+        <jms:reference-file line="142">ARIPDShoppingBundle/Payment/checkout.html.twig</jms:reference-file>
+        <jms:reference-file line="151">ARIPDShoppingBundle/Payment/checkout.html.twig</jms:reference-file>
+        <jms:reference-file line="61">ARIPDShoppingBundle/Payment/form.html.twig</jms:reference-file>
+        <jms:reference-file line="31">ARIPDShoppingBundle/Postaladdress/form.html.twig</jms:reference-file>
+        <jms:reference-file line="31">ARIPDShoppingBundle/Transportation/form.html.twig</jms:reference-file>
+        <jms:reference-file line="33">ARIPDUserBundle/Postaladdress/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="33">ARIPDUserBundle/Postaladdress/new.html.twig</jms:reference-file>
+        <jms:reference-file line="23">ARIPDUserBundle/Postaladdress/show.html.twig</jms:reference-file>
+        <jms:reference-file line="88">views/AdsAdvertisement/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/AdsAdvertisement/new.html.twig</jms:reference-file>
+        <jms:reference-file line="53">views/AdsAdvertisement/show.html.twig</jms:reference-file>
+        <jms:reference-file line="86">views/BlogPost/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="9">views/BlogPost/show.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/CMSFaq/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/CMSFaq/new.html.twig</jms:reference-file>
+        <jms:reference-file line="16">views/CMSFaq/show.html.twig</jms:reference-file>
+        <jms:reference-file line="13">views/CMSPage/new.html.twig</jms:reference-file>
+        <jms:reference-file line="28">views/CMSPost/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="28">views/CMSPost/new.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/CMSPost/show.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/CMSSubtopic/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/CMSSubtopic/new.html.twig</jms:reference-file>
+        <jms:reference-file line="16">views/CMSSubtopic/show.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/CMSTopic/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/CMSTopic/new.html.twig</jms:reference-file>
+        <jms:reference-file line="24">views/CMSTopic/show.html.twig</jms:reference-file>
+        <jms:reference-file line="33">views/CRMIndividual/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/CRMIndividual/new.html.twig</jms:reference-file>
+        <jms:reference-file line="13">views/CRMTaggroup/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="13">views/CRMTaggroup/new.html.twig</jms:reference-file>
+        <jms:reference-file line="35">views/CRMTaggroup/show.html.twig</jms:reference-file>
+        <jms:reference-file line="13">views/CRMTagkey/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="13">views/CRMTagkey/new.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/CRMTagkey/show.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/ForumTopic/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/ForumTopic/new.html.twig</jms:reference-file>
+        <jms:reference-file line="50">views/ForumTopic/show.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Fxrate/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Fxrate/new.html.twig</jms:reference-file>
+        <jms:reference-file line="35">views/Fxrate/show.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/Iso3166/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/Iso3166/new.html.twig</jms:reference-file>
+        <jms:reference-file line="45">views/Iso3166/show.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/Iso4217/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/Iso4217/new.html.twig</jms:reference-file>
+        <jms:reference-file line="49">views/Iso4217/show.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/ShoppingPayment/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/ShoppingPayment/new.html.twig</jms:reference-file>
+        <jms:reference-file line="56">views/ShoppingPayment/show.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/ShoppingPaymentgroup/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/ShoppingPaymentgroup/new.html.twig</jms:reference-file>
+        <jms:reference-file line="65">views/ShoppingPaymentgroup/show.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/ShoppingPaymentgrouptype/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/ShoppingPaymentgrouptype/new.html.twig</jms:reference-file>
+        <jms:reference-file line="24">views/ShoppingPaymentgrouptype/show.html.twig</jms:reference-file>
+        <jms:reference-file line="32">views/ShoppingTransportation/show.html.twig</jms:reference-file>
+        <jms:reference-file line="16">views/ShoppingVoucher/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/ShoppingVoucher/new.html.twig</jms:reference-file>
+        <jms:reference-file line="53">views/ShoppingVoucher/show.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/StoreBanner/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/StoreBanner/new.html.twig</jms:reference-file>
+        <jms:reference-file line="38">views/StoreBanner/show.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/StoreBranch/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/StoreBranch/new.html.twig</jms:reference-file>
+        <jms:reference-file line="24">views/StoreBranch/show.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/StoreBrand/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/StoreBrand/new.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/StoreBrand/show.html.twig</jms:reference-file>
+        <jms:reference-file line="13">views/StoreCategory/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/StoreCategory/new.html.twig</jms:reference-file>
+        <jms:reference-file line="21">views/StoreCategory/show.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/StoreModel/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/StoreModel/new.html.twig</jms:reference-file>
+        <jms:reference-file line="17">views/StoreModel/show.html.twig</jms:reference-file>
+        <jms:reference-file line="40">views/StoreProduct/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="40">views/StoreProduct/new.html.twig</jms:reference-file>
+        <jms:reference-file line="25">views/StoreProduct/show.html.twig</jms:reference-file>
+        <jms:reference-file line="35">views/SurveySurvey/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/SurveySurvey/new.html.twig</jms:reference-file>
+        <jms:reference-file line="28">views/SurveySurvey/show.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/Taxonomy/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/Taxonomy/new.html.twig</jms:reference-file>
+        <jms:reference-file line="25">views/Taxonomy/show.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/UserGroup/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/UserGroup/new.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/UserPurchaseorder/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="17">views/UserUser/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/UserUser/new.html.twig</jms:reference-file>
+        <jms:reference-file line="37">views/UserUser/show.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/UserPostaladdress/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/UserPostaladdress/new.html.twig</jms:reference-file>
+        <jms:reference-file line="21">views/UserPostaladdress/show.html.twig</jms:reference-file>
+        <source>Back</source>
+        <target>Geri</target>
+      </trans-unit>
+      <trans-unit id="dd96994d01e723dd6f9b0bdb6119722dbeb9faf0" resname="Backup">
+        <jms:reference-file line="23">views/Backup/database.html.twig</jms:reference-file>
+        <jms:reference-file line="23">views/Backup/themes.html.twig</jms:reference-file>
+        <source>Backup</source>
+        <target>Yedekle</target>
+      </trans-unit>
+      <trans-unit id="77dfd2135f4db726c47299bb55be26f7f4525a46" resname="Cancel">
+        <jms:reference-file line="32">ARIPDShoppingBundle/Payment/pos.html.twig</jms:reference-file>
+        <source>Cancel</source>
+        <target>İptal</target>
+      </trans-unit>
+      <trans-unit id="4271627f4f0bef6104a95cca7bb21cda4d74503e" resname="City">
+        <jms:reference-file line="25">ARIPDUserBundle/Postaladdress/edit.html.twig</jms:reference-file>
+        <source>City</source>
+        <target state="new">City</target>
+      </trans-unit>
+      <trans-unit id="adac69379a626c2436948a4ef1792c7d719ef929" resname="Code">
+        <jms:reference-file line="12">Form/Type/ShoppingPaymentgrouptypeFormType.php</jms:reference-file>
+        <source>Code</source>
+        <target state="new">Code</target>
+      </trans-unit>
+      <trans-unit id="04a212215ef9fbf686d280802eb81ee7a6e681cd" resname="Confirm">
+        <jms:reference-file line="14">views/Loyalty/result.html.twig</jms:reference-file>
+        <source>Confirm</source>
+        <target>Onayla</target>
+      </trans-unit>
+      <trans-unit id="4f9be057f0ea5d2ba72fd2c810e8d7b9aa98b469" resname="Content">
+        <jms:reference-file line="10">Form/Type/ForumPostFormType.php</jms:reference-file>
+        <source>Content</source>
+        <target state="new">Content</target>
+      </trans-unit>
+      <trans-unit id="2e02623966f9391facf6eaefc8b079ed5b630bee" resname="Continue">
+        <jms:reference-file line="143">ARIPDShoppingBundle/Payment/checkout.html.twig</jms:reference-file>
+        <jms:reference-file line="152">ARIPDShoppingBundle/Payment/checkout.html.twig</jms:reference-file>
+        <jms:reference-file line="62">ARIPDShoppingBundle/Payment/form.html.twig</jms:reference-file>
+        <jms:reference-file line="33">ARIPDShoppingBundle/Payment/pos.html.twig</jms:reference-file>
+        <jms:reference-file line="33">ARIPDShoppingBundle/Postaladdress/form.html.twig</jms:reference-file>
+        <jms:reference-file line="32">ARIPDShoppingBundle/Transportation/form.html.twig</jms:reference-file>
+        <jms:reference-file line="4">ARIPDShoppingBundle/Voucher/form.html.twig</jms:reference-file>
+        <source>Continue</source>
+        <target>Devam</target>
+      </trans-unit>
+      <trans-unit id="4ed375c55c56c81866550fb82f5f69741216f0a5" resname="Copyright 2012-%currentYear% %companyName%. All rights reserved.">
+        <jms:reference-file line="33">pdc_com_tr/views/footer.html.twig</jms:reference-file>
+        <source>Copyright 2012-%currentYear% %companyName%. All rights reserved.</source>
+        <target>Copyright 2012-%currentYear% %companyName%. Tüm hakları saklıdır.</target>
+      </trans-unit>
+      <trans-unit id="d523ebbd10146cdfd39dee077f04c9d08468d0bc" resname="Country">
+        <jms:reference-file line="27">ARIPDUserBundle/Postaladdress/edit.html.twig</jms:reference-file>
+        <source>Country</source>
+        <target state="new">Country</target>
+      </trans-unit>
+      <trans-unit id="60dee38933959dfdae71ec0ee78d9ddb94f8ba0e" resname="County">
+        <jms:reference-file line="24">ARIPDUserBundle/Postaladdress/edit.html.twig</jms:reference-file>
+        <source>County</source>
+        <target state="new">County</target>
+      </trans-unit>
+      <trans-unit id="6e157c5da4410b7e9de85f5c93026b9176e69064" resname="Create">
+        <jms:reference-file line="34">ARIPDUserBundle/Postaladdress/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/AdsAdvertisement/new.html.twig</jms:reference-file>
+        <jms:reference-file line="13">views/CMSFaq/new.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/CMSPage/new.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/CMSPost/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/CMSSubtopic/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/CMSTopic/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/CRMIndividual/new.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/CRMTaggroup/new.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/CRMTagkey/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/ForumTopic/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Fxrate/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/Iso3166/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/Iso4217/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/ShoppingPayment/new.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/ShoppingPaymentgroup/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/ShoppingPaymentgrouptype/new.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/ShoppingTransportation/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/ShoppingVoucher/new.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/StoreBanner/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/StoreBranch/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/StoreBrand/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/StoreCategory/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/StoreModel/new.html.twig</jms:reference-file>
+        <jms:reference-file line="41">views/StoreProduct/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/SurveySurvey/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/Taxonomy/new.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/UserUser/new.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/UserPostaladdress/new.html.twig</jms:reference-file>
+        <source>Create</source>
+        <target>Oluştur</target>
+      </trans-unit>
+      <trans-unit id="f6fdbe48dc54dd86f63097a03bd24094dedd713a" resname="Delete">
+        <jms:reference-file line="5">ARIPDUserBundle/Image/list.html.twig</jms:reference-file>
+        <jms:reference-file line="34">ARIPDUserBundle/Postaladdress/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="40">ARIPDUserBundle/Postaladdress/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="25">ARIPDUserBundle/Postaladdress/show.html.twig</jms:reference-file>
+        <jms:reference-file line="89">views/AdsAdvertisement/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="55">views/AdsAdvertisement/show.html.twig</jms:reference-file>
+        <jms:reference-file line="17">views/AppearanceTheme/index.html.twig</jms:reference-file>
+        <jms:reference-file line="34">views/Backup/database.html.twig</jms:reference-file>
+        <jms:reference-file line="34">views/Backup/themes.html.twig</jms:reference-file>
+        <jms:reference-file line="87">views/BlogPost/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/BlogPost/show.html.twig</jms:reference-file>
+        <jms:reference-file line="13">views/CMSFaq/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="26">views/CMSFaq/index.html.twig</jms:reference-file>
+        <jms:reference-file line="18">views/CMSFaq/show.html.twig</jms:reference-file>
+        <jms:reference-file line="28">views/CMSPage/index.html.twig</jms:reference-file>
+        <jms:reference-file line="81">views/CMSPost/_index.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/CMSPost/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="16">views/CMSPost/show.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/CMSSubtopic/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="18">views/CMSSubtopic/show.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/CMSTopic/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="26">views/CMSTopic/show.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/CRMImage/list.html.twig</jms:reference-file>
+        <jms:reference-file line="35">views/CRMIndividual/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="20">views/CRMIndividual/show.html.twig</jms:reference-file>
+        <jms:reference-file line="19">views/CRMTaggroup/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="37">views/CRMTaggroup/show.html.twig</jms:reference-file>
+        <jms:reference-file line="19">views/CRMTagkey/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="31">views/CRMTagkey/show.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/ForumTopic/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="26">views/ForumTopic/index.html.twig</jms:reference-file>
+        <jms:reference-file line="53">views/ForumTopic/show.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Fxrate/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="37">views/Fxrate/show.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/Iso3166/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="47">views/Iso3166/show.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/Iso4217/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="51">views/Iso4217/show.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/ShoppingPayment/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="34">views/ShoppingPayment/index.html.twig</jms:reference-file>
+        <jms:reference-file line="58">views/ShoppingPayment/show.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/ShoppingPaymentgroup/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="34">views/ShoppingPaymentgroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="67">views/ShoppingPaymentgroup/show.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/ShoppingPaymentgrouptype/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="28">views/ShoppingPaymentgrouptype/index.html.twig</jms:reference-file>
+        <jms:reference-file line="26">views/ShoppingPaymentgrouptype/show.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/ShoppingTransportation/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="32">views/ShoppingTransportation/index.html.twig</jms:reference-file>
+        <jms:reference-file line="34">views/ShoppingTransportation/show.html.twig</jms:reference-file>
+        <jms:reference-file line="17">views/ShoppingVoucher/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="34">views/ShoppingVoucher/index.html.twig</jms:reference-file>
+        <jms:reference-file line="55">views/ShoppingVoucher/show.html.twig</jms:reference-file>
+        <jms:reference-file line="16">views/StoreBanner/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="30">views/StoreBanner/index.html.twig</jms:reference-file>
+        <jms:reference-file line="40">views/StoreBanner/show.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/StoreBranch/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="26">views/StoreBranch/show.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/StoreBranchimage/list.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/StoreBrand/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/StoreBrand/show.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/StoreCategory/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="36">views/StoreCategory/index.html.twig</jms:reference-file>
+        <jms:reference-file line="23">views/StoreCategory/show.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/StoreModel/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="46">views/StoreModel/list.html.twig</jms:reference-file>
+        <jms:reference-file line="20">views/StoreModel/show.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/StoreModelimage/list.html.twig</jms:reference-file>
+        <jms:reference-file line="42">views/StoreProduct/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="47">views/StoreProduct/index.html.twig</jms:reference-file>
+        <jms:reference-file line="27">views/StoreProduct/show.html.twig</jms:reference-file>
+        <jms:reference-file line="36">views/SurveySurvey/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="31">views/SurveySurvey/index.html.twig</jms:reference-file>
+        <jms:reference-file line="31">views/SurveySurvey/show.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/Taxonomy/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="27">views/Taxonomy/show.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/UserGroup/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="28">views/UserGroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="20">views/UserGroup/show.html.twig</jms:reference-file>
+        <jms:reference-file line="30">views/UserPurchaseorder/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="85">views/UserPurchaseorder/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="82">views/UserPurchaseorder/new.html.twig</jms:reference-file>
+        <jms:reference-file line="18">views/UserUser/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="39">views/UserUser/show.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/UserPostaladdress/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="21">views/UserPostaladdress/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="23">views/UserPostaladdress/show.html.twig</jms:reference-file>
+        <source>Delete</source>
+        <target>Sil</target>
+      </trans-unit>
+      <trans-unit id="08170580cbf4275bbc82f95ca2564a30804a3e28" resname="Delete all">
+        <jms:reference-file line="24">views/Backup/database.html.twig</jms:reference-file>
+        <jms:reference-file line="24">views/Backup/themes.html.twig</jms:reference-file>
+        <jms:reference-file line="34">views/StoreBrand/index.html.twig</jms:reference-file>
+        <jms:reference-file line="45">views/StoreCategory/index.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/StoreProduct/index.html.twig</jms:reference-file>
+        <source>Delete all</source>
+        <target>Tümünü sil</target>
+      </trans-unit>
+      <trans-unit id="dc3decbb93847518f1a049dcf49d0d7c6560bcc6" resname="Details">
+        <jms:reference-file line="81">ARIPDStoreBundle/Model/show.html.twig</jms:reference-file>
+        <source>Details</source>
+        <target>Ayrıntılar</target>
+      </trans-unit>
+      <trans-unit id="9e9cf3221a30246219863f1d2366e36cb580debc" resname="Documentation">
+        <jms:reference-file line="26">Resources/views/adminbar.html.twig</jms:reference-file>
+        <source>Documentation</source>
+        <target>Belgeler</target>
+      </trans-unit>
+      <trans-unit id="a479c9c34e878d07b4d67a73a48f432ad7dc53c8" resname="Download">
+        <jms:reference-file line="33">views/Backup/database.html.twig</jms:reference-file>
+        <jms:reference-file line="33">views/Backup/themes.html.twig</jms:reference-file>
+        <source>Download</source>
+        <target>İndir</target>
+      </trans-unit>
+      <trans-unit id="394c802657352b895ae38bae0eb2aec2edcdb050" resname="E-mail address">
+        <jms:reference-file line="42">ARIPDCMSBundle/Page/contact.html.twig</jms:reference-file>
+        <source>E-mail address</source>
+        <target state="new">E-mail address</target>
+      </trans-unit>
+      <trans-unit id="5301648dcf6b53cefc9ed52999aaa92d4603cae0" resname="Edit">
+        <jms:reference-file line="18">ARIPDShoppingBundle/Postaladdress/form.html.twig</jms:reference-file>
+        <jms:reference-file line="28">ARIPDUserBundle/Postaladdress/index.html.twig</jms:reference-file>
+        <jms:reference-file line="24">ARIPDUserBundle/Postaladdress/show.html.twig</jms:reference-file>
+        <jms:reference-file line="16">ARIPDUserBundle/Profile/show.html.twig</jms:reference-file>
+        <jms:reference-file line="37">views/AdsAdvertisement/index.html.twig</jms:reference-file>
+        <jms:reference-file line="54">views/AdsAdvertisement/show.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/AppearanceTheme/index.html.twig</jms:reference-file>
+        <jms:reference-file line="36">views/BlogPost/index.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/BlogPost/show.html.twig</jms:reference-file>
+        <jms:reference-file line="25">views/CMSFaq/index.html.twig</jms:reference-file>
+        <jms:reference-file line="17">views/CMSFaq/show.html.twig</jms:reference-file>
+        <jms:reference-file line="27">views/CMSPage/index.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/CMSPage/show.html.twig</jms:reference-file>
+        <jms:reference-file line="80">views/CMSPost/_index.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/CMSPost/show.html.twig</jms:reference-file>
+        <jms:reference-file line="21">views/CMSSubtopic/index.html.twig</jms:reference-file>
+        <jms:reference-file line="17">views/CMSSubtopic/show.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/CMSTopic/index.html.twig</jms:reference-file>
+        <jms:reference-file line="51">views/CMSTopic/index.html.twig</jms:reference-file>
+        <jms:reference-file line="25">views/CMSTopic/show.html.twig</jms:reference-file>
+        <jms:reference-file line="19">views/CRMIndividual/show.html.twig</jms:reference-file>
+        <jms:reference-file line="30">views/CRMTaggroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="40">views/CRMTaggroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="36">views/CRMTaggroup/show.html.twig</jms:reference-file>
+        <jms:reference-file line="23">views/CRMTagkey/index.html.twig</jms:reference-file>
+        <jms:reference-file line="30">views/CRMTagkey/show.html.twig</jms:reference-file>
+        <jms:reference-file line="66">views/Default/index.html.twig</jms:reference-file>
+        <jms:reference-file line="91">views/Default/index.html.twig</jms:reference-file>
+        <jms:reference-file line="25">views/ForumTopic/index.html.twig</jms:reference-file>
+        <jms:reference-file line="52">views/ForumTopic/show.html.twig</jms:reference-file>
+        <jms:reference-file line="27">views/Fxrate/index.html.twig</jms:reference-file>
+        <jms:reference-file line="36">views/Fxrate/show.html.twig</jms:reference-file>
+        <jms:reference-file line="35">views/Iso3166/index.html.twig</jms:reference-file>
+        <jms:reference-file line="46">views/Iso3166/show.html.twig</jms:reference-file>
+        <jms:reference-file line="37">views/Iso4217/index.html.twig</jms:reference-file>
+        <jms:reference-file line="50">views/Iso4217/show.html.twig</jms:reference-file>
+        <jms:reference-file line="33">views/ShoppingPayment/index.html.twig</jms:reference-file>
+        <jms:reference-file line="46">views/ShoppingPayment/show.html.twig</jms:reference-file>
+        <jms:reference-file line="57">views/ShoppingPayment/show.html.twig</jms:reference-file>
+        <jms:reference-file line="33">views/ShoppingPaymentgroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="47">views/ShoppingPaymentgroup/show.html.twig</jms:reference-file>
+        <jms:reference-file line="66">views/ShoppingPaymentgroup/show.html.twig</jms:reference-file>
+        <jms:reference-file line="27">views/ShoppingPaymentgrouptype/index.html.twig</jms:reference-file>
+        <jms:reference-file line="25">views/ShoppingPaymentgrouptype/show.html.twig</jms:reference-file>
+        <jms:reference-file line="31">views/ShoppingTransportation/index.html.twig</jms:reference-file>
+        <jms:reference-file line="33">views/ShoppingTransportation/show.html.twig</jms:reference-file>
+        <jms:reference-file line="33">views/ShoppingVoucher/index.html.twig</jms:reference-file>
+        <jms:reference-file line="54">views/ShoppingVoucher/show.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/StoreBanner/index.html.twig</jms:reference-file>
+        <jms:reference-file line="39">views/StoreBanner/show.html.twig</jms:reference-file>
+        <jms:reference-file line="25">views/StoreBranch/index.html.twig</jms:reference-file>
+        <jms:reference-file line="25">views/StoreBranch/show.html.twig</jms:reference-file>
+        <jms:reference-file line="25">views/StoreBrand/index.html.twig</jms:reference-file>
+        <jms:reference-file line="13">views/StoreBrand/show.html.twig</jms:reference-file>
+        <jms:reference-file line="35">views/StoreCategory/index.html.twig</jms:reference-file>
+        <jms:reference-file line="22">views/StoreCategory/show.html.twig</jms:reference-file>
+        <jms:reference-file line="45">views/StoreModel/list.html.twig</jms:reference-file>
+        <jms:reference-file line="19">views/StoreModel/show.html.twig</jms:reference-file>
+        <jms:reference-file line="46">views/StoreProduct/index.html.twig</jms:reference-file>
+        <jms:reference-file line="26">views/StoreProduct/show.html.twig</jms:reference-file>
+        <jms:reference-file line="30">views/SurveySurvey/index.html.twig</jms:reference-file>
+        <jms:reference-file line="30">views/SurveySurvey/show.html.twig</jms:reference-file>
+        <jms:reference-file line="25">views/Taxonomy/index.html.twig</jms:reference-file>
+        <jms:reference-file line="26">views/Taxonomy/show.html.twig</jms:reference-file>
+        <jms:reference-file line="27">views/UserGroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="19">views/UserGroup/show.html.twig</jms:reference-file>
+        <jms:reference-file line="32">views/UserPurchaseorder/index.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/UserPurchaseorder/show.html.twig</jms:reference-file>
+        <jms:reference-file line="48">views/UserUser/_index.html.twig</jms:reference-file>
+        <jms:reference-file line="38">views/UserUser/show.html.twig</jms:reference-file>
+        <jms:reference-file line="22">views/UserPostaladdress/show.html.twig</jms:reference-file>
+        <source>Edit</source>
+        <target>Düzenle</target>
+      </trans-unit>
+      <trans-unit id="fc45f9b7a9a6e8b48f0e28821ec1981804dd1eb6" resname="Generate">
+        <jms:reference-file line="5">views/Vouchercode/form.html.twig</jms:reference-file>
+        <source>Generate</source>
+        <target>Üret</target>
+      </trans-unit>
+      <trans-unit id="2e0b45f2a456e8db55f08d7b65e87593a3e9a140" resname="Go">
+        <jms:reference-file line="10">views/BlogPost/show.html.twig</jms:reference-file>
+        <source>Go</source>
+        <target>Git</target>
+      </trans-unit>
+      <trans-unit id="c47ae15370cfe1ed2781eedc1dc2547d12d9e972" resname="Help">
+        <jms:reference-file line="23">Resources/views/adminbar.html.twig</jms:reference-file>
+        <source>Help</source>
+        <target>Yardım</target>
+      </trans-unit>
+      <trans-unit id="34d8b60fe25332f7b98585e82e753eaf502c3e50" resname="Hide">
+        <jms:reference-file line="65">Resources/views/base.admin.html.twig</jms:reference-file>
+        <source>Hide</source>
+        <target>Gizle</target>
+      </trans-unit>
+      <trans-unit id="70f8bb9a8a5393ef080507a89e4b98d139000d65" resname="Home">
+        <jms:reference-file line="12">ARIPDCMSBundle/Page/show.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDShoppingBundle/Payment/pos.html.twig</jms:reference-file>
+        <jms:reference-file line="9">ARIPDStoreBundle/Catalog/bulk.html.twig</jms:reference-file>
+        <jms:reference-file line="9">ARIPDStoreBundle/Catalog/retail.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDStoreBundle/Category/show.html.twig</jms:reference-file>
+        <jms:reference-file line="14">ARIPDStoreBundle/Model/show.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDStoreBundle/Search/result.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDUserBundle/ChangePassword/changePassword.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDUserBundle/Postaladdress/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDUserBundle/Postaladdress/index.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDUserBundle/Postaladdress/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDUserBundle/Postaladdress/show.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDUserBundle/Profile/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDUserBundle/Profile/show.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDUserBundle/Purchaseorder/index.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDUserBundle/Purchaseorder/show.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDUserBundle/Registration/register.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDUserBundle/Resetting/checkEmail.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDUserBundle/Resetting/passwordAlreadyRequested.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDUserBundle/Resetting/request.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDUserBundle/Resetting/reset.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDUserBundle/Security/login.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDUserBundle/Wishlist/index.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/Default/login.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/Default/share.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/Default/share.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/Loyalty/____index.html.twig</jms:reference-file>
+        <jms:reference-file line="34">views/Loyalty/____index.html.twig</jms:reference-file>
+        <jms:reference-file line="47">views/Loyalty/____index.html.twig</jms:reference-file>
+        <jms:reference-file line="59">views/Loyalty/____index.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/Loyalty/index.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/StoreBranch/index.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/StoreProduct/index.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/UserRegistration/_register_captcha.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/UserRegistration/register.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/UserResetting/request.html.twig</jms:reference-file>
+        <source>Home</source>
+        <target>Ana Sayfa</target>
+      </trans-unit>
+      <trans-unit id="ced3905ec8220a51e0d47124fc2d0549ce7c8472" resname="Latitude">
+        <jms:reference-file line="28">ARIPDUserBundle/Postaladdress/edit.html.twig</jms:reference-file>
+        <source>Latitude</source>
+        <target state="new">Latitude</target>
+      </trans-unit>
+      <trans-unit id="b04ba49f848624bb97ab094a2631d2ad74913498" resname="Loading...">
+        <jms:reference-file line="53">ARIPDCMSBundle/Page/contact.html.twig</jms:reference-file>
+        <jms:reference-file line="143">ARIPDShoppingBundle/Payment/checkout.html.twig</jms:reference-file>
+        <jms:reference-file line="152">ARIPDShoppingBundle/Payment/checkout.html.twig</jms:reference-file>
+        <jms:reference-file line="33">ARIPDShoppingBundle/Payment/pos.html.twig</jms:reference-file>
+        <jms:reference-file line="4">ARIPDShoppingBundle/Voucher/form.html.twig</jms:reference-file>
+        <jms:reference-file line="4">ARIPDUserBundle/ChangePassword/changePassword_content.html.twig</jms:reference-file>
+        <jms:reference-file line="3">ARIPDUserBundle/Image/new.html.twig</jms:reference-file>
+        <jms:reference-file line="35">ARIPDUserBundle/Postaladdress/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="34">ARIPDUserBundle/Postaladdress/new.html.twig</jms:reference-file>
+        <jms:reference-file line="6">ARIPDUserBundle/Profile/edit_content.html.twig</jms:reference-file>
+        <jms:reference-file line="19">ARIPDUserBundle/Registration/register.html.twig</jms:reference-file>
+        <jms:reference-file line="24">ARIPDUserBundle/Resetting/request.html.twig</jms:reference-file>
+        <jms:reference-file line="17">ARIPDUserBundle/Resetting/reset.html.twig</jms:reference-file>
+        <jms:reference-file line="49">ARIPDUserBundle/Security/login.html.twig</jms:reference-file>
+        <jms:reference-file line="90">views/AdsAdvertisement/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/AdsAdvertisement/new.html.twig</jms:reference-file>
+        <jms:reference-file line="88">views/BlogPost/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/CMSFaq/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="13">views/CMSFaq/new.html.twig</jms:reference-file>
+        <jms:reference-file line="13">views/CMSPage/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/CMSPage/new.html.twig</jms:reference-file>
+        <jms:reference-file line="30">views/CMSPost/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/CMSPost/new.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/CMSSubtopic/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/CMSSubtopic/new.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/CMSTopic/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/CMSTopic/new.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/CRMImage/new.html.twig</jms:reference-file>
+        <jms:reference-file line="36">views/CRMIndividual/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/CRMIndividual/form.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/CRMIndividual/new.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/CRMTaggroup/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/CRMTaggroup/new.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/CRMTagkey/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/CRMTagkey/new.html.twig</jms:reference-file>
+        <jms:reference-file line="17">views/Default/contact.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/ForumTopic/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/ForumTopic/new.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/Fxrate/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Fxrate/new.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/Iso3166/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/Iso3166/new.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/Iso4217/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/Iso4217/new.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/ShoppingPayment/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/ShoppingPayment/new.html.twig</jms:reference-file>
+        <jms:reference-file line="16">views/ShoppingPaymentgroup/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/ShoppingPaymentgroup/new.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/ShoppingPaymentgrouptype/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/ShoppingPaymentgrouptype/new.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/ShoppingTransportation/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/ShoppingTransportation/new.html.twig</jms:reference-file>
+        <jms:reference-file line="18">views/ShoppingVoucher/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/ShoppingVoucher/new.html.twig</jms:reference-file>
+        <jms:reference-file line="17">views/StoreBanner/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/StoreBanner/new.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/StoreBranch/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/StoreBranch/new.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/StoreBranchimage/new.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/StoreBrand/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/StoreBrand/new.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/StoreCategory/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/StoreCategory/new.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/StoreModel/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/StoreModel/new.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/StoreModelimage/new.html.twig</jms:reference-file>
+        <jms:reference-file line="43">views/StoreProduct/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="41">views/StoreProduct/new.html.twig</jms:reference-file>
+        <jms:reference-file line="37">views/SurveySurvey/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/SurveySurvey/new.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/Taxonomy/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/Taxonomy/new.html.twig</jms:reference-file>
+        <jms:reference-file line="13">views/UserGroup/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/UserGroup/new.html.twig</jms:reference-file>
+        <jms:reference-file line="31">views/UserPurchaseorder/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="32">views/UserPurchaseorder/new.html.twig</jms:reference-file>
+        <jms:reference-file line="19">views/UserUser/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/UserUser/new.html.twig</jms:reference-file>
+        <jms:reference-file line="16">views/UserPostaladdress/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/UserPostaladdress/new.html.twig</jms:reference-file>
+        <jms:reference-file line="13">views/UserRegistration/register.html.twig</jms:reference-file>
+        <jms:reference-file line="19">views/UserResetting/request.html.twig</jms:reference-file>
+        <source>Loading...</source>
+        <target>Yükleniyor...</target>
+      </trans-unit>
+      <trans-unit id="6f9f011c5d36df6d431a68143636a75fbaa508bd" resname="Longitude">
+        <jms:reference-file line="29">ARIPDUserBundle/Postaladdress/edit.html.twig</jms:reference-file>
+        <source>Longitude</source>
+        <target state="new">Longitude</target>
+      </trans-unit>
+      <trans-unit id="4bab2d8fe13fa6ab57f80098b414f0f734c5dd25" resname="More">
+        <jms:reference-file line="20">views/CRMIndividual/result.html.twig</jms:reference-file>
+        <source>More</source>
+        <target>More</target>
+      </trans-unit>
+      <trans-unit id="709a23220f2c3d64d1e1d6d18c4d5280f8d82fca" resname="Name">
+        <jms:reference-file line="13">Form/Type/ShoppingPaymentgrouptypeFormType.php</jms:reference-file>
+        <jms:reference-file line="8">Form/Type/StoreBrandFormType.php</jms:reference-file>
+        <jms:reference-file line="10">Form/Type/ForumThreadFormType.php</jms:reference-file>
+        <source>Name</source>
+        <target state="new">Name</target>
+      </trans-unit>
+      <trans-unit id="91bf28e6858b104d93010396a8daec07fda504cf" resname="New entry">
+        <jms:reference-file line="36">ARIPDUserBundle/Postaladdress/index.html.twig</jms:reference-file>
+        <jms:reference-file line="46">views/AdsAdvertisement/index.html.twig</jms:reference-file>
+        <jms:reference-file line="35">views/CMSFaq/index.html.twig</jms:reference-file>
+        <jms:reference-file line="37">views/CMSPage/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSSearch/form.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/CMSSubtopic/index.html.twig</jms:reference-file>
+        <jms:reference-file line="33">views/CMSTopic/index.html.twig</jms:reference-file>
+        <jms:reference-file line="59">views/CMSTopic/index.html.twig</jms:reference-file>
+        <jms:reference-file line="17">views/CRMIndividual/index.html.twig</jms:reference-file>
+        <jms:reference-file line="50">views/CRMIndividual/index.html.twig</jms:reference-file>
+        <jms:reference-file line="34">views/CRMTaggroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="48">views/CRMTaggroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="31">views/CRMTagkey/index.html.twig</jms:reference-file>
+        <jms:reference-file line="35">views/ForumTopic/index.html.twig</jms:reference-file>
+        <jms:reference-file line="51">views/ForumTopic/show.html.twig</jms:reference-file>
+        <jms:reference-file line="36">views/Fxrate/index.html.twig</jms:reference-file>
+        <jms:reference-file line="44">views/Iso3166/index.html.twig</jms:reference-file>
+        <jms:reference-file line="46">views/Iso4217/index.html.twig</jms:reference-file>
+        <jms:reference-file line="43">views/ShoppingPayment/index.html.twig</jms:reference-file>
+        <jms:reference-file line="43">views/ShoppingPaymentgroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="55">views/ShoppingPaymentgroup/show.html.twig</jms:reference-file>
+        <jms:reference-file line="37">views/ShoppingPaymentgrouptype/index.html.twig</jms:reference-file>
+        <jms:reference-file line="41">views/ShoppingTransportation/index.html.twig</jms:reference-file>
+        <jms:reference-file line="43">views/ShoppingVoucher/index.html.twig</jms:reference-file>
+        <jms:reference-file line="42">views/StoreBanner/index.html.twig</jms:reference-file>
+        <jms:reference-file line="34">views/StoreBranch/index.html.twig</jms:reference-file>
+        <jms:reference-file line="35">views/StoreBrand/index.html.twig</jms:reference-file>
+        <jms:reference-file line="46">views/StoreCategory/index.html.twig</jms:reference-file>
+        <jms:reference-file line="2">views/StoreModel/list.html.twig</jms:reference-file>
+        <jms:reference-file line="18">views/StoreModel/show.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/StoreProduct/index.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/StoreProduct/new.html.twig</jms:reference-file>
+        <jms:reference-file line="44">views/SurveySurvey/index.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/SurveySurvey/show.html.twig</jms:reference-file>
+        <jms:reference-file line="34">views/Taxonomy/index.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/UserGroup/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="37">views/UserGroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/UserGroup/new.html.twig</jms:reference-file>
+        <jms:reference-file line="18">views/UserGroup/show.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/UserUser/new.html.twig</jms:reference-file>
+        <source>New entry</source>
+        <target>Yeni kayıt</target>
+      </trans-unit>
+      <trans-unit id="c7ac934cfaa9b50e25559321e48737eb6bc8d9d8" resname="Postal Code">
+        <jms:reference-file line="26">ARIPDUserBundle/Postaladdress/edit.html.twig</jms:reference-file>
+        <source>Postal Code</source>
+        <target state="new">Postal Code</target>
+      </trans-unit>
+      <trans-unit id="a9a96ec019494d5b8b041c1d2468061ae66e35d5" resname="Primary">
+        <jms:reference-file line="42">views/StoreModel/list.html.twig</jms:reference-file>
+        <source>Primary</source>
+        <target state="new">Primary</target>
+      </trans-unit>
+      <trans-unit id="5b221e9c2a451799d8f37e2b9874409d5e03ab05" resname="Print">
+        <jms:reference-file line="30">views/UserPurchaseorder/index.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/UserPurchaseorder/show.html.twig</jms:reference-file>
+        <source>Print</source>
+        <target>Yazdır</target>
+      </trans-unit>
+      <trans-unit id="e963907dac5cd5c017869b4c96c18021c9bd058b" resname="Remove">
+        <jms:reference-file line="45">ARIPDUserBundle/Basket/form.html.twig</jms:reference-file>
+        <jms:reference-file line="37">ARIPDUserBundle/Wishlist/index.html.twig</jms:reference-file>
+        <jms:reference-file line="80">views/SurveySurvey/edit.html.twig</jms:reference-file>
+        <source>Remove</source>
+        <target>Çıkart</target>
+      </trans-unit>
+      <trans-unit id="4100ef4df528ba73c142af7f2de8568c48ee7744" resname="Remove all">
+        <jms:reference-file line="76">ARIPDUserBundle/Basket/form.html.twig</jms:reference-file>
+        <jms:reference-file line="44">ARIPDUserBundle/Wishlist/index.html.twig</jms:reference-file>
+        <jms:reference-file line="31">views/UserBasket/index.html.twig</jms:reference-file>
+        <source>Remove all</source>
+        <target>Tümünü çıkart</target>
+      </trans-unit>
+      <trans-unit id="efc007a393f66cdb14d57d385822a3d9e36ef873" resname="Save">
+        <jms:reference-file line="35">ARIPDUserBundle/Postaladdress/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="90">views/AdsAdvertisement/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="25">views/AppearanceTheme/show.html.twig</jms:reference-file>
+        <jms:reference-file line="88">views/BlogPost/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/CMSFaq/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="30">views/CMSPost/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/CMSSubtopic/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/CMSTopic/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="36">views/CRMIndividual/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/CRMTaggroup/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/CRMTagkey/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/ForumTopic/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/Fxrate/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/Iso3166/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/Iso4217/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/ShoppingPayment/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="16">views/ShoppingPaymentgroup/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/ShoppingPaymentgrouptype/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/ShoppingTransportation/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="18">views/ShoppingVoucher/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="17">views/StoreBanner/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/StoreBranch/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/StoreBrand/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/StoreCategory/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/StoreModel/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="44">views/StoreModel/show.html.twig</jms:reference-file>
+        <jms:reference-file line="43">views/StoreProduct/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="37">views/SurveySurvey/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/Taxonomy/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="31">views/UserPurchaseorder/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="32">views/UserPurchaseorder/new.html.twig</jms:reference-file>
+        <jms:reference-file line="19">views/UserUser/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="16">views/UserPostaladdress/edit.html.twig</jms:reference-file>
+        <source>Save</source>
+        <target>Kaydet</target>
+      </trans-unit>
+      <trans-unit id="bce06414177f72ab70e6387b6af9f8ceef0d6049" resname="Search">
+        <jms:reference-file line="4">views/CMSSearch/form.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/CRMIndividual/form.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/CRMIndividual/index.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/UserUser/form.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/Loyalty/index.html.twig</jms:reference-file>
+        <source>Search</source>
+        <target>Ara</target>
+      </trans-unit>
+      <trans-unit id="fd3cfc02834858b6847a18bcd6e8e8c145fad487" resname="Security Code">
+        <jms:reference-file line="17">Form/Type/RegistrationFormType.php</jms:reference-file>
+        <source>Security Code</source>
+        <target state="new">Security Code</target>
+      </trans-unit>
+      <trans-unit id="9bc2575c3930437e80555f78757b783c842e8e66" resname="Send">
+        <jms:reference-file line="53">ARIPDCMSBundle/Page/contact.html.twig</jms:reference-file>
+        <source>Send</source>
+        <target>Gönder</target>
+      </trans-unit>
+      <trans-unit id="448ab73ba1c21e671e218fb91f2644c834f0c16f" resname="Set">
+        <jms:reference-file line="16">views/AppearanceTheme/index.html.twig</jms:reference-file>
+        <source>Set</source>
+        <target>Set</target>
+      </trans-unit>
+      <trans-unit id="09ca55ca52d207f2cc1d9339e0226a88e9e96e2f" resname="Share">
+        <jms:reference-file line="36">views/Default/index.html.twig</jms:reference-file>
+        <jms:reference-file line="32">views/Default/login.html.twig</jms:reference-file>
+        <jms:reference-file line="23">views/Default/share.html.twig</jms:reference-file>
+        <jms:reference-file line="27">views/Loyalty/____index.html.twig</jms:reference-file>
+        <jms:reference-file line="28">views/Loyalty/index.html.twig</jms:reference-file>
+        <jms:reference-file line="48">views/Loyalty/index.html.twig</jms:reference-file>
+        <jms:reference-file line="27">views/Loyalty/transfer.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/StoreBranch/index.html.twig</jms:reference-file>
+        <jms:reference-file line="18">views/StoreBranch/map.html.twig</jms:reference-file>
+        <jms:reference-file line="25">views/StoreBranch/show.html.twig</jms:reference-file>
+        <jms:reference-file line="31">views/StoreModel/show.html.twig</jms:reference-file>
+        <jms:reference-file line="32">views/StoreProduct/index.html.twig</jms:reference-file>
+        <jms:reference-file line="39">views/UserBasket/index.html.twig</jms:reference-file>
+        <jms:reference-file line="26">views/UserProfile/show.html.twig</jms:reference-file>
+        <jms:reference-file line="40">views/UserRegistration/_register_captcha.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/UserWishlist/index.html.twig</jms:reference-file>
+        <source>Share</source>
+        <target>Paylaş</target>
+      </trans-unit>
+      <trans-unit id="d97d1ee339e4eeaba8cac91dca37c8b4ec8f5501" resname="Show">
+        <jms:reference-file line="28">ARIPDStoreBundle/Catalog/retail.html.twig</jms:reference-file>
+        <jms:reference-file line="42">ARIPDStoreBundle/Category/show.html.twig</jms:reference-file>
+        <jms:reference-file line="16">ARIPDStoreBundle/Product/brandnew.html.twig</jms:reference-file>
+        <jms:reference-file line="12">ARIPDStoreBundle/Product/latest.html.twig</jms:reference-file>
+        <jms:reference-file line="14">ARIPDStoreBundle/Product/list.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDStoreBundle/Product/listbycategoryid_blockview.html.twig</jms:reference-file>
+        <jms:reference-file line="11">ARIPDStoreBundle/Product/recommend.html.twig</jms:reference-file>
+        <jms:reference-file line="9">ARIPDStoreBundle/Product/vitrine.html.twig</jms:reference-file>
+        <jms:reference-file line="27">ARIPDUserBundle/Postaladdress/index.html.twig</jms:reference-file>
+        <jms:reference-file line="40">ARIPDUserBundle/Purchaseorder/index.html.twig</jms:reference-file>
+        <jms:reference-file line="36">views/AdsAdvertisement/index.html.twig</jms:reference-file>
+        <jms:reference-file line="35">views/BlogPost/index.html.twig</jms:reference-file>
+        <jms:reference-file line="24">views/CMSFaq/index.html.twig</jms:reference-file>
+        <jms:reference-file line="26">views/CMSPage/index.html.twig</jms:reference-file>
+        <jms:reference-file line="79">views/CMSPost/_index.html.twig</jms:reference-file>
+        <jms:reference-file line="20">views/CMSSubtopic/index.html.twig</jms:reference-file>
+        <jms:reference-file line="28">views/CMSTopic/index.html.twig</jms:reference-file>
+        <jms:reference-file line="50">views/CMSTopic/index.html.twig</jms:reference-file>
+        <jms:reference-file line="34">views/CRMIndividual/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/CRMTaggroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="39">views/CRMTaggroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="22">views/CRMTagkey/index.html.twig</jms:reference-file>
+        <jms:reference-file line="24">views/ForumTopic/index.html.twig</jms:reference-file>
+        <jms:reference-file line="26">views/Fxrate/index.html.twig</jms:reference-file>
+        <jms:reference-file line="34">views/Iso3166/index.html.twig</jms:reference-file>
+        <jms:reference-file line="36">views/Iso4217/index.html.twig</jms:reference-file>
+        <jms:reference-file line="32">views/ShoppingPayment/index.html.twig</jms:reference-file>
+        <jms:reference-file line="32">views/ShoppingPaymentgroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="26">views/ShoppingPaymentgrouptype/index.html.twig</jms:reference-file>
+        <jms:reference-file line="30">views/ShoppingTransportation/index.html.twig</jms:reference-file>
+        <jms:reference-file line="32">views/ShoppingVoucher/index.html.twig</jms:reference-file>
+        <jms:reference-file line="28">views/StoreBanner/index.html.twig</jms:reference-file>
+        <jms:reference-file line="24">views/StoreBranch/index.html.twig</jms:reference-file>
+        <jms:reference-file line="24">views/StoreBrand/index.html.twig</jms:reference-file>
+        <jms:reference-file line="34">views/StoreCategory/index.html.twig</jms:reference-file>
+        <jms:reference-file line="44">views/StoreModel/list.html.twig</jms:reference-file>
+        <jms:reference-file line="41">views/StoreProduct/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="45">views/StoreProduct/index.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/SurveySurvey/index.html.twig</jms:reference-file>
+        <jms:reference-file line="24">views/Taxonomy/index.html.twig</jms:reference-file>
+        <jms:reference-file line="26">views/UserGroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="31">views/UserPurchaseorder/index.html.twig</jms:reference-file>
+        <jms:reference-file line="47">views/UserUser/_index.html.twig</jms:reference-file>
+        <source>Show</source>
+        <target>Göster</target>
+      </trans-unit>
+      <trans-unit id="50a279de829f2dc398ac2ac7c9367508ea4b5df5" resname="Show all">
+        <jms:reference-file line="172">views/Default/index.html.twig</jms:reference-file>
+        <jms:reference-file line="16">views/StoreSearch/report.html.twig</jms:reference-file>
+        <source>Show all</source>
+        <target state="new">Show all</target>
+      </trans-unit>
+      <trans-unit id="a4a2910dbee8029c9ddbd8ec416ae721df5849e6" resname="Show bigger map">
+        <jms:reference-file line="62">ARIPDCMSBundle/Page/contact.html.twig</jms:reference-file>
+        <source>Show bigger map</source>
+        <target state="new">Show bigger map</target>
+      </trans-unit>
+      <trans-unit id="3d84a8bdc9460014256846aa3df74056a3e9cf68" resname="Social Media">
+        <jms:reference-file line="27">ARIPDCMSBundle/Page/contact.html.twig</jms:reference-file>
+        <source>Social Media</source>
+        <target>Social Media</target>
+      </trans-unit>
+      <trans-unit id="8d183dbdcea3b29906090bd83fa6fa37923cc8ec" resname="Subject">
+        <jms:reference-file line="45">ARIPDCMSBundle/Page/contact.html.twig</jms:reference-file>
+        <source>Subject</source>
+        <target state="new">Subject</target>
+      </trans-unit>
+      <trans-unit id="2dacf65959849884a011f36f76a04eebea94c5ea" resname="Submit">
+        <jms:reference-file line="17">views/Default/contact.html.twig</jms:reference-file>
+        <jms:reference-file line="18">views/Default/login.html.twig</jms:reference-file>
+        <jms:reference-file line="13">views/UserRegistration/register.html.twig</jms:reference-file>
+        <source>Submit</source>
+        <target>Gönder</target>
+      </trans-unit>
+      <trans-unit id="f32d5a3b17e614297417cc279a7ec1cd02274d65" resname="Support">
+        <jms:reference-file line="25">Resources/views/adminbar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Default/contact.html.twig</jms:reference-file>
+        <source>Support</source>
+        <target>Destek</target>
+      </trans-unit>
+      <trans-unit id="3e44c920427e845df4958295eb8c3045b55fcfd5" resname="Switch">
+        <jms:reference-file line="49">views/UserUser/_index.html.twig</jms:reference-file>
+        <source>Switch</source>
+        <target>Switch</target>
+      </trans-unit>
+      <trans-unit id="c480264d9d16c228e8474771b4abaa0f2b359092" resname="Switch back">
+        <jms:reference-file line="39">Resources/views/topbar_right.html.twig</jms:reference-file>
+        <source>Switch back</source>
+        <target>Switch back</target>
+      </trans-unit>
+      <trans-unit id="da33d8906282e9d4e451c9ca29955b8061e181e9" resname="Taxonomy">
+        <jms:reference-file line="5">views/Taxonomy/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Taxonomy/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Taxonomy/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Taxonomy/show.html.twig</jms:reference-file>
+        <source>Taxonomy</source>
+        <target state="new">Taxonomy</target>
+      </trans-unit>
+      <trans-unit id="cc9081be469e7bc0a0ee108f50c9848a3b218f15" resname="There are %count% results found for %q%">
+        <jms:reference-file line="20">ARIPDStoreBundle/Search/result.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/CRMIndividual/result.html.twig</jms:reference-file>
+        <jms:reference-file line="9">views/UserUser/_index.html.twig</jms:reference-file>
+        <source>There are %count% results found for %q%</source>
+        <target>{0} '%q%' için sonuç bulunamadı|{1} '%q%' için sadece 1 adet sonuç bulundu|]1,Inf] '%q%' için %count% adet sonuç bulundu</target>
+      </trans-unit>
+      <trans-unit id="fb91e24fa52d8d2b32937bf04d843f730319a902" resname="Update">
+        <jms:reference-file line="77">ARIPDUserBundle/Basket/form.html.twig</jms:reference-file>
+        <jms:reference-file line="6">ARIPDUserBundle/Profile/edit_content.html.twig</jms:reference-file>
+        <source>Update</source>
+        <target>Güncelle</target>
+      </trans-unit>
+      <trans-unit id="8bdf057f91e76ae328b2a21d35f682daa08a0ec0" resname="Upload">
+        <jms:reference-file line="3">ARIPDUserBundle/Image/new.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/CRMImage/new.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/StoreBranchimage/new.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/StoreModelimage/new.html.twig</jms:reference-file>
+        <source>Upload</source>
+        <target>Yükle</target>
+      </trans-unit>
+      <trans-unit id="f190c98ece6a67328e369fcdfcf84eea73c94b7e" resname="Your message">
+        <jms:reference-file line="48">ARIPDCMSBundle/Page/contact.html.twig</jms:reference-file>
+        <source>Your message</source>
+        <target state="new">Your message</target>
+      </trans-unit>
+      <trans-unit id="ab42293e29e1ffb306c1403dd95144d664853a60" resname="Your name">
+        <jms:reference-file line="39">ARIPDCMSBundle/Page/contact.html.twig</jms:reference-file>
+        <source>Your name</source>
+        <target state="new">Your name</target>
+      </trans-unit>
+      <trans-unit id="0f3ec4fa8c8a1a7bb5a115087e60d7a778d239b5" resname="alert.records.zero">
+        <jms:reference-file line="61">ARIPDUserBundle/Basket/form.html.twig</jms:reference-file>
+        <jms:reference-file line="88">ARIPDUserBundle/Basket/form.html.twig</jms:reference-file>
+        <jms:reference-file line="33">ARIPDUserBundle/Postaladdress/index.html.twig</jms:reference-file>
+        <jms:reference-file line="46">ARIPDUserBundle/Purchaseorder/index.html.twig</jms:reference-file>
+        <jms:reference-file line="47">ARIPDUserBundle/Wishlist/index.html.twig</jms:reference-file>
+        <jms:reference-file line="52">views/BlogPost/index.html.twig</jms:reference-file>
+        <jms:reference-file line="93">views/CMSPost/_index.html.twig</jms:reference-file>
+        <jms:reference-file line="40">views/SurveySurvey/index.html.twig</jms:reference-file>
+        <jms:reference-file line="39">views/UserPurchaseorder/index.html.twig</jms:reference-file>
+        <jms:reference-file line="48">views/Purchaseorder/email.html.twig</jms:reference-file>
+        <source>alert.records.zero</source>
+        <target>Görüntülenecek bir kayıt bulunamadı</target>
+      </trans-unit>
+      <trans-unit id="d7f67a250d8254339cc572b200990d99fe1baf29" resname="attributes">
+        <jms:reference-file line="5">views/Attributekey/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Attributekey/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Attributekey/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Attributekey/show.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Attributevalue/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Attributevalue/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Attributevalue/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Attributevalue/show.html.twig</jms:reference-file>
+        <source>attributes</source>
+        <target state="new">attributes</target>
+      </trans-unit>
+      <trans-unit id="c49c0a536150b901a0abeec30bc8fc0e13b7cb77" resname="dealer.sales">
+        <jms:reference-file line="35">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <source>dealer.sales</source>
+        <target state="new">dealer.sales</target>
+      </trans-unit>
+      <trans-unit id="b979042683c1083b606ee72a40cd8095a893458b" resname="dealers">
+        <jms:reference-file line="37">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Dealer/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Dealer/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Dealer/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Dealer/show.html.twig</jms:reference-file>
+        <source>dealers</source>
+        <target state="new">dealers</target>
+      </trans-unit>
+      <trans-unit id="f1c1a4f0437b70182773303781fd157a01a2969a" resname="flash.backup.delete.nok">
+        <jms:reference-file line="60">AdminBundle/Controller/BackupDatabaseController.php</jms:reference-file>
+        <jms:reference-file line="84">AdminBundle/Controller/BackupDatabaseController.php</jms:reference-file>
+        <jms:reference-file line="64">AdminBundle/Controller/BackupThemesController.php</jms:reference-file>
+        <jms:reference-file line="88">AdminBundle/Controller/BackupThemesController.php</jms:reference-file>
+        <source>flash.backup.delete.nok</source>
+        <target state="new">flash.backup.delete.nok</target>
+      </trans-unit>
+      <trans-unit id="e55a114997cba816de70d9fc6b132f5493b1dcde" resname="flash.backup.delete.ok">
+        <jms:reference-file line="55">AdminBundle/Controller/BackupDatabaseController.php</jms:reference-file>
+        <jms:reference-file line="79">AdminBundle/Controller/BackupDatabaseController.php</jms:reference-file>
+        <jms:reference-file line="59">AdminBundle/Controller/BackupThemesController.php</jms:reference-file>
+        <jms:reference-file line="83">AdminBundle/Controller/BackupThemesController.php</jms:reference-file>
+        <source>flash.backup.delete.ok</source>
+        <target state="new">flash.backup.delete.ok</target>
+      </trans-unit>
+      <trans-unit id="8bbef00259e86b232271462e1b7c4e71ed6ce413" resname="flash.backup.ok">
+        <jms:reference-file line="133">AdminBundle/Controller/BackupDatabaseController.php</jms:reference-file>
+        <jms:reference-file line="129">AdminBundle/Controller/BackupThemesController.php</jms:reference-file>
+        <source>flash.backup.ok</source>
+        <target state="new">flash.backup.ok</target>
+      </trans-unit>
+      <trans-unit id="e0c84f53309aa63809d9c52a4a4f415ca7874067" resname="flash.crm.image.delete.completed">
+        <jms:reference-file line="118">AdminBundle/Controller/CRMImageController.php</jms:reference-file>
+        <source>flash.crm.image.delete.completed</source>
+        <target state="new">flash.crm.image.delete.completed</target>
+      </trans-unit>
+      <trans-unit id="8b0e0ff725c78a6540565961fe6a785879731ca9" resname="flash.crm.loyalty.confirmed">
+        <jms:reference-file line="117">CRMBundle/Controller/LoyaltyController.php</jms:reference-file>
+        <source>flash.crm.loyalty.confirmed</source>
+        <target state="new">flash.crm.loyalty.confirmed</target>
+      </trans-unit>
+      <trans-unit id="e4461350dace7a96dc40c28952543059b12d7e29" resname="flash.crm.loyalty.notfound">
+        <jms:reference-file line="72">CRMBundle/Controller/LoyaltyController.php</jms:reference-file>
+        <source>flash.crm.loyalty.notfound</source>
+        <target state="new">flash.crm.loyalty.notfound</target>
+      </trans-unit>
+      <trans-unit id="74c9fdc20c3267f9bd8b14d7eeea1fd6baddf3eb" resname="flash.message.send.nok">
+        <jms:reference-file line="145">AdminBundle/Controller/DefaultController.php</jms:reference-file>
+        <source>flash.message.send.nok</source>
+        <target state="new">flash.message.send.nok</target>
+      </trans-unit>
+      <trans-unit id="fec1b1d773369446c85c7cd7c0d08a8bf4a1a2f0" resname="flash.message.send.ok">
+        <jms:reference-file line="142">AdminBundle/Controller/DefaultController.php</jms:reference-file>
+        <source>flash.message.send.ok</source>
+        <target state="new">flash.message.send.ok</target>
+      </trans-unit>
+      <trans-unit id="251404bcf2c796e8eb8772208e31abac9d23c515" resname="flash.page.contact.message.send.completed">
+        <jms:reference-file line="108">CMSBundle/Controller/PageController.php</jms:reference-file>
+        <source>flash.page.contact.message.send.completed</source>
+        <target state="new">flash.page.contact.message.send.completed</target>
+      </trans-unit>
+      <trans-unit id="502468570fcf5488a1d4367382b2b240c3b15419" resname="flash.survey.vote.completed">
+        <jms:reference-file line="73">UserBundle/Controller/SurveySurveyController.php</jms:reference-file>
+        <source>flash.survey.vote.completed</source>
+        <target state="new">flash.survey.vote.completed</target>
+      </trans-unit>
+      <trans-unit id="8393b14c61063651b56d4d36f2b626e5b1838bb4" resname="flash.theme.delete.nok">
+        <jms:reference-file line="192">AdminBundle/Controller/AppearanceThemeController.php</jms:reference-file>
+        <source>flash.theme.delete.nok</source>
+        <target state="new">flash.theme.delete.nok</target>
+      </trans-unit>
+      <trans-unit id="bc3fcd0638b525d24f47c33e5524bd821a434f26" resname="flash.theme.delete.ok">
+        <jms:reference-file line="202">AdminBundle/Controller/AppearanceThemeController.php</jms:reference-file>
+        <source>flash.theme.delete.ok</source>
+        <target state="new">flash.theme.delete.ok</target>
+      </trans-unit>
+      <trans-unit id="cd98652370a92affe853f3b2bece2f8b138a53db" resname="flash.theme.file.update.ok">
+        <jms:reference-file line="167">AdminBundle/Controller/AppearanceThemeController.php</jms:reference-file>
+        <source>flash.theme.file.update.ok</source>
+        <target state="new">flash.theme.file.update.ok</target>
+      </trans-unit>
+      <trans-unit id="91ca15d984c34a06aefe75fd91ec93a6122e5e20" resname="forums">
+        <jms:reference-file line="5">views/ForumTopic/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ForumTopic/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ForumTopic/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ForumTopic/show.html.twig</jms:reference-file>
+        <source>forums</source>
+        <target state="new">forums</target>
+      </trans-unit>
+      <trans-unit id="0a894db7c792e10a79e380cb0453380548bbacb5" resname="groups">
+        <jms:reference-file line="36">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/UserGroup/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/UserGroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/UserGroup/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/UserGroup/show.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Group/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Group/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Group/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Group/show.html.twig</jms:reference-file>
+        <source>groups</source>
+        <target state="new">groups</target>
+      </trans-unit>
+      <trans-unit id="fef5b1b286763358fec64fdac4728ff2441d0d7a" resname="incomings">
+        <jms:reference-file line="5">views/Incoming/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Incoming/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Incoming/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Incoming/show.html.twig</jms:reference-file>
+        <source>incomings</source>
+        <target state="new">incomings</target>
+      </trans-unit>
+      <trans-unit id="5947727cea9dc530db9fe09d941ac61596a8e803" resname="individuals">
+        <jms:reference-file line="86">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/CRMIndividual/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CRMIndividual/index.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/CRMIndividual/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CRMIndividual/new.html.twig</jms:reference-file>
+        <source>individuals</source>
+        <target state="new">individuals</target>
+      </trans-unit>
+      <trans-unit id="8ad6c293f713b6f8795b60da795a7a6b06133ed7" resname="iso3166">
+        <jms:reference-file line="155">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Iso3166/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Iso3166/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Iso3166/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Iso3166/show.html.twig</jms:reference-file>
+        <source>iso3166</source>
+        <target state="new">iso3166</target>
+      </trans-unit>
+      <trans-unit id="8af57a667455290cd89580b89b6586f61cd003ba" resname="iso4217">
+        <jms:reference-file line="156">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Iso4217/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Iso4217/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Iso4217/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Iso4217/show.html.twig</jms:reference-file>
+        <source>iso4217</source>
+        <target state="new">iso4217</target>
+      </trans-unit>
+      <trans-unit id="de4869293732c11a9361e3084ab108cd6f1a05ce" resname="iso639">
+        <jms:reference-file line="154">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Iso639/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Iso639/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Iso639/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Iso639/show.html.twig</jms:reference-file>
+        <source>iso639</source>
+        <target state="new">iso639</target>
+      </trans-unit>
+      <trans-unit id="bbec3012ccea1aacc10dd0996f8c474a43c10eb8" resname="label.actions">
+        <jms:reference-file line="15">views/CRMTaggroup/index.html.twig</jms:reference-file>
+        <source>label.actions</source>
+        <target state="new">label.actions</target>
+      </trans-unit>
+      <trans-unit id="94f40e3fb7bc6d47933fea20a539932057224ec7" resname="label.answer">
+        <jms:reference-file line="11">Form/Type/SurveyAnswerType.php</jms:reference-file>
+        <jms:reference-file line="17">Form/Type/SurveyQuestionType.php</jms:reference-file>
+        <source>label.answer</source>
+        <target state="new">label.answer</target>
+      </trans-unit>
+      <trans-unit id="0c0a69a3e25ba71944b31e53f0a057e417264e0b" resname="label.approver">
+        <jms:reference-file line="14">views/CMSTopic/index.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/UserGroup/show.html.twig</jms:reference-file>
+        <source>label.approver</source>
+        <target state="new">label.approver</target>
+      </trans-unit>
+      <trans-unit id="20fdd0fc8d5ea9d8ec581dcabbcca61de1cf8317" resname="label.emailaddress">
+        <jms:reference-file line="11">Form/Type/BulletinBasicFormType.php</jms:reference-file>
+        <source>label.emailaddress</source>
+        <target state="new">label.emailaddress</target>
+      </trans-unit>
+      <trans-unit id="776945596cf1c9f095b2accb85da9aada9e36cae" resname="label.endingAt">
+        <jms:reference-file line="28">Form/Type/AdsAdvertisementType.php</jms:reference-file>
+        <source>label.endingAt</source>
+        <target state="new">label.endingAt</target>
+      </trans-unit>
+      <trans-unit id="f01c51761e2885fee4a30331d21a6f809d6316eb" resname="label.expdateMonth">
+        <jms:reference-file line="134">ARIPDShoppingBundle/Payment/checkout.html.twig</jms:reference-file>
+        <jms:reference-file line="24">ARIPDShoppingBundle/Payment/pos.html.twig</jms:reference-file>
+        <source>label.expdateMonth</source>
+        <target state="new">label.expdateMonth</target>
+      </trans-unit>
+      <trans-unit id="1150d10900abebd7ac6aa05094e70168576de7f8" resname="label.expdateYear">
+        <jms:reference-file line="133">ARIPDShoppingBundle/Payment/checkout.html.twig</jms:reference-file>
+        <jms:reference-file line="23">ARIPDShoppingBundle/Payment/pos.html.twig</jms:reference-file>
+        <source>label.expdateYear</source>
+        <target state="new">label.expdateYear</target>
+      </trans-unit>
+      <trans-unit id="ecaf54eb5f92da2c91912d0e5456afe525f334e4" resname="label.file">
+        <jms:reference-file line="13">Form/Type/AdsAdvertisementType.php</jms:reference-file>
+        <jms:reference-file line="14">Form/Type/ShoppingPaymentgrouptypeFormType.php</jms:reference-file>
+        <jms:reference-file line="9">Form/Type/ImageFormType.php</jms:reference-file>
+        <source>label.file</source>
+        <target state="new">label.file</target>
+      </trans-unit>
+      <trans-unit id="3cd9c41a102fb35eb8b88cf1fed3e0de49dc6095" resname="label.iso4217">
+        <jms:reference-file line="20">Form/Type/Iso639FormType.php</jms:reference-file>
+        <source>label.iso4217</source>
+        <target state="new">label.iso4217</target>
+      </trans-unit>
+      <trans-unit id="8ae31786b4c80e28f7d14f5f3568dd5820dee03c" resname="label.question">
+        <jms:reference-file line="11">Form/Type/SurveyQuestionType.php</jms:reference-file>
+        <source>label.question</source>
+        <target state="new">label.question</target>
+      </trans-unit>
+      <trans-unit id="fa3b79fa8f820278043500eee0cde4f5155591dd" resname="label.search.cms">
+        <jms:reference-file line="3">views/CMSSearch/form.html.twig</jms:reference-file>
+        <source>label.search.cms</source>
+        <target state="new">label.search.cms</target>
+      </trans-unit>
+      <trans-unit id="2427a9afb52a561b1b3c4437d96ab2ef89621d96" resname="label.search.individual">
+        <jms:reference-file line="3">views/CRMIndividual/form.html.twig</jms:reference-file>
+        <source>label.search.individual</source>
+        <target state="new">label.search.individual</target>
+      </trans-unit>
+      <trans-unit id="b669dc67e609a435b1f8a681b951810a4ae642cf" resname="label.search.qrcode">
+        <jms:reference-file line="9">views/Loyalty/index.html.twig</jms:reference-file>
+        <source>label.search.qrcode</source>
+        <target state="new">label.search.qrcode</target>
+      </trans-unit>
+      <trans-unit id="5cb2467135e6cd45c81335a9ea3f346ecb627be1" resname="label.search.user">
+        <jms:reference-file line="3">views/UserUser/form.html.twig</jms:reference-file>
+        <source>label.search.user</source>
+        <target state="new">label.search.user</target>
+      </trans-unit>
+      <trans-unit id="f155c919a6b09da756b4acb3b8bffde2d98ba24d" resname="label.startingAt">
+        <jms:reference-file line="23">Form/Type/AdsAdvertisementType.php</jms:reference-file>
+        <source>label.startingAt</source>
+        <target state="new">label.startingAt</target>
+      </trans-unit>
+      <trans-unit id="d297e5e766d72cac5d1578188f5142d02471167b" resname="label.subtotal">
+        <jms:reference-file line="9">views/Purchaseorder/email.html.twig</jms:reference-file>
+        <source>label.subtotal</source>
+        <target state="new">label.subtotal</target>
+      </trans-unit>
+      <trans-unit id="5249aa7e7febb98be9abba929ac9a7a7d2c54466" resname="label.total">
+        <jms:reference-file line="54">views/Purchaseorder/email.html.twig</jms:reference-file>
+        <jms:reference-file line="92">views/Purchaseorder/email.html.twig</jms:reference-file>
+        <source>label.total</source>
+        <target state="new">label.total</target>
+      </trans-unit>
+      <trans-unit id="4de1867062602d09eb9454f69569483eaf1dfc36" resname="label.url">
+        <jms:reference-file line="9">Form/Type/StoreBrandFormType.php</jms:reference-file>
+        <source>label.url</source>
+        <target state="new">label.url</target>
+      </trans-unit>
+      <trans-unit id="e86aa1c14adcd28b45ea82fc7d39b49baa8a9313" resname="label.writer">
+        <jms:reference-file line="12">views/UserGroup/show.html.twig</jms:reference-file>
+        <source>label.writer</source>
+        <target state="new">label.writer</target>
+      </trans-unit>
+      <trans-unit id="474c797713f37901928aafb6adbae0241d1750bd" resname="logs">
+        <jms:reference-file line="5">views/UserLog/_index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/UserLog/index.html.twig</jms:reference-file>
+        <source>logs</source>
+        <target state="new">logs</target>
+      </trans-unit>
+      <trans-unit id="7a7368ae189d47c48423ea9a04f42699f34e6184" resname="logtypes">
+        <jms:reference-file line="152">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Logtype/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Logtype/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Logtype/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Logtype/show.html.twig</jms:reference-file>
+        <source>logtypes</source>
+        <target state="new">logtypes</target>
+      </trans-unit>
+      <trans-unit id="1d06a0d76f000e6edd18de492383983feefced4e" resname="model">
+        <jms:reference-file line="5">views/StoreModel/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreModel/new.html.twig</jms:reference-file>
+        <source>model</source>
+        <target state="new">model</target>
+      </trans-unit>
+      <trans-unit id="4d591efdebc6864001414b0d6c3c85a1a8b6c7a6" resname="paymentgroups">
+        <jms:reference-file line="151">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ShoppingPaymentgroup/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ShoppingPaymentgroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ShoppingPaymentgroup/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ShoppingPaymentgroup/show.html.twig</jms:reference-file>
+        <source>paymentgroups</source>
+        <target state="new">paymentgroups</target>
+      </trans-unit>
+      <trans-unit id="430605558ad79a108260b8d78db488e12aa0656a" resname="paymentgrouptypes">
+        <jms:reference-file line="150">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ShoppingPaymentgrouptype/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ShoppingPaymentgrouptype/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ShoppingPaymentgrouptype/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ShoppingPaymentgrouptype/show.html.twig</jms:reference-file>
+        <source>paymentgrouptypes</source>
+        <target state="new">paymentgrouptypes</target>
+      </trans-unit>
+      <trans-unit id="d5ef150a823c49b8e25a3d28440b3e26f11b917e" resname="purchaseorders">
+        <jms:reference-file line="129">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/UserPurchaseorder/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/UserPurchaseorder/index.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/UserPurchaseorder/new.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/UserPurchaseorder/show.html.twig</jms:reference-file>
+        <source>purchaseorders</source>
+        <target state="new">purchaseorders</target>
+      </trans-unit>
+      <trans-unit id="aa4298a8e04f573911e2c236d43be708e892cff1" resname="salesorder">
+        <jms:reference-file line="5">views/Salesorder/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Salesorder/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Salesorder/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Salesorder/show.html.twig</jms:reference-file>
+        <source>salesorder</source>
+        <target state="new">salesorder</target>
+      </trans-unit>
+      <trans-unit id="1d7cdcdcdc82d0847f2bbc9977d4727cba62eac4" resname="subtopics">
+        <jms:reference-file line="5">views/CMSSubtopic/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSSubtopic/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSSubtopic/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSSubtopic/show.html.twig</jms:reference-file>
+        <source>subtopics</source>
+        <target state="new">subtopics</target>
+      </trans-unit>
+      <trans-unit id="5b195f2e7b218830467da8f1772d76c5d88d1007" resname="taggroup">
+        <jms:reference-file line="12">views/CRMTaggroup/index.html.twig</jms:reference-file>
+        <source>taggroup</source>
+        <target state="new">taggroup</target>
+      </trans-unit>
+      <trans-unit id="c41f826e5cf17114512db338dfe3c506f7701664" resname="taggroups">
+        <jms:reference-file line="83">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/CRMTaggroup/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/CRMTaggroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/CRMTaggroup/new.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/CRMTaggroup/show.html.twig</jms:reference-file>
+        <source>taggroups</source>
+        <target state="new">taggroups</target>
+      </trans-unit>
+      <trans-unit id="fe2645b72bb177a1a8bd3dfaad03c1d3857f906e" resname="tagkeys">
+        <jms:reference-file line="14">views/CRMTaggroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/CRMTagkey/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/CRMTagkey/index.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/CRMTagkey/new.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/CRMTagkey/show.html.twig</jms:reference-file>
+        <source>tagkeys</source>
+        <target state="new">tagkeys</target>
+      </trans-unit>
+      <trans-unit id="615a8e40b12e40188b3ebcab753c3f02db8a216b" resname="themes">
+        <jms:reference-file line="5">views/AppearanceTheme/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/AppearanceTheme/show.html.twig</jms:reference-file>
+        <source>themes</source>
+        <target>Temalar</target>
+      </trans-unit>
+      <trans-unit id="5b7dcd14a4faa2cdd54cf6eb8d4bc35da31914a1" resname="users">
+        <jms:reference-file line="5">views/UserUser/_index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/UserUser/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/UserUser/new.html.twig</jms:reference-file>
+        <source>users</source>
+        <target state="new">users</target>
+      </trans-unit>
+      <trans-unit id="dd01687dffe730edb96c2dc1170a8b8edeafb29e" resname="vouchers">
+        <jms:reference-file line="5">views/ShoppingVoucher/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ShoppingVoucher/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ShoppingVoucher/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/ShoppingVoucher/show.html.twig</jms:reference-file>
+        <source>vouchers</source>
+        <target state="new">vouchers</target>
+      </trans-unit>
+      <trans-unit id="1428c9bfa594823d79c18ac7e05db082c6bc9594" resname="İndirim Çeki">
+        <jms:reference-file line="11">Form/Type/VoucherFormType.php</jms:reference-file>
+        <source>İndirim Çeki</source>
+        <target state="new">İndirim Çeki</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

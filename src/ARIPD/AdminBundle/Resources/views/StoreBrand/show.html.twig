@@ -1,0 +1,19 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'Brands'|trans({}, 'ARIPDStoreBundle') }}</h1>
+</div>
+<ul class="unstyled">
+	{% if entity.url %}<li><img src="{{ entity.url }}"></li>{% endif %}
+	<li>{{ entity.name }}</li>
+</ul>
+<div class="form-actions btn-toolbar">
+	<a class="btn" href="{{ path('aripd_admin_store_brand_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_store_brand_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+	<button class="btn btn-danger" type="button" onclick="deleteRecord();"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+</div>
+<form id="delete_form" action="{{ path('aripd_admin_store_brand_delete', { 'id': entity.id }) }}" method="post">
+	{{ form_widget(delete_form) }}
+</form>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<ul class="breadcrumb">
+	<li><a href="{{ path('aripd_default_index') }}">{{ 'Dashboard'|trans({}, 'ARIPDAdminBundle') }}</a> <span class="divider">/</span></li>
+	<li class="active">{{ 'Store Management'|trans({}, 'ARIPDStoreBundle') }} <span class="divider">/</span></li>
+	<li class="active">{{ 'Products'|trans({}, 'ARIPDStoreBundle') }}</li>
+</ul>
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_storeproduct_new') }}">{{ 'New entry'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_storeproduct_clear') }}">{{ 'Delete all'|trans() }}</a>
+	<form class="pull-right navbar-search" action="{{ path('aripd_admin_storeproduct_search') }}" method="GET">
+		<div class="input-append">
+			<input type="text" id="appendedInputButtons" name="q" placeholder="Ürün arayın">
+			<button class="btn" type="submit"><i class="icon-search"></i></button>
+		</div>
+	</form>
+</div>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>{{ 'Category'|trans({}, 'ARIPDStoreBundle') }}</th>
+			<th>{{ 'Brand'|trans({}, 'ARIPDStoreBundle') }}</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for entity in pagination %}
+		<tr>
+			<td>
+				<div class="span1 thumbnail"><img src="{{ entity.model.image.url }}" /></div>
+			</td>
+			<td>
+				<div>{{ entity.name }}</div>	
+				<small>{{ entity.code }}</small>	
+			</td>
+			<td>{{ entity.defaultcategory.name }}</td>
+			<td>{{ entity.brand.name }}</td>
+			<td>
+				<div class="btn-group">
+					<a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-cog"></i></a>
+					<ul class="dropdown-menu pull-right">
+						<li><a href="{{ path('aripd_admin_storeproduct_show', { id: entity.id }) }}"><i class="icon-pencil"></i> {{ 'Show'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_storeproduct_edit', { id: entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_storeproduct_delete', { id: entity.id }) }}"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</a></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<div class="navigation">
+	{{ knp_pagination_render(pagination) }}
+</div>
+{% endblock %}

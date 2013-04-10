@@ -1,0 +1,54 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<ul class="breadcrumb">
+	<li><a href="{{ path('aripd_default_index') }}">{{ 'Dashboard'|trans({}, 'ARIPDAdminBundle') }}</a> <span class="divider">/</span></li>
+	<li class="active">{{ 'Content Management'|trans({}, 'ARIPDCMSBundle') }} <span class="divider">/</span></li>
+	<li class="active">{{ 'Comments'|trans({}, 'ARIPDCMSBundle') }}</li>
+</ul>
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+	<thead>
+		<tr>
+			<th width="50">Id</th>
+			<th width="100">Post</th>
+			<th>Name</th>
+			<th width="50">Approved</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+</table>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function() {
+	$('#example').dataTable({
+		"bProcessing": true,
+		"bServerSide": true,
+		"sAjaxSource": "{{ path('aripd_admin_cmscomment_data') }}",
+		"aoColumns": [
+						{ "mData": "id" },
+						{ "mData": "post.name" },
+						{ "mData": "content" },
+						{ "mData": "approved" },
+		],
+		"fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+			var link_status = Routing.generate('aripd_admin_cmscomment_status', { id: aData.id });
+			$('td:eq(3)', nRow).html( '<a class="btn btn-mini" href="'+link_status+'">'+aData.approved+'</a>' );
+			if (aData.approved) {
+				$(nRow).addClass('success');
+			}
+			else if (!aData.approved) {
+				$(nRow).addClass('warning');
+			}
+		},
+		"sDom": "<'row'<'span3'l><'span6'f>r>t<'row'<'span3'i><'span6'p>>",
+		"sPaginationType": "bootstrap",
+		"oLanguage": {
+			"sLengthMenu": "_MENU_ records per page"
+		}
+	});
+});
+</script>
+{% endblock %}

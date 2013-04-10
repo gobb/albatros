@@ -1,0 +1,14 @@
+parameters:
+    aripdblog.post_service.class: ARIPD\BlogBundle\Service\PostService
+    aripdblog.post_listener.class: ARIPD\BlogBundle\EventListener\PostListener
+
+services:
+    aripdblog.post_service:
+        class: "%aripdblog.post_service.class%"
+        arguments: [ "@service_container", "@doctrine.orm.entity_manager" ]
+    aripdblog.post_listener:
+        class: "%aripdblog.post_listener.class%"
+        arguments: [ "@service_container" ]
+        tags:
+            - { name: doctrine.event_listener, event: postLoad, method: postLoad }
+

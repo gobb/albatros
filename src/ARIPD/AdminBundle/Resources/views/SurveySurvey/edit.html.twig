@@ -1,0 +1,89 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'Survey Management'|trans({}, 'ARIPDSurveyBundle') }}</h1>
+</div>
+
+<form action="{{ path('aripd_admin_survey_survey_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+
+	{{ form_row(edit_form.name, {attr: {class: 'span9'}}) }}
+	{{ form_row(edit_form.description, {attr: {class: 'span9'}}) }}
+	{{ form_row(edit_form.startingAt) }}
+	{{ form_row(edit_form.endingAt) }}
+	
+	<hr>
+	
+	<ul class="questions" data-prototype="{{ form_widget(edit_form.questions.vars.prototype) | e }}">
+		{% for question in edit_form.questions %}
+		<li>
+			{{ form_row(question.name) }}
+			<ul class="answers" data-prototype="{{ form_widget(question.answers.vars.prototype) | e }}">
+				{% for answer in question.answers %}
+				<li>
+					{{ form_row(answer.name) }}
+				</li>
+				{% endfor %}
+			</ul>
+		</li>
+		{% endfor %}
+	</ul>
+	
+	{{ form_rest(edit_form) }}
+	
+	<div class="form-actions">
+		<a class="btn" href="{{ path('aripd_admin_survey_survey_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+		<button class="btn btn-danger" type="button" onclick="deleteRecord();"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+		<button class="btn btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit"><i class="icon-ok"></i> {{ 'Save'|trans() }}</button>
+	</div>
+	
+</form>
+
+<form id="delete_form" action="{{ path('aripd_admin_survey_survey_delete', { 'id': entity.id }) }}" method="post">
+	{{ form_widget(delete_form) }}
+</form>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+var collectionHolder = $('ul.questions');
+
+var $addQuestionLink = $('<a href="#" class="add_question_link">{{ 'Add'|trans() }}</a>');
+var $newQuestionLinkLi = $('<li></li>').append($addQuestionLink);
+
+jQuery(document).ready(function() {
+	collectionHolder.find('li').each(function() {
+		addQuestionFormDeleteLink($(this));
+	});
+
+	collectionHolder.append($newQuestionLinkLi);
+
+	$addQuestionLink.on('click', function(e) {
+		e.preventDefault();
+		addQuestionForm(collectionHolder, $newQuestionLinkLi);
+	});
+});
+
+function addQuestionForm(collectionHolder, $newQuestionLinkLi) {
+    var prototype = collectionHolder.attr('data-prototype');
+
+    var newQuestionForm = prototype.replace(/__name__/g, collectionHolder.children().length);
+
+    var $newQuestionFormLi = $('<li></li>').append(newQuestionForm);
+    $newQuestionLinkLi.before($newQuestionFormLi);
+
+    addQuestionFormDeleteLink($newQuestionFormLi);
+}
+
+function addQuestionFormDeleteLink($questionFormLi) {
+    var $removeQuestionFormAnchor = $('<a href="#">{{ 'Remove'|trans() }}</a>');
+    $questionFormLi.append($removeQuestionFormAnchor);
+
+    $removeQuestionFormAnchor.on('click', function(e) {
+        e.preventDefault();
+        $questionFormLi.remove();
+    });
+}
+</script>
+{% endblock %}

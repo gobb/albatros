@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+
+{% block container %}
+{# render(controller('ARIPDStoreBundle:Banner:list')) #}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			{% include '::sidebar.html.twig' %}
+			<div class="span9">
+				<h3>{{ 'New Products'|trans({}, 'ARIPDStoreBundle') }}</h3>
+				{{ render(controller('ARIPDStoreBundle:Product:brandnew')) }}
+				<h3>Tüm Ürünler</h3>
+				{{ render(controller('ARIPDStoreBundle:Product:list')) }}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

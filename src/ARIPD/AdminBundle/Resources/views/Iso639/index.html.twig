@@ -1,0 +1,52 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'iso639'|trans() }}</h1>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>A2</th>
+            <th>A3</th>
+            <th>Name</th>
+            <th>Native</th>
+            <th>Active</th>
+            <th>Iso4217</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('aripd_admin_iso639_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.a2 }}</td>
+            <td>{{ entity.a3 }}</td>
+            <td>{{ entity.name }}</td>
+            <td>{{ entity.native }}</td>
+            <td>{{ entity.active }}</td>
+            <td>{{ entity.iso4217.code }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('aripd_admin_iso639_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('aripd_admin_iso639_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('aripd_admin_iso639_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
+{% endblock %}

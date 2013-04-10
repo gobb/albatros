@@ -1,0 +1,10 @@
+{% if entities|length > 1 %}
+<li class="dropdown">
+	<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ 'Language: %language%'|trans({'%language%': app.request.locale|localizedlanguage}, 'ARIPDAdminBundle') }} <b class="caret"></b></a>
+	<ul class="dropdown-menu">
+		{% for entity in entities %}
+		<li><a href="{{ path('aripd_admin_default_index') }}" {% if app.request.locale == entity.a2 %}class="active"{% endif %}>{{ entity.a2|localizedlanguage }}</a></li>
+		{% endfor %}
+	</ul>
+</li>
+{% endif %}

@@ -1,0 +1,72 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ entity.name }}{% endblock %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			{% include '::sidebar.html.twig' %}
+			<div class="span9">
+				<ul class="breadcrumb">
+					<li><a href="{{ path('aripd_default_index') }}">{{ 'Home'|trans() }}</a> <span class="divider">/</span></li>
+					<li class="active">{{ entity.name }}</li>
+				</ul>
+				<h3>
+					{{ entity.name }}
+					<form id="filter" class="pull-right form-inline">
+						{{ render(controller('ARIPDStoreBundle:Tag:listByCategoryId', { category_id: entity.id })) }}
+						<select name="sort">
+							<option value="name" selected="selected">{{ 'Alphabetical'|trans({}, 'ARIPDStoreBundle') }}</option>
+							<option value="name_reversed">{{ 'Reverse alphabetical'|trans({}, 'ARIPDStoreBundle') }}</option>
+							<option value="price">{{ 'Low to high'|trans({}, 'ARIPDStoreBundle') }}</option>
+							<option value="price_reversed">{{ 'High to low'|trans({}, 'ARIPDStoreBundle') }}</option>
+						</select>
+					</form>
+				</h3>
+				<hr class="soft">
+				{# render(controller('ARIPDStoreBundle:Product:listbycategoryid', { id: entity.id, template: 'listbycategoryid_blockview.html.twig' })) #}
+				<ul class="thumbnails" id="applications">
+					{% for product in entity.products %}
+					<li class="span3" data-id="id-{{ loop.index }}" data-type="{% for tag in product.tags %}{{ tag.slug }}{% if loop.last == false %} {% endif %}{% endfor %}">
+					  <div class="thumbnail">
+						{% if product.brandnew %}
+						<i class="tag"></i>
+						{% endif %}
+					  <a href="{{ path('aripd_store_model_show', { id: product.model.id, code: product.model.code, slug: product.slug }) }}">
+							<img src="{{ product.model.image.url }}" alt=""/>
+						</a>
+						<div class="caption">
+						  <h5><span data-type="name">{{ product.name }}</span></h5>
+						  <h4>
+						  	<a class="btn btn-large" href="{{ path('aripd_store_model_show', { id: product.model.id, code: product.model.code, slug: product.slug}) }}">{{ 'Show'|trans() }}</a>
+						  	<span class="pull-right" data-type="price">{{ product.model.price|convertFormat(product.model.iso4217, app.session.get('iso4217')) }}</span>
+						  </h4>
+						</div>
+					  </div>
+					</li>
+					{% endfor %}
+				</ul>
+				<hr class="soft">				
+				
+				<!--
+				<a href="compair.html" class="btn btn-large pull-right">Compair Product</a>
+				<div class="pagination">
+					<ul>
+						<li><a href="#">‹</a></li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">...</a></li>
+						<li><a href="#">›</a></li>
+					</ul>
+				</div>
+				<br class="clr">
+				-->
+				
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+<select name="type">
+	<option value="all" selected="selected">{{ 'All Products'|trans({}, 'ARIPDStoreBundle') }}</option>
+	{% for entity in entities %}
+	<option value="{{ entity.slug }}">{{ entity.name }}</option>
+	{% endfor %}
+</select>

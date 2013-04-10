@@ -1,0 +1,17 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<ul class="breadcrumb">
+	<li><a href="{{ path('aripd_admin_default_index') }}">{{ 'Dashboard'|trans({}, 'ARIPDAdminBundle') }}</a> <span class="divider">/</span></li>
+	<li class="active">{{ 'Customer Relationship Management'|trans({}, 'ARIPDCRMBundle') }} <span class="divider">/</span></li>
+	<li><a href="{{ path('aripd_admin_crm_tagkey_index') }}">{{ 'tagkeys'|trans() }}</a> <span class="divider">/</span></li>
+	<li class="active">{{ 'New'|trans({}, 'ARIPDCRMBundle') }}</li>
+</ul>
+<form action="{{ path('aripd_admin_crm_tagkey_create') }}" method="post" {{ form_enctype(form) }}>
+	{{ form_widget(form) }}
+	<div class="form-actions">
+		<a class="btn" href="{{ path('aripd_admin_crm_tagkey_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+		<button class="btn btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Create'|trans() }}</button>
+	</div>
+</form>
+{% endblock %}

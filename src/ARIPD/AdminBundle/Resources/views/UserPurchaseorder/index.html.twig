@@ -1,0 +1,45 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<ul class="breadcrumb">
+	<li><a href="{{ path('aripd_default_index') }}">{{ 'Dashboard'|trans({}, 'ARIPDAdminBundle') }}</a> <span class="divider">/</span></li>
+	<li class="active">{{ 'purchaseorders'|trans() }}</li>
+</ul>
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_userpurchaseorder_new') }}">Yeni</a>
+</div>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Sipariş No</th>
+			<th>Durum</th>
+			<th>Taşıma</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for entity in pagination %}
+		<tr>
+			<td>{{ entity.poid }}</td>
+			<td>{{ entity.status.name }}</td>
+			<td>{{ entity.transportation.name }}</td>
+			<td>
+				<div class="btn-group">
+					<a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-cog"></i></a>
+					<ul class="dropdown-menu pull-right">
+						<li><a href="{{ path('aripd_admin_userpurchaseorder_print', { id: entity.id }) }}"><i class="icon-print"></i> {{ 'Print'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_userpurchaseorder_show', { id: entity.id }) }}"><i class="icon-eye-open"></i> {{ 'Show'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_userpurchaseorder_edit', { id: entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		{% else %}
+		<tr>
+			<td colspan="4">{{ 'alert.records.zero'|trans() }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<div class="navigation">{{ knp_pagination_render(pagination) }}</div>
+{% endblock %}

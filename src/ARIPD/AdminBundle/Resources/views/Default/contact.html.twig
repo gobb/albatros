@@ -1,0 +1,19 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'Support'|trans() }}</h1>
+</div>
+<form action="{{ path('aripd_admin_default_contact') }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
+	{{ form_errors(form) }}
+
+	{{ form_row(form.name, { attr: { class: 'span3', value: app.user.fullname }}) }}
+	{{ form_row(form.email, { attr: { class: 'span3', value: app.user.email }}) }}
+	{{ form_row(form.subject, { attr: { class: 'span6' }}) }}
+	{{ form_row(form.body, { attr: { class: 'span6' }}) }}
+	
+	{{ form_rest(form) }}
+
+	<button class="btn btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Submit'|trans() }}</button>
+</form>
+{% endblock %}

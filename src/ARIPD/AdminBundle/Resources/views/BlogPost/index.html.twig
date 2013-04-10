@@ -1,0 +1,54 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'Blogs'|trans({}, 'ARIPDBlogBundle') }} <small>Kullanıcılar tarafından girişi yapılan bloglar ve durumları</small></h1>
+</div>
+{% if pagination|length > 0 %}
+<table class="table table-striped">
+	<caption>{{ 'Blogs'|trans({}, 'ARIPDBlogBundle') }}</caption>
+	<thead>
+		<tr>
+			<th>{{ 'User'|trans({}, 'ARIPDUserBundle') }}</th>
+			<th>{{ 'Post'|trans({}, 'ARIPDBlogBundle') }}</th>
+			<th>{{ 'Status'|trans({}, 'ARIPDBlogBundle') }}</th>
+			<th>{{ 'Tags'|trans({}, 'ARIPDBlogBundle') }}</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for entity in pagination %}
+		<tr>
+			<td>
+				<a href="{{ path('aripd_cms_user_show', {username: entity.user.username}) }}">{{ entity.user.fullname }}</a>
+			</td>
+			<td>{{ entity.name }}</td>
+			<td>
+				<div class="btn-group" data-toggle="buttons-radio">
+					<a href="{{ path('aripd_admin_blog_post_approval', {id: entity.id}) }}" class="btn btn-mini {% if entity.approved %}btn-success active{% else %}{% endif %}"><i class="icon-thumbs-up"></i></a>
+					<a href="{{ path('aripd_admin_blog_post_approval', {id: entity.id}) }}" class="btn btn-mini {% if entity.approved %}{% else %}btn-inverse active{% endif %}"><i class="icon-thumbs-down"></i></a>
+				</div>
+			</td>
+			<td>{% for tag in entity.tags %}{{ tag.name }}{% if loop.last == false %},{% endif %}{% endfor %}</td>
+			<td>
+				<div class="btn-group">
+					<a class="btn btn-mini" href="{{ path('aripd_admin_blog_post_show', { id: entity.id }) }}">{{ 'Show'|trans() }}</a>
+					<a class="btn btn-mini" href="{{ path('aripd_admin_blog_post_edit', { id: entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+				</div>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="5">
+				<div class="navigation">{{ knp_pagination_render(pagination) }}</div>
+			</td>
+		</tr>
+	</tfoot>
+</table>
+
+{% else %}
+{{ 'alert.records.zero'|trans() }}
+{% endif %}
+{% endblock %}

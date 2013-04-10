@@ -1,0 +1,48 @@
+<ul class="nav nav-pills">
+	{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+	<li class="dropdown">
+		<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ 'User is'|trans({'%username%': app.user.username}, 'ARIPDUserBundle') }} <b class="caret"></b></a>
+		<ul class="dropdown-menu">
+			{% if is_expr_granted("hasAnyRole('ROLE_ADMIN', 'ROLE_EDITOR')") %}
+			<li><a href="{{ path('aripd_admin_default_index') }}"><i class="icon-asterisk"></i> {{ 'Admin Panel'|trans({}, 'ARIPDAdminBundle') }}</a></li>
+			<li class="divider"></li>
+			{% endif %}
+			<li class="nav-header">Profil Bilgileri</li>
+			<li><a href="{{ path('aripd_user_profile_show') }}">{{ 'My Profile'|trans({}, 'ARIPDUserBundle') }}</a></li>
+			<li><a href="{{ path('aripd_user_message_list') }}">{{ 'Messages'|trans({}, 'ARIPDUserBundle') }}</a></li>
+			{% if configVariable('module_store') %}
+			<li><a href="{{ path('aripd_user_postaladdress_index') }}">{{ 'Postal Addresses'|trans({}, 'ARIPDShoppingBundle') }}</a></li>
+			{% endif %}
+			{% if configVariable('module_store') %}
+			<li class="divider"></li>
+			{% if is_granted('ROLE_WRITER') %}
+			<li><a href="{{ path('aripd_user_store_product_index') }}">{{ 'Products'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+			{% endif %}
+			<li><a href="{{ path('aripd_user_wishlist_index') }}">{{ 'Wish List'|trans({}, 'ARIPDShoppingBundle') }}</a></li>
+			<li><a href="{{ path('aripd_user_basket_index') }}">{{ 'My Basket'|trans({}, 'ARIPDUserBundle') }}</a></li>
+			<li><a href="{{ path('aripd_user_purchaseorder_index') }}">{{ 'My Purchase Orders'|trans({}, 'ARIPDUserBundle') }}</a></li>
+			{% endif %}
+			{% if configVariable('module_cms') %}
+			<li class="divider"></li>
+			{% if is_granted('ROLE_WRITER') %}
+			<li><a href="{{ path('aripd_user_cms_post_index') }}">{{ 'Posts'|trans({}, 'ARIPDCMSBundle') }}</a></li>
+			<li class="hide"><a accesskey="N" href="{{ path('aripd_user_cms_post_new') }}">new cms post</a></li>
+			{% endif %}
+			{% endif %}
+			{% if configVariable('module_blog') %}
+			<li><a href="{{ path('aripd_user_blog_post_index') }}">{{ 'Posts'|trans({}, 'ARIPDBlogBundle') }}</a></li>
+			{% endif %}
+			<li class="divider"></li>
+			<li><a accesskey="L" href="{{ path('fos_user_security_logout') }}"><i class="icon-off"></i> {{ 'Logout'|trans({}, 'ARIPDUserBundle') }}</a></li>
+			{% if is_granted('ROLE_PREVIOUS_ADMIN') %}
+			<li class="divider"></li>
+			<li><a href="?_switch_user=_exit"><i class="icon-refresh"></i> {{ 'Switch back'|trans() }}</a></li>
+			{% endif %}
+		</ul>
+	</li>
+	{% else %}
+	<li><a accesskey="L" href="{{ path('fos_user_security_login') }}">{{ 'Login'|trans({}, 'ARIPDUserBundle') }}</a></li>
+	<li><a href="{{ path('fos_user_registration_register') }}">{{ 'Register'|trans({}, 'ARIPDUserBundle') }}</a></li>
+	{% endif %}
+	{{ render(controller('ARIPDDefaultBundle:Iso639:list')) }}
+</ul>

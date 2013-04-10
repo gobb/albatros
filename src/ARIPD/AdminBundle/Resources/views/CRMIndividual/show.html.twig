@@ -1,0 +1,69 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>Individual</h1>
+</div>
+<div class="row">
+	<div class="span3">
+		<div class="thumbnail">
+			{{ crmIndividualImage(entity, configVariable('crm_individual_width'), configVariable('crm_individual_height')) }}
+		</div>
+		<div>{{ entity.fullname }}</div>
+		<div>{{ entity.idno }}</div>
+		<div>{{ entity.gender }}</div>
+		<div>{{ entity.birthdate|localizeddate('short', 'none') }}</div>
+		<form action="{{ path('aripd_admin_crm_individual_delete', { 'id': entity.id }) }}" method="post">
+			{{ form_widget(delete_form) }}
+			<div class="form-actions">
+				<a class="btn" href="{{ path('aripd_admin_crm_individual_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+				<button class="btn btn-danger" type="submit"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+			</div>
+		</form>
+	</div>
+	<div class="span6">
+		<div class="accordion" id="accordion2">
+			{% for taggroup in taggroups %}
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse-{{ taggroup.id }}">
+						{{ taggroup.name }}
+					</a>
+				</div>
+				<div id="collapse-{{ taggroup.id }}" class="accordion-body {% if loop.first %}in{% endif %} collapse" style="height: {% if loop.first %}auto{% else %}0px{% endif %};">
+					<div class="accordion-inner">
+						<table class="table table-striped">
+							<tbody>
+							{% for tagkey in taggroup.tagkeys %}
+							<tr>
+								<td>{{ tagkey.name }}</td>
+								<td>
+									 {% for tag in tagkey.tags %}
+									 {% if tag in entity.tags %}
+									 <div>{{ tag.name }}</div>
+									 {% endif %}
+									 {% endfor %}
+								</td>
+							</tr>
+							{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+	
+<div id="images" class="page-header">
+	<h1>Resimler <small>Headings, paragraphs, lists, and other inline type elements</small></h1>
+</div>
+{{ render(controller('ARIPDAdminBundle:CRMImage:new', { 'individual_id': entity.id })) }}
+{% include 'ARIPDAdminBundle:CRMImage:list.html.twig' with {entity: entity} %}
+
+<div class="row">
+	<div class="span12">
+	</div>
+</div>
+{% endblock %}

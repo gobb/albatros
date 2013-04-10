@@ -1,0 +1,19 @@
+<ul class="thumbnails" id="applications">
+	{% for entity in entities %}
+	<li class="span3" data-id="id-{{ loop.index }}" data-type="{% for tag in entity.tags %}{{ tag.slug }}{% if loop.last == false %} {% endif %}{% endfor %}">
+	  <div class="thumbnail">
+		<a href="{{ path('aripd_store_model_show', { id: entity.model.id, code: entity.model.code, slug: entity.slug }) }}">
+			<img src="{{ entity.model.image.url }}" alt=""/>
+		</a>
+		<div class="caption">
+		  <h5><span data-type="name">{{ entity.name }}</span></h5>
+		  <h4>
+		  	<a class="btn btn-large" href="{{ path('aripd_store_model_show', { id: entity.model.id, code: entity.model.code, slug: entity.slug}) }}">{{ 'Show'|trans() }}</a>
+		  	<span class="pull-right" data-type="size">{{ entity.model.price|convertFormat(entity.model.iso4217, app.session.get('iso4217')) }}</span>
+		  </h4>
+		</div>
+	  </div>
+	</li>
+	{% endfor %}
+</ul>
+<hr class="soft">

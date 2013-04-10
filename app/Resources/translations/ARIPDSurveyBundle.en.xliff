@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2013-04-16T08:59:10Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="55f8ebc805e65b5b71ddafdae390e3be2bcd69af" resname="Description">
+        <jms:reference-file line="11">Form/Type/SurveySurveyType.php</jms:reference-file>
+        <source>Description</source>
+        <target state="new">Description</target>
+      </trans-unit>
+      <trans-unit id="4a35679c27d00d5538717225f60e86b72f4dd8cf" resname="Ending At">
+        <jms:reference-file line="21">Form/Type/SurveySurveyType.php</jms:reference-file>
+        <source>Ending At</source>
+        <target state="new">Ending At</target>
+      </trans-unit>
+      <trans-unit id="709a23220f2c3d64d1e1d6d18c4d5280f8d82fca" resname="Name">
+        <jms:reference-file line="10">Form/Type/SurveySurveyType.php</jms:reference-file>
+        <source>Name</source>
+        <target state="new">Name</target>
+      </trans-unit>
+      <trans-unit id="9a1fc1731f624d1f9dbca42b781ff8a60a6594e1" resname="Questions">
+        <jms:reference-file line="27">Form/Type/SurveySurveyType.php</jms:reference-file>
+        <source>Questions</source>
+        <target state="new">Questions</target>
+      </trans-unit>
+      <trans-unit id="6d8eed168d61a7460f8ec1cc396d5e001a12cafa" resname="Starting At">
+        <jms:reference-file line="16">Form/Type/SurveySurveyType.php</jms:reference-file>
+        <source>Starting At</source>
+        <target state="new">Starting At</target>
+      </trans-unit>
+      <trans-unit id="70e765bfe9623ad659cda6ceb1716b525cfbe916" resname="Survey Management">
+        <jms:reference-file line="5">views/SurveySurvey/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/SurveySurvey/new.html.twig</jms:reference-file>
+        <source>Survey Management</source>
+        <target state="new">Survey Management</target>
+      </trans-unit>
+      <trans-unit id="0762895fdf43e65d386349a557579da462c433e9" resname="Surveys">
+        <jms:reference-file line="63">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/SurveySurvey/index.html.twig</jms:reference-file>
+        <source>Surveys</source>
+        <target state="new">Surveys</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

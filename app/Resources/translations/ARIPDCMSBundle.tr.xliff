@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2013-04-16T08:58:46Z" source-language="en" target-language="tr" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="e525fa72373eb01469877d56acc5fb8226d7595b" resname="Add Tag">
+        <jms:reference-file line="46">views/CMSPost/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="41">views/CMSPost/new.html.twig</jms:reference-file>
+        <source>Add Tag</source>
+        <target>Etiket Ekle</target>
+      </trans-unit>
+      <trans-unit id="f18fc1523cb5e768e668a05a79fb7cbc9930c664" resname="Approver">
+        <jms:reference-file line="35">Form/Type/CMSTopicFormType.php</jms:reference-file>
+        <source>Approver</source>
+        <target state="new">Approver</target>
+      </trans-unit>
+      <trans-unit id="8a3eb5dedcf7c1c5ea8621edac3c39e1a2a677c1" resname="Bulletin registration has been completed">
+        <jms:reference-file line="73">CMSBundle/Controller/BulletinController.php</jms:reference-file>
+        <jms:reference-file line="143">CMSBundle/Controller/BulletinController.php</jms:reference-file>
+        <source>Bulletin registration has been completed</source>
+        <target>E-bültenimize kaydınız tamamlanmıştır</target>
+      </trans-unit>
+      <trans-unit id="ec63db4989711e6cfd4717fe6c71621a57aff71e" resname="Bulletin registration has not been completed. Please try again.">
+        <jms:reference-file line="151">CMSBundle/Controller/BulletinController.php</jms:reference-file>
+        <source>Bulletin registration has not been completed. Please try again.</source>
+        <target>E-bültenimize kaydınız tamamlanamadı. Lütfen yeniden deneyiniz.</target>
+      </trans-unit>
+      <trans-unit id="45b9ce6e2d695ff2c034093f4531d40c366e7b04" resname="Choose an option">
+        <jms:reference-file line="26">Form/Type/CMSPageFormType.php</jms:reference-file>
+        <source>Choose an option</source>
+        <target>Seçiminizi yapın</target>
+      </trans-unit>
+      <trans-unit id="fce06e20e5f7f74aacccab40b59b75a56c8f7305" resname="Comments">
+        <jms:reference-file line="7">views/CMSComment/index.html.twig</jms:reference-file>
+        <source>Comments</source>
+        <target>Yorumlar</target>
+      </trans-unit>
+      <trans-unit id="b37456c4530be810dc040f50da72eda09addfb0a" resname="Contact">
+        <jms:reference-file line="3">ARIPDCMSBundle/Page/contact.html.twig</jms:reference-file>
+        <jms:reference-file line="9">ARIPDCMSBundle/Page/contact.html.twig</jms:reference-file>
+        <jms:reference-file line="34">ARIPDCMSBundle/Page/contact.html.twig</jms:reference-file>
+        <jms:reference-file line="4">ARIPDCMSBundle/Page/list.html.twig</jms:reference-file>
+        <jms:reference-file line="28">pdc_com_tr/views/header.html.twig</jms:reference-file>
+        <source>Contact</source>
+        <target>İletişim</target>
+      </trans-unit>
+      <trans-unit id="a34b69fc46e7a278cf65c58bb347de6560fb046f" resname="Contact Information">
+        <jms:reference-file line="13">ARIPDCMSBundle/Page/contact.html.twig</jms:reference-file>
+        <source>Contact Information</source>
+        <target>İletişim Bilgileri</target>
+      </trans-unit>
+      <trans-unit id="4f9be057f0ea5d2ba72fd2c810e8d7b9aa98b469" resname="Content">
+        <jms:reference-file line="23">Form/Type/CMSFaqFormType.php</jms:reference-file>
+        <jms:reference-file line="32">Form/Type/CMSPageFormType.php</jms:reference-file>
+        <jms:reference-file line="36">Form/Type/CMSPostFormType.php</jms:reference-file>
+        <jms:reference-file line="27">Form/Type/CMSPostFormType.php</jms:reference-file>
+        <source>Content</source>
+        <target>İçerik</target>
+      </trans-unit>
+      <trans-unit id="783b185629549fca4e7d92cae557e1791a4815ba" resname="Content Management">
+        <jms:reference-file line="48">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/CMSComment/index.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/CMSPost/show.html.twig</jms:reference-file>
+        <source>Content Management</source>
+        <target>İçerik Yönetimi</target>
+      </trans-unit>
+      <trans-unit id="a83ed75221e875c789f78f19697cffcdbc75e73c" resname="Corporate">
+        <jms:reference-file line="14">pdc_com_tr/views/footer.html.twig</jms:reference-file>
+        <source>Corporate</source>
+        <target>Kurumsal</target>
+      </trans-unit>
+      <trans-unit id="e6cf5e5ccc63fbaba8d6685fe4995cef09d0c36d" resname="Deleted successfully">
+        <jms:reference-file line="116">UserBundle/Controller/CMSImageController.php</jms:reference-file>
+        <source>Deleted successfully</source>
+        <target state="new">Deleted successfully</target>
+      </trans-unit>
+      <trans-unit id="55f8ebc805e65b5b71ddafdae390e3be2bcd69af" resname="Description">
+        <jms:reference-file line="31">Form/Type/CMSPageFormType.php</jms:reference-file>
+        <jms:reference-file line="34">Form/Type/CMSPostFormType.php</jms:reference-file>
+        <jms:reference-file line="14">Form/Type/CMSImageFormType.php</jms:reference-file>
+        <source>Description</source>
+        <target>Açıklama</target>
+      </trans-unit>
+      <trans-unit id="394c802657352b895ae38bae0eb2aec2edcdb050" resname="E-mail address">
+        <jms:reference-file line="10">Form/Type/BulletinFormType.php</jms:reference-file>
+        <jms:reference-file line="11">Form/Type/ContactFormType.php</jms:reference-file>
+        <source>E-mail address</source>
+        <target>E-posta adresi</target>
+      </trans-unit>
+      <trans-unit id="eb1e1dbc74dcd1d12c137f56f8572f59ccd66df2" resname="E-mail address has not found">
+        <jms:reference-file line="176">CMSBundle/Controller/BulletinController.php</jms:reference-file>
+        <source>E-mail address has not found</source>
+        <target state="new">E-mail address has not found</target>
+      </trans-unit>
+      <trans-unit id="ab9dcd4a0295bd5e2c0f799fd9becca5752365e8" resname="FAQs">
+        <jms:reference-file line="3">ARIPDCMSBundle/Faq/list.html.twig</jms:reference-file>
+        <jms:reference-file line="6">ARIPDCMSBundle/Page/list.html.twig</jms:reference-file>
+        <jms:reference-file line="57">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSFaq/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSFaq/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSFaq/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSFaq/show.html.twig</jms:reference-file>
+        <source>FAQs</source>
+        <target>Sıkça Sorulan Sorular</target>
+      </trans-unit>
+      <trans-unit id="82da67b211249624f24f3c7db5642a5112c9446f" resname="Facebook">
+        <jms:reference-file line="28">ARIPDCMSBundle/Page/contact.html.twig</jms:reference-file>
+        <jms:reference-file line="26">pdc_com_tr/views/footer.html.twig</jms:reference-file>
+        <source>Facebook</source>
+        <target state="new">Facebook</target>
+      </trans-unit>
+      <trans-unit id="b7c17e97d3d625694b836d85ace6edc18bbef0e6" resname="Female">
+        <jms:reference-file line="15">Form/Type/BulletinFormType.php</jms:reference-file>
+        <source>Female</source>
+        <target>Bayan</target>
+      </trans-unit>
+      <trans-unit id="8a754c61c2ced0c5ff79a1827e02c9d643d6d926" resname="Gender">
+        <jms:reference-file line="12">Form/Type/BulletinFormType.php</jms:reference-file>
+        <source>Gender</source>
+        <target>Cinsiyet</target>
+      </trans-unit>
+      <trans-unit id="f77562ae0f3df5f61f357418891b85a82b5f1b10" resname="Google+">
+        <jms:reference-file line="31">ARIPDCMSBundle/Page/contact.html.twig</jms:reference-file>
+        <jms:reference-file line="29">pdc_com_tr/views/footer.html.twig</jms:reference-file>
+        <source>Google+</source>
+        <target state="new">Google+</target>
+      </trans-unit>
+      <trans-unit id="3f3a489c72dea800ea7b6338c89938766d41a6e5" resname="Male">
+        <jms:reference-file line="14">Form/Type/BulletinFormType.php</jms:reference-file>
+        <source>Male</source>
+        <target>Erkek</target>
+      </trans-unit>
+      <trans-unit id="709a23220f2c3d64d1e1d6d18c4d5280f8d82fca" resname="Name">
+        <jms:reference-file line="22">Form/Type/CMSFaqFormType.php</jms:reference-file>
+        <jms:reference-file line="28">Form/Type/CMSPageFormType.php</jms:reference-file>
+        <jms:reference-file line="31">Form/Type/CMSPostFormType.php</jms:reference-file>
+        <jms:reference-file line="20">Form/Type/CMSSubtopicFormType.php</jms:reference-file>
+        <jms:reference-file line="22">Form/Type/CMSTopicFormType.php</jms:reference-file>
+        <jms:reference-file line="11">Form/Type/CMSImageFormType.php</jms:reference-file>
+        <jms:reference-file line="22">Form/Type/CMSPostFormType.php</jms:reference-file>
+        <source>Name</source>
+        <target state="new">Name</target>
+      </trans-unit>
+      <trans-unit id="f463e28db658ebab951104d2fcfddd1bd8c287ac" resname="No survey">
+        <jms:reference-file line="72">Form/Type/CMSPostFormType.php</jms:reference-file>
+        <source>No survey</source>
+        <target state="new">No survey</target>
+      </trans-unit>
+      <trans-unit id="600584c2d5ccb97c0c0c424d9f32d6b102fcb040" resname="Pages">
+        <jms:reference-file line="60">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSPage/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSPage/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSPage/new.html.twig</jms:reference-file>
+        <source>Pages</source>
+        <target>Sayfalar</target>
+      </trans-unit>
+      <trans-unit id="23d692f07a3fb646a8e54fcd2dc724f4ea2ed2c6" resname="Parent">
+        <jms:reference-file line="27">Form/Type/CMSPageFormType.php</jms:reference-file>
+        <source>Parent</source>
+        <target state="new">Parent</target>
+      </trans-unit>
+      <trans-unit id="9a5056ce77b90fc0bd7f2dded81dab636100d2a3" resname="Post Template File">
+        <jms:reference-file line="26">Form/Type/CMSTopicFormType.php</jms:reference-file>
+        <source>Post Template File</source>
+        <target state="new">Post Template File</target>
+      </trans-unit>
+      <trans-unit id="a0ca0c3198947ded7419101f3e83d48a9cb41f2a" resname="Posts">
+        <jms:reference-file line="62">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="28">Resources/views/topbar_right.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/CMSPost/_index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSPost/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSPost/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSPost/new.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/CMSPost/show.html.twig</jms:reference-file>
+        <source>Posts</source>
+        <target>Yazılar</target>
+      </trans-unit>
+      <trans-unit id="9b49f70ec1e6219e702ba9f3c5f3a3df081d917d" resname="Published At">
+        <jms:reference-file line="28">Form/Type/CMSPostFormType.php</jms:reference-file>
+        <source>Published At</source>
+        <target>Yayınlanma Zamanı</target>
+      </trans-unit>
+      <trans-unit id="e963907dac5cd5c017869b4c96c18021c9bd058b" resname="Remove">
+        <jms:reference-file line="84">views/CMSPost/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="79">views/CMSPost/new.html.twig</jms:reference-file>
+        <source>Remove</source>
+        <target>Çıkart</target>
+      </trans-unit>
+      <trans-unit id="fd3cfc02834858b6847a18bcd6e8e8c145fad487" resname="Security Code">
+        <jms:reference-file line="19">Form/Type/BulletinFormType.php</jms:reference-file>
+        <jms:reference-file line="15">Form/Type/ContactFormType.php</jms:reference-file>
+        <source>Security Code</source>
+        <target>Güvenlik Kodu</target>
+      </trans-unit>
+      <trans-unit id="3d84a8bdc9460014256846aa3df74056a3e9cf68" resname="Social Media">
+        <jms:reference-file line="25">pdc_com_tr/views/footer.html.twig</jms:reference-file>
+        <source>Social Media</source>
+        <target>Sosyal Medya</target>
+      </trans-unit>
+      <trans-unit id="378e9e163b7eecefadb4415cae533096e336c4ab" resname="Sorting">
+        <jms:reference-file line="33">Form/Type/CMSPageFormType.php</jms:reference-file>
+        <jms:reference-file line="21">Form/Type/CMSSubtopicFormType.php</jms:reference-file>
+        <jms:reference-file line="23">Form/Type/CMSTopicFormType.php</jms:reference-file>
+        <source>Sorting</source>
+        <target>Sıralama</target>
+      </trans-unit>
+      <trans-unit id="8d183dbdcea3b29906090bd83fa6fa37923cc8ec" resname="Subject">
+        <jms:reference-file line="12">Form/Type/ContactFormType.php</jms:reference-file>
+        <source>Subject</source>
+        <target>Konu</target>
+      </trans-unit>
+      <trans-unit id="a6af8180fc7c7ff59d4ea2706fe6b1979907dd07" resname="Submitted for new post approval">
+        <jms:reference-file line="111">UserBundle/Controller/CMSPostController.php</jms:reference-file>
+        <source>Submitted for new post approval</source>
+        <target state="new">Submitted for new post approval</target>
+      </trans-unit>
+      <trans-unit id="10624ecd128e17c3ded9653778ed184ed69d67d1" resname="Submitted for update approval">
+        <jms:reference-file line="199">UserBundle/Controller/CMSPostController.php</jms:reference-file>
+        <source>Submitted for update approval</source>
+        <target state="new">Submitted for update approval</target>
+      </trans-unit>
+      <trans-unit id="144f692960659d0543e35d15ef165426678b1b87" resname="Subtopics">
+        <jms:reference-file line="43">Form/Type/CMSTopicFormType.php</jms:reference-file>
+        <source>Subtopics</source>
+        <target state="new">Subtopics</target>
+      </trans-unit>
+      <trans-unit id="29c3140d86c579d5f58650d5a971f3f60c6258bd" resname="Survey">
+        <jms:reference-file line="73">Form/Type/CMSPostFormType.php</jms:reference-file>
+        <source>Survey</source>
+        <target state="new">Survey</target>
+      </trans-unit>
+      <trans-unit id="982963c1c41cbed8cab073724749592fe35c532b" resname="Tag">
+        <jms:reference-file line="80">Form/Type/CMSPostFormType.php</jms:reference-file>
+        <source>Tag</source>
+        <target>Etiket</target>
+      </trans-unit>
+      <trans-unit id="7e13bd176f89a12f0b614b55ffc19c14515ef920" resname="Topic">
+        <jms:reference-file line="53">Form/Type/CMSPostFormType.php</jms:reference-file>
+        <jms:reference-file line="17">Form/Type/CMSSubtopicFormType.php</jms:reference-file>
+        <source>Topic</source>
+        <target>Konu</target>
+      </trans-unit>
+      <trans-unit id="cea4257854a17b70a753802708282a87659005fe" resname="Topic Template File">
+        <jms:reference-file line="25">Form/Type/CMSTopicFormType.php</jms:reference-file>
+        <source>Topic Template File</source>
+        <target state="new">Topic Template File</target>
+      </trans-unit>
+      <trans-unit id="07e4f9c27860c8f452d481954e498a807cd27a98" resname="Topics">
+        <jms:reference-file line="61">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSTopic/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSTopic/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSTopic/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSTopic/show.html.twig</jms:reference-file>
+        <source>Topics</source>
+        <target>Konular</target>
+      </trans-unit>
+      <trans-unit id="5392c950bdde4be7e5f5b8fdc6a1ca5f21e905cf" resname="Twitter">
+        <jms:reference-file line="29">ARIPDCMSBundle/Page/contact.html.twig</jms:reference-file>
+        <jms:reference-file line="27">pdc_com_tr/views/footer.html.twig</jms:reference-file>
+        <source>Twitter</source>
+        <target>Twitter</target>
+      </trans-unit>
+      <trans-unit id="00b684cb216615b4c8347c8fa7be4f4f1cc3f1fd" resname="Upload completed">
+        <jms:reference-file line="72">UserBundle/Controller/CMSImageController.php</jms:reference-file>
+        <source>Upload completed</source>
+        <target state="new">Upload completed</target>
+      </trans-unit>
+      <trans-unit id="9f8a2389a20ca0752aa9e95093515517e90e194c" resname="User">
+        <jms:reference-file line="66">Form/Type/CMSPostFormType.php</jms:reference-file>
+        <source>User</source>
+        <target state="new">User</target>
+      </trans-unit>
+      <trans-unit id="bc17c1f0179a888f2a7e8389f67d4f2cf5cf4531" resname="Video">
+        <jms:reference-file line="39">Form/Type/CMSPostFormType.php</jms:reference-file>
+        <jms:reference-file line="30">Form/Type/CMSPostFormType.php</jms:reference-file>
+        <source>Video</source>
+        <target>Video</target>
+      </trans-unit>
+      <trans-unit id="d63e42932b8052782d0378cf88b32478a236deba" resname="You have already registered our bulletin list">
+        <jms:reference-file line="46">CMSBundle/Controller/BulletinController.php</jms:reference-file>
+        <jms:reference-file line="115">CMSBundle/Controller/BulletinController.php</jms:reference-file>
+        <source>You have already registered our bulletin list</source>
+        <target>E-bültenimize zaten kayıtlısınız</target>
+      </trans-unit>
+      <trans-unit id="3fddf5523411ff20c4ae454e45ea923cb59d7c46" resname="You have been removed from the bulletin list">
+        <jms:reference-file line="184">CMSBundle/Controller/BulletinController.php</jms:reference-file>
+        <source>You have been removed from the bulletin list</source>
+        <target>E-bülten kaydınız silindi</target>
+      </trans-unit>
+      <trans-unit id="34c2e6d0d6898a20666ed35ed5c50d97b316de91" resname="Your comment has been sent for approval. Thanks.">
+        <jms:reference-file line="129">UserBundle/Controller/CMSCommentController.php</jms:reference-file>
+        <source>Your comment has been sent for approval. Thanks.</source>
+        <target state="new">Your comment has been sent for approval. Thanks.</target>
+      </trans-unit>
+      <trans-unit id="f190c98ece6a67328e369fcdfcf84eea73c94b7e" resname="Your message">
+        <jms:reference-file line="13">Form/Type/ContactFormType.php</jms:reference-file>
+        <source>Your message</source>
+        <target>Mesajınız</target>
+      </trans-unit>
+      <trans-unit id="ab42293e29e1ffb306c1403dd95144d664853a60" resname="Your name">
+        <jms:reference-file line="10">Form/Type/ContactFormType.php</jms:reference-file>
+        <source>Your name</source>
+        <target>Adınız</target>
+      </trans-unit>
+      <trans-unit id="98a532b74df1d551f5ab7c06e1d3438f2afadce4" resname="Youtube">
+        <jms:reference-file line="30">ARIPDCMSBundle/Page/contact.html.twig</jms:reference-file>
+        <jms:reference-file line="28">pdc_com_tr/views/footer.html.twig</jms:reference-file>
+        <source>Youtube</source>
+        <target state="new">Youtube</target>
+      </trans-unit>
+      <trans-unit id="cb329146a0dd0d566b0628744d67936558741ffa" resname="description">
+        <jms:reference-file line="25">Form/Type/CMSPostFormType.php</jms:reference-file>
+        <source>description</source>
+        <target state="new">description</target>
+      </trans-unit>
+      <trans-unit id="121ae03ca9cc14a4b15089abf4776c3fee3991d3" resname="label.approved">
+        <jms:reference-file line="30">Form/Type/CMSPostFormType.php</jms:reference-file>
+        <source>label.approved</source>
+        <target state="new">label.approved</target>
+      </trans-unit>
+      <trans-unit id="ecaf54eb5f92da2c91912d0e5456afe525f334e4" resname="label.file">
+        <jms:reference-file line="15">Form/Type/CMSImageFormType.php</jms:reference-file>
+        <source>label.file</source>
+        <target state="new">label.file</target>
+      </trans-unit>
+      <trans-unit id="131385d09a45a544ffed2d1ee82acc255829e76f" resname="label.hidden">
+        <jms:reference-file line="24">Form/Type/CMSTopicFormType.php</jms:reference-file>
+        <source>label.hidden</source>
+        <target state="new">label.hidden</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

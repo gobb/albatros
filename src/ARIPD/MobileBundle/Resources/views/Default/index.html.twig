@@ -1,0 +1,41 @@
+{% extends 'ARIPDMobileBundle::layout.html.twig' %}
+
+{% block body %}
+<div data-role="page" id="foo" data-title="Page Foo">
+	<div data-role="header" data-id="header" data-position="fixed">
+		<h1><img alt="logo" src="{{ asset('bundles/aripdmobile/images/logo.png') }}" height="40" /></h1>
+		{% include 'ARIPDMobileBundle:Default:loginout.html.twig' %}
+	</div>
+	<div data-role="content">
+		<div class="ui-grid-solo">
+			<div class="ui-block-a center">
+				<img src="{{ asset('bundles/aripdmobile/images/logo.png') }}" />
+			</div>
+		</div>
+		<div class="ui-grid-a center">
+			<div class="ui-block-a">
+				<a href="{{ path('aripd_mobile_store_branch_index') }}"><img src="{{ asset('bundles/aripdmobile/images/Branch.png') }}" /></a>
+			</div>
+			<div class="ui-block-b">
+				<a href="{{ path('aripd_mobile_store_product_index') }}"><img src="{{ asset('bundles/aripdmobile/images/Menu.png') }}" /></a>
+			</div>
+			<div class="ui-block-a">
+				<a href="{{ path('aripd_mobile_loyalty_index') }}"><img src="{{ asset('bundles/aripdmobile/images/GoldStick.png') }}" /></a>
+			</div>
+			<div class="ui-block-b">
+				<a href="{{ path('aripd_mobile_default_share') }}"><img src="{{ asset('bundles/aripdmobile/images/Share.png') }}" /></a>
+			</div>
+		</div>
+	</div>
+	<div data-role="footer" data-id="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="{{ path('aripd_mobile_store_branch_index') }}">{{ 'Branch'|trans({}, 'ARIPDStoreBundle') }}</a></li>
+				<li><a href="{{ path('aripd_mobile_store_product_index') }}">{{ 'Menu'|trans({}, 'ARIPDMobileBundle') }}</a></li>
+				<li><a href="{{ path('aripd_mobile_loyalty_index') }}">Bana özel</a></li>
+				<li><a href="{{ path('aripd_mobile_default_share') }}">{{ 'Share'|trans() }}</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}

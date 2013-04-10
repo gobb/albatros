@@ -1,0 +1,15 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ 'Register'|trans({}, 'ARIPDUserBundle') }}{% endblock title %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<p>{{ 'An email has been sent to %email%. It contains an activation link you must click to activate your account.'|trans({'%email%': user.email}, 'ARIPDUserBundle') }}</p>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

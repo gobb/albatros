@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2013-04-16T08:58:46Z" source-language="en" target-language="tr" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="e525fa72373eb01469877d56acc5fb8226d7595b" resname="Add Tag">
+        <jms:reference-file line="10">views/BlogPost/edit.html.twig</jms:reference-file>
+        <source>Add Tag</source>
+        <target state="new">Add Tag</target>
+      </trans-unit>
+      <trans-unit id="5ef4439786692eab160ee60be0da2bb3a8597d9a" resname="Blogs">
+        <jms:reference-file line="56">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="64">views/BlogPost/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/BlogPost/index.html.twig</jms:reference-file>
+        <jms:reference-file line="9">views/BlogPost/index.html.twig</jms:reference-file>
+        <source>Blogs</source>
+        <target>Web Günlükleri</target>
+      </trans-unit>
+      <trans-unit id="4f9be057f0ea5d2ba72fd2c810e8d7b9aa98b469" resname="Content">
+        <jms:reference-file line="14">Form/Type/BlogPostFormType.php</jms:reference-file>
+        <jms:reference-file line="13">Form/Type/BlogPostFormType.php</jms:reference-file>
+        <source>Content</source>
+        <target>İçerik</target>
+      </trans-unit>
+      <trans-unit id="709a23220f2c3d64d1e1d6d18c4d5280f8d82fca" resname="Name">
+        <jms:reference-file line="12">Form/Type/BlogPostFormType.php</jms:reference-file>
+        <jms:reference-file line="11">Form/Type/BlogPostFormType.php</jms:reference-file>
+        <source>Name</source>
+        <target state="new">Name</target>
+      </trans-unit>
+      <trans-unit id="7858ac3ff63354f37161bd349efe11edd13b89cb" resname="Post">
+        <jms:reference-file line="13">views/BlogPost/index.html.twig</jms:reference-file>
+        <source>Post</source>
+        <target>Yazı</target>
+      </trans-unit>
+      <trans-unit id="a0ca0c3198947ded7419101f3e83d48a9cb41f2a" resname="Posts">
+        <jms:reference-file line="33">Resources/views/topbar_right.html.twig</jms:reference-file>
+        <source>Posts</source>
+        <target>Yazılar</target>
+      </trans-unit>
+      <trans-unit id="e963907dac5cd5c017869b4c96c18021c9bd058b" resname="Remove">
+        <jms:reference-file line="48">views/BlogPost/edit.html.twig</jms:reference-file>
+        <source>Remove</source>
+        <target state="new">Remove</target>
+      </trans-unit>
+      <trans-unit id="bae7d5be70820ed56467bd9a63744e23b47bd711" resname="Status">
+        <jms:reference-file line="14">views/BlogPost/index.html.twig</jms:reference-file>
+        <source>Status</source>
+        <target>Durum</target>
+      </trans-unit>
+      <trans-unit id="a6af8180fc7c7ff59d4ea2706fe6b1979907dd07" resname="Submitted for new post approval">
+        <jms:reference-file line="105">UserBundle/Controller/BlogPostController.php</jms:reference-file>
+        <source>Submitted for new post approval</source>
+        <target state="new">Submitted for new post approval</target>
+      </trans-unit>
+      <trans-unit id="10624ecd128e17c3ded9653778ed184ed69d67d1" resname="Submitted for update approval">
+        <jms:reference-file line="187">UserBundle/Controller/BlogPostController.php</jms:reference-file>
+        <source>Submitted for update approval</source>
+        <target state="new">Submitted for update approval</target>
+      </trans-unit>
+      <trans-unit id="848eed0fbd5429f556b2982dec3ea87136e33e44" resname="Tags">
+        <jms:reference-file line="15">views/BlogPost/index.html.twig</jms:reference-file>
+        <source>Tags</source>
+        <target>Etiketler</target>
+      </trans-unit>
+      <trans-unit id="34c2e6d0d6898a20666ed35ed5c50d97b316de91" resname="Your comment has been sent for approval. Thanks.">
+        <jms:reference-file line="124">UserBundle/Controller/BlogCommentController.php</jms:reference-file>
+        <source>Your comment has been sent for approval. Thanks.</source>
+        <target state="new">Your comment has been sent for approval. Thanks.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

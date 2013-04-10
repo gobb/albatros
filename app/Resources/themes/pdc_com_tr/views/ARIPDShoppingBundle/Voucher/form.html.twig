@@ -1,0 +1,7 @@
+<form class="form-inline pull-right" action="{{ path('aripd_shopping_voucher_form') }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
+	<div class="input-append">
+		{{ form_widget(form.vouchercode, { attr: { class: 'input-medium', placeholder: 'İndirim Çeki', id: 'appendedInputButton' }}) }}
+		<button class="btn" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Continue'|trans() }} <i class="icon-chevron-right"></i></button>
+	</div>
+	{{ form_rest(form) }}
+</form>

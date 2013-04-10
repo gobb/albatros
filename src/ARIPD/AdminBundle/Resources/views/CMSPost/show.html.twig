@@ -1,0 +1,105 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<ul class="breadcrumb">
+	<li><a href="{{ path('aripd_default_index') }}">{{ 'Dashboard'|trans({}, 'ARIPDAdminBundle') }}</a> <span class="divider">/</span></li>
+	<li class="active">{{ 'Content Management'|trans({}, 'ARIPDCMSBundle') }} <span class="divider">/</span></li>
+	<li><a href="{{ path('aripd_admin_cmspost_index') }}">{{ 'Posts'|trans({}, 'ARIPDCMSBundle') }}</a> <span class="divider">/</span></li>
+	<li class="active">{{ entity.topic.name }} <span class="divider">/</span></li>
+	<li class="active">{{ entity.name }}</li>
+</ul>
+<form id="delete_form" action="{{ path('aripd_admin_cmspost_delete', { 'id': entity.id }) }}" method="post">
+	{{ form_widget(delete_form) }}
+	<div class="form-actions">
+		<a class="btn" href="{{ path('aripd_admin_cmspost_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+		<a class="btn" href="{{ path('aripd_admin_cmspost_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+		<button class="btn btn-danger" type="submit"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+		{% if entity.approved %}
+		<a class="btn btn-success pull-right" href="{{ path('aripd_admin_cmspost_status', { id: entity.id }) }}">Approved</a>
+		{% else %}
+		<a class="btn btn-danger pull-right" href="{{ path('aripd_admin_cmspost_status', { id: entity.id }) }}">Not Approved</a>
+		{% endif %}
+	</div>
+</form>
+<div>
+	<div><i class="icon-tag"></i> {% for tag in entity.tags %}<span class="label">{{ tag.name }}</span>{% if loop.last == false %}&nbsp;{% endif %}{% endfor %}</div>
+	<div>
+		<i class="icon-user"></i> {{ entity.user.fullname }}
+		<i class="icon-time"></i> {{ entity.publishedAt|localizeddate('short', 'medium') }}
+	</div>
+	<div class="lead">{{ entity.description }}</div>
+	<div class="span3 thumbnail">{{ postImage(entity, configVariable('cms_post_width'), configVariable('cms_post_height'), { class: 'img-circle' }) }}</div>
+	<div>{{ entity.content|raw }}</div>
+</div>
+<div id="comments" class="page-header">
+	<h1>Resimler <small>Headings, paragraphs, lists, and other inline type elements</small></h1>
+</div>
+{% if entity.images is not empty %}
+<div class="row">
+	<div class="span9">
+		<div id="cms_image" class="carousel slide">
+			<div class="carousel-inner">
+				{% for image in entity.images %}
+				<div class="item {% if loop.first %}active{% endif %}">
+					{{ entityImage(image, configVariable('cms_post_width'), configVariable('cms_post_height')) }}
+					<div class="carousel-caption">
+						<h4>{{ image.name }}</h4>
+						<p>{{ image.description }}</p>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			{% if entity.images|length > 1 %}
+			<a class="left carousel-control" href="#cms_image" data-slide="prev">‹</a>
+			<a class="right carousel-control" href="#cms_image" data-slide="next">›</a>
+			{% endif %}
+		</div>
+	</div>
+</div>
+{% endif %}
+	
+<div id="comments" class="page-header">
+	<h1>Video <small>Headings, paragraphs, lists, and other inline type elements</small></h1>
+</div>
+{% if entity.video %}
+<p>{{ entity.video|videoEmbed(870, 543) }}</p>
+{% endif %}
+
+<div id="comments" class="page-header">
+	<h1>Yorumlar <small>Headings, paragraphs, lists, and other inline type elements</small></h1>
+</div>
+<table class="table">
+{% for comment in entity.comments %}
+<tr>
+	<td>
+		<p>
+			{% if comment.approved %}
+			<a class="btn btn-mini btn-success" href="{{ path('aripd_admin_cmscomment_status', {id: comment.id}) }}">Approved</a>
+			{% else %}
+			<a class="btn btn-mini btn-danger" href="{{ path('aripd_admin_cmscomment_status', {id: comment.id}) }}">Not Approved</a>
+			{% endif %}
+			<i class="icon-user"></i> {{ comment.user.fullname}} <i class="icon-time"></i> <time datetime="{{ comment.createdAt|date('c') }}">{{ comment.createdAt|localizeddate('full', 'none') }}</time></p>
+		<p id="comment-{{ comment.id }}">{{ comment.content }}</p>
+	</td>
+</tr>
+{% else %}
+<tr><td>There are no comments for this post. Be the first to comment...</td></tr>
+{% endfor %}
+</table>
+
+<div class="page-header">
+	<h1>Reports <small>Headings, paragraphs, lists, and other inline type elements</small></h1>
+</div>
+<div id="hit">&nbsp;</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]});
+$(function() {
+	{{ gchart_bar_chart(hit, "hit", '100%', 200, entity.name) }}
+});
+</script>
+{% endblock %}

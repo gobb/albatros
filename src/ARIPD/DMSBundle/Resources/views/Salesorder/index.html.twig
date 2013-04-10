@@ -1,0 +1,48 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'salesorder'|trans() }}</h1>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Soid</th>
+            <th>Createdat</th>
+            <th>Updatedat</th>
+            <th>Content</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('aripd_dms_salesorder_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.soid }}</td>
+            <td>{% if entity.createdAt %}{{ entity.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>{{ entity.content }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('aripd_dms_salesorder_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('aripd_dms_salesorder_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('aripd_dms_salesorder_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
+{% endblock %}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2013-04-16T08:59:10Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="fcff4c78456070704d3703b7042a6ce7ba4a8e5a" resname="Dealer Management">
+        <jms:reference-file line="28">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <source>Dealer Management</source>
+        <target state="new">Dealer Management</target>
+      </trans-unit>
+      <trans-unit id="1012280c24db74cad67d21e2ebe22dfa9c5846e6" resname="Impact Price">
+        <jms:reference-file line="15">DMSBundle/Form/GroupType.php</jms:reference-file>
+        <source>Impact Price</source>
+        <target state="new">Impact Price</target>
+      </trans-unit>
+      <trans-unit id="7f2c57502caa7274db34525ccd67ba6265aa4280" resname="Impact Rate">
+        <jms:reference-file line="14">DMSBundle/Form/GroupType.php</jms:reference-file>
+        <source>Impact Rate</source>
+        <target state="new">Impact Rate</target>
+      </trans-unit>
+      <trans-unit id="709a23220f2c3d64d1e1d6d18c4d5280f8d82fca" resname="Name">
+        <jms:reference-file line="13">DMSBundle/Form/GroupType.php</jms:reference-file>
+        <source>Name</source>
+        <target state="new">Name</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

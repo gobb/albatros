@@ -1,0 +1,7 @@
+<form class="pull-right" action="{{ path('aripd_admin_useruser_index') }}" method="POST" {{ form_enctype(form) }}>
+	<div class="input-append">
+		{{ form_widget(form.name, { 'attr': { 'class': 'span2', 'placeholder': 'label.search.user'|trans() }}) }}
+		<button class="btn" type="submit"><i class="icon-search"></i> {{ 'Search'|trans() }}</button>
+	</div>
+	{{ form_rest(form) }}
+</form>

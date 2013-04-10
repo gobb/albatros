@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2013-04-16T08:58:46Z" source-language="en" target-language="tr" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="93711db98eb0c79098c09e0e7d87dd859fe86edd" resname="Admin Panel">
+        <jms:reference-file line="12">Resources/views/adminbar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">Resources/views/base.admin.html.twig</jms:reference-file>
+        <jms:reference-file line="7">Resources/views/topbar_right.html.twig</jms:reference-file>
+        <source>Admin Panel</source>
+        <target>Yönetim Paneli</target>
+      </trans-unit>
+      <trans-unit id="dd96994d01e723dd6f9b0bdb6119722dbeb9faf0" resname="Backup">
+        <jms:reference-file line="169">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <source>Backup</source>
+        <target>Yedekleme</target>
+      </trans-unit>
+      <trans-unit id="6b295419d3023fe428b905278ab7b34042397f3a" resname="Backup Database">
+        <jms:reference-file line="175">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Backup/database.html.twig</jms:reference-file>
+        <source>Backup Database</source>
+        <target>Veritabanı Yedekleme</target>
+      </trans-unit>
+      <trans-unit id="63f140238cd618c14ab47f95c8f32017cf9e9e3e" resname="Backup Themes">
+        <jms:reference-file line="176">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Backup/themes.html.twig</jms:reference-file>
+        <source>Backup Themes</source>
+        <target>Temaları Yedekleme</target>
+      </trans-unit>
+      <trans-unit id="4ed375c55c56c81866550fb82f5f69741216f0a5" resname="Copyright 2012-%currentYear% %companyName%. All rights reserved.">
+        <jms:reference-file line="40">Resources/views/base.admin.html.twig</jms:reference-file>
+        <source>Copyright 2012-%currentYear% %companyName%. All rights reserved.</source>
+        <target>Copyright 2012-%currentYear% %companyName%. Tüm hakları saklıdır.</target>
+      </trans-unit>
+      <trans-unit id="1c8acc7f907a624e945bf0cd8a1c253a8c89be7b" resname="Cron Manager">
+        <jms:reference-file line="160">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <source>Cron Manager</source>
+        <target>Cron Yöneticisi</target>
+      </trans-unit>
+      <trans-unit id="d87f47b47e4d5794d53fe0734c49417bd046cde0" resname="Dashboard">
+        <jms:reference-file line="15">Resources/views/adminbar.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSComment/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CMSPost/show.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CRMTaggroup/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CRMTaggroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CRMTaggroup/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CRMTaggroup/show.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CRMTagkey/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CRMTagkey/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CRMTagkey/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/CRMTagkey/show.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreProduct/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreProduct/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreProduct/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/StoreSearch/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/UserPurchaseorder/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/UserPurchaseorder/index.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/UserPurchaseorder/new.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/UserPurchaseorder/show.html.twig</jms:reference-file>
+        <source>Dashboard</source>
+        <target>Dashboard</target>
+      </trans-unit>
+      <trans-unit id="394c802657352b895ae38bae0eb2aec2edcdb050" resname="E-mail address">
+        <jms:reference-file line="11">Form/Type/ContactFormType.php</jms:reference-file>
+        <source>E-mail address</source>
+        <target>E-posta adresi</target>
+      </trans-unit>
+      <trans-unit id="1c63ce40eed918cf78b66da902e6177b4bbf7c46" resname="Language: %language%">
+        <jms:reference-file line="32">Resources/views/adminbar.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Iso639/list.html.twig</jms:reference-file>
+        <source>Language: %language%</source>
+        <target>Dil: %language%</target>
+      </trans-unit>
+      <trans-unit id="d7604bb53adacc69823ff5464ec399a7cda729b5" resname="Logout (%username%)">
+        <jms:reference-file line="39">Resources/views/adminbar.html.twig</jms:reference-file>
+        <source>Logout (%username%)</source>
+        <target>Çıkış (%username%)</target>
+      </trans-unit>
+      <trans-unit id="8d183dbdcea3b29906090bd83fa6fa37923cc8ec" resname="Subject">
+        <jms:reference-file line="12">Form/Type/ContactFormType.php</jms:reference-file>
+        <source>Subject</source>
+        <target>Konu</target>
+      </trans-unit>
+      <trans-unit id="94d5186ba3ec63d1ebcb1e902a2d13ac15f0c527" resname="Themes">
+        <jms:reference-file line="157">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <source>Themes</source>
+        <target>Temalar</target>
+      </trans-unit>
+      <trans-unit id="8ad8302d110b05d7e02330dac58628134fdcff02" resname="Translations">
+        <jms:reference-file line="159">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <source>Translations</source>
+        <target>Tercümeler</target>
+      </trans-unit>
+      <trans-unit id="ac018db1f7b00972061adff843d37497d8ee153c" resname="Variables">
+        <jms:reference-file line="158">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <source>Variables</source>
+        <target>Değişkenler</target>
+      </trans-unit>
+      <trans-unit id="f190c98ece6a67328e369fcdfcf84eea73c94b7e" resname="Your message">
+        <jms:reference-file line="13">Form/Type/ContactFormType.php</jms:reference-file>
+        <source>Your message</source>
+        <target>Mesajınız</target>
+      </trans-unit>
+      <trans-unit id="ab42293e29e1ffb306c1403dd95144d664853a60" resname="Your name">
+        <jms:reference-file line="10">Form/Type/ContactFormType.php</jms:reference-file>
+        <source>Your name</source>
+        <target>Adınız</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

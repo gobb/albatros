@@ -1,0 +1,8 @@
+parameters:
+    aripdads.ads_service.class: ARIPD\AdsBundle\Service\AdsService
+
+services:
+    aripdads.ads_service:
+        class: %aripdads.ads_service.class%
+        arguments: [ @service_container, @doctrine.orm.entity_manager ]
+        

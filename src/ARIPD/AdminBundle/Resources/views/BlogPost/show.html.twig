@@ -1,0 +1,40 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ entity.name }}</h1>
+</div>
+<div>{{ entity.content|raw }}</div>
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_blog_post_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_blog_post_show', {id: entity.id, slug: entity.slug}) }}">{{ 'Go'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_blog_post_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+	<button class="btn btn-mini btn-danger" type="button" onclick="deleteRecord();"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</button>
+</div>
+<form id="delete_form" action="{{ path('aripd_admin_blog_post_delete', { 'id': entity.id }) }}" method="post">
+	{{ form_widget(delete_form) }}
+</form>
+<dl>
+	<dt>Tags</dt>
+	<dd>{% for tag in entity.tags %}{{ tag.name }}{% if loop.last == false %},{% endif %}{% endfor %}</dd>
+	<dt>Approved?</dt>
+	<dd>{%  if entity.approved %}Approved{% else %}Not Approved{% endif %}</dd>
+	<dt>Yazan</dt>
+	<dd>
+		<a href="{{ path('aripd_cms_user_show', {username: entity.user.username}) }}">{{ entity.user.fullname }}</a>
+	</dd>
+	<dt>Created At</dt>
+	<dd>{{ entity.createdAt|localizeddate('medium', 'medium') }}</dd>
+	<dt>Updated At</dt>
+	<dd>{{ entity.updatedAt|localizeddate('medium', 'medium') }}</dd>
+</dl>
+	
+<div class="page-header">
+	<h1>Reports <small>Headings, paragraphs, lists, and other inline type elements</small></h1>
+</div>
+<div id="example" class="k-content absConf">
+	<div class="chart-wrapper" style="margin: auto;">
+		<div id="chart_views"></div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% for entity in entities %}
+{% if entity.code == app.session.get('iso4217').code %}
+<span class="btn btn-mini btn-primary">{{ entity.symbol }}</span>
+{% else %}
+<a href="{{ path('aripd_default_iso4217_set', { code: entity.code }) }}"><span class="btn btn-mini">{{ entity.symbol }}</span></a>
+{% endif %}
+{% endfor %}

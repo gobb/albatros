@@ -1,0 +1,70 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ 'Contact'|trans({}, 'ARIPDCMSBundle') }}{% endblock %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<hr class="soften">
+		<h1>{{ 'Contact'|trans({}, 'ARIPDCMSBundle') }}</h1>
+		<hr class="soften">	
+		<div class="row">
+			<div class="span4">
+				<h4>{{ 'Contact Information'|trans({}, 'ARIPDCMSBundle') }}</h4>
+				<p>
+					<strong>{{ configVariable('company_title') }}</strong><br>
+					{{ configVariable('company_address') }}
+				<br><br>
+				<i class="icon-th"></i> +86-139-02923101 (CHINA)<br>
+				﻿<i class="icon-th"></i> +90-532-672-1275 (TÜRKİYE)<br>
+				<i class="icon-th"></i> {{ configVariable('company_phone') }} (TELEFON)<br>
+				<i class="icon-th"></i> {{ configVariable('company_phone') }} (FAX)<br>
+				<i class="icon-globe"></i> {{ configVariable('company_email') }}<br>
+				<i class="icon-globe"></i> pdc.com.tr
+				</p>		
+			</div>
+			<div class="span4">
+				<h4>{{ 'Social Media'|trans() }}</h4>
+				<p><a href="#" target="_blank">{{ 'Facebook'|trans({}, 'ARIPDCMSBundle') }}</a></p>
+				<p><a href="https://twitter.com/pdccomtr" target="_blank">{{ 'Twitter'|trans({}, 'ARIPDCMSBundle') }}</a></p>
+				<p><a href="#" target="_blank">{{ 'Youtube'|trans({}, 'ARIPDCMSBundle') }}</a></p>
+				<p><a href="https://plus.google.com/111360470667419012579" rel="publisher">{{ 'Google+'|trans({}, 'ARIPDCMSBundle') }}</a></p>
+			</div>
+			<div class="span4">
+				<h4>{{ 'Contact'|trans({}, 'ARIPDCMSBundle') }}</h4>
+				<form action="{{ path('aripd_cms_page_contact') }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
+					{{ form_errors(form) }}
+					<fieldset>
+						<div class="control-group">
+							{{ form_row(form.name, { attr: { placeholder: 'Your name'|trans(), class: 'input-xlarge' } }) }}
+						</div>
+						<div class="control-group">
+							{{ form_row(form.email, { attr: { placeholder: 'E-mail address'|trans(), class: 'input-xlarge' } }) }}
+						</div>
+						<div class="control-group">
+							{{ form_row(form.subject, { attr: { placeholder: 'Subject'|trans(), class: 'input-xlarge' } }) }}
+						</div>
+						<div class="control-group">
+							{{ form_row(form.body, { attr: { placeholder: 'Your message'|trans(), class: 'input-xlarge' } }) }}
+						</div>
+						<div class="control-group">
+							{{ form_row(form.captcha, { attr: { class: 'span1' } }) }}
+						</div>
+						<button class="btn btn-large btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Send'|trans() }}</button>
+					</fieldset>
+					{{ form_rest(form) }}
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+<!-- 
+<iframe width="1170" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=tr&amp;geocode=&amp;q=ESSE+GRUP,+K%C4%B1m%C4%B1z+Sokak+(Sanayi+Cd.),+%C4%B0stanbul,+T%C3%BCrkiye&amp;aq=0&amp;oq=esse+gru&amp;sll=39.08719,35.177914&amp;sspn=10.161338,21.643066&amp;t=h&amp;ie=UTF8&amp;hq=ESSE+GRUP,&amp;hnear=K%C4%B1m%C4%B1z+Sokak+(Sanayi+Cd.),+Bah%C3%A7elievler,+T%C3%BCrkiye&amp;ll=40.993595,28.829455&amp;spn=0.009653,0.021136&amp;z=14&amp;iwloc=A&amp;cid=9266408922913915765&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=tr&amp;geocode=&amp;q=ESSE+GRUP,+K%C4%B1m%C4%B1z+Sokak+(Sanayi+Cd.),+%C4%B0stanbul,+T%C3%BCrkiye&amp;aq=0&amp;oq=esse+gru&amp;sll=39.08719,35.177914&amp;sspn=10.161338,21.643066&amp;t=h&amp;ie=UTF8&amp;hq=ESSE+GRUP,&amp;hnear=K%C4%B1m%C4%B1z+Sokak+(Sanayi+Cd.),+Bah%C3%A7elievler,+T%C3%BCrkiye&amp;ll=40.993595,28.829455&amp;spn=0.009653,0.021136&amp;z=14&amp;iwloc=A&amp;cid=9266408922913915765" style="color:#0000FF;text-align:left">Daha Büyük Görüntüle</a></small>
+			<iframe src="http://maps.google.com/maps?f=q&amp;ie=UTF8&amp;hl={{ app.request.locale }}&amp;ll={{ configVariable('company_latitude') }},{{ configVariable('company_longitude') }}&amp;spn=7.747835,23.24707&amp;z=14&amp;output=embed" width="1170" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" ></iframe><br />
+<small><a href="http://maps.google.com/maps?f=q&amp;ie=UTF8&amp;hl={{ app.request.locale }}&amp;ll={{ configVariable('company_latitude') }},{{ configVariable('company_longitude') }}&amp;spn=7.747835,23.24707&amp;z=14&amp;source=embed" style="color:#0000FF;text-align:left">{{ 'Show bigger map'|trans() }}</a></small>
+ -->
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,7 @@
+parameters:
+#    aripddms.example.class: ARIPD\DMSBundle\Example
+
+services:
+#    aripddms.example:
+#        class: %aripddms.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

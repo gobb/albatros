@@ -1,0 +1,27 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ 'My Profile'|trans({}, 'ARIPDUserBundle') }}{% endblock title %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<ul class="breadcrumb">
+					<li><a href="{{ path('aripd_default_index') }}">{{ 'Home'|trans() }}</a> <span class="divider">/</span></li>
+					<li class="active">{{ 'My Profile'|trans({}, 'ARIPDUserBundle') }}</li>
+				</ul>
+				{% include "::ARIPDUserBundle/Profile/show_content.html.twig" %}
+				<div class="form-actions">
+					<a class="btn" href="{{ path('aripd_user_profile_edit') }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+					<a class="btn" href="{{ path('fos_user_change_password') }}"><i class="icon-lock"></i> {{ 'Change password'|trans({}, 'ARIPDUserBundle') }}</a>
+				</div>
+				<h3>{{ 'Profile Pictures'|trans({}, 'ARIPDUserBundle') }}</h3>	
+				<hr class="soft">
+				{{ render(controller('ARIPDUserBundle:Image:new')) }}
+				{% include '::ARIPDUserBundle/Image/list.html.twig' with { entity: entity } %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

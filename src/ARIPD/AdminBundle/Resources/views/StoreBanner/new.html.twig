@@ -1,0 +1,18 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'Banners'|trans({}, 'ARIPDStoreBundle') }}</h1>
+</div>
+<form action="{{ path('aripd_admin_store_banner_create') }}" method="post" {{ form_enctype(form) }}>
+	{{ form_row(form.name, {attr: {class: 'span9'}}) }}
+	{{ form_row(form.description, {attr: {class: 'span9'}}) }}
+	{{ form_row(form.href, {attr: {class: 'span9', placeholder: 'http://www.domain.tld'}}) }}
+	{{ form_row(form.url, {attr: {class: 'span9', placeholder: 'http://dl.dropbox.com/u/36591931/pdc_com_tr/banner/store_banner_1.png'}}) }}
+	{{ form_rest(form) }}
+	<div class="form-actions">
+		<a class="btn" href="{{ path('aripd_admin_store_banner_index') }}"><i class="icon-chevron-left"></i> {{ 'Back'|trans() }}</a>
+		<button class="btn btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Create'|trans() }}</button>
+	</div>
+</form>
+{% endblock %}

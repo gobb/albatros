@@ -1,0 +1,50 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<ul class="breadcrumb">
+	<li><a href="{{ path('aripd_admin_default_index') }}">{{ 'Dashboard'|trans({}, 'ARIPDAdminBundle') }}</a> <span class="divider">/</span></li>
+	<li class="active">{{ 'Customer Relationship Management'|trans({}, 'ARIPDCRMBundle') }} <span class="divider">/</span></li>
+	<li class="active">{{ 'taggroups'|trans() }}</li>
+</ul>
+<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>{{ 'taggroup'|trans() }}</th>
+			<th>{{ 'Sorting'|trans({}, 'ARIPDCRMBundle') }}</th>
+			<th>{{ 'tagkeys'|trans() }}</th>
+			<th>{{ 'label.actions'|trans() }}</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for entity in entities %}
+		<tr>
+			<td>{{ entity.name }}</td>
+			<td>{{ entity.sorting }}</td>
+			<td>
+				<ul>
+					{% for tagkey in entity.tagkeys %}
+					<li>
+						{{ tagkey.name }}
+						<span class="btn-group">
+							<a class="btn btn-mini" href="{{ path('aripd_admin_crm_tagkey_show', { 'id': tagkey.id }) }}">{{ 'Show'|trans() }}</a>
+							<a class="btn btn-mini" href="{{ path('aripd_admin_crm_tagkey_edit', { 'id': tagkey.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+						</span>
+					</li>
+					{% endfor %}
+					<a class="btn btn-mini" href="{{ path('aripd_admin_crm_tagkey_new') }}">{{ 'New entry'|trans() }}</a>
+				</ul>
+			</td>
+			<td>
+				<div class="btn-group">
+					<a class="btn btn-mini" href="{{ path('aripd_admin_crm_taggroup_show', { 'id': entity.id }) }}">{{ 'Show'|trans() }}</a>
+					<a class="btn btn-mini" href="{{ path('aripd_admin_crm_taggroup_edit', { 'id': entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a>
+				</div>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_crm_taggroup_new') }}">{{ 'New entry'|trans() }}</a>
+</div>
+{% endblock %}

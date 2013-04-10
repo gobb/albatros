@@ -1,0 +1,48 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'Categories'|trans({}, 'ARIPDStoreBundle') }}</h1>
+</div>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Subs</th>
+			<th>Iso639</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for entity in entities %}
+		<tr>
+			<td>{{ entity.name }}</td>
+			<td>
+				<ul>
+					{% for sub in entity.subs %}
+					<li>
+						<a href="{{ path('aripd_admin_store_category_edit', { 'id': sub.id }) }}"><i class="icon-edit"></i> {{ sub.name }}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</td>
+			<td>{{ entity.iso639.name }}</td>
+			<td>
+				<div class="btn-group">
+					<a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-cog"></i></a>
+					<ul class="dropdown-menu pull-right">
+						<li><a href="{{ path('aripd_admin_store_category_show', { id: entity.id }) }}"><i class="icon-pencil"></i> {{ 'Show'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_store_category_edit', { id: entity.id }) }}"><i class="icon-edit"></i> {{ 'Edit'|trans() }}</a></li>
+						<li><a href="{{ path('aripd_admin_store_category_delete', { id: entity.id }) }}"><i class="icon-trash"></i> {{ 'Delete'|trans() }}</a></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<div class="form-actions">
+	<a class="btn" href="{{ path('aripd_admin_store_category_clear') }}">{{ 'Delete all'|trans() }}</a>
+	<a class="btn" href="{{ path('aripd_admin_store_category_new') }}">{{ 'New entry'|trans() }}</a>
+</div>
+{% endblock %}

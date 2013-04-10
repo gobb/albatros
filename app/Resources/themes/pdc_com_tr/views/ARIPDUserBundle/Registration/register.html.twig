@@ -1,0 +1,27 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ 'Register'|trans({}, 'ARIPDUserBundle') }}{% endblock %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			{% include '::sidebar.html.twig' %}
+			<div class="span9">
+				<ul class="breadcrumb">
+					<li><a href="{{ path('aripd_default_index') }}">{{ 'Home'|trans() }}</a> <span class="divider">/</span></li>
+					<li class="active">{{ 'Register'|trans({}, 'ARIPDUserBundle') }}</li>
+				</ul>
+				<div class="well">
+					<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" novalidate="novalidate">
+						{{ form_widget(form) }}
+						<div class="form-actions">
+							<button class="btn btn-large btn-primary" data-loading-text="{{ 'Loading...'|trans() }}" type="submit">{{ 'Register'|trans({}, 'ARIPDUserBundle') }}</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

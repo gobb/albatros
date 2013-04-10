@@ -1,0 +1,55 @@
+<div class="row-fluid">
+	<div class="span8">
+		<dl class="dl-horizontal">
+			<dt>{{ 'Username'|trans({}, 'ARIPDUserBundle') }}</dt>
+			<dd>{{ entity.username }}</dd>
+			{% if entity.email %}
+			<dt>{{ 'E-mail address'|trans({}, 'ARIPDUserBundle') }}</dt>
+			<dd>{{ entity.email }}</dd>
+			{% endif %}
+			{% if entity.mobile %}
+			<dt>{{ 'Mobile'|trans({}, 'ARIPDUserBundle') }}</dt>
+			<dd>{{ entity.mobile }}</dd>
+			{% endif %}
+			{% if entity.firstname %}
+			<dt>{{ 'Firstname'|trans({}, 'ARIPDUserBundle') }}</dt>
+			<dd>{{ entity.firstname }}</dd>
+			{% endif %}
+			{% if entity.lastname %}
+			<dt>{{ 'Lastname'|trans({}, 'ARIPDUserBundle') }}</dt>
+			<dd>{{ entity.lastname }}</dd>
+			{% endif %}
+			{% if entity.gender %}
+			<dt>{{ 'Gender'|trans({}, 'ARIPDUserBundle') }}</dt>
+			<dd>
+				{% if entity.gender == 'F' %}&#9792; {{ entity.gender }}
+				{% elseif entity.gender == 'M' %}&#9794; {{ entity.gender }}
+				{% endif %}
+			</dd>
+			{% endif %}
+			{% if entity.dateofbirth %}
+			<dt>{{ 'Date of birth'|trans({}, 'ARIPDUserBundle') }}</dt>
+			<dd>{{ entity.dateofbirth|localizeddate('medium', 'none') }}</dd>
+			{% endif %}
+			{% if entity.twitterUsername %}
+			<dt>{{ 'Twitter'|trans({}, 'ARIPDUserBundle') }}</dt>
+			<dd>{{ entity.twitterUsername }}</dd>
+			{% endif %}
+			{% if entity.facebookId %}
+			<dt>{{ 'Facebook'|trans({}, 'ARIPDUserBundle') }}</dt>
+			<dd>{{ entity.facebookId }}</dd>
+			{% endif %}
+			{% if entity.google %}
+			<dt>{{ 'Google'|trans({}, 'ARIPDUserBundle') }}</dt>
+			<dd>{{ entity.google }}</dd>
+			{% endif %}
+			{% if entity.linkedin %}
+			<dt>{{ 'Linkedin'|trans({}, 'ARIPDUserBundle') }}</dt>
+			<dd>{{ entity.linkedin }}</dd>
+			{% endif %}
+		</dl>
+	</div>
+	<div class="span4">
+		{{ profileImage(entity, configVariable('user_user_width'), configVariable('user_user_height')) }}
+	</div>
+</div>

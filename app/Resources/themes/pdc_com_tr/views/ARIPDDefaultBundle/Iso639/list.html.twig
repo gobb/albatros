@@ -1,0 +1,7 @@
+{% for entity in entities %}
+{% if entity.a2 == app.request.locale %}
+<span class="btn btn-mini btn-primary">{{ entity.native }}</span>
+{% else %}
+<a href="{{ path('aripd_default_index', { _locale: entity.a2 }) }}"><span class="btn btn-mini">{{ entity.native }}</span></a>
+{% endif %}
+{% endfor %}

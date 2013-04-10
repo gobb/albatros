@@ -1,0 +1,23 @@
+<div id="mainBody">
+	<div class="container">
+		<h1>{{ 'FAQs'|trans({}, 'ARIPDCMSBundle') }}</h1>
+		<hr class="soften">	
+		<div class="accordion" id="accordion2">
+			{% for entity in entities %}
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<h5>
+						<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse{{ entity.id }}">
+							<i class="icon-cog"></i>
+							{{ entity.name }}
+						</a>
+					</h5>
+				</div>
+				<div id="collapse{{ entity.id }}" class="accordion-body collapse">
+					<div class="accordion-inner">{{ entity.content|raw }}</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>

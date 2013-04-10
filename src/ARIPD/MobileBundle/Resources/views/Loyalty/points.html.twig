@@ -1,0 +1,31 @@
+{% extends 'ARIPDMobileBundle::layout.html.twig' %}
+
+{% block body %}
+<div data-role="page" id="foo" data-title="Page Foo">
+	<div data-role="header" data-id="header" data-position="fixed">
+		<a data-rel="back" data-icon="arrow-l">Back</a>
+		<h1>Puan hareketlerim</h1>
+		{% include 'ARIPDMobileBundle:Default:loginout.html.twig' %}
+	</div>
+	<div data-role="content">
+		<table>
+			<tbody>
+				{% set totalBonus = 0 %}
+				{% for entity in entities %}
+				<tr>
+					<td>
+						<div>{{ entity.logtype.name }}</div>
+						<small>{{ entity.createdAt|localizeddate('short', 'short') }}</small>
+					</td>
+					<td>{{ entity.bonus }}</td>
+				</tr>
+				{% set totalBonus = totalBonus + entity.bonus %}
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<div data-role="footer" class="ui-bar" data-position="fixed" data-id="footer">
+		<h1>Toplam puanınız: {{ totalBonus }}</h1>
+	</div>
+</div>
+{% endblock %}

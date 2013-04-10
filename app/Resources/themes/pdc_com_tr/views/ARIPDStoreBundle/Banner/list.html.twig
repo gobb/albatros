@@ -1,0 +1,23 @@
+<div id="carouselBlk">
+	<div class="container">
+		<div id="myCarousel" class="carousel slide">
+			<div class="carousel-inner">
+				{% for entity in entities %}
+				<div class="item {% if loop.first %}active{% endif %}">
+					<a href="{{ entity.href }}">
+						<img style="width:100%" src="{{ image(entity.getWebPath()).resize(1170, 480, 'transparent').png }}" alt="{{ entity.name }}"/>
+					</a>
+					<div class="carousel-caption">
+						<h4>{{ entity.name }}</h4>
+						<p>{{ entity.description }}</p>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			<!--
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+			<a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+			-->
+		</div> 
+	</div>
+</div>

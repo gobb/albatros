@@ -1,0 +1,46 @@
+{% extends 'ARIPDAdminBundle::layout.html.twig' %}
+
+{% block container %}
+<div class="page-header">
+	<h1>{{ 'attributes'|trans() }}</h1>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Attributekey</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('aripd_admin_store_attributevalue_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.attributekey.name }}</td>
+            <td>{{ entity.code }}</td>
+            <td>{{ entity.name }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('aripd_admin_store_attributevalue_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('aripd_admin_store_attributevalue_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('aripd_admin_store_attributevalue_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
+{% endblock %}

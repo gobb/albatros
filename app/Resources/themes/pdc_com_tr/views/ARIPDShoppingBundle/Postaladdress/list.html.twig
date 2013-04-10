@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ 'Postal Address'|trans({}, 'ARIPDUserBundle') }}{% endblock %}
+
+{% block container %}
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				{% if app.session.get("transportation") is not empty %}
+				{{ render(controller('ARIPDShoppingBundle:Postaladdress:form')) }}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

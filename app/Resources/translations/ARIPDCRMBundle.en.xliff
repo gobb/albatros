@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2013-04-16T08:59:10Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="e525fa72373eb01469877d56acc5fb8226d7595b" resname="Add Tag">
+        <jms:reference-file line="50">views/CRMIndividual/edit.html.twig</jms:reference-file>
+        <source>Add Tag</source>
+        <target state="new">Add Tag</target>
+      </trans-unit>
+      <trans-unit id="de68e107e9e30887f25bfbfcf562990b633dec5e" resname="Customer Relationship">
+        <jms:reference-file line="75">Resources/views/adminsidebar.html.twig</jms:reference-file>
+        <source>Customer Relationship</source>
+        <target state="new">Customer Relationship</target>
+      </trans-unit>
+      <trans-unit id="7f42dd1f20f3310c843634da7f55233d3efac4ba" resname="Customer Relationship Management">
+        <jms:reference-file line="6">views/CRMTaggroup/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/CRMTaggroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/CRMTaggroup/new.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/CRMTaggroup/show.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/CRMTagkey/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/CRMTagkey/index.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/CRMTagkey/new.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/CRMTagkey/show.html.twig</jms:reference-file>
+        <source>Customer Relationship Management</source>
+        <target state="new">Customer Relationship Management</target>
+      </trans-unit>
+      <trans-unit id="55f8ebc805e65b5b71ddafdae390e3be2bcd69af" resname="Description">
+        <jms:reference-file line="14">Form/Type/CRMImageFormType.php</jms:reference-file>
+        <source>Description</source>
+        <target state="new">Description</target>
+      </trans-unit>
+      <trans-unit id="b7c17e97d3d625694b836d85ace6edc18bbef0e6" resname="Female">
+        <jms:reference-file line="26">Form/Type/CRMIndividualType.php</jms:reference-file>
+        <source>Female</source>
+        <target state="new">Female</target>
+      </trans-unit>
+      <trans-unit id="2c3cafa4db3f3e1e51b3dff4303502dbe42b7a89" resname="File">
+        <jms:reference-file line="15">Form/Type/CRMImageFormType.php</jms:reference-file>
+        <source>File</source>
+        <target state="new">File</target>
+      </trans-unit>
+      <trans-unit id="3f3a489c72dea800ea7b6338c89938766d41a6e5" resname="Male">
+        <jms:reference-file line="25">Form/Type/CRMIndividualType.php</jms:reference-file>
+        <source>Male</source>
+        <target state="new">Male</target>
+      </trans-unit>
+      <trans-unit id="709a23220f2c3d64d1e1d6d18c4d5280f8d82fca" resname="Name">
+        <jms:reference-file line="11">Form/Type/CRMImageFormType.php</jms:reference-file>
+        <source>Name</source>
+        <target state="new">Name</target>
+      </trans-unit>
+      <trans-unit id="6403f2b7eb2aaafe6de34cbf2a029b01afebc512" resname="New">
+        <jms:reference-file line="8">views/CRMTaggroup/new.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/CRMTagkey/new.html.twig</jms:reference-file>
+        <source>New</source>
+        <target state="new">New</target>
+      </trans-unit>
+      <trans-unit id="e963907dac5cd5c017869b4c96c18021c9bd058b" resname="Remove">
+        <jms:reference-file line="89">views/CRMIndividual/edit.html.twig</jms:reference-file>
+        <source>Remove</source>
+        <target state="new">Remove</target>
+      </trans-unit>
+      <trans-unit id="5e054413dacd642ddacc8f8ec146442bea000086" resname="Search Results">
+        <jms:reference-file line="6">views/CRMIndividual/result.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Loyalty/result.html.twig</jms:reference-file>
+        <source>Search Results</source>
+        <target state="new">Search Results</target>
+      </trans-unit>
+      <trans-unit id="378e9e163b7eecefadb4415cae533096e336c4ab" resname="Sorting">
+        <jms:reference-file line="13">views/CRMTaggroup/index.html.twig</jms:reference-file>
+        <jms:reference-file line="17">views/CRMTagkey/show.html.twig</jms:reference-file>
+        <source>Sorting</source>
+        <target state="new">Sorting</target>
+      </trans-unit>
+      <trans-unit id="effc10a1129bd6c61428ed5588e3240f08c270e2" resname="label.birthdate">
+        <jms:reference-file line="18">Form/Type/CRMIndividualType.php</jms:reference-file>
+        <source>label.birthdate</source>
+        <target state="new">label.birthdate</target>
+      </trans-unit>
+      <trans-unit id="5fd79280d513007c983e5c17078933eed37a0c39" resname="label.gender">
+        <jms:reference-file line="23">Form/Type/CRMIndividualType.php</jms:reference-file>
+        <source>label.gender</source>
+        <target state="new">label.gender</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
